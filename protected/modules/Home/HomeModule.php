@@ -2,6 +2,8 @@
 
 class HomeModule extends CWebModule
 {
+	public $defaultController = 'main';
+	
 	public function init()
 	{
 		// this method is called when the module is being created

@@ -2,6 +2,8 @@
 
 class UserCenterModule extends CWebModule
 {
+	public $defaultController ='main';
+	
 	public function init()
 	{
 		// this method is called when the module is being created
@@ -12,6 +14,7 @@ class UserCenterModule extends CWebModule
 			'UserCenter.models.*',
 			'UserCenter.components.*',
 		));
+		
 	}
 
 	public function beforeControllerAction($controller, $action)

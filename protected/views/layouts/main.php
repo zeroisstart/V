@@ -29,11 +29,11 @@
 	<div id="mainmenu">
 		<?php $this->widget('zii.widgets.CMenu',array(
 			'items'=>array(
-				array('label'=>'Home', 'url'=>array('/site/index')),
-				array('label'=>'About', 'url'=>array('/site/page', 'view'=>'about')),
-				array('label'=>'Contact', 'url'=>array('/site/contact')),
-				array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
-				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
+				array('label'=>'Home', 'url'=>array('/Home/main/index')),
+				array('label'=>'Login', 'url'=>array('/UserCenter/login/login'), 'visible'=>Yii::app()->user->isGuest),
+				array('label'=>'Regisgter', 'url'=>array('/UserCenter/register/register'), 'visible'=>Yii::app()->user->isGuest),
+				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/UserCenter/login/logout'), 'visible'=>!Yii::app()->user->isGuest),
+				array('label'=>'admin', 'url'=>array('/Admin/main/main'), 'visible'=>!Yii::app()->user->isGuest)
 			),
 		)); ?>
 	</div><!-- mainmenu -->
@@ -54,6 +54,8 @@
 	</div><!-- footer -->
 
 </div><!-- page -->
+	
+	<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=2"></' + 'script>')</script>
 
 </body>
 </html>

@@ -39,7 +39,7 @@ $components = require 'components.php';
 // CWebApplication properties can be configured here.
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
-	'name'=>'Top\' CodeBase ',
+	'name'=>'Top\'s Vengeance ',
     'timeZone'=>'Asia/Shanghai', //设置时区为上海
     'language'=>'zh_cn',
 
@@ -64,41 +64,11 @@ return array(
 	// application components
 	'components'=>$components,
 
-
 	// application-level parameters that can be accessed
 	// using Yii::app()->params['paramName']
 	'params'=>array(
 		'phantomjs'=>'D:\htdocs\www\phantomjs-1.8.2-windows\phantomjs.exe D:\htdocs\www\phantomjs-1.8.2-windows\examples\rasterize.js',
 		// this is used in contact page
 		'adminEmail'=>'shenhongmings@gmail.com',
-		
-//参数的传递
-		'args' => array('a','a+b','a+b+c','a+b+c+d'),
-		
-		'allowFunction'=>array(
-		
-			'base64_decode',
-			'base64_encode',
-			'md5',
-			'sha1',
-			
-//十进制转换			
-			'decbin',
-			'decoct',
-			'dechex',
-//二进制转十进制			
-			'bindec',
-			'bin2hex',
-//八进制转十进制			
-			'octdec',
-//十六进制转十进制
-			'hexdec',
-//时间
-			'date',
-			'time',
-//正则匹配					
-			'preg_match',
-			'preg_match_all',
-			),
 	),
 );
