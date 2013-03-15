@@ -20,7 +20,7 @@ class UploadedFile extends CUploadedFile {
 		if (strrchr ( $pathStr, "/" ) != "/") {
 			$pathStr .= "/";
 		}
-		$pathStr .= date ( "Ymd" );
+		$pathStr .= date ( "Ym/d" );
 		if (! file_exists ( $pathStr )) {
 			if (! mkdir ( $pathStr, 0777, true )) {
 				return false;

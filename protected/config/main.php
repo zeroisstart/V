@@ -53,6 +53,7 @@ return array(
 		'application.models.*',
 		'application.components.*',
 	    'application.components.Helper.*',
+		'application.components.System.*',
 	)),
     'aliases'=>array(
       'anne' =>dirname(__FILE__).DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR,
@@ -74,6 +75,7 @@ return array(
 		'imgPath'=>'/v/',
 		'uploadPath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'../../upload/',
 		'fileAccessPath'=>'/v/',
-		
+		'imgUploadPath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'../../img/',
+		'attachmentUploadPath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'../../attachment/',
 	),
 );

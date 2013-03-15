@@ -1,2 +1,2 @@
 <?php
-echo CHtml::fileField('ImgUploadForm[img]');
+echo CHtml::fileField($fieldName);
