@@ -129,4 +129,18 @@ class User extends CActiveRecord
 		$salt.=strtr(substr(base64_encode($rand),0,22),array('+'=>'.'));
 		return $salt;
 	}
+
+	/**
+	 * 返回用户名
+	 *
+	 * @param int $uid
+	 * @return string
+	 */
+	public function getNameByID($uid) {
+		$model = $this -> findByPk($uid);
+		if($model)
+			return $model -> username;
+		return false;
+	}
+	
 }

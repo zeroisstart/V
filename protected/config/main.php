@@ -49,16 +49,17 @@ return array(
 	'preload'=>array('log'),
 
 	// autoloading model and component classes
-	'import'=>array(
+	'import'=>array_merge($modules_includes,array(
 		'application.models.*',
 		'application.components.*',
 	    'application.components.Helper.*',
-	),
+	)),
     'aliases'=>array(
       'anne' =>dirname(__FILE__).DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR,
       'alice' =>dirname(__FILE__).DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR,
       'components'=>'application.components', // 设置元件目录
       'views'=>'application.views',           // 设置显示目录
+      'widget'=>'application.widgets',
       'widgets'=>'application.widgets'),      // 设置小工具目录
 	'modules'=>$modules,
 	// application components
@@ -70,5 +71,9 @@ return array(
 		'phantomjs'=>'D:\htdocs\www\phantomjs-1.8.2-windows\phantomjs.exe D:\htdocs\www\phantomjs-1.8.2-windows\examples\rasterize.js',
 		// this is used in contact page
 		'adminEmail'=>'shenhongmings@gmail.com',
+		'imgPath'=>'/v/',
+		'uploadPath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'../../upload/',
+		'fileAccessPath'=>'/v/',
+		
 	),
 );

@@ -23,7 +23,7 @@ class phantom extends CWidget {
 	 * @see CWidget::run()
 	 */
 	public function run() {
-		var_dump($this -> url);
+		//var_dump($this -> url);
 		$img = 'img/'.md5($this->url.time()).'.jpg';
 		$args = '"'.$this->url . '" ' . $img;
 		$this->ex ( $this->phantom . ' ' . $args );
@@ -34,8 +34,6 @@ class phantom extends CWidget {
 	 * @return string
 	 */
 	public function ex($in) {
-		echo $in;
-		die;
 		$out = '';
 		if (function_exists ( 'exec' )) {
 			exec ( $in, $out );
