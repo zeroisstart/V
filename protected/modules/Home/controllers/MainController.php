@@ -1,9 +1,6 @@
 <?php
-
-class MainController extends Controller
-{
-	public function actionIndex()
-	{
-		$this->render('main'); 
+class MainController extends Controller {
+	public function actionIndex() {
+		$this->render ( 'main' );
 	}
 }
