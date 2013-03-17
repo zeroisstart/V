@@ -23,7 +23,6 @@ class MainAdminController extends Controller {
 	 */
 	public function actionIndex() {
 		$user = Yii::app ()->user;
-		
 		if ($user->isGuest) {
 			$this->redirect ( $this->createUrl ( '/admin/login' ) );
 		}

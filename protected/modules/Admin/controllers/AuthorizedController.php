@@ -11,7 +11,7 @@ class AuthorizedController extends Controller {
 	 *
 	 * @var string
 	 */
-	public $layout = 'adminLogin';
+	public $layout = 'innovationLogin';
 	
 	/**
 	 */
@@ -25,32 +25,34 @@ class AuthorizedController extends Controller {
 		if (! Yii::app ()->user->isGuest)
 			$this->redirect ( $this->createUrl ( '/admin' ) );
 		
-		$url = $this->module->getAssetsUrl ();
-		$model = user::model ();
+		$model = new LoginForm ();
 		
-		if (isset ( $_POST ['User'] )) {
-			$model->attributes = $_POST ['User'];
-			if ($model->validate ()) {
-				$user_identity = new UserIdentity ( $model->username, $model->password );
-				if ($user_identity->authenticate ()) {
-					$this->redirect ( $this->createUrl ( '/admin' ) );
-					// var_dump(Yii::app() -> user);
-					// die;
-				} else {
-					$auth_error = array (
-							'code' => $user_identity->errorCode,
-							'msg' => $user_identity->errorMessage 
-					);
-				}
-			} else {
-				var_dump ( $model->errors );
-			}
+		// if it is ajax validation request
+		if (isset ( $_POST ['ajax'] ) && $_POST ['ajax'] === 'login-form') {
+			echo CActiveForm::validate ( $model );
+			Yii::app ()->end ();
 		}
 		
-		$this->render ( 'login', array (
-				'model' => $model,
-				'auth_error' => isset ( $auth_error ) ? $auth_error : null 
-		) );
+		// collect user input data
+		if (isset ( $_POST ['LoginForm'] )) {
+			$model->attributes = $_POST ['LoginForm'];
+			// validate user input and redirect to the previous page if valid
+			if ($model->validate () && $model->login ())
+				$this->redirect ( Yii::app ()->user->returnUrl );
+			else {
+				/* $auth_error = array (
+						'msg' => $model -> errMsg,
+				); */
+			}
+		}
+		$ary = array (
+				'model' => $model 
+		) ;
+		if(isset($auth_error))
+		$ary ['auth_error'] = $auth_error;
+		
+		// display the login form
+		$this->render ( 'authLogin', $ary);
 	}
 	public function actionLogout() {
 		$user = Yii::app ()->user;
