@@ -51,7 +51,7 @@ $this->widget ( 'widget.system.uploadForm', array (
 <?php $this -> endWidget()?>
 
 <script type="text/javascript">
-	/*$(document).ready(function(){
+	$(document).ready(function(){
 		hm.confirm({
 				noTitle : true, 
 				text : '这里面是提示', 
@@ -64,5 +64,5 @@ $this->widget ( 'widget.system.uploadForm', array (
 			},function(){
 				alert('cancel');
 				});
-	})*/
+	})
 </script>
