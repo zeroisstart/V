@@ -3,6 +3,7 @@
 return array (
 		'user' => array (
 				// enable cookie-based authentication
+				'class'=>'application.components.WebUser',
 				'allowAutoLogin' => true 
 		),
 		'Folder' => array (
