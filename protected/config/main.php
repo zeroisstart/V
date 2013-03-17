@@ -54,7 +54,6 @@ return array(
 		'application.components.*',
 	    'application.components.Helper.*',
 		'application.components.System.*',
-		'application.components.activeRecordBehaviors.*',
 	)),
     'aliases'=>array(
       'anne' =>dirname(__FILE__).DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR,
@@ -78,10 +77,5 @@ return array(
 		'fileAccessPath'=>'/v/',
 		'imgUploadPath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'../../img/',
 		'attachmentUploadPath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'../../attachment/',
-		
-		'save_site_actions' => true,
-		'multilanguage_support' => false,
-		'collect_routes_from_modules' => true,
-		'themes_enabled' => false
 	),
 );

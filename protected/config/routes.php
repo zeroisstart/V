@@ -3,9 +3,7 @@ return array (
 		'' => 'Home/main/index',
 		'/' => 'Home/main/index',
 		
-		
 		'admin' =>'Admin/main/main',
-		'admin/login' =>'Admin/Authorized/Login',
 		
 		'register' => 'UserCenter/register/register',
 		'login' => 'UserCenter/login/login',

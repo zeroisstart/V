@@ -1,6 +1,6 @@
 <?php
 
-class User extends ActiveRecord
+class User extends CActiveRecord
 {
 	/**
 	 * The followings are the available columns in table 'tbl_user':
@@ -10,48 +10,6 @@ class User extends ActiveRecord
 	 * @var string $email
 	 * @var string $profile
 	 */
-	
-	public $name = '';
-	
-	const STATUS_ACTIVE  = 'active';
-	const STATUS_NEW     = 'new';
-	const STATUS_BLOCKED = 'blocked';
-	
-	const GENDER_MAN   = "man";
-	const GENDER_WOMAN = "woman";
-	
-	const ROLE_ADMIN = 'admin';
-	const ROLE_GUEST = 'guest';
-	const ROLE_USER  = 'user';
-	
-	const SCENARIO_CHANGE_PASSWORD_REQUEST = 'ChangePasswordRequest';
-	const SCENARIO_ACTIVATE_REQUEST        = 'ActivateRequest';
-	const SCENARIO_UPDATE_SELF_DATA        = 'UpdateSelfData';
-	const SCENARIO_CHANGE_PASSWORD         = 'ChangePassword';
-	const SCENARIO_REGISTRATION            = 'Registration';
-	const SCENARIO_USER_SEARCH             = 'UserSearch';
-	const SCENARIO_UPDATE                  = 'Update';
-	const SCENARIO_CREATE                  = 'Create';
-	const SCENARIO_LOGIN                   = 'Login';
-	
-	public $password_c;
-	
-	public $remember_me = false;
-	
-	public $activate_error;
-	
-	public $activate_code;
-	
-	public $role;
-	
-	public static $roles = array(
-			self::ROLE_USER,
-			self::ROLE_GUEST,
-			self::ROLE_ADMIN
-	);
-	
-	
-	public $_state = array(0=>'停用',1=>'激活','2'=>'删除');
 
 	/**
 	 * Returns the static model of the specified AR class.
@@ -60,10 +18,6 @@ class User extends ActiveRecord
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
-	}
-	
-	public function name(){
-		return 'User';
 	}
 
 	/**
@@ -85,15 +39,6 @@ class User extends ActiveRecord
 			array('username, password, email', 'required'),
 			array('username, password, email', 'length', 'max'=>128),
 			array('profile', 'safe'),
-				array(
-						'role',
-						'unsafe'
-				),
-				array(
-						'role',
-						'in',
-						'range' => self::$roles
-				)
 		);
 	}
 
@@ -115,12 +60,11 @@ class User extends ActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id' => '用户ID',
-			'username' => '用户名',
-			'password' => '密码',
-			'email' => '邮箱',
+			'id' => 'Id',
+			'username' => 'Username',
+			'password' => 'Password',
+			'email' => 'Email',
 			'profile' => 'Profile',
-			'state'=>'状态'
 		);
 	}
 
@@ -185,38 +129,6 @@ class User extends ActiveRecord
 		$salt.=strtr(substr(base64_encode($rand),0,22),array('+'=>'.'));
 		return $salt;
 	}
-	/**
-	 * Retrieves a list of models based on the current search/filter conditions.
-	 *
-	 * @return CActiveDataProvider the data provider that can return the models
-	 *         based on the search/filter conditions.
-	 */
-	public function search() {
-		// Warning: Please modify the following code to remove attributes that
-		// should not be searched.
-		$criteria = new CDbCriteria ();
-	
-		$criteria->compare ( 'id', $this->id, true );
-		$criteria->compare ( 'username', $this->username, true );
-		$criteria->compare ( 'password', $this->password, true );
-		$criteria->compare ( 'email', $this->email, true );
-		$criteria->compare ( 'state', $this->state, true );
-	
-		return new CActiveDataProvider ( $this, array (
-				'criteria' => $criteria,
-				'pagination' => array (
-						'pageSize' => 20
-				)
-		) );
-	}
-	
-	/**
-	 * 
-	 * @return boolean
-	 */
-	public function isRootRole(){
-		return false;
-	}
 
 	/**
 	 * 返回用户名
@@ -230,5 +142,5 @@ class User extends ActiveRecord
 			return $model -> username;
 		return false;
 	}
-		
+	
 }
