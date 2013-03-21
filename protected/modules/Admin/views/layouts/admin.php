@@ -118,9 +118,9 @@ $(document).ready(function(){
 					'htmlOptions'=>array('class'=>'sf-menu sf-js-enabled sf-shadow'),
 					'items'=>array(
 							array('label'=>'管理首页', 'url'=>array('Admin/main/main')),
-							array('label'=>'新闻', 'url'=>array('/news/admin/list')),
-							array('label'=>'赛事', 'url'=>array('/event/admin/index')),
-							array('label'=>'图片','url'=>array('/pic/slider/list')),
+							#array('label'=>'新闻', 'url'=>array('/news/admin/list')),
+							#array('label'=>'赛事', 'url'=>array('/event/admin/index')),
+							#array('label'=>'图片','url'=>array('/pic/slider/list')),
 							array('label'=>'用户管理','url'=>array('/Admin/UserAdmin/list')),
 					)
 			));?>
@@ -131,7 +131,7 @@ $(document).ready(function(){
 	</header>
 	<!-- End of Header -->
 	<!-- Page title -->
-	<div id="pagetitle">
+	<div id="pagetitle" style="display:none;">
 		<div class="wrapper">
 			<h1>控制面板</h1>
 			<!-- Quick search box -->
@@ -142,7 +142,7 @@ $(document).ready(function(){
 		
 	<div class="page_content">
 		
-	<?php echo $content;?>
+		<?php echo $content;?>	
 	
 	</div>
 
