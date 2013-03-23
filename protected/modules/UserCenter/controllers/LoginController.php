@@ -4,6 +4,9 @@ class LoginController extends Controller {
 	 * Displays the login page
 	 */
 	public function actionLogin() {
+		echo "test";
+		die;
+		
 		$model = new LoginForm ();
 		
 		// if it is ajax validation request
@@ -12,6 +15,7 @@ class LoginController extends Controller {
 			Yii::app ()->end ();
 		}
 		
+
 		// collect user input data
 		if (isset ( $_POST ['LoginForm'] )) {
 			$model->attributes = $_POST ['LoginForm'];

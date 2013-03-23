@@ -3,7 +3,7 @@ class RegisterController extends Controller {
 	public $defaultAction = 'register';
 	public function actionRegister() {
 		$model = new RegisterForm ();
-		
+		//$profileModel = new 
 		// if it is ajax validation request
 		if (isset ( $_POST ['ajax'] ) && $_POST ['ajax'] === 'register-form') {
 			echo CActiveForm::validate ( $model );
@@ -17,11 +17,12 @@ class RegisterController extends Controller {
 			if ($model->validate () && $model->register ()){
 				var_dump($model -> attributes);
 			}
-				//$this->redirect ( Yii::app ()->user->returnUrl );
+			//$this->redirect ( Yii::app ()->user->returnUrl );
 		}
 		
 		$this->render ( 'register', array (
-				'model' => $model 
+				'model' => $model,
+				'profileModel'=>$profileModel
 		) );
 	}
 }

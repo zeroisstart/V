@@ -18,6 +18,13 @@ $this->breadcrumbs=array(
 	)); ?>
 
 	<p class="note">Fields with <span class="required">*</span> are required.</p>
+	
+	
+	<div class="row">
+		<?php echo $form->labelEx($model,'user_type'); ?>
+		<?php echo $form->textField($model,'user_type'); ?>
+		<?php echo $form->error($model,'user_type'); ?>
+	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'username'); ?>
