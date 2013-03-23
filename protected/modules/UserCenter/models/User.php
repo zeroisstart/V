@@ -122,7 +122,7 @@ class User extends ActiveRecord
 			'password' => '密码',
 			'email' => '邮箱',
 			'profile' => 'Profile',
-			'state'=>'状态'
+			'state'=>'状态',
 		);
 	}
 

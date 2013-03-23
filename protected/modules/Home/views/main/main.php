@@ -49,24 +49,3 @@ $this->widget ( 'widget.system.uploadForm', array (
 <?php echo CHtml::submitButton('submit');?>
 
 <?php $this -> endWidget()?>
-
-<?php
-/* 
-<script type="text/javascript">
-$(document).ready(function(){
-	hm.confirm({
-	 noTitle : true,
-			text : '这里面是提示',
-			height : 'auto',
-			width : 210,
-			confirm:'确定',
-			cancel:'取消'
-			},function(){
-			alert('ok');
-			},function(){
-			alert('cancel');
-			});
-})
-
-</script>*/
-?>

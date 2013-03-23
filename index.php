@@ -1,7 +1,7 @@
 <?php
 
 if (substr ( $_SERVER ['DOCUMENT_ROOT'], - 1 ) != '/') {
-	$_SERVER ['DOCUMENT_ROOT'] = $_SERVER ['DOCUMENT_ROOT'] . '/V/';
+	$_SERVER ['DOCUMENT_ROOT'] = $_SERVER ['DOCUMENT_ROOT'] . '/ea/';
 }
 
 require_once $_SERVER ['DOCUMENT_ROOT'] . 'protected/config/constants.php';
@@ -21,8 +21,10 @@ require_once ($yii);
 require_once (LIBRARY_PATH . 'functions/debug_functions.php');
 require_once (LIBRARY_PATH . 'functions/php_5_3_functions.php');
 
-$session = new CHttpSession ();
-$session->open ();
+
+#$session = new CHttpSession ();
+#$session->open ();
+
 
 if(in_array( $_SERVER ['REMOTE_ADDR'], array('::1','127.0.0.1'))){
 	$config = 'development';
@@ -31,5 +33,4 @@ if(in_array( $_SERVER ['REMOTE_ADDR'], array('::1','127.0.0.1'))){
 }
 
 $config = PROTECTED_PATH . '/config/' . $config . '.php';
-
 Yii::createWebApplication ( $config )->run ();

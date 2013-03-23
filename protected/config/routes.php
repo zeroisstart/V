@@ -5,6 +5,7 @@ return array (
 		
 		
 		'admin' =>'Admin/main/main',
+		'admin' =>'Admin/main/main',
 		'admin/login' =>'Admin/Authorized/Login',
 		
 		'register' => 'UserCenter/register/register',

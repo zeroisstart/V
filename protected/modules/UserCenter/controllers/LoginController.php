@@ -4,9 +4,6 @@ class LoginController extends Controller {
 	 * Displays the login page
 	 */
 	public function actionLogin() {
-		echo "test";
-		die;
-		
 		$model = new LoginForm ();
 		
 		// if it is ajax validation request

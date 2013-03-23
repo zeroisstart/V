@@ -21,9 +21,9 @@ $this->breadcrumbs=array(
 	
 	
 	<div class="row">
-		<?php echo $form->labelEx($model,'user_type'); ?>
-		<?php echo $form->textField($model,'user_type'); ?>
-		<?php echo $form->error($model,'user_type'); ?>
+		<?php echo $form->labelEx($model,'userType'); ?>
+		<?php echo $form->dropDownList ($model,'userType',$model-> user_type); ?>
+		<?php echo $form->error($model,'userType'); ?>
 	</div>
 
 	<div class="row">

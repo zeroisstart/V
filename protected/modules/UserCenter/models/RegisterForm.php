@@ -11,6 +11,7 @@ class RegisterForm extends CFormModel {
 	public $password_confirm;
 	public $email;
 	private $_identity;
+	public $userType;
 	
 	/**
 	 * Declares the validation rules.
@@ -26,18 +27,40 @@ class RegisterForm extends CFormModel {
 				),
 				array (
 						'username',
+						'length',
+						'min'=>6,
+						'max' => 14
+				),
+				array (
+						'password',
+						'length',
+						'min'=>6,
+						'max' => 16 
+				),
+				array (
+						'username',
 						'_isExists' 
 				),
 				
 				array (
 						'email',
-						'email',
+						'email' 
 				),
-				array('email','_isExistsEmail'),
+				array (
+						'email',
+						'_isExistsEmail' 
+				),
 				array (
 						'password',
 						'_password_confirm' 
 				) 
+		);
+	}
+	public function getUser_type() {
+		return array (
+				'0' => '学生',
+				'1' => '企业',
+				'2' => '个人' 
 		);
 	}
 	
@@ -48,13 +71,15 @@ class RegisterForm extends CFormModel {
 		return array (
 				'username' => '用户名',
 				'password' => '密码',
+				'userType' => '用户类型',
 				'password_confirm' => '重复密码',
-				'email' => '邮箱' 
+				'email' => '邮箱',
+				'userType' 
 		);
 	}
 	/**
 	 * 返回用户名是否有人注册
-	 * 
+	 *
 	 * @param string $_username        	
 	 * @return boolean
 	 */
@@ -71,7 +96,7 @@ class RegisterForm extends CFormModel {
 	}
 	/**
 	 * 返回邮箱是否有人注册
-	 * 
+	 *
 	 * @param
 	 *        	$attribute_name
 	 * @return boolean
@@ -114,7 +139,12 @@ class RegisterForm extends CFormModel {
 		$user->password = md5 ( $this->password );
 		$user->email = $this->email;
 		if ($user->validate ()) {
+			
 			$user->save ();
+			$userProfile = new UserProfile ();
+			$userProfile->ID = $user->id;
+			$userProfile->User_category = $this->userType;
+			$userProfile->save ();
 		} else {
 			YII_DEBUG && var_dump ( $user->errors );
 		}

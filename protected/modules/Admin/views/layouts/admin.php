@@ -105,7 +105,7 @@ $(document).ready(function(){
 				<!-- 
 				<span>|</span> <a href="#">Settings</a>
 				 -->
-				<span>|</span> <a href="<?php echo $this -> createUrl('/logout')?>">Logout</a><br />
+				<span>|</span> <a href="<?php echo $this -> createUrl('/logout')?>">退出</a><br />
 				<!-- 
 				<small>You have <a href="#" class="high"><b>1</b> new message!</a></small>
 				 -->
@@ -117,7 +117,7 @@ $(document).ready(function(){
 					'activeCssClass' => 'current',
 					'htmlOptions'=>array('class'=>'sf-menu sf-js-enabled sf-shadow'),
 					'items'=>array(
-							array('label'=>'管理首页', 'url'=>array('Admin/main/main')),
+							array('label'=>'管理首页', 'url'=>array('/Admin/main/main')),
 							#array('label'=>'新闻', 'url'=>array('/news/admin/list')),
 							#array('label'=>'赛事', 'url'=>array('/event/admin/index')),
 							#array('label'=>'图片','url'=>array('/pic/slider/list')),
