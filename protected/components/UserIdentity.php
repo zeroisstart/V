@@ -32,6 +32,24 @@ class UserIdentity extends CUserIdentity
 		}
 		return $this->errorCode==self::ERROR_NONE;
 	}
+
+	/**
+	 * 
+	 */
+	public function getErrMsg(){
+		switch($this->errorCode){
+			case self::ERROR_USERNAME_INVALID:
+				return '用户名不存在!';
+				break;
+			case self::ERROR_PASSWORD_INVALID:
+				return '密码错误!';	
+				break;
+			default :
+				return true;
+				break;
+		}
+	}
+	
 	/**
 	 * (non-PHPdoc)
 	 * @see CUserIdentity::getId()
@@ -39,4 +57,7 @@ class UserIdentity extends CUserIdentity
 	public function getId(){
 		return $this -> _id;
 	}
+	
+	
+	
 }

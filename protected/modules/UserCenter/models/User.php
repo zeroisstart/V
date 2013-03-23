@@ -38,6 +38,8 @@ class User extends ActiveRecord
 	
 	public $remember_me = false;
 	
+	public $identity;
+	
 	public $activate_error;
 	
 	public $activate_code;
@@ -82,8 +84,8 @@ class User extends ActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('username, password, email', 'required'),
-			array('username, password, email', 'length', 'max'=>128),
+			array('username, password', 'required'),
+			array('username, password, email', 'length', 'max'=>128,'on'=>'create'),
 			array('profile', 'safe'),
 				array(
 						'role',
@@ -208,6 +210,27 @@ class User extends ActiveRecord
 						'pageSize' => 20
 				)
 		) );
+	}
+	
+	/**
+	 * 密码验证逻辑
+	 * @return boolean
+	 */
+	public function authenticate(){
+		$user_identity = new UserIdentity ( $this->username, $this->password );
+		$this -> identity = $user_identity;
+		return $this -> identity -> authenticate();
+	}
+	
+	/**
+	 * 执行登陆操作
+	 * @return boolean
+	 */
+	public function login()
+	{
+		$duration=$this->remember_me ? 3600*24*30 : 0; // 30 days
+		Yii::app()->user->login($this -> identity,$duration);
+		return true;
 	}
 	
 	/**

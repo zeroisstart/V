@@ -1,0 +1,27 @@
+body,div,ul,ol,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,p{margin:0px;padding:0px;}
+ul li{list-style:none;}
+body{font-family: "Microsoft Yahei";FONT-SIZE: 14px;}
+TEXTAREA{BACKGROUND-COLOR: #cccccc;COLOR: #000000;}
+
+a{COLOR: #666;text-decoration:none;}
+a:visited {COLOR: #666 ;}
+a:hover {COLOR: #000;}
+
+
+.caption{border-bottom: 1px dotted #333;font-size: 18px;height: 30px;line-height: 30px;margin-bottom: 20px;text-indent: 2em;}
+
+/*×ó²àÁÐ±íÒ³*/
+.listPage{background: #f4f4f4;padding-top:20px;}
+.listTitle{height:30px;line-height:30px;padding:0px 20px;font-size:16px;border-bottom: 1px dotted #333;}
+
+
+.listContent{}
+.listContent .listBar{}
+.listContent .listBar .listBtn{height:40px;line-height:40px;text-indent:70px;color:#333;font-size:12px;background:url(ico.gif) no-repeat 45px 0px;cursor:pointer;border-bottom:1px dotted #aaa;}
+.listContent .listBar.on .listBtn{background-position:45px -40px;}
+.listContent .listBar .listItem{text-indent:95px;display:none;background:#e6e6e6;border-bottom:1px dotted #aaa;}
+.listContent .listBar.on .listItem{display:block;}
+
+.listContent .listBar .listItem li{height:30px;background:url(ico.gif) no-repeat 65px -85px;}
+.listContent .listBar .listItem li a{display:block;line-height:30px;font-size:12px;color:#333;}
+.listContent .listBar .listItem li a:hover{color:#2076b2;text-decoration:underline;}

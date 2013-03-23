@@ -1,8 +1,7 @@
 <?php
 class AdminModule extends CWebModule {
-	public $defaultContoller = 'main';
 	
-	public $layout = 'admin';
+	public $defaultContoller = 'main';
 	
 	public function init() {
 		
@@ -17,7 +16,6 @@ class AdminModule extends CWebModule {
 	}
 	public function beforeControllerAction($controller, $action) {
 		if (parent::beforeControllerAction ( $controller, $action )) {
-			$controller -> layout = 'admin';
 			// this method is called before any module controller action is
 			// performed
 			// you may place customized code here

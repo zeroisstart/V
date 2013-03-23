@@ -47,8 +47,6 @@ $this->widget ( 'widget.clientScript.autoRegisterFile', array (
 							<?php echo CHtml::activeTextField($model, 'username',array('class'=>'full','id'=>'username'))?>
 						</p>
 						
-						
-						
 						<p>
 							<label class="required" for="password">密码:</label><br/>
 							<?php echo CHtml::activePasswordField($model, 'password',array('class'=>'full','id'=>'password'))?>

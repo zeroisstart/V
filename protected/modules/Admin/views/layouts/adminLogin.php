@@ -45,7 +45,7 @@ $(document).ready(function(){
 	Administry.setup();
 
 	// validate signup form on keyup and submit
-var validator = $("#loginform").validate({
+var validator = $("#loginf").validate({
 	rules: {
 	username: "required",
 	password: "required"
