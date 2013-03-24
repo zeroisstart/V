@@ -21,14 +21,12 @@ $css = array (
 $js = array (
 		'js/swfobject.js',
 		'js/jquery.ui.core.min.js',
-		'js/jquery.ui.tabs.min.js',
 		'js/jquery.tipTip.min.js',
 		'js/jquery.superfish.min.js',
 		'js/jquery.supersubs.min.js',
 		'js/jquery.validate_pack.js',
 		'js/jquery.nyroModal.pack.js',
 		'js/flot/jquery.flot.min.js',
-		'js/administry.js',
 	//	'footer'=>array()	
 );
 

@@ -1,0 +1,73 @@
+@CHARSET "UTF-8";
+
+/* settings */
+.navicon-settings {
+    background-image: url(images/icon/menu.settings.png) !important;
+}
+
+.navicon-settings:hover {
+    background-position: 0 -30px !important;
+}
+
+/* users */
+.navicon-users {
+    background-image: url(images/icon/menu.users.png) !important;
+}
+
+.navicon-users:hover {
+    background-position: 0 -30px !important;
+}
+
+/* navigation */
+.navicon-navigation {
+    background-image: url(images/icon/menu.navigation.png) !important;
+}
+
+.navicon-navigation:hover {
+    background-position: 0 -30px !important;
+}
+
+/* widgets */
+.navicon-widgets {
+    background-image: url(images/icon/menu.widgets.png) !important;
+}
+
+.navicon-widgets:hover {
+    background-position: 0 -30px !important;
+}
+
+/* tags */
+.navicon-tags {
+    background-image: url(images/icon/menu.tags.png) !important;
+}
+
+.navicon-tags:hover {
+    background-position: 0 -30px !important;
+}
+
+/* page */
+.navicon-page,.section-new .subnavicon-page {
+    background-image: url(images/icon/menu.page.png) !important;
+}
+
+.navicon-page:hover {
+    background-position: 0 -30px !important;
+}
+
+/* comments */
+.navicon-comments {
+    background-image: url(images/icon/menu.comments.png) !important;
+}
+
+.navicon-comments:hover {
+    background-position: 0 -30px !important;
+}
+
+/* media */
+.navicon-media {
+    background-image: url(images/icon/menu.media.png) !important;
+}
+
+.navicon-media:hover {
+    background-position: 0 -30px !important;
+}

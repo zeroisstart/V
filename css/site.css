@@ -1,0 +1,483 @@
+@CHARSET "UTF-8";
+
+/* Color Palette
+**************************************************************
+
+Background: #f3f4f5
+Borders: 
+Text: #333333
+Secondary Text: 
+Main Accent: 
+Links: 1e5d7d
+New Links: #3a822e;
+*/
+
+/* Reset
+***************************************************************/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td, button, submit {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    border: 0;
+    vertical-align: baseline;
+    font-weight: inherit;
+    font-style: inherit;
+    font-size: 100%;
+    font-family: inherit;
+}
+
+html, body {
+    height: 100%;
+    color: #333;
+    background: white;
+}
+
+body {
+    line-height: 1;
+    min-width: 946px; /* 946px */
+    min-height: 639px; /* 639px */
+    font-size: 13px;
+    font-family: "微软雅黑", Segoe UI,Trebuchet,Arial,Sans-Serif;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+/* Tables still need 'cellspacing="0"' in the markup */
+table {
+    border-spacing: 0;
+    border-collapse: separate;
+}
+
+caption, th, td {
+    text-align: left;
+    font-weight: normal;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+}
+
+h1 {
+    font-size: 1.769em;
+}
+
+h2 {
+    font-size: 1.308em;
+}
+
+h3 {
+    font-size: 1.231em;
+}
+
+h4 {
+    font-size: 1.154em;
+}
+
+h5 {
+    font-size: 1.077em;
+}
+
+h6 {
+    font-size: 1em;
+}
+
+h1, h2, h3, h4, h5, legend {
+    padding: .6px 0;
+    font-weight: normal;
+    font-style: normal;
+}
+
+    h1 img, h2 img, h3 img,
+    h4 img, h5 img, h6 img {
+        margin: 0;
+    }
+
+select, textarea, input.text, input.textMedium, input.text-small, input.text-box {
+    font-family: inherit;
+    padding: 3px;
+    border: 1px solid #BDBCBC;
+    font-family: inherit;
+    font-size: inherit;
+}
+
+/* layout
+*******************************************/
+.layout-panel {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+}
+
+.layout-north {
+}
+
+.layout-west {
+}
+
+.layout-east {
+}
+
+.layout-south {
+}
+
+/* global page
+*******************************************/
+.layout-header {
+    overflow: hidden;
+    height: 110px;
+    color: #FFFFFF;
+}
+
+.header-inner {
+    height: 71px;
+    background-image: url(images/header_bg.png);
+    background-repeat: repeat-x;
+}
+
+.header-logo {
+    float: left;
+    padding: 10px;
+    width: 200px;
+    height: 50px;
+}
+
+.header-link {
+    float: right;
+    padding: 8px;
+}
+
+.header-nav {
+    display: block;
+    height: 39px;
+    background-image: url(images/menu_bg.png);
+    background-repeat: repeat-x;
+}
+
+.header-nav-tip {
+    float: left;
+    clear: left;
+    width: 153px;
+    height: 100%;
+    background-image: url(images/menu_span.png);
+    background-position: right center;
+    background-repeat: no-repeat;
+}
+
+.header-nav-menu {
+    display: block;
+    height: 100%;
+}
+
+    .header-nav-menu li {
+        display: inline;
+        float: left;
+    }
+
+.header-nav-box li a {
+    display: inline;
+    float: left;
+    padding: 0px 15px;
+    background-image: url(images/menu_span.png);
+    background-position: right center;
+    background-repeat: no-repeat;
+    color: #FFFFff;
+    text-decoration: none;
+    line-height: 39px;
+}
+
+.header-nav-menu li a:hover {
+    background-color: #ffffff;
+    color: #333;
+}
+
+.layout-center {
+    position: absolute;
+    height: inherit;
+    left: 0px;
+    right: 0px;
+    top: 110px;
+    bottom: 0px;
+    display: block;
+}
+
+/*  */
+.center-nav {
+    width: 150px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    background-color: #effaff;
+    border-right: 3px solid #e5f3fe;
+}
+
+.center-nav-box {
+    margin: 8px 0px;
+}
+
+    .center-nav-box h2 {
+        color: #333230;
+        font-size: 14px;
+        padding: 0px 0px 0px 15px;
+        line-height: 22px;
+        font-weight: bold;
+    }
+
+    .center-nav-box ul {
+    }
+
+        .center-nav-box ul li {
+            display: inline-block;
+            width: 100%;
+        }
+
+            .center-nav-box ul li a {
+                display: block;
+                height: 23px;
+                line-height: 23px;
+                word-spacing: 15px;
+                color: #32373b;
+                padding-left: 30px;
+                text-decoration: none;
+            }
+
+                .center-nav-box .selected, .center-nav-box ul li a:hover {
+                    background-color: #e5f3fe;
+                    border-left: 2px solid #0065b3;
+                    margin-left: 0px;
+                    padding-left: 28px;
+                }
+
+.center-nav-box-slicing {
+    margin: 0px 15px;
+    height: 1px;
+    background-color: #dee8f1;
+}
+
+.center-content {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    left: 153px;
+    bottom: 0px;
+}
+
+.layout-footer {
+    display: none;
+    position: absolute;
+    top: auto;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    height: 30px;
+    background-color: #0178d4;
+    color: #FFFFFF;
+    text-align: center;
+    line-height: 30px;
+    width: 100%;
+}
+
+
+/* Page */
+.page-panel {
+    background-color: #F3F4F5;
+    display: block;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    padding: 15px;
+}
+
+    .page-panel > h2 {
+        font-size: 16px;
+        height: 30px;
+        line-height: 30px;
+        margin-bottom: 10px;
+    }
+
+/* Form */
+.form-panel {
+    padding: 10px;
+    border: 1px solid #E4E5E6;
+    background-color: #FFFFFF;
+}
+
+.form-fieldset {
+    clear: both;
+    margin: 5px;
+    margin-bottom: 10px;
+}
+
+    .form-fieldset > label {
+        display: block;
+        line-height: 20px;
+    }
+
+    .form-fieldset > .form-input {
+        margin: 2px 0px;
+    }
+
+        .form-fieldset > .form-input > input {
+            width: 99%;
+        }
+
+.form-buttom {
+    clear: both;
+    margin: 5px;
+}
+
+
+
+/*----buttons----*/
+button.remove, .remove.button, .remove.button:link, .remove.button:visited {
+    background-color:#DECCCA;
+    background-image:url(images/tableHeaderBackgroundRed.gif);
+    border-color:#d6c9c7;
+    color:#5c3732;
+}
+button.remove:hover, .remove.button:hover,
+button.remove:active, .remove.button:active,
+button.remove:focus, .remove.button:focus {
+    background:#8f7c79;
+    border-color:#6e5551;
+    color:#faedeb;
+}
+button.remove:focus::-moz-focus-inner, .remove.button:focus::-moz-focus-inner {
+    border-color:#8f7c79;
+}
+.delete.button {
+    float:right;
+}
+.button.grey {
+  		color:#5d615d;
+		background:#f5f5f5;
+		border:1px solid #999;
+
+		/*CSS3 properties*/
+		text-shadow:none;
+		
+		-webkit-box-shadow: inset 0px 0px 1px rgba(255, 255, 255, 1.0); 
+        -moz-box-shadow: inset 0px 0px 1px rgba(255, 255, 255, 1.0); 
+        box-shadow: inset 0px 0px 1px rgba(255, 255, 255, 1.0);
+		
+		/*----In ie the first couplet sets the alpha value so 00=transparent and ff=opaque)----*/    
+        filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, startColorstr='#fff5f5f5',  endColorstr='#ffd9d9d9');
+        background: -webkit-gradient(linear, 0 0, 0 100%, from(rgba(245, 245, 245, 1.0)), to(rgba(217, 217, 217, 1.0)));   
+        background: -moz-linear-gradient(top, rgba(245, 245, 245, 1.0), rgba(217, 217, 217, 1.0));
+		
+		-webkit-border-radius: 2px;
+        -moz-border-radius: 2px;
+         border-radius: 2px;	
+}
+button, .button, a.button {
+    background:#0065b3;
+    border:1px solid #0178d4;
+    color:#fff;
+    cursor: pointer;
+    display: inline-block;
+    font: 12px Arial,Helvetica,sans-serif;
+    padding: 5px 14px 5px 14px;
+    
+    /*position: relative;*/
+    text-align: center;
+    text-decoration: none;
+    
+    /*----CSS3 properties----*/
+     text-shadow: rgba(40,53,9,.2) 0px 0px 1px;
+    -webkit-box-shadow: inset 0px 0px 1px rgba(255, 255, 255, 1.0), 1px 1px 1px rgba(102, 102, 102, 0.2); 
+    -moz-box-shadow: inset 0px 0px 1px rgba(255, 255, 255, 1.0), 1px 1px 1px rgba(102, 102, 102, 0.2); 
+     box-shadow: inset 0px 0px 1px rgba(255, 255, 255, 1.0), 1px 1px 1px rgba(102, 102, 102, 0.2);
+
+     
+    /*----In ie the first couplet sets the alpha value so 00=transparent and ff=opaque)----*/    
+     filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, startColorstr='#ff9bb36c',  endColorstr='#ff809f43');	
+	 background: -webkit-gradient(linear, 0 0, 0 100%, from(rgba(155, 179, 108, 1.0)), to(rgba(128, 159, 67, 1.0)));    
+     background: -moz-linear-gradient(top, rgba(155, 179, 108, 1.0), rgba(128, 159, 67, 1.0));
+
+     /*test - base green in pallet is 155,179,108*/
+     background: -moz-linear-gradient(top, rgba(155, 179, 108, 1.0), rgba(133, 154, 93, 1.0));
+        
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+     border-radius: 2px;
+}
+
+.button, a.button /* For link buttons */
+{
+   padding: 5px 14px 5px 14px; 
+}
+
+button, input.button, x:-moz-any-link {
+    padding: 3px 14px 3px 14px;
+    }
+
+button:hover, .button:hover, a.button:hover {
+    border-color:#3a822e;
+    color:#eefcec;
+    text-decoration:none; 
+    background: #809f43;
+    
+    /*CSS3 properties*/  
+     filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, startColorstr='#ff6e7f45',  endColorstr='#ff6a7b42');
+     background: -webkit-gradient(linear, 0 0, 0 100%, from(rgba(110, 127, 69, 1.0)), to(rgba(106, 123, 66, 1.0)));    
+     background: -moz-linear-gradient(top, rgba(110, 127, 69, 1.0), rgba(106, 123, 66, 1.0));
+}
+
+button:active, .buton:active, a.button:active {
+    text-decoration:none; 
+    background:#6a7b42;
+    border:1px solid #487328;
+    color:#fff;
+
+    /*CSS3 properties*/
+    text-shadow: rgba(0,0,0,.5) 0px 0px 1px;
+     filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, startColorstr='#ff9bb36c',  endColorstr='#ff809f43');	
+	 background: -webkit-gradient(linear, 0 0, 0 100%, from(rgba(155, 179, 108, 1.0)), to(rgba(128, 159, 67, 1.0)));   
+     background: -moz-linear-gradient(top, rgba(155, 179, 108, 1.0), rgba(128, 159, 67, 1.0));
+}
+button:focus::-moz-focus-inner, .button:focus::-moz-focus-inner {
+  border: 1px dotted transparent;
+}
+/*disabled*/
+.button.disabled, .button.disabled:visited, .button.disabled:hover, .button.disabled:active, .button.disabled:focus {
+	background-color:#eee;
+	border:1px solid #ababab;
+	color:#ababab;
+	cursor:default;
+	
+	filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, startColorstr='#ffeeeeee',  endColorstr='#ffeeeeee');
+	background: -webkit-gradient(linear, 0 0, 0 100%, from(rgba(238, 238, 238, 1.0)), to(rgba(238, 238, 238, 1.0)));   
+    background: -moz-linear-gradient(top, rgba(238, 238, 238, 1.0), rgba(238, 238, 238, 1.0));
+    
+	text-shadow: none;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+}
+/* and allow all of that button style to be undone and beyond - to look like a link */
+button.link {
+    background:none;
+    border:0;
+    padding:inherit;
+    text-shadow:none;
+    -webkit-box-shadow:none; 
+    -moz-box-shadow:none; 
+    box-shadow:none;
+    filter:none;	
+    -webkit-border-radius:0;
+    -moz-border-radius:0;
+    border-radius:0;
+}

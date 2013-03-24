@@ -1,6 +1,10 @@
 <?php
 class RegisterController extends Controller {
+	
 	public $defaultAction = 'register';
+	
+	public $layout ='//layouts/ea';
+	
 	public function actionRegister() {
 		
 		$model = new RegisterForm ();

@@ -1,5 +1,7 @@
 <?php
 class LoginController extends Controller {
+	public $layout ='//layouts/ea';
+	
 	/**
 	 * Displays the login page
 	 */

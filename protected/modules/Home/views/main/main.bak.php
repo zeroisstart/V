@@ -1,10 +1,61 @@
+<?php
+/* @var $this MainController */
+
+$this->breadcrumbs = array (
+		'Main' 
+);
+?>
+<h1><?php echo $this->id . '/' . $this->action->id; ?></h1>
+
+<p>
+	You may change the content of this page by modifying the file
+	<tt><?php echo __FILE__; ?></tt>
+	.
+</p>
+
+<?php
+$this->widget ( 'ext.popup.popup' );
+
+$form = $this->beginWidget ( 'CActiveForm', array (
+		'id' => 'contact-form',
+		// 'action' => $this->createUrl ( '/System/upload/ImgUpload' ),
+		'action' => $this->createUrl ( '/System/upload/AttachmentUpload' ),
+		'enableClientValidation' => true,
+		'method' => 'post',
+		'htmlOptions' => array (
+				'enctype' => "multipart/form-data" 
+		),
+		'clientOptions' => array (
+				'validateOnSubmit' => true 
+		) 
+) );
+
+?>
+<button>this is test</button>
+<?php
+/*
+ * $model = new ImgUploadForm (); $this->widget ( 'widget.system.uploadForm',
+ * array ( 'fieldName'=>'ImgUploadForm[img]', 'model' => $model ) );
+ */
+/*
+$model = new ImgUploadForm ();
+$this->widget ( 'widget.system.uploadForm', array (
+		'fieldName'=>'AttachmentUploadForm[attachment]',
+		'model' => $model
+) );*/
+
+?>
+
+<?php echo CHtml::submitButton('submit');?>
+
+<?php $this -> endWidget()?>
+
+
 <div id="contextAdorn"></div>
             <div id="contextBox">
                 <div id="rightContent">
                     <div id="contentTop">
-                        <div id="contentTopImg">
-                       	 <?php $this -> widget('ext.slider.slider',array('images'=>array('https://www.google.com.hk/images/srpr/logo4w.png','https://www.google.com.hk/images/srpr/logo4w.png','https://www.google.com.hk/images/srpr/logo4w.png')))?>
-                        </div>
+                        <div id="contentTopImg"></div>
                         <div id="contentTopInfo">
                             <div class="title">竞赛资讯</div>
                             <ul>
@@ -60,9 +111,29 @@
 					
                 </div>
                 <div id="leftColumns">
-                	
-                	<?php $this -> widget('widget.Helper.leftLogin');?>
-
+                    <div id="userLogin">
+                        <div id="userLoginTitle">用户登录</div>
+                        <div id="userLoginBox">
+                            <form>
+                                <div class="userLoginInput">
+                                    <span>用户名：</span>
+                                    <input type="text" id="username" />
+                                </div>
+                                <div class="userLoginInput">
+                                    <span>密&nbsp;&nbsp;&nbsp;码：</span>
+                                    <input type="password" id="password" />
+                                </div>
+                            </form>
+                            <div style="text-align: justify; padding: 5px;">
+                                <span class="userLoginInput">
+                                    <input type="button" class="login" />
+                                </span>
+                                <span class="userLoginInput">
+                                    <input type="button" class="register" />
+                                </span>
+                            </div>
+                        </div>
+                    </div>
                     <div class="leftColumnsBox">
                         <div class="leftItem">
                             <div class="title">参与方式</div>

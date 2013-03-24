@@ -1,0 +1,9 @@
+@CHARSET "UTF-8";
+
+.main {
+    position: absolute;
+    left: auto;
+    right: auto;
+
+    height: 100px;
+}

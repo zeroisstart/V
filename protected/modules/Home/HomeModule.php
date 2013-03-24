@@ -20,6 +20,9 @@ class HomeModule extends CWebModule
 	{
 		if(parent::beforeControllerAction($controller, $action))
 		{
+			$layoutPath = Yii::getPathOfAlias('application.views.layouts');
+			$this -> setLayoutPath($layoutPath);
+			$controller->layout = 'ea';
 			// this method is called before any module controller action is performed
 			// you may place customized code here
 			return true;
