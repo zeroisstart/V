@@ -23,6 +23,7 @@
 	padding-top: 15px;
 	padding-right: 5px;
 	padding-left: 5px;
+
 }
 
 #navBox li {
@@ -42,6 +43,7 @@
 	padding-top: 1px;
 	width: 91px;
 	height: 25px;
+	line-height:25px;
 	color: #FFF;
 	text-align: center;
 	text-decoration: none;
@@ -137,16 +139,33 @@
 	border: none;
 	background-image: url('../images/user_login_bg.png');
 	background-repeat: no-repeat;
-	display:inline-block;
-	overflow:hidden;
+	display: inline-block;
+	overflow: hidden;
 }
 
+.yel_btn {
+	border: none;
+	background-image: url('../images/yellow_btn.png');
+	background-repeat: no-repeat;
+	display: inline-block;
+	width:110px;
+	text-align:center;
+	text-decoration:none;
+	color:#FFF;
+	height:35px;
+	line-height:35px;
+	overflow: hidden;
+}
+
+.yel_btn:hover{
+	color:#000;
+}
 .userLoginInput .ipt_username,.userLoginInput .ipt_password {
 	border: none;
 	background-image: url('../images/user_login_bg.png');
 	background-repeat: no-repeat;
-	display:inline-block;
-	overflow:hidden;
+	display: inline-block;
+	overflow: hidden;
 }
 
 .userLoginInput .login {
@@ -353,10 +372,10 @@ a.blue_btn:hover {
 	color: black;
 }
 
-.active a{
+.active a {
 	background-image: url('../images/nav_select.png');
 	background-repeat: no-repeat;
-	color:black !important;
+	color: black !important;
 }
 
 .contentTopInfo {

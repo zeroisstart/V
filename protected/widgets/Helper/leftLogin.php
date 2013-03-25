@@ -40,10 +40,10 @@ class leftLogin extends CWidget {
 		</form>
 		<div style="text-align: justify; padding: 5px;">
 			<span class="userLoginInput">
-				<a class="btn login" href="$logout">注册</a>
+				<a class="btn" href="$logout">注册</a>
 			</span> 
 			<span class="userLoginInput"> 
-				<a class="btn register" href="$logout">注册</a>
+				<a class="btn" href="$logout">注册</a>
 			</span>
 		</div>
 	</div>
@@ -64,7 +64,7 @@ EOT;
 		<form>
 			<div class="userLoginInput">
 				<span>用户名：</span> 
-				<input type="text" class="ipt_username" id="username" />
+				<input type="text" class="ipt_username"  id="username" />
 			</div>
 			<div class="userLoginInput">
 				<span>密&nbsp;&nbsp;&nbsp;码：</span> 
@@ -73,10 +73,10 @@ EOT;
 		</form>
 		<div style="text-align: justify; padding: 5px;">
 			<span class="userLoginInput">
-				<a class="btn login" href="$login">注册</a>
+				<a class="yel_btn" href="$login">登陆</a>
 			</span> 
 			<span class="userLoginInput"> 
-				<a class="btn register" href="$register">注册</a>
+				<a class="yel_btn" href="$register">注册</a>
 			</span>
 		</div>
 	</div>

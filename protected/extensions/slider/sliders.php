@@ -1,5 +1,6 @@
 <?php
-class slider extends CWidget {
+class sliders extends CWidget {
+	
 	public $images = array ();
 	
 	/**

@@ -76,7 +76,8 @@ return array(
 		'adminEmail'=>'shenhongmings@gmail.com',
 		'imgPath'=>'/v/',
 		'uploadPath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'../../upload/',
-		'fileAccessPath'=>'/v/',
+		'fileAccessPath'=>'/ea/',
+		'imgAccessPath'=>'/ea/img/',
 		'imgUploadPath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'../../img/',
 		'attachmentUploadPath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'../../attachment/',
 		

@@ -3,7 +3,7 @@
                 <div id="rightContent">
                     <div id="contentTop">
                         <div id="contentTopImg">
-                       	 <?php $this -> widget('ext.slider.slider',array('images'=>array('https://www.google.com.hk/images/srpr/logo4w.png','https://www.google.com.hk/images/srpr/logo4w.png','https://www.google.com.hk/images/srpr/logo4w.png')))?>
+                       	 <?php $this -> widget('ext.slider.sliders',array('images'=>$img))?>
                         </div>
                         <div id="contentTopInfo">
                             <div class="title">竞赛资讯</div>
