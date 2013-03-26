@@ -117,6 +117,7 @@ $(document).ready(function(){
 					'items'=>array(
 							array('label'=>'管理首页', 'url'=>array('/Admin/main/main')),
 							array('label'=>'首页滑动', 'url'=>array('/Admin/slider/main')),
+							array('label'=>'内容发布', 'url'=>array('/Admin/content/list')),
 							#array('label'=>'新闻', 'url'=>array('/news/admin/list')),
 							#array('label'=>'赛事', 'url'=>array('/event/admin/index')),
 							#array('label'=>'图片','url'=>array('/pic/slider/list')),

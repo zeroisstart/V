@@ -4,15 +4,15 @@ class MainController extends Controller {
 		$slider_model = Slider::model ();
 		$dataProvider = $slider_model->search ();
 		
-		header("Location:/V/admin");
+		// header("Location:/V/admin");
 		
-		// ar_dump($slider_model);
-		// ie;
+		// var_dump($slider_model);
+		// die;
 		
 		$img = array ();
 		
-		// ar_dump(Yii::app() -> params -> imgAccessPath);
-		// ie;
+		// var_dump(Yii::app() -> params -> imgAccessPath);
+		// die;
 		
 		foreach ( $dataProvider->data as $_model ) {
 			$img [] = (Yii::app ()->params->imgAccessPath . $_model->img);

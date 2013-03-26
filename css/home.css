@@ -411,3 +411,31 @@ a.blue_btn:hover {
 	background-color: #65b8e1;
 	color: #fff;
 }
+
+
+
+.feed_list{
+	width:675px;
+	height:175px;
+	background-image: url('../images/list_bg.png');
+	background-repeat: no-repeat;
+}
+.feed_list .feed_list_img{
+	float:left;
+}
+
+.feed_list .feed_list_img img{
+	width:175px;
+	height:120px;
+	line-height:175px;
+	margin-top:25px;
+	margin-left:25px;
+}
+
+.feed_list .feed_list_content{
+	width:605px;
+	margin-right:25px;
+}
+.feed_list .feed_list_content .feed_list_title{
+	font-size:20px;
+}
