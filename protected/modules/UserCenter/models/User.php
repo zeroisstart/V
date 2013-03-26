@@ -107,7 +107,7 @@ class User extends ActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			//'posts' => array(self::HAS_MANY, 'Post', 'author_id'),
+			'userProfile'=>array(self::HAS_ONE,'UserProfile','ID'),
 		);
 	}
 
@@ -203,6 +203,15 @@ class User extends ActiveRecord
 		$criteria->compare ( 'password', $this->password, true );
 		$criteria->compare ( 'email', $this->email, true );
 		$criteria->compare ( 'state', $this->state, true );
+		
+		$profile_model = UserProfile::model();
+		
+		$req = Yii::app() -> request;
+		$t = $req-> getParam('t') ; 
+		if($t && key_exists($t, $profile_model -> user_category)){
+			$criteria -> with = array('userProfile');
+		}
+		
 	
 		return new CActiveDataProvider ( $this, array (
 				'criteria' => $criteria,

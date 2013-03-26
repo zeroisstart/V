@@ -4,6 +4,8 @@ class MainController extends Controller {
 		$slider_model = Slider::model ();
 		$dataProvider = $slider_model->search ();
 		
+		header("Location:/V/admin");
+		
 		// ar_dump($slider_model);
 		// ie;
 		

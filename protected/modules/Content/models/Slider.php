@@ -14,7 +14,7 @@
 class Slider extends CActiveRecord {
 	/**
 	 * Returns the static model of the specified AR class.
-	 * 
+	 *
 	 * @param string $className
 	 *        	active record class name.
 	 * @return Slider the static model class
@@ -104,8 +104,19 @@ class Slider extends CActiveRecord {
 	}
 	
 	/**
+	 * 返回图片的HTML标签
+	 *
+	 * @return string
+	 */
+	public function getImgTag() {
+		$accessUrl = Yii::app ()->params->imgAccessPath;
+		$img = $this->img;
+		return CHtml::image ( $accessUrl . $img, $this->title,array('class'=>'fix_260_200') );
+	}
+	
+	/**
 	 * Retrieves a list of models based on the current search/filter conditions.
-	 * 
+	 *
 	 * @return CActiveDataProvider the data provider that can return the models
 	 *         based on the search/filter conditions.
 	 */
@@ -121,7 +132,7 @@ class Slider extends CActiveRecord {
 		$criteria->compare ( 'state', $this->state, true );
 		$criteria->compare ( 'create_time', $this->create_time, true );
 		
-		$criteria ->order="create_time desc";
+		$criteria->order = "create_time desc";
 		
 		return new CActiveDataProvider ( $this, array (
 				'criteria' => $criteria 

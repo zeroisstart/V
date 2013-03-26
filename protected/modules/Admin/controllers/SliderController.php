@@ -49,7 +49,7 @@ class SliderController extends Controller {
 	
 	/**
 	 * 删除slider的滑动
-	 * 
+	 *
 	 * @param int $id        	
 	 */
 	public function actionDelete($id) {

@@ -6,19 +6,24 @@
 
 <div class="form">
 
-<?php $form=$this->beginWidget('CActiveForm', array(
-	'id'=>'slider-slider-form',
-	'enableClientValidation'=>true,
-	'method' => 'post',
-	'htmlOptions' => array (
-			'enctype' => "multipart/form-data"
-	),
-	'clientOptions'=>array(
-		'validateOnSubmit'=>true,
-	),
-)); ?>
+<?php
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
+$form = $this->beginWidget ( 'CActiveForm', array (
+		'id' => 'slider-slider-form',
+		'enableClientValidation' => true,
+		'method' => 'post',
+		'htmlOptions' => array (
+				'enctype' => "multipart/form-data" 
+		),
+		'clientOptions' => array (
+				'validateOnSubmit' => true 
+		) 
+) );
+?>
+
+	<p class="note">
+		Fields with <span class="required">*</span> are required.
+	</p>
 
 	<?php echo $form->errorSummary($model); ?>
 
@@ -40,8 +45,8 @@
 
 <?php $this->endWidget(); ?>
 
-</div><!-- form -->
-
+</div>
+<!-- form -->
 
 <div class="grid_form">
 <?php
@@ -49,14 +54,20 @@
 
 $this->widget ( 'widget.helper.GridView', array (
 		'dataProvider' => $dataProvider,
-		
 		'columns' => array (
-				'ID','title','img','create_time'
-				,array (
-						'template'=>'{delete}',
-						'header'=>'操作',
-						'class' => 'widget.helper.ButtonColumn',
-				)
+				'ID',
+				'img' => array (
+						'name'=>'img',
+						'type'=>'html',
+						'value'=>'$data -> imgTag' 
+				),
+				'title',
+				'create_time',
+				array (
+						'template' => '{delete}',
+						'header' => '操作',
+						'class' => 'widget.helper.ButtonColumn' 
+				) 
 		) 
 ) )?>
 
