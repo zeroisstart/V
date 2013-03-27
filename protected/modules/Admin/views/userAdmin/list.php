@@ -13,7 +13,9 @@ $this->breadcrumbs = array (
 <?php
 $this->widget ( 'widget.Helper.SecNav', array (
 		'tabs' => array (
-				'导师管理' => '/Admin/UserAdmin/list?t=2' 
+				'导师管理' => $this->createUrl ( '/Admin/UserAdmin/list', array (
+						't' => 2 
+				) ) 
 		) 
 ) )?>
 
@@ -35,8 +37,7 @@ $this->widget ( 'widget.helper.GridView', array (
 				array (
 						'template' => '{update}',
 						'class' => 'widget.helper.ButtonColumn' 
-				)
-				 
+				) 
 		) 
 ) )?>
 

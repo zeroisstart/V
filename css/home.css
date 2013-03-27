@@ -413,29 +413,74 @@ a.blue_btn:hover {
 }
 
 
-
 .feed_list{
 	width:675px;
 	height:175px;
 	background-image: url('../images/list_bg.png');
 	background-repeat: no-repeat;
+	margin-bottom:10px;
+	
 }
-.feed_list .feed_list_img{
+.feed_list div{
 	float:left;
 }
-
+.feed_list .feed_list_img {
+	margin-left:20px;
+	margin-top:25px;
+	width:175px;
+}
 .feed_list .feed_list_img img{
 	width:175px;
 	height:120px;
 	line-height:175px;
-	margin-top:25px;
-	margin-left:25px;
 }
 
 .feed_list .feed_list_content{
-	width:605px;
-	margin-right:25px;
+	margin-top:25px;
+	margin-left:20px;
+	color:#696969;
+	font-family:"微软雅黑";
+	width:400px;
+	font-size:15px;
+}
+.feed_list .feed_list_content .timeline{
+	font-size:15px;
 }
 .feed_list .feed_list_content .feed_list_title{
 	font-size:20px;
+	color:#696969;
+	font-family:"微软雅黑";
+	font-weight:bold;
+	overflow:hidden;
 }
+.test{
+	border:1px red solid;
+}
+
+
+.user_info {
+	width: 220px;
+	height: 165px;
+	text-align: center;
+	padding-left: 20px;
+
+}
+.user_info span i{	
+	font-style: :normal;
+}
+.user_info span a{	
+	width:100px;
+	display:inline-block;
+	text-decoration:none;
+}
+.user_info span{
+	display: block;
+	width: :180px;
+	height: 55px;
+	margin: 0 auto;
+	text-align: left;
+	font-size: 20px;
+	line-height: 55px;
+
+}
+

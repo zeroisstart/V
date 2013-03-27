@@ -9,6 +9,12 @@ class MainController extends Controller {
 		// var_dump($slider_model);
 		// die;
 		
+// 		$user = Yii::app() ->user;
+		
+// 		var_dump($user -> name);
+		
+// 		var_dump($user-> id);
+		
 		$img = array ();
 		
 		// var_dump(Yii::app() -> params -> imgAccessPath);
