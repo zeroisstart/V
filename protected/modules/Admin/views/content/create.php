@@ -1,14 +1,11 @@
+<?php $css = array('')?>
+
+<!-- form begin -->
+
 <?php
-/* @var $this ContentController */
 
-$this->breadcrumbs=array(
-	'Content'=>array('/Admin/content'),
-	'Create',
-);
+$this->renderPartial ( '_form', array ( 'model' => $model ) );
+ 
 ?>
-<h1><?php echo $this->id . '/' . $this->action->id; ?></h1>
 
-<p>
-	You may change the content of this page by modifying
-	the file <tt><?php echo __FILE__; ?></tt>.
-</p>
+<!-- form end -->
