@@ -37,7 +37,8 @@ PHPExcel_Shared_String::buildCharacterSets();
 class PHPExcel_Autoloader
 {
 	public static function Register() {
-		return spl_autoload_register(array('PHPExcel_Autoloader', 'Load'));
+		return Yii::registerAutoloader(array('PHPExcel_Autoloader', 'Load'));
+		//return spl_autoload_register(array('PHPExcel_Autoloader', 'Load'));
 	}	//	function Register()
 
 
