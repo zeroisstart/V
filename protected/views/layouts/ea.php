@@ -4,30 +4,22 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title><?php echo Yii::app() -> name?></title>
     
+	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/form.css" />
+    
     <?php 
     	$cs = Yii::app() -> clientScript;
     	$cs -> registerCoreScript('jquery');
     	
-    	$css = array('css/global.css','css/home.css');
+    	$css = array('css/global.css','css/home.css','css/user.profile.css');
     	
     	
     	$this -> widget('widget.ClientScript.autoRegisterFile',array('css'=>$css));
     	
     ?>
-    
-    <!--[if gte IE 9]>
-    <link href="/Application/Modules/admin/Tpl/Public/Styles/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
-    <![endif]-->
-        <!--[if IE 8]>
-    <link href="/Application/Modules/admin/Tpl/Public/Styles/ie8.css" media="screen, projection" rel="stylesheet" type="text/css" />
-    <![endif]-->
-        <!--[if lte IE 7]>
-    <link href="../css/ie7.css" media="screen, projection" rel="stylesheet" type="text/css" />
-    <![endif]-->
-        <!--[if lt IE 9]>
-    <script src="/Application/Modules/admin/Tpl/Public/Scripts/html5.js" type="text/javascript"></script>
-    <![endif]-->
-
+   <!--[if lt IE 8]>
+	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/ie.css" media="screen, projection" />
+	<![endif]-->
+   
 </head>
 <body>
     <div id="header">
@@ -45,6 +37,7 @@
 						array('label'=>'竞赛动态', 'url'=>array('/Home/feeds/main')),
 						array('label'=>'历届回顾', 'url'=>array('/Home/history/main')),
 						array('label'=>'风采展示', 'url'=>array('/Home/gallery/main')),
+						array('label'=>'个人中心', 'url'=>array('/UserCenter/main/main'),'visable'=>Yii::app() -> user -> isGuest)
 					),
 				)); ?>	
             </div>
@@ -52,6 +45,19 @@
     </div>
 
     <div id="context">
+    	<?php if(Yii::app()->user->hasFlash('success') || 1):?>
+		<?php 
+		Yii::app()->clientScript->registerScript(
+		'myHideEffect',
+		'$(".info").animate({opacity: 1.0}, 3000).fadeOut("slow");',
+		CClientScript::POS_READY
+		);
+		?>
+		<div class="notice">
+			<?php echo Yii::app()->user->getFlash('success'); ?>
+		</div>
+		<?php endif; ?>
+    
         <div class="main">
             <?php echo $content;?>
         </div>
@@ -60,6 +66,5 @@
         <div class="main"></div>
     </div>
     <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
-    
 </body>
 </html>

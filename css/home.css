@@ -452,7 +452,7 @@ a.blue_btn:hover {
 .feed_list .feed_list_content .feed_list_title {
 	font-size: 20px;
 	color: #696969;
-	font-family: "微软雅黑";
+	font-family: "微软雅黑", Arial, Helvetica, sans-serif;
 	font-weight: bold;
 	overflow: hidden;
 }
@@ -541,4 +541,31 @@ a.blue_btn:hover {
 	right: 10px;
 	color: #969696;
 	font-size: 12px;
+}
+
+.none {
+	display: none;
+}
+
+.form select {
+	width: 153px;
+}
+
+.center_form {
+	margin-left: 50px;
+}
+
+.feed_list_title a {
+	text-decoration: none;
+	color: #696969;
+	font-family: "微软雅黑", Arial, Helvetica, sans-serif;
+}
+
+#pager {
+	text-align: right;
+	font-size: 15px;
+}
+
+#pager a {
+	font-size: 15px;
 }

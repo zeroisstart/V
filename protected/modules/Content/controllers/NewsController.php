@@ -246,7 +246,7 @@ class NewsController extends Controller {
 	 * @return string
 	 */
 	public function actionImgUpload() {
-		Yii::import ( 'application.components.system.Uploader' );
+		Yii::import ( 'application.components.System.Uploader' );
 		if (empty ( $_FILES )) {
 			die ( 'Not Allow Access!' );
 		}

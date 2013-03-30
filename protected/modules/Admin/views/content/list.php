@@ -37,7 +37,7 @@ $this->widget ( 'widget.helper.GridView', array (
 				'create_time',
 				array (
 						'class' => 'widget.helper.ButtonColumn',
-						'viewButtonUrl' => 'Yii::app()->controller->createUrl("/news/".$data->primaryKey)' 
+						'viewButtonUrl' => 'Yii::app()->controller->createUrl("/feeds/".$data->primaryKey)' 
 				) 
 		) 
 ) )?>

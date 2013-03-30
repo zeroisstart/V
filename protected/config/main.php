@@ -74,10 +74,10 @@ return array(
 		'phantomjs'=>'D:\htdocs\www\phantomjs-1.8.2-windows\phantomjs.exe D:\htdocs\www\phantomjs-1.8.2-windows\examples\rasterize.js',
 		// this is used in contact page
 		'adminEmail'=>'shenhongmings@gmail.com',
-		'imgPath'=>'/v/',
+		'imgPath'=>'/ea/',
 		'uploadPath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'../../upload/',
 		'fileAccessPath'=>'/ea/',
-		'imgAccessPath'=>'/ea/img/',
+		'imgAccessPath'=>'/ea/',
 		'imgUploadPath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'../../img/',
 		'attachmentUploadPath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'../../attachment/',
 		

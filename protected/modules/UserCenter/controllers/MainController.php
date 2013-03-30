@@ -1,36 +1,77 @@
 <?php
-
-class MainController extends Controller
-{
-	public function actionIndex()
-	{
-		$this->render('index');
-	}
-
-	// Uncomment the following methods and override them if needed
-	/*
-	public function filters()
-	{
-		// return the filter configuration for this controller, e.g.:
-		return array(
-			'inlineFilterName',
-			array(
-				'class'=>'path.to.FilterClass',
-				'propertyName'=>'propertyValue',
-			),
+/**
+ * 
+ * @author top
+ *
+ */
+class MainController extends Controller {
+	public $defaultAction = 'main';
+	public $layout = '//layouts/ea';
+	
+	/**
+	 * (non-PHPdoc)
+	 *
+	 * @see CController::accessRules()
+	 */
+	public function accessRules() {
+		return array (
+				array (
+						'allow',
+						'actions' => array (
+								'main' 
+						),
+						'users' => array (
+								'@' 
+						),
+						'roles' => array (
+								'admin' 
+						) 
+				),
+				array (
+						'deny',
+						'actions' => array (
+								'main' 
+						),
+						'users' => array (
+								'?' 
+						) 
+				) 
 		);
 	}
-
-	public function actions()
-	{
-		// return external action classes, e.g.:
-		return array(
-			'action1'=>'path.to.ActionClass',
-			'action2'=>array(
-				'class'=>'path.to.AnotherActionClass',
-				'propertyName'=>'propertyValue',
-			),
-		);
+	public function actionMain() {
+		$req = Yii::app ()->request;
+		$ac = $req->getParam ( 'ac' );
+		switch ($ac) {
+			case 'team' :
+				$this->_actionTeam ();
+				break;
+			case 'product' :
+				$this->_actionProduct ();
+				break;
+			case 'state' :
+				$this->_actionState ();
+				break;
+			default :
+				$this->render ( 'main' );
+				break;
+		}
 	}
-	*/
+	/**
+	 * 我的团队
+	 */
+	public function _actionTeam() {
+		$this->render ( 'team' );
+	}
+	/**
+	 * 我的作品
+	 */
+	public function _actionProduct() {
+		$this->render ( 'product' );
+	}
+	/**
+	 * 参赛状态
+	 */
+	public function _actionState() {
+		$this->render ( 'state' );
+	}
 }

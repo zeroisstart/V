@@ -1,0 +1,32 @@
+@CHARSET "UTF-8";
+
+.user_sec_nav {
+	width: 200px;
+	font-size: 20px;
+}
+
+.user_sec_nav ul li {
+	margin-top: 20px;
+	border-bottom: 1px solid #319C28;
+}
+
+.user_sec_nav ul li.active_nav {
+	border-bottom: 1px solid #DA2782;
+}
+
+.user_sec_nav ul li a {
+	color: #3499CF;
+	text-decoration: none;
+}
+
+.user_sec_nav ul li.active_nav a {
+	color: #DA2782;
+}
+
+.user_profile_info p {
+	text-align: right;
+}
+
+.user_profile_info .user_notice {
+	margin-right: 30px;
+}

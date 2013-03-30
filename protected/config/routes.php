@@ -14,6 +14,10 @@ return array (
 		'join'=>'/Home/join/main',
 		'about'=>'/Home/about/main',
 		
+		'news'=>'/Home/feeds/main/',
+		
+		'profile'=>'/UserCenter/main/main',
+		
 		
 		'register' => 'UserCenter/register/register',
 		'login' => 'UserCenter/login/login',

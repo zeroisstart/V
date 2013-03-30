@@ -119,7 +119,7 @@ class News extends CActiveRecord {
 				'text' => 'Text',
 				'photo' => 'Photo',
 				'state' => '状态',
-				'isRecommend' =>'首页推荐',
+				'isRecommend' => '首页推荐',
 				'date' => 'Date',
 				'create_time' => '创建时间' 
 		);
@@ -135,8 +135,12 @@ class News extends CActiveRecord {
 	public function getAllCate() {
 		$criteria = new CDbCriteria ();
 		$criteria->compare ( 'type', '1' );
-		
 		$models = Category::model ()->findAll ( $criteria );
+		
+		// models = Category::model()->findAll($criteria);
+		
+		// ar_dump($models);
+		
 		$data = array ();
 		
 		foreach ( $models as $model ) {
@@ -235,6 +239,8 @@ class News extends CActiveRecord {
 	 * @return string
 	 */
 	public function getUrl() {
-		return Yii::app ()->createUrl ( '/news/' . $this->ID );
+		return Yii::app ()->createUrl ( '/Home/feeds/view', array (
+				'id' => $this->ID 
+		) );
 	}
 }

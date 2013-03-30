@@ -58,9 +58,9 @@ class RegisterForm extends CFormModel {
 	}
 	public function getUser_type() {
 		return array (
-				'0' => '学生',
-				'1' => '企业',
-				'2' => '个人' 
+				'3' => '学生',
+				'4' => '企业',
+				'5' => '个人' 
 		);
 	}
 	
@@ -145,6 +145,7 @@ class RegisterForm extends CFormModel {
 			$userProfile->ID = $user->id;
 			$userProfile->User_category = $this->userType;
 			$userProfile->save ();
+			return true;
 		} else {
 			YII_DEBUG && var_dump ( $user->errors );
 		}

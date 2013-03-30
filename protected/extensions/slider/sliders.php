@@ -28,7 +28,7 @@ class sliders extends CWidget {
 		
 		$div = '<div class="wrapper" id="focus"><ul>';
 		foreach ( $this->images as $img ) {
-			$div .= '<li><a target="_blank" href="http://www.xiamizhan.com/"><img alt="jquery商城焦点图效果" src="'.$img.'" /></a></li>';
+			$div .= '<li><a target="_blank" href="#"><img alt="" src="'.$img.'" /></a></li>';
 		}
 		$div .= '</ul></div>';
 		

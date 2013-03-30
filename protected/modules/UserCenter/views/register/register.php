@@ -6,9 +6,9 @@ $this->breadcrumbs=array(
 );
 ?>
 
-<h1>Register</h1>
+<h1 style="text-align:center;">注册</h1>
 
-<div class="form">
+<div class="form center_form">
 	<?php $form=$this->beginWidget('CActiveForm', array(
 		'id'=>'register-form',
 		'enableClientValidation'=>true,
@@ -17,8 +17,7 @@ $this->breadcrumbs=array(
 		),
 	)); ?>
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
-	
+	<p class="note none">Fields with <span class="required">*</span> are required.</p>
 	
 	<div class="row">
 		<?php echo $form->labelEx($model,'userType'); ?>
@@ -51,7 +50,7 @@ $this->breadcrumbs=array(
 	</div>
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton('Register'); ?>
+		<?php echo CHtml::submitButton('注册'); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

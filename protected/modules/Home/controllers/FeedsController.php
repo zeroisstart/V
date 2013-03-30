@@ -1,36 +1,40 @@
 <?php
-
-class FeedsController extends Controller
-{
-	public function actionMain()
-	{
-		$this->render('main');
+/**
+ * 
+ * @author top
+ *
+ */
+class FeedsController extends Controller {
+	
+	/**
+	 *
+	 * @var string
+	 */
+	public $defaultAction = 'main';
+	
+	/**
+	 */
+	public function actionMain() {
+		$req = Yii::app ()->request;
+		$id = $req->getParam ( 'id' );
+		
+		$model = News::model ()->findByPk ( $id );
+		
+		if (! empty ( $model )) {
+			$data = $model->attributes;
+			$this->render ( 'view', array (
+					'data' => $data,
+					'model' => $model 
+			) );
+		} else {
+			
+			$model = News::model ();
+			$model->category = 18;
+			$dataProvider = $model->search ();
+			$this->render ( 'main', array (
+					'dataProvider' => $dataProvider,
+					'model' => $model 
+			) );
+		}
 	}
-
-	// Uncomment the following methods and override them if needed
-	/*
-	public function filters()
-	{
-		// return the filter configuration for this controller, e.g.:
-		return array(
-			'inlineFilterName',
-			array(
-				'class'=>'path.to.FilterClass',
-				'propertyName'=>'propertyValue',
-			),
-		);
-	}
-
-	public function actions()
-	{
-		// return external action classes, e.g.:
-		return array(
-			'action1'=>'path.to.ActionClass',
-			'action2'=>array(
-				'class'=>'path.to.AnotherActionClass',
-				'propertyName'=>'propertyValue',
-			),
-		);
-	}
-	*/
 }

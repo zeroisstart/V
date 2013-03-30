@@ -294,7 +294,7 @@ class ContentController extends Controller {
 	 * @return string
 	 */
 	public function actionUpload() {
-		Yii::import ( 'application.components.uploader.Uploader' );
+		Yii::import ( 'application.components.System.Uploader' );
 		if (empty ( $_FILES )) {
 			die ( 'Not Allow Access!' );
 		}
