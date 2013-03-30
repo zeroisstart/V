@@ -1,14 +1,28 @@
 <?php
 /* @var $this AboutController */
 
-$this->breadcrumbs=array(
-	'About'=>array('/Home/about'),
-	'Main',
+$this->breadcrumbs = array (
+		'About' => array (
+				'/Home/about' 
+		),
+		'Main' 
 );
 ?>
-<h1><?php echo $this->id . '/' . $this->action->id; ?></h1>
 
-<p>
-	You may change the content of this page by modifying
-	the file <tt><?php echo __FILE__; ?></tt>.
-</p>
+<div class="sba_title">
+	<h3 class="sba_caption">
+		<!-- title end -->
+		<?php echo $data['title']?>
+		<!-- title end -->
+	</h3>
+	<span class="sba_spire">
+		<!-- time end -->
+		<?php echo $data['create_time']?>
+		<!-- time end -->
+	</span>
+</div>
+
+
+<div class="news_content">
+	<?php echo $data['text']?>
+</div>

@@ -138,7 +138,7 @@ class ContentController extends Controller {
 				
 				Yii::app ()->user->setFlash ( 'success', '新增成功!' );
 				
-				$this->redirect ( $this->createUrl ( '/news/admin/list' ) );
+				$this->redirect ( $this->createUrl ( '/Admin/Content/list' ) );
 				
 				// form inputs are valid, do something here
 			} else {
@@ -240,7 +240,7 @@ class ContentController extends Controller {
 		return $model;
 	}
 	public function actionFileUpload() {
-		Yii::import ( 'application.components.uploader.Uploader' );
+		Yii::import ( 'application.components.System.Uploader' );
 		if (empty ( $_FILES )) {
 			die ( 'Not Allow Access!' );
 		}
