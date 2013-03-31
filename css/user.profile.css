@@ -24,9 +24,10 @@
 }
 
 .user_profile_info p {
-	text-align: right;
+	
 }
 
 .user_profile_info .user_notice {
 	margin-right: 30px;
+	text-align: right;
 }

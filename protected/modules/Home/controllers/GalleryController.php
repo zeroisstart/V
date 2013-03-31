@@ -1,36 +1,58 @@
 <?php
-
-class GalleryController extends Controller
-{
-	public function actionMain()
-	{
-		$this->render('main');
+class GalleryController extends Controller {
+	/**
+	 *
+	 * @var string
+	 */
+	public $defaultAction = 'product';
+	public function actionMain() {
+		$req = Yii::app ()->request;
+		$ac = $req->getParam ( 'ac' );
+		switch ($ac) {
+			case 'team' :
+				
+				$this->_actionTeam ();
+				break;
+			case 'post' :
+				$this->_actionPost ();
+				break;
+			case 'product' :
+			
+			default :
+				$this->_actionProduct ();
+				break;
+		}
 	}
-
-	// Uncomment the following methods and override them if needed
-	/*
-	public function filters()
-	{
-		// return the filter configuration for this controller, e.g.:
-		return array(
-			'inlineFilterName',
-			array(
-				'class'=>'path.to.FilterClass',
-				'propertyName'=>'propertyValue',
-			),
-		);
+	/**
+	 * 我的团队
+	 */
+	public function _actionTeam() {
+		$model = News::model ();
+		$model->category = 20;
+		$dataProvider = $model->search ();
+		$this->render ( 'team' );
+		/*
+		 * $this->render ( 'team', array ( 'model' => $model, 'dataProvider' =>
+		 * $dataProvider ) );
+		 */
 	}
-
-	public function actions()
-	{
-		// return external action classes, e.g.:
-		return array(
-			'action1'=>'path.to.ActionClass',
-			'action2'=>array(
-				'class'=>'path.to.AnotherActionClass',
-				'propertyName'=>'propertyValue',
-			),
-		);
+	/**
+	 * 我的作品
+	 */
+	public function _actionProduct() {
+		$model = News::model ();
+		$model->category = 20;
+		$dataProvider = $model->search ();
+		$this->render ( 'product', array (
+				'model' => $model,
+				'dataProvider' => $dataProvider 
+		) );
+		// this->render ( 'product' );
 	}
-	*/
+	/**
+	 * 参赛状态
+	 */
+	public function _actionPost() {
+		$this->render ( 'post' );
+	}
 }

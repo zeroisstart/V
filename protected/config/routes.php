@@ -17,6 +17,8 @@ return array (
 		'news'=>'/Home/feeds/main/',
 		
 		'profile'=>'/UserCenter/main/main',
+		'master'=>'/Home/master/main',
+		'companyq'=>'/Home/companyq/main',
 		
 		
 		'register' => 'UserCenter/register/register',

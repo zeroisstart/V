@@ -10,6 +10,12 @@ class RegisterForm extends CFormModel {
 	public $password;
 	public $password_confirm;
 	public $email;
+	
+	public $company_name;
+	public $contact;
+	public $mobile;
+	public $city;
+	public $allowRegister;
 	private $_identity;
 	public $userType;
 	
@@ -22,7 +28,7 @@ class RegisterForm extends CFormModel {
 		return array (
 				// username and password are required
 				array (
-						'username, password,password_confirm,email',
+						'username,allowRegister,password,password_confirm,email,contact,mobile,city',
 						'required' 
 				),
 				array (
@@ -72,8 +78,14 @@ class RegisterForm extends CFormModel {
 				'username' => '用户名',
 				'password' => '密码',
 				'userType' => '用户类型',
-				'password_confirm' => '重复密码',
+				'password_confirm' => '确认密码',
+				'company_name'=>'机构名称',
+				'contact'=>'联系人姓名',
+				'mobile'=>'手机',
+				'city'=>'所在城市',
+				'allowRegister'=>'同意大赛注册协议',
 				'email' => '邮箱',
+				'allowRegister'=>'同意大赛注册协议',
 				'userType' 
 		);
 	}
