@@ -25,7 +25,7 @@ class SecNav extends CWidget {
 		$sec_nav_content = false;
 		
 		foreach ( $this->tabs as $key => $val ) {
-			$sec_nav_content .= CHtml::link ( $key, Yii::app ()->createUrl ( $val ), array (
+			$sec_nav_content .= CHtml::link ( $key, $val, array (
 					'class' => 'blue_Btn',
 					'title'=>$key
 			) );

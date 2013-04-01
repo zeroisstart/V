@@ -8,15 +8,13 @@
                         <div id="contentTopInfo">
                             <div class="title">竞赛资讯</div>
                             <ul>
-                                <li><a href="javascript:;">全国高等院校物联网专业评估与人才培养研讨会在京举行</a></li>
-                                <li><a href="javascript:;">全国高等院校物联网专业评估与人才培养研讨会在京举行</a></li>
-                                <li><a href="javascript:;">全国高等院校物联网专业评估与人才培养研讨会在京举行</a></li>
-                                <li><a href="javascript:;">全国高等院校物联网专业评估与人才培养研讨会在京举行</a></li>
-                                <li><a href="javascript:;">全国高等院校物联网专业评估与人才培养研讨会在京举行</a></li>
-                                <li><a href="javascript:;">全国高等院校物联网专业评估与人才培养研讨会在京举行</a></li>
-                                <li><a href="javascript:;">全国高等院校物联网专业评估与人才培养研讨会在京举行</a></li>
-                                <li><a href="javascript:;">全国高等院校物联网专业评估与人才培养研讨会在京举行</a></li>
-                                <li><a href="javascript:;">全国高等院校物联网专业评估与人才培养研讨会在京举行</a></li>
+                            <?php foreach($news as $_model):?>
+                            	<li>
+                            		<a href="<?php echo $this -> createUrl('/Home/feeds/main',array('id'=>$_model -> ID))?>">
+                            		<?php echo $_model -> title;?>
+                            		</a>
+                            	</li>
+                            <?php endforeach;?>
                             </ul>
                         </div>
                     </div>

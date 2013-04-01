@@ -25,29 +25,36 @@ class leftLogin extends CWidget {
 	}
 	public function _logged() {
 		$logout = Yii::app ()->createUrl ( '/logout' );
-		$profileUrl = Yii::app() -> createUrl('/profile');
 		
-		$team = Yii::app() -> createUrl('/team');
+		$profileUrl = Yii::app ()->createUrl ( '/UserCenter/main/main' );
 		
-		$members = Yii::app() -> createUrl('/members');
+		$team = Yii::app ()->createUrl ( '/UserCenter/main/main', array (
+				'ac' => 'team' 
+		) );
 		
-		$user = Yii::app() ->user;
+		$members = Yii::app ()->createUrl ( '/UserCenter/main/main', array (
+				'ac' => 'book' 
+		) );
 		
-		$mineProduct = Yii::app() -> createUrl('/product');
+		$user = Yii::app ()->user;
 		
-		$name = ($user -> name);
+		$mineProduct = Yii::app ()->createUrl ( '/UserCenter/main/main', array (
+				'ac' => 'product' 
+		) );
 		
-		$id = ($user-> id);
+		$name = ($user->name);
+		
+		$id = ($user->id);
 		echo <<<EOT
 <div id="userLogin">
 	<div id="userLoginTitle">用户登陆信息</div>
 	<div id="userLoginBox">
-		<div class="user_info test">
+		<div class="user_info ">
 			<span><a href="$profileUrl">$name</a> | <a href="$logout">退出</a> </span>
 			
 			<span><a href="$team">我的队伍</a> | <a href="$profileUrl">完善资料</a></span>
 			
-			<span><a href="$mineProduct">我的作品</a> | <a href="$members">团队成员</a></span>
+			<span><a href="$mineProduct">我的作品</a> | <a href="$members">报名</a></span>
 		</div>
 	</div>
 </div>		
@@ -57,29 +64,57 @@ EOT;
 	private function _notLogin() {
 		$login = Yii::app ()->createUrl ( '/login' );
 		$register = Yii::app ()->createUrl ( '/register' );
+		$cs = Yii::app() -> clientScript;
+		$cs -> registerScript('login','
+			$("document").ready(function(){
+				$(".login_button").click(function(){
+						$("form").submit();
+				});
+			})
+');
+		
+		$model = new LoginForm();
 		
 		echo <<<EOT
 <div id="userLogin">
 	<div id="userLoginTitle">用户登录</div>
 	<div id="userLoginBox">
-		<form>
-			<div class="userLoginInput">
-				<span>用户名：</span> 
-				<input type="text" class="ipt_username"  id="username" />
-			</div>
-			<div class="userLoginInput">
-				<span>密&nbsp;&nbsp;&nbsp;码：</span> 
-				<input type="password" class="ipt_password" id="password" />
-			</div>
-		</form>
-		<div style="text-align: justify; padding: 5px;">
+EOT;
+		?>
+
+<?php $form=$this->beginWidget('CActiveForm', array(
+	'action'=>Yii::app() -> createUrl('/UserCenter/login/login'),
+	'id'=>'login-form',
+	'enableClientValidation'=>true,
+	'clientOptions'=>array(
+		'validateOnSubmit'=>true,
+	),
+)); ?>
+
+	<div class="userLoginInput">
+		<span>用户名：</span> 
+		<?php echo $form->textField($model,'username',array('class'=>'ipt_username','id'=>'username')); ?>
+		<?php echo $form->error($model,'username'); ?>
+	</div>
+
+	<div class="userLoginInput">
+		<span>密&nbsp;&nbsp;&nbsp;码：</span> 
+		<?php echo $form->passwordField($model,'password',array('class'=>'ipt_password','id'=>'password')); ?>
+		<?php echo $form->error($model,'password'); ?>
+	</div>
+
+	<div style="text-align: justify; padding: 5px;margin-top:20px;">
 			<span class="userLoginInput">
-				<a class="yel_btn" href="$login">登陆</a>
+				<a class="yel_btn login_button" href="javascript:void(0);">登陆</a>
 			</span> 
 			<span class="userLoginInput"> 
-				<a class="yel_btn" href="$register">注册</a>
+				<a class="yel_btn" href="<?php echo $register?>">注册</a>
 			</span>
-		</div>
+	</div>
+
+<?php $this->endWidget(); ?>
+<?php 
+echo <<<EOT
 	</div>
 </div>		
 EOT;

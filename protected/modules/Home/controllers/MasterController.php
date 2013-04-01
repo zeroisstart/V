@@ -1,19 +1,5 @@
 <?php
-/**
- * 
- * @author top
- *
- */
-class FeedsController extends Controller {
-	
-	/**
-	 *
-	 * @var string
-	 */
-	public $defaultAction = 'main';
-	
-	/**
-	 */
+class MasterController extends Controller {
 	public function actionMain() {
 		$req = Yii::app ()->request;
 		$id = $req->getParam ( 'id' );

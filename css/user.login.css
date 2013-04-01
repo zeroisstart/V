@@ -1,0 +1,64 @@
+@CHARSET "UTF-8";
+
+.login_form {
+	margin: 0 0 0 45px;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	display: block;
+	background: #fbfbfb;
+	position: relative;
+	min-height: 374px;
+	_height: 374px;
+}
+
+.login_form .row {
+	width: 860px;
+	height: 80px;
+}
+
+.login_form .login_input,.login_form .reg_input {
+	display: inline-block;
+	background-color: white;
+	font-size: 14px;
+	height: 24px;
+	line-height: 24px;
+	border: 1px solid #D9D9D9;
+	border-top-color: #C2C2C2;
+	padding: 7px;
+	width: 240px;
+	color: #A0A0A0;
+	cursor: text;
+	outline: none;
+	float: left;
+	margin-right: 10px;
+}
+
+.div_login_btn {
+	width: 256px;
+	height: 40px;
+}
+
+.div_login_btn .login_btn {
+	width: 80px;
+	height: 30px;
+}
+
+.div_login_btn .reg_btn,.login_btn	 {
+	width: 80px;
+	height: 30px;
+	line-height: 30px;
+	font-size: 20px;
+	text-align: center;
+	display: inline-block;
+	text-decoration: none;
+	background:#3499CF;
+}
+.allowregister{
+}
+.user_info span,.user_info span a{
+	color:#3499CF;
+}
+
+#userLoginBox .userLoginInput{
+	float:left;
+}

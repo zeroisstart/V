@@ -1,12 +1,3 @@
-<?php
-/* @var $this JoinController */
-
-$this->breadcrumbs=array(
-	'Join'=>array('/Home/join'),
-	'Main',
-);
-?>
-
 <div class="sba_title">
 	<h3 class="sba_caption">
 		<!-- title end -->

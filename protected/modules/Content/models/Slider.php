@@ -111,7 +111,7 @@ class Slider extends CActiveRecord {
 	public function getImgTag() {
 		$accessUrl = Yii::app ()->params->imgAccessPath;
 		$img = $this->img;
-		return CHtml::image ( $accessUrl . $img, $this->title,array('class'=>'fix_260_200') );
+		return CHtml::image ( $accessUrl .'img/'. $img, $this->title,array('class'=>'fix_260_200') );
 	}
 	
 	/**

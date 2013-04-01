@@ -22,7 +22,8 @@ class RegisterController extends Controller {
 			$model->setAttributes($_POST ['RegisterForm'],false);
 			// validate user input and redirect to the previous page if valid
 			if ($model->validate () && $model->register ()) {
-				var_dump ( $model->attributes );
+				Yii::app() -> user -> setFlash('success','注册成功!');
+				$this -> redirect($this -> createUrl('/'));
 			}
 			// $this->redirect ( Yii::app ()->user->returnUrl );
 		}
