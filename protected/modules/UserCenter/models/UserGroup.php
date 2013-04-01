@@ -10,6 +10,7 @@
  * @property string $state
  */
 class UserGroup extends CActiveRecord {
+	
 	public $_state = array (
 			'0' => '未审核',
 			'1' => '以审核',
@@ -83,7 +84,9 @@ class UserGroup extends CActiveRecord {
 	public function relations() {
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
-		return array ();
+		return array (
+					'members'=>array(self::HAS_MANY,'UserGroupMember','gid')
+				);
 	}
 	
 	/**
