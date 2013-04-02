@@ -14,6 +14,7 @@ class MasterController extends Controller {
 			) );
 		} else {
 			
+			//18 企业导师
 			$model = News::model ();
 			$model->category = 18;
 			$dataProvider = $model->search ();

@@ -56,7 +56,19 @@ class UserGroupMember extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+				
 		);
+	}
+	
+	/**
+	 * 
+	 * @param int $uid
+	 * @param int $id
+	 * @return boolean
+	 */
+	public function canJoin($uid){
+		$model = $this -> findByAttributes(array('UID'=>$uid));
+		return empty($model)?true:false;
 	}
 
 	/**

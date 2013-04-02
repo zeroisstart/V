@@ -590,7 +590,7 @@ a.blue_btn:hover {
 }
 
 .company_logo {
-	border: 1px dotted #319C28;
+	border: 2px dotted #319C28;
 	border-bottom: 0px;
 	width: 240px;
 	text-align: center;

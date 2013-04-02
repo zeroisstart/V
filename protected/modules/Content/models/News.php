@@ -25,6 +25,13 @@ class News extends CActiveRecord {
 	 *        	active record class name.
 	 * @return News the static model class
 	 */
+	
+	
+	//18 企业导师
+	//19 参赛方法
+	//20 关于竞赛
+	//21 企业命题
+	
 	public $pageSize = 20;
 	public static function model($className = __CLASS__) {
 		return parent::model ( $className );
@@ -195,7 +202,7 @@ class News extends CActiveRecord {
 		$criteria->compare ( 'create_time', $this->create_time, true );
 		$criteria->order = "create_time desc";
 		
-		$criteria->addCondition ( 'category<>4' );
+		$criteria->addCondition ( 'category not in (4,19,20)' );
 		
 		return new CActiveDataProvider ( $this, array (
 				'criteria' => $criteria,

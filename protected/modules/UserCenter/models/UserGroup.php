@@ -99,12 +99,20 @@ class UserGroup extends CActiveRecord {
 	public function attributeLabels() {
 		return array (
 				'ID' => '组ID',
-				'UID' => '创建人',
-				'username' => '创建人ID',
+				'UID' => '队长ID',
+				'username' => '队长',
 				'name' => '组名',
 				'create_time' => '创建时间',
 				'state' => '组状态' 
 		);
+	}
+	
+	/**
+	 * 
+	 * @return boolean
+	 */
+	public function canAdd(){
+		return true;	
 	}
 	
 	/**

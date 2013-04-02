@@ -1,8 +1,17 @@
 <div class="sec_nav">
-	<a class="blue_Btn" href="<?php echo $this -> createUrl('/Admin/content/create')?>">新增新闻</a>
+	<a class="blue_Btn"
+		href="<?php echo $this -> createUrl('/Admin/content/create')?>">新增新闻</a>
+
+	<a class="blue_Btn"
+		href="<?php echo $this -> createUrl('/Admin/content/update',array('id'=>'49569'))?>">关于竞赛</a>
+
+	<a class="blue_Btn"
+		href="<?php echo $this -> createUrl('/Admin/content/update',array('id'=>'49568'))?>">参赛办法</a>
 	<?php if(0):?> 
-	<a class="blue_Btn" href="<?php echo $this -> createUrl('/category/admin/create',array('t'=>1));?>">新增分类</a>
-	<a class="blue_Btn" href="<?php echo $this -> createUrl('/category/admin/list',array('t'=>1));?>">新闻分类</a>
+	<a class="blue_Btn"
+		href="<?php echo $this -> createUrl('/category/admin/create',array('t'=>1));?>">新增分类</a>
+	<a class="blue_Btn"
+		href="<?php echo $this -> createUrl('/category/admin/list',array('t'=>1));?>">新闻分类</a>
 	<?php endif;?>  
 </div>
 
@@ -25,7 +34,7 @@ $this->widget ( 'widget.helper.GridView', array (
 						'type' => 'text',
 						'value' => '$data->username' 
 				),
-				'category' => array ( 
+				'category' => array (
 						'name' => 'category',
 						'value' => '$data -> cateText' 
 				),
