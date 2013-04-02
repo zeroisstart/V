@@ -1,36 +1,31 @@
 <?php
-/* @var $this AdminController */
+/* @var $this GroupController */
 
 $this->breadcrumbs = array (
-		'Admin' => array (
-				'/UserCenter/admin' 
+		'Group' => array (
+				'/Admin/group' 
 		),
 		'List' 
 );
 ?>
-<h1>用户管理面板</h1>
 
-<?php
-$this->widget ( 'widget.Helper.SecNav', array (
-		'tabs' => array (
-				'导师管理' => $this->createUrl ( '/Admin/UserAdmin/list', array (
-						't' => 2 
-				) ) 
-		) 
-) )?>
+<h1>参赛队伍管理</h1>
 
 <div class="grid_form">
 <?php
- 
 /* @var $this AdminController */
 
 $this->widget ( 'widget.helper.GridView', array (
 		'dataProvider' => $dataProvider,
-		
 		'columns' => array (
-				'id',
+				'ID',
+				'name' => array (
+						'name' => 'name',
+						'type' => 'html',
+						'value' => '$data -> getMemberLink($data->name);' 
+				),
 				'username',
-				'email',
+				'create_time',
 				'state' => array (
 						'name' => 'state',
 						'value' => '$data -> _state[$data -> state];' 

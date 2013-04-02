@@ -10,11 +10,10 @@
  * @property string $state
  */
 class UserGroup extends CActiveRecord {
-	
 	public $_state = array (
 			'0' => '未审核',
-			'1' => '以审核',
-			'2' => '以删除' 
+			'1' => '已审核',
+			'2' => '已删除' 
 	);
 	
 	/**
@@ -85,8 +84,12 @@ class UserGroup extends CActiveRecord {
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array (
-					'members'=>array(self::HAS_MANY,'UserGroupMember','gid')
-				);
+				'members' => array (
+						self::HAS_MANY,
+						'UserGroupMember',
+						'gid' 
+				) ,
+		);
 	}
 	
 	/**
@@ -95,12 +98,26 @@ class UserGroup extends CActiveRecord {
 	 */
 	public function attributeLabels() {
 		return array (
-				'id' => '组ID',
-				'uid' => '创建人',
+				'ID' => '组ID',
+				'UID' => '创建人',
+				'username' => '创建人ID',
 				'name' => '组名',
 				'create_time' => '创建时间',
 				'state' => '组状态' 
 		);
+	}
+	
+	/**
+	 * 获取用户组成员的链接
+	 *
+	 * @param String $txt        	
+	 */
+	public function getMemberLink($txt) {
+		return CHtml::link ( Controller::cut_str ( $txt, 10, 0 ), Yii::app ()->createUrl ( '/Admin/group/view', array (
+				'id' => $this->ID 
+		) ), array (
+				'title' => $txt 
+		) );
 	}
 	
 	/**
@@ -114,8 +131,8 @@ class UserGroup extends CActiveRecord {
 		// should not be searched.
 		$criteria = new CDbCriteria ();
 		
-		$criteria->compare ( 'id', $this->id, true );
-		$criteria->compare ( 'uid', $this->uid );
+		$criteria->compare ( 'ID', $this->ID, true );
+		$criteria->compare ( 'UID', $this->UID );
 		$criteria->compare ( 'name', $this->name, true );
 		$criteria->compare ( 'state', $this->state, true );
 		

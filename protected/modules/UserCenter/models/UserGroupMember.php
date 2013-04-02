@@ -11,6 +11,9 @@
  */
 class UserGroupMember extends CActiveRecord
 {
+	
+	public $_state=array(0=>'拒绝加入',1=>'同意加入');
+	
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
@@ -37,11 +40,11 @@ class UserGroupMember extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('uid, group_id', 'numerical', 'integerOnly'=>true),
+			array('uid, gid', 'numerical', 'integerOnly'=>true),
 			array('state', 'length', 'max'=>1),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, uid, group_id, state', 'safe', 'on'=>'search'),
+			array('id, uid, gid, state', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -62,9 +65,10 @@ class UserGroupMember extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id' => 'ID',
-			'uid' => '用户名',
-			'group_id' => '组ID',
+			'ID' => 'ID',
+			'UID' => '用户ID',
+			'username'=>'用户名',
+			'gid' => '组ID',
 			'state' => '状态',
 			'create_time' => '创建时间',
 		);
@@ -81,9 +85,9 @@ class UserGroupMember extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('id',$this->id,true);
-		$criteria->compare('uid',$this->uid);
-		$criteria->compare('group_id',$this->group_id);
+		$criteria->compare('ID',$this->ID,true);
+		$criteria->compare('UID',$this->UID);
+		$criteria->compare('gid',$this->gid);
 		$criteria->compare('state',$this->state,true);
 
 		return new CActiveDataProvider($this, array(

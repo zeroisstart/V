@@ -13,7 +13,7 @@ class GroupController extends Controller {
 	
 	/**
 	 *
-	 * @var int
+	 * @var int 
 	 */
 	public $defaultAction = 'list';
 	public function actionAdd() {
@@ -23,10 +23,20 @@ class GroupController extends Controller {
 		$model = UserGroup::model ();
 		
 		if (isset ( $_POST ['UserGroup'] )) {
+			
 			$model->attributes = $_POST ['UserGroup'];
 			$model->uid = Yii::app ()->user->id;
 			$model->state = 0;
 			$model->create_time = date ( 'Y-m-d H:i:s', time () );
+			$model -> save();
+			
+			$model-> members = new UserGroupMember();
+			$model-> members ->  uid = Yii::app() -> user -> id;
+			$model -> members -> gid = $model -> id;
+			$model -> members -> state = 1;
+			$model -> members -> create_time =date('Y-m-d H:i:s',time());
+			$modle -> members -> save();
+			
 		}
 		
 		$ary = array ();
