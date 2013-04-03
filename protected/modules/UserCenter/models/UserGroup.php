@@ -88,7 +88,7 @@ class UserGroup extends CActiveRecord {
 						self::HAS_MANY,
 						'UserGroupMember',
 						'gid' 
-				) ,
+				) 
 		);
 	}
 	
@@ -108,11 +108,19 @@ class UserGroup extends CActiveRecord {
 	}
 	
 	/**
-	 * 
-	 * @return boolean
+	 * 判断当前用户是不是队长
+	 *
+	 * @param int $uid        	
 	 */
-	public function canAdd(){
-		return true;	
+	public function isLeader($uid) {
+		if ($this->uid) {
+			return ($this->uid == $uid) ? true : false;
+		} else {
+			$model = $this->findByAttributes ( array (
+					'uid' => $uid 
+			) );
+			return $model ? true : false;
+		}
 	}
 	
 	/**

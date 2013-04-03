@@ -4,16 +4,26 @@ class UserSecNav extends CWidget {
 			'main' => '我的首页',
 			'team' => '我的团队',
 			'product' => '我的作品',
-			'state' => '参赛状态', 
-			'book'=>'报名'
+			'state' => '参赛状态',
+			'book' => '报名' 
 	);
 	public $current = 'main';
 	public function init() {
 		$req = Yii::app ()->request;
 		$action = $req->getParam ( 'ac' );
+		
+		$user = Yii::app ()->user;
+		$uid = $user->id;
+		
+		$userGroup = UserGroup::model ();
+		if($userGroup->isLeader ( $uid )){
+			$this -> ary_nav['accept'] = '队员申请';
+		}
+		
 		if (key_exists ( $action, $this->ary_nav )) {
 			$this->current = $action;
 		}
+		
 	}
 	public function run() {
 		?>
@@ -24,17 +34,15 @@ class UserSecNav extends CWidget {
 			<ul>
 			<?php foreach($this -> ary_nav as $key => $val):?>
 				<?php if($this -> current == $key):?>
-					<li class="active_nav">
-						<a href="<?php echo Yii::app() -> createUrl('/UserCenter/main/main',array('ac'=>$key))?>">
+					<li class="active_nav"><a
+			href="<?php echo Yii::app() -> createUrl('/UserCenter/main/main',array('ac'=>$key))?>">
 							<?php echo $val?>
-						</a>
-					</li>
+						</a></li>
 				<?php else:?>
-					<li>
-						<a href="<?php echo Yii::app() -> createUrl('/UserCenter/main/main',array('ac'=>$key))?>">
+					<li><a
+			href="<?php echo Yii::app() -> createUrl('/UserCenter/main/main',array('ac'=>$key))?>">
 							<?php echo $val?>
-						</a>
-					</li>
+						</a></li>
 				<?php endif;?>
 			<?php endforeach;?>
 			</ul>
