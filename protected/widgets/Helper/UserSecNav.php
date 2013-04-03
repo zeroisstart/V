@@ -15,15 +15,24 @@ class UserSecNav extends CWidget {
 		$user = Yii::app ()->user;
 		$uid = $user->id;
 		
+		// 队长页面
 		$userGroup = UserGroup::model ();
-		if($userGroup->isLeader ( $uid )){
-			$this -> ary_nav['accept'] = '队员申请';
+		if ($userGroup->isLeader ( $uid )) {
+			$this->ary_nav ['accept'] = '队员申请';
+		}
+		
+		// 评委老师页面
+		if ($user->userProfile->User_category == 2) {
+			$teacher_nav = array (
+					'assessment' => '我要评定的作品',
+					'assessmented' => '我评过的作品' 
+			);
+			$this->ary_nav = $teacher_nav;
 		}
 		
 		if (key_exists ( $action, $this->ary_nav )) {
 			$this->current = $action;
 		}
-		
 	}
 	public function run() {
 		?>

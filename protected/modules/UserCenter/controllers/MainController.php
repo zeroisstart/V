@@ -61,11 +61,18 @@ class MainController extends Controller {
 				break;
 			case 'acceptTeam' :
 				break;
+			case 'assessment' :
+				$this->_actionAssessment ();
+				break;
+			case 'assessmented' :
+				$this->_actionAssessmented ();
+				break;
 			default :
 				$this->render ( 'main' );
 				break;
 		}
 	}
+	
 	/**
 	 * 我的团队
 	 */
@@ -243,5 +250,18 @@ class MainController extends Controller {
 	 */
 	public function _actionBook() {
 		$this->render ( 'book' );
+	}
+	
+	/**
+	 * 评委获取需要评定的作品
+	 */
+	public function _actionAssessment() {
+		$this->render ( 'assessment' );
+	}
+	/**
+	 * 评委获取评定过的作品
+	 */
+	public function _actionAssessmented() {
+		$this->render ( 'assessmented' );
 	}
 }
