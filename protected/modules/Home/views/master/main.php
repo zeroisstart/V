@@ -2,8 +2,7 @@
 <div id="contextBox">
 	<div id="rightContent">
 		<?php $this -> widget('widget.Helper.ContentList',array('dataProvider'=>$dataProvider));?>
-	
-                </div>
+   </div>
 		<div id="leftColumns">
 		
 		<div class="company_logo">

@@ -113,11 +113,11 @@ class UserGroup extends CActiveRecord {
 	 * @param int $uid        	
 	 */
 	public function isLeader($uid) {
-		if ($this->uid) {
-			return ($this->uid == $uid) ? true : false;
+		if ($this->UID) {
+			return ($this->UID == $uid) ? true : false;
 		} else {
 			$model = $this->findByAttributes ( array (
-					'uid' => $uid 
+					'UID' => $uid 
 			) );
 			return $model ? true : false;
 		}

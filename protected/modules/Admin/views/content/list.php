@@ -1,19 +1,47 @@
-<div class="sec_nav">
-	<a class="blue_Btn"
-		href="<?php echo $this -> createUrl('/Admin/content/create')?>">新增新闻</a>
+<?php
+$tab = array (
+		'新增新闻' => $this->createUrl ( '/Admin/content/create' ),
+		'关于竞赛' => $this->createUrl ( '/Admin/content/update', array (
+				'id' => '49569' 
+		) ),
+		'参赛办法' => $this->createUrl ( '/Admin/content/update', array (
+				'id' => '49568' 
+		) ),
+		'企业命题' => $this->createUrl ( '/Admin/content/list', array (
+				'c' => '21' 
+		) ),
+		'企业导师简介' => $this->createUrl ( '/Admin/content/list', array (
+				'c' => '22' 
+		) ) 
+);
+$req = Yii::app ()->request;
 
-	<a class="blue_Btn"
-		href="<?php echo $this -> createUrl('/Admin/content/update',array('id'=>'49569'))?>">关于竞赛</a>
+switch ($req->getParam ( 'c' )) {
+	case "22" :
+		$tab = array (
+				'内容列表' => $this->createUrl ( '/Admin/content/list' ),
+				'新增企业导师简介' => $this->createUrl ( '/Admin/content/create', array (
+						'c' => 22 
+				) ) 
+		);
+		break;
+	
+	case 21 :
+		$tab = array (
+				'内容列表' => $this->createUrl ( '/Admin/content/list' ),
+				'新增企业命题' => $this->createUrl ( '/Admin/content/create', array (
+						'c' => 21
+				) ) 
+		);
+		break;
+	default :
+		break;
+}
 
-	<a class="blue_Btn"
-		href="<?php echo $this -> createUrl('/Admin/content/update',array('id'=>'49568'))?>">参赛办法</a>
-	<?php if(0):?> 
-	<a class="blue_Btn"
-		href="<?php echo $this -> createUrl('/category/admin/create',array('t'=>1));?>">新增分类</a>
-	<a class="blue_Btn"
-		href="<?php echo $this -> createUrl('/category/admin/list',array('t'=>1));?>">新闻分类</a>
-	<?php endif;?>  
-</div>
+$this->widget ( 'widget.Helper.SecNav', array (
+		'tabs' => $tab 
+) );
+?>
 
 
 <div class="grid_form">

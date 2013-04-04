@@ -119,6 +119,7 @@ $(document).ready(function(){
 							array('label'=>'首页滑动', 'url'=>array('/Admin/slider/main')),
 							array('label'=>'内容发布', 'url'=>array('/Admin/content/list')),
 							array('label'=>'参赛队伍', 'url'=>array('/Admin/group/list')),
+							#array('label'=>'企业导师管理', 'url'=>array('/Admin/master/main')),
 							#array('label'=>'新闻', 'url'=>array('/news/admin/list')),
 							#array('label'=>'赛事', 'url'=>array('/event/admin/index')),
 							#array('label'=>'图片','url'=>array('/pic/slider/list')),

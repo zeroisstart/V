@@ -14,9 +14,9 @@ class MasterController extends Controller {
 			) );
 		} else {
 			
-			//18 企业导师
+			// 18 企业导师
 			$model = News::model ();
-			$model->category = 18;
+			$model->category = 22;
 			$dataProvider = $model->search ();
 			$this->render ( 'main', array (
 					'dataProvider' => $dataProvider,

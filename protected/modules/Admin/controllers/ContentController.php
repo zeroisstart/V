@@ -89,11 +89,17 @@ class ContentController extends Controller {
 	 */
 	public function actionList() {
 		$news = News::model ();
+		$req = Yii::app ()->request;
 		
 		if (isset ( $_POST ['News'] )) {
 			$news->attributes = $_POST ['News'];
 		}
 		
+		$cate = $req->getParam ( 'c' );
+		
+		if ($cate) {
+			$news->category = $cate;
+		}
 		$data = $news->search ();
 		
 		$this->render ( 'list', array (
@@ -104,12 +110,19 @@ class ContentController extends Controller {
 	/**
 	 * 新闻添加
 	 */
-	
-	// @todo.top
 	public function actionCreate() {
 		$model = new News ( 'create' );
 		
 		$user = Yii::app ()->user;
+		
+		$req = Yii::app ()->request;
+		$cate = $req->getParam ( 'c' );
+		
+		if ($cate) {
+			$model->category = $cate;
+		} else {
+			$model->category = 18;
+		}
 		
 		if (isset ( $_POST ['News'] )) {
 			$model->attributes = $_POST ['News'];
@@ -237,6 +250,26 @@ class ContentController extends Controller {
 		$model->state = 'active';
 		$model->date = date ( 'Y-m-d' );
 		$model->create_time = date ( 'Y-m-d H:i:s' );
+		
+		if (isset ( $_FILES ['News'] )) {
+			$upload = UploadedFile::getInstance ( $model, 'photo' );
+			$model->photo = $upload;
+			if ($model->validate () || 1) {
+				$ext = $upload->getExtensionName ();
+				$name = md5 ( $upload->getName () . time () );
+				$name = $name . '.' . $ext;
+				$path = Yii::app ()->getParams ();
+				$imgUploadPath = $path->imgUploadPath;
+				$folder = UploadedFile::getFolder ( $imgUploadPath );
+				$savePath = (substr ( $folder, strpos ( $folder, '../' ) + 5 )) . '/' . $name;
+				// save before action
+				$upload->saveAs ( $folder . '/' . $name );
+				$model->photo = $savePath;
+			} else {
+				var_dump ( $model->errors );
+			}
+		}
+		
 		return $model;
 	}
 	public function actionFileUpload() {
@@ -258,8 +291,9 @@ class ContentController extends Controller {
 						".swf",
 						".wmv" 
 				), // 文件允许格式
-				"maxSize" => 100000);  // 文件大小限制，单位KB
-		// 生成上传实例对象并完成上传
+				"maxSize" => 100000 
+		); // 文件大小限制，单位KB
+		   // 生成上传实例对象并完成上传
 		$up = new Uploader ( "upfile", $config );
 		
 		/**

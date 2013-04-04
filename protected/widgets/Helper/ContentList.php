@@ -25,9 +25,8 @@ class ContentList extends CWidget {
 <?php foreach($this -> dataProvider -> data as $model):?>
 <div class="feed_list">
 	<div class="feed_list_img">
-		<a
-			href="<?php echo Yii::app() -> createUrl('/Home/feeds/main',array('id'=>$model -> ID));?>">
-			<img src="http://www.google.com.hk/images/srpr/logo4w.png" />
+		<a href="<?php echo Yii::app() -> createUrl('/Home/feeds/main',array('id'=>$model -> ID));?>">
+			<img src="<?php echo Yii::app()->createUrl('/').'/'.$model -> photo;?>" />
 		</a>
 	</div>
 

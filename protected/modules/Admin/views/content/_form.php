@@ -18,17 +18,17 @@
 <div class="form">
 <?php
 
-$cate = $model->getAllCate ();
+$cate = array();// $model->getAllCate ();
 
 $cate['0'] = '其他';
 
 $_form = array ();
 
 if ($model->isNewRecord) {
-	$_form ['title'] = '新增新闻';
+	$_form ['title'] = '新增';
 	$_form ['submit'] = '保存';
 } else {
-	$_form ['title'] = '编辑新闻';
+	$_form ['title'] = '编辑';
 	$_form ['submit'] = '编辑';
 }
 $_form ['content'] = $model -> text;
@@ -47,6 +47,10 @@ $_form ['fileAccessUrl'] = Yii::app ()->params ['fileAccessPath'];
 
 $form = $this->beginWidget ( 'CActiveForm', array (
 		'id' => 'news-_from-form',
+		'htmlOptions' => array (
+				'method' => 'post',
+				'enctype' => "multipart/form-data" 
+		),
 		'enableAjaxValidation' => false 
 ) );
 ?>
@@ -58,11 +62,21 @@ $form = $this->beginWidget ( 'CActiveForm', array (
 		<?php echo $form->textField($model,'title',array('class'=>'w_600')); ?>
 		<?php echo $form->error($model,'title'); ?>
 		
+		<?php if(0):?>
 		<span class="m_l_155">新闻分类:
 			<?php echo $form -> dropDownList($model, 'category', $cate,array('class'=>'w_200'))?>
 		</span>
+		<?php endif;?>
+		<?php echo $form -> hiddenField($model, 'category');?>
+		
 	</div>
 
+	<div class="row">
+		<?php echo $form->label($model, 'photo');?>
+		<?php echo $form->fileField($model, 'photo');?>
+		<?php echo $form->error($model,'photo'); ?>
+	</div>
+	
 	<div class="row">
 
 		<!-- editor begin -->

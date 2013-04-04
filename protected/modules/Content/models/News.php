@@ -74,8 +74,8 @@ class News extends CActiveRecord {
 				),
 				array (
 						'photo',
-						'length',
-						'max' => 60 
+						'file',
+						'types'=>array('jpg','jpeg','gif','png')
 				),
 				array (
 						'state',
@@ -124,7 +124,7 @@ class News extends CActiveRecord {
 				'title' => '标题',
 				'category' => '分类',
 				'text' => 'Text',
-				'photo' => 'Photo',
+				'photo' => '简介图',
 				'state' => '状态',
 				'isRecommend' => '首页推荐',
 				'date' => 'Date',

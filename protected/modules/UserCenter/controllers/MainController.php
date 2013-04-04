@@ -86,7 +86,7 @@ class MainController extends Controller {
 				'state' => 1 
 		) );
 		
-		if (empty ( $row ) || 1) {
+		if (empty ( $row )) {
 			
 			$group_model = UserGroup::model ();
 			$group_model->state = '1';
