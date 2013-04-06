@@ -18,105 +18,171 @@
  * @property integer $type
  * @property string $create_time
  */
-class UserProductGrade extends CActiveRecord
-{
+class UserProductGrade extends CActiveRecord {
+	
 	/**
 	 * Returns the static model of the specified AR class.
-	 * @param string $className active record class name.
+	 *
+	 * @param string $className
+	 *        	active record class name.
 	 * @return UserProductGrade the static model class
 	 */
-	public static function model($className=__CLASS__)
-	{
-		return parent::model($className);
+	public static function model($className = __CLASS__) {
+		return parent::model ( $className );
 	}
-
+	
 	/**
+	 *
 	 * @return string the associated database table name
 	 */
-	public function tableName()
-	{
+	public function tableName() {
 		return '{{user_product_grade}}';
 	}
-
+	
 	/**
+	 *
 	 * @return array validation rules for model attributes.
 	 */
-	public function rules()
-	{
+	public function rules() {
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
-		return array(
-			array('uid, edit_count, type', 'numerical', 'integerOnly'=>true),
-			array('title, doc, img', 'length', 'max'=>255),
-			array('detail', 'length', 'max'=>300),
-			array('os, hard_driver, ep_num', 'length', 'max'=>45),
-			array('text, create_time', 'safe'),
-			// The following rule is used by search().
-			// Please remove those attributes that should not be searched.
-			array('ID, uid, title, detail, text, doc, img, os, hard_driver, ep_num, edit_count, type, create_time', 'safe', 'on'=>'search'),
+		return array (
+				array (
+						'uid, edit_count, type',
+						'numerical',
+						'integerOnly' => true 
+				),
+				array (
+						'title, doc, img',
+						'length',
+						'max' => 255 
+				),
+				array (
+						'detail',
+						'length',
+						'max' => 300 
+				),
+				array (
+						'os, hard_driver, ep_num',
+						'length',
+						'max' => 45 
+				),
+				array (
+						'text, create_time',
+						'safe' 
+				),
+				// The following rule is used by search().
+				// Please remove those attributes that should not be searched.
+				array (
+						'ID, uid, title, detail, text, doc, img, os, hard_driver, ep_num, edit_count, type, create_time',
+						'safe',
+						'on' => 'search' 
+				) 
 		);
 	}
-
+	
 	/**
+	 *
 	 * @return array relational rules.
 	 */
-	public function relations()
-	{
+	public function relations() {
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
-		return array(
-		);
+		return array ();
 	}
-
+	
 	/**
+	 *
 	 * @return array customized attribute labels (name=>label)
 	 */
-	public function attributeLabels()
-	{
-		return array(
-			'ID' => 'ID',
-			'uid' => 'Uid',
-			'title' => 'Title',
-			'detail' => 'Detail',
-			'text' => 'Text',
-			'doc' => 'Doc',
-			'img' => 'Img',
-			'os' => 'Os',
-			'hard_driver' => 'Hard Driver',
-			'ep_num' => 'Ep Num',
-			'edit_count' => 'Edit Count',
-			'type' => 'Type',
-			'create_time' => 'Create Time',
+	public function attributeLabels() {
+		return array (
+				'ID' => 'ID',
+				'uid' => 'Uid',
+				'gid' => '用户组 ID',
+				'title' => 'Title',
+				'detail' => 'Detail',
+				'text' => 'Text',
+				'doc' => 'Doc',
+				'img' => 'Img',
+				'os' => 'Os',
+				'hard_driver' => 'Hard Driver',
+				'ep_num' => 'Ep Num',
+				'edit_count' => 'Edit Count',
+				'type' => 'Type',
+				'create_time' => 'Create Time' 
 		);
 	}
-
+	/**
+	 *
+	 * @return NULL
+	 */
+	public function getTeamLeader() {
+		$uid = $this->uid;
+		$user = User::model ()->findByPk ( $uid );
+		if (empty ( $user ))
+			return null;
+		return $user->username;
+	}
+	/**
+	 *
+	 * @return NULL
+	 */
+	public function getTeamName() {
+		$gid = $this->gid;
+		$group = UserGroup::model ()->findByPk ( $gid );
+		if (empty ( $group ))
+			return null;
+		else
+			return $group->name;
+	}
+	
+	/**
+	 *
+	 * @return NULL Ambigous mixed, NULL, unknown, multitype:unknown Ambigous
+	 *         <unknown, NULL> , CActiveRecord, multitype:unknown Ambigous
+	 *         <CActiveRecord, NULL> , multitype:unknown >
+	 */
+	public function getTeamMembers() {
+		$gid = $this->gid;
+		$groupMember = UserGroupMember::model ();
+		$members = $groupMember->findAllByAttributes ( array (
+				'gid' => $gid,
+				'state' => 1 
+		) );
+		if (empty ( $members ))
+			return null;
+		else
+			return $members;
+	}
+	
 	/**
 	 * Retrieves a list of models based on the current search/filter conditions.
-	 * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.
+	 *
+	 * @return CActiveDataProvider the data provider that can return the models
+	 *         based on the search/filter conditions.
 	 */
-	public function search()
-	{
+	public function search() {
 		// Warning: Please modify the following code to remove attributes that
 		// should not be searched.
-
-		$criteria=new CDbCriteria;
-
-		$criteria->compare('ID',$this->ID);
-		$criteria->compare('uid',$this->uid);
-		$criteria->compare('title',$this->title,true);
-		$criteria->compare('detail',$this->detail,true);
-		$criteria->compare('text',$this->text,true);
-		$criteria->compare('doc',$this->doc,true);
-		$criteria->compare('img',$this->img,true);
-		$criteria->compare('os',$this->os,true);
-		$criteria->compare('hard_driver',$this->hard_driver,true);
-		$criteria->compare('ep_num',$this->ep_num,true);
-		$criteria->compare('edit_count',$this->edit_count);
-		$criteria->compare('type',$this->type);
-		$criteria->compare('create_time',$this->create_time,true);
-
-		return new CActiveDataProvider($this, array(
-			'criteria'=>$criteria,
-		));
+		$criteria = new CDbCriteria ();
+		
+		$criteria->compare ( 'ID', $this->ID );
+		$criteria->compare ( 'uid', $this->uid );
+		$criteria->compare ( 'title', $this->title, true );
+		$criteria->compare ( 'detail', $this->detail, true );
+		$criteria->compare ( 'text', $this->text, true );
+		$criteria->compare ( 'doc', $this->doc, true );
+		$criteria->compare ( 'img', $this->img, true );
+		$criteria->compare ( 'os', $this->os, true );
+		$criteria->compare ( 'hard_driver', $this->hard_driver, true );
+		$criteria->compare ( 'ep_num', $this->ep_num, true );
+		$criteria->compare ( 'edit_count', $this->edit_count );
+		$criteria->compare ( 'type', $this->type );
+		$criteria->compare ( 'create_time', $this->create_time, true );
+		
+		return new CActiveDataProvider ( $this, array (
+				'criteria' => $criteria 
+		) );
 	}
 }

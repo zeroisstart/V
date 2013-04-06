@@ -56,17 +56,26 @@
     </div>
 
     <div id="context">
-    	<?php if(Yii::app()->user->hasFlash('success') || 1):?>
-		<?php 
+    	<?php if(Yii::app()->user->hasFlash('success')):?>
+		<?php
+		$this -> widget('ext.popup.popup');
 		Yii::app()->clientScript->registerScript(
 		'myHideEffect',
-		'$(".info").animate({opacity: 1.0}, 3000).fadeOut("slow");',
+		'hm.alert({
+				noTitle : true, // 是否显示标题
+				text : "'.Yii::app()->user->getFlash('success').'", // 内容文
+				height : "auto", // 高度字
+				width : 220,// 宽度
+				confirm : "确定"
+				})',
 		CClientScript::POS_READY
 		);
 		?>
+		<?php if(0):?>
 		<div class="notice">
 			<?php echo Yii::app()->user->getFlash('success'); ?>
 		</div>
+		<?php endif;?>
 		<?php endif; ?>
     
         <div class="main">
@@ -76,7 +85,7 @@
     <div id="footer">
         <div class="main">
         	<div class="footer_logo">
-        		<img class="ie6png" src="/ea/assets/f79271e5/img/admin_logo.png" alt="logo">
+        		<img class="ie6png" src="<?php echo Yii::app()->request->baseUrl; ?>/images/logo.png" alt="logo">
         	</div>
         	
         	<div class="footer_nav">

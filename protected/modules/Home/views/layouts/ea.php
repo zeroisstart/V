@@ -5,12 +5,10 @@
     <title><?php echo Yii::app() -> name?></title>
     
     <?php 
+    
     	$cs = Yii::app() -> clientScript;
     	$cs -> registerCoreScript('jquery');
-    	
     	$css = array('css/global.css','css/home.css');
-    	
-    	
     	$this -> widget('widget.ClientScript.autoRegisterFile',array('css'=>$css));
     	
     ?>
@@ -56,6 +54,7 @@
             <?php echo $content;?>
         </div>
     </div>
+    
     <div id="footer">
         <div class="main"></div>
     </div>

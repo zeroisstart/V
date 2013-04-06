@@ -18,15 +18,19 @@ class UserAdminController extends Controller {
 		$ary ['model'] = $model;
 		$ary ['dataProvider'] = $dataProvider;
 		
-		#$data = $dataProvider -> data;
-		#$row = end($data);
-		#var_dump($row);
-		#var_dump($row->userProfile->userCategory);
-		#var_dump($data);
-		#die;
+		// data = $dataProvider -> data;
+		// row = end($data);
+		// ar_dump($row);
+		// ar_dump($row->userProfile->userCategory);
+		// ar_dump($data);
+		// ie;
 		
 		$this->render ( 'list', $ary );
 	}
+	/**
+	 *
+	 * @param int $id        	
+	 */
 	public function actionUpdate($id) {
 		$model = User::model ();
 		$model = $model->findByPk ( $id );
@@ -42,6 +46,10 @@ class UserAdminController extends Controller {
 			$this->run ( 'list' );
 		}
 	}
+	/**
+	 *
+	 * @param int $id        	
+	 */
 	public function actionView($id) {
 		$model = false;
 		if ($id) {

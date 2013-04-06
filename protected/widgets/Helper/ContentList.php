@@ -23,22 +23,41 @@ class ContentList extends CWidget {
 	public function run() {
 		?>
 <?php foreach($this -> dataProvider -> data as $model):?>
+<?php 
+	$url =  Yii::app() -> createUrl('/Home/feeds/main',array('id'=>$model -> ID));
+	switch($model->category){
+		case 18:
+			break;
+		case 19:
+			break;
+		case 20:
+			break;
+		case 21:
+			break;
+		case 22:
+			$url = Yii::app() -> createUrl('/Home/master/main',array('id'=>$model -> ID));
+			break;
+		default:
+			break; 
+	}
+	
+?>
 <div class="feed_list">
 	<div class="feed_list_img">
-		<a href="<?php echo Yii::app() -> createUrl('/Home/feeds/main',array('id'=>$model -> ID));?>">
+		<a href="<?php echo $url?>">
 			<img src="<?php echo Yii::app()->createUrl('/').'/'.$model -> photo;?>" />
 		</a>
 	</div>
 
 	<div class="feed_list_content">
 		<span class="feed_list_title"> 
-		<a href="<?php echo Yii::app() -> createUrl('/Home/feeds/main',array('id'=>$model -> ID));?>">
+		<a href="<?php echo $url?>">
 					<?php echo $model -> title?>
 		</a>
 		</span>
 		<p class="timeline"><?php echo $model -> create_time?></p>
 		<p class="f_content">
-			<a href="<?php echo Yii::app() -> createUrl('/Home/feeds/main',array('id'=>$model -> ID));?>" />
+			<a href="<?php echo $url?>" />
 				<?php echo $this -> cut_str(strip_tags($model -> text),70).'...';?>
 			</a>
 		</p>

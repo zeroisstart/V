@@ -40,7 +40,8 @@ $components = require 'components.php';
 // CWebApplication properties can be configured here.
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
-	'name'=>'Top\'s Vengeance ',
+	//'name'=>'Top\'s Vengeance ',
+	'name'=>'2013全国移动互联网创新大赛',
     'timeZone'=>'Asia/Shanghai', //设置时区为上海
     'language'=>'zh_cn',
 

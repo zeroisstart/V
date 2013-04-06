@@ -31,7 +31,12 @@ class MainController extends Controller {
 			$img [] = (Yii::app ()->params->imgAccessPath . 'img/' . $_model->img);
 		}
 		
+		$left = array_slice($news, 0,5);
+		$right = array_slice($news, 5,5);
+		
 		$this->render ( 'main', array (
+				'left'=>$left,
+				'right'=>$right,
 				'img' => $img,
 				'news' => $news 
 		) );

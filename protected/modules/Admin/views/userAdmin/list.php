@@ -13,7 +13,11 @@ $this->breadcrumbs = array (
 <?php
 $this->widget ( 'widget.Helper.SecNav', array (
 		'tabs' => array (
-				'导师管理' => $this->createUrl ( '/Admin/UserAdmin/list', array (
+				'评委管理' => $this->createUrl ( '/Admin/UserAdmin/list', array (
+						't' => 2 
+				) ),
+				'新增评委' => $this->createUrl ( '/Admin/UserAdmin/list', array (
+						'ac'=>'create',
 						't' => 2 
 				) ) 
 		) 
@@ -21,7 +25,7 @@ $this->widget ( 'widget.Helper.SecNav', array (
 
 <div class="grid_form">
 <?php
- 
+
 /* @var $this AdminController */
 
 $this->widget ( 'widget.helper.GridView', array (

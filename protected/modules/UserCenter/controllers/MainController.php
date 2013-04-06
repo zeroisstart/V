@@ -38,6 +38,7 @@ class MainController extends Controller {
 		);
 	}
 	public function actionMain() {
+		
 		$req = Yii::app ()->request;
 		$ac = $req->getParam ( 'ac' );
 		switch ($ac) {
@@ -68,7 +69,17 @@ class MainController extends Controller {
 				$this->_actionAssessmented ();
 				break;
 			default :
-				$this->render ( 'main' );
+				
+				$user = Yii::app ()->user;
+				$uid = $user->id;
+				
+				$profile = $user->userProfile;
+				// 评委老师页面
+				if ($profile && $user->userProfile->User_category == 2) {
+					$this->_actionAssessment ();
+				} else {
+					$this->render ( 'main' );
+				}
 				break;
 		}
 	}
@@ -256,12 +267,78 @@ class MainController extends Controller {
 	 * 评委获取需要评定的作品
 	 */
 	public function _actionAssessment() {
-		$this->render ( 'assessment' );
+		$user = Yii::app ()->user;
+		$uid = $user->id;
+		
+		$productGrade = UserGroupGrade::model ();
+		$productGrade->judges = $uid;
+		$productGrade->is_checked = 0;
+		
+		$req = Yii::app ()->request;
+		$id = $req->getParam ( 'id' );
+		
+		if ($id) {
+			
+			$productGrade->ID = $id;
+			
+			$criteria = new CDbCriteria ();
+			$criteria->compare ( 't.judges', $uid );
+			$criteria->compare ( 't.is_checked', 0 );
+			$criteria->compare ( 't.ID', $id );
+			$criteria->with = array (
+					'product' 
+			);
+			
+			$model = $productGrade->find ( $criteria );
+			
+			if (isset ( $_POST ['UserGroupGrade'] )) {
+				$model->attributes = $_POST ['UserGroupGrade'];
+				if ($model->validate ()) {
+					$model->is_checked = 1;
+					$model->check_time = date ( 'Y-m-d H:i:s', time () );
+					$model->save ();
+					Yii::app ()->user->setFlash ( 'success', '评分成功!' );
+					$this->redirect ( $this->createUrl ( '/UserCenter/main/main', array (
+							'ac' => 'assessment' 
+					) ) );
+				} else {
+					var_dump ( $model->errors );
+				}
+			}
+			
+			if (empty ( $model )) {
+				$this->redirect ( $this->createUrl ( '/UserCenter/main/main', array (
+						'ac' => 'assessment' 
+				) ) );
+			}
+			
+			$this->render ( 'assessment_ing', array (
+					'model' => $model 
+			) );
+		} else {
+			$dataProvider = $productGrade->search ();
+			$this->render ( 'assessment', array (
+					'model' => $productGrade,
+					'dataProvider' => $dataProvider 
+			) );
+		}
 	}
+	
 	/**
 	 * 评委获取评定过的作品
 	 */
 	public function _actionAssessmented() {
-		$this->render ( 'assessmented' );
+		$user = Yii::app ()->user;
+		$uid = $user->id;
+		
+		$productGrade = UserGroupGrade::model ();
+		$productGrade->judges = $uid;
+		$productGrade->is_checked = 1;
+		$dataProvider = $productGrade->search ();
+		
+		$this->render ( 'assessmented', array (
+				'model' => $productGrade,
+				'dataProvider' => $dataProvider 
+		) );
 	}
 }
