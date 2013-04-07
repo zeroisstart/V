@@ -5,7 +5,6 @@ class ExportController extends Controller {
 	 * @var string
 	 */
 	public $defaultAction = 'main';
-	
 	/**
 	 *
 	 * @var string
@@ -15,15 +14,22 @@ class ExportController extends Controller {
 	/**
 	 */
 	public function actionMain() {
+		
 		Yii::import ( 'application.libs.phpexcel.Classes.PHPExcel' );
-		
-		
-		#error_reporting ( E_ALL );
 		
 		/**
 		 * Include path *
 		 */
-		// ni_set ( 'include_path', ini_get ( 'include_path' ) . ';/Classes/' );
+		// ini_set ( 'include_path', ini_get ( 'include_path' ) . ';/Classes/' );
+
+		$groupModel = UserGroupGrade::model();
+		$groupCriteria = new CDbCriteria();
+		$groupCriteria -> compare('is_checked', 1);
+		$groupCriteria -> order = "check_time desc";
+		$groupCriteria -> with =array('product');
+
+		$groupModels = $groupModel -> findAll($groupCriteria);
+		
 		
 		/**
 		 * PHPExcel
@@ -32,7 +38,7 @@ class ExportController extends Controller {
 		/**
 		 * PHPExcel_Writer_Excel2007
 		 */
-		// nclude 'PHPExcel/Writer/Excel2007.php';
+		// include 'PHPExcel/Writer/Excel2007.php';
 		
 		// Create new PHPExcel object
 		$objPHPExcel = new PHPExcel ();
@@ -63,11 +69,14 @@ class ExportController extends Controller {
 		$a2->getHyperlink ()->setUrl ( "sheet://'2'!A1" );
 		
 		$sheet1 = $objPHPExcel->createSheet ( 1 );
-		$sheet1->SetCellValue ( 'A1', 'Hello' );
+ 		$sheet1->SetCellValue ( 'A1', 'Hello' );
 		$sheet1->SetCellValue ( 'B2', 'world!' );
 		$sheet1->SetCellValue ( 'C1', 'Hello' );
 		$sheet1->SetCellValue ( 'D2', 'world!' );
-		$sheet1->setTitle ( '2' );
+		
+		$objPHPExcel->getActiveSheet()->mergeCells('A2:A3');
+		
+		$sheet1->setTitle ( '2013全国移动互联网创新大赛' );
 		
 		$sheet1 = $objPHPExcel->createSheet ( 1 );
 		$sheet1->SetCellValue ( 'A1', 'Hello' );
@@ -85,7 +94,7 @@ class ExportController extends Controller {
 		
 		header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
 		
-		header("Content-Disposition: attachment; filename=\"test.xls\"");
+		header("Content-Disposition: attachment; filename=\"2013全国移动互联网创新大赛.xls\"");
 		
 		header('Cache-Control: max-age=0');
 		
@@ -95,14 +104,15 @@ class ExportController extends Controller {
 		/*
 		$objWriter = new PHPExcel_Writer_Excel2007 ( $objPHPExcel );
 		#$objWriter ->
-		$objWriter->save ( str_replace ( '.php', '.xlsx', __FILE__ ) );
+		$objWriter->save ( str_replace ( '.php', '.xlsx', __FILE__ ) ); 
 		die ();
-		// Echo done
+		// Echo done 
 		echo date ( 'H:i:s' ) . " Done writing file.\r\n";*/
 	}
 	
 	/**
 	 */
 	public function actionGrade() {
+		
 	}
 }

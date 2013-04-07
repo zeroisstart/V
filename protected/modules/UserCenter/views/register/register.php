@@ -6,9 +6,10 @@ $this->breadcrumbs=array(
 );
 ?>
 
-<h1 style="text-align:center;">注册</h1>
-
-<div class="form center_form login_form">
+<div class="registerFrame">
+<div class="registerFrameBorder">
+<div class="form login_form">
+	<div class="registerTitle">请填写以下注册信息...</div>
 	<?php $form=$this->beginWidget('CActiveForm', array(
 		'id'=>'register-form',
 		'enableClientValidation'=>true,
@@ -17,11 +18,13 @@ $this->breadcrumbs=array(
 		),
 	)); ?>
 
+	
+
 	<p class="note none">Fields with <span class="required">*</span> are required.</p>
 	
 	<div class="row">
 		<?php echo $form->labelEx($model,'userType'); ?>
-		<?php echo $form->dropDownList ($model,'userType',$model-> user_type,array('class'=>'reg_input')); ?>
+		<?php echo $form->dropDownList ($model,'userType',$model-> user_type,array('class'=>'reg_select')); ?>
 		<?php echo $form->error($model,'userType'); ?>
 	</div>
 
@@ -84,12 +87,16 @@ $this->breadcrumbs=array(
 		<?php echo $form->error($model,'allowRegister'); ?>
 	</div>
 
-	<div class="row buttons">
-		<?php echo CHtml::submitButton('注册'); ?>
+	<div class="registerBtn">
+		<a href="#">注册</a>
+		<?php // echo CHtml::submitButton('注册'); ?>
 	</div>
 
 <?php $this->endWidget(); ?>
 </div><!-- form -->
+
+</div>
+</div>
 
 <script>
 $(document).ready(function(){

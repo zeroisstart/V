@@ -82,7 +82,7 @@ class UserGroupGrade extends CActiveRecord {
 						self::HAS_ONE,
 						'UserProductGrade',
 						false,'on'=>"t.pid=product.ID" 
-				) 
+				)
 		);
 	}
 	
