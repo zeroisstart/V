@@ -36,7 +36,7 @@ $this->breadcrumbs=array(
 
 	
 	<div class="loginBtn">
-		<?php echo CHtml::link('登陆','javascript:void(0);');?>
+		<?php echo CHtml::link('登陆','javascript:void(0);',array('class'=>'login_btn'));?>
 		
 		<?php echo CHtml::link('注册',$this -> createUrl('/UserCenter/register/register'),array('class'=>'reg_btn'));?>
 	</div>

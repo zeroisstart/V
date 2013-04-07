@@ -112,7 +112,7 @@ class UserGroup extends CActiveRecord {
 	 *
 	 * @param int $uid        	
 	 */
-	public function isLeader($uid) {
+	public function isLeader($uid=false) {
 		if ($this->UID) {
 			return ($this->UID == $uid) ? true : false;
 		} else {

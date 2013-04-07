@@ -124,6 +124,7 @@ $(document).ready(function(){
 							#array('label'=>'赛事', 'url'=>array('/event/admin/index')),
 							#array('label'=>'图片','url'=>array('/pic/slider/list')),
 							array('label'=>'用户管理','url'=>array('/Admin/UserAdmin/list')),
+							array('label'=>'参赛用户数据导出','url'=>array('/Admin/export/main')),
 					)
 			));?>
 			</nav>

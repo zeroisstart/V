@@ -3,11 +3,14 @@
 	<div id="rightContent" class="user_profile_info">
 		<p class="user_notice">您好 <?php echo Yii::app() -> user->username;?></p>
 
-		
 		<div class="user_data_info">
-			<p>竞赛通知</p>
+			
+			<?php if(!$group -> isLeader()):?>
+				<p class="user_data_info_title">对不起，您所在的组，队长还没有提交作品哦!</p>
+			<?php else:?>
+			
+			<?php endif;?>
 		</div>
-		
 		
 	</div>
 	<div id="leftColumns">

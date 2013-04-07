@@ -38,7 +38,6 @@ class MainController extends Controller {
 		);
 	}
 	public function actionMain() {
-		
 		$req = Yii::app ()->request;
 		$ac = $req->getParam ( 'ac' );
 		switch ($ac) {
@@ -94,7 +93,7 @@ class MainController extends Controller {
 		$group_member_model = UserGroupMember::model ();
 		$row = $group_member_model->findByAttributes ( array (
 				'UID' => $uid,
-				'state' => 1 
+				'state' => '1' 
 		) );
 		
 		if (empty ( $row )) {
@@ -154,11 +153,12 @@ class MainController extends Controller {
 		$username = $user->username;
 		if ($userGroupModel->canJoin ( $uid )) {
 			$model = new UserGroupMember ();
-			$model->uid = $uid;
+			$model->UID = $uid;
 			$model->gid = $id;
 			$model->username = $username;
-			$model->create_time = data ( 'Y-m-d H:i:s', time () );
-			if (1 || $model->save ()) {
+			$model->state = 0;
+			$model->create_time = date ( 'Y-m-d H:i:s', time () );
+			if ($model->save ()) {
 				echo CJavaScript::encode ( array (
 						'status' => 1,
 						'code' => '1' 
@@ -248,7 +248,43 @@ class MainController extends Controller {
 	 * 我的作品
 	 */
 	public function _actionProduct() {
-		$this->render ( 'product' );
+		$user = Yii::app ()->user;
+		$uid = $user->id;
+		
+		$groupMemberModel = UserGroupMember::model ();
+		$groupMemberModel = $groupMemberModel->findByAttributes ( array (
+				'UID' => $uid,
+				'state' => '1' 
+		) );
+		$product = '';
+		$group = '';
+		
+		// ar_dump($groupMemberModel);
+		// ie;
+		if ($groupMemberModel) {
+			
+			$group = UserGroup::model ()->findByAttributes ( array (
+					'ID' => $groupMemberModel->gid 
+			) );
+			
+			$product = UserProductGrade::model ()->findByAttributes ( array (
+					'gid' => $groupMemberModel->gid 
+			) );
+		}
+		
+		if (! ($group)) {
+			$this->render ( 'no_grp', array () );
+		} elseif (! ($product)) {
+			$this->render ( 'no_pro', array (
+					'groupMember' => $groupMemberModel,
+					'group' => $group 
+			) );
+		} else {
+			
+			$this->render ( 'product', array (
+					'model' => $groupMemberModel 
+			) );
+		}
 	}
 	/**
 	 * 参赛状态

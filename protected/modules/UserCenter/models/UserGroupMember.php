@@ -5,7 +5,7 @@
  *
  * The followings are the available columns in table '{{user_group_member}}':
  * @property string $id
- * @property integer $uid
+ * @property integer $UID
  * @property integer $group_id
  * @property string $state
  */
@@ -40,11 +40,11 @@ class UserGroupMember extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('uid, gid', 'numerical', 'integerOnly'=>true),
+			array('UID, gid', 'numerical', 'integerOnly'=>true),
 			array('state', 'length', 'max'=>1),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, uid, gid, state', 'safe', 'on'=>'search'),
+			array('id, UID, gid, state', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -56,18 +56,18 @@ class UserGroupMember extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-				
+				'group'=>array(self::HAS_ONE,'UserGroup','gid')
 		);
 	}
 	
 	/**
 	 * 
-	 * @param int $uid
+	 * @param int $UID
 	 * @param int $id
 	 * @return boolean
 	 */
-	public function canJoin($uid){
-		$model = $this -> findByAttributes(array('UID'=>$uid));
+	public function canJoin($UID){
+		$model = $this -> findByAttributes(array('UID'=>$UID));
 		return empty($model)?true:false;
 	}
 

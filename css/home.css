@@ -1008,3 +1008,9 @@ a.blue_btn:hover {
 .competition ul li a:hover{
 	text-decoration:underline;
 }
+.user_data_info_title{
+	font-size:17px;
+}
+.user_data_info_title a{
+	font-size:20px;
+}

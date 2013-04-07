@@ -15,6 +15,7 @@ $this->widget ( 'ext.popup.popup' );
 				$this->widget ( 'widget.helper.GridView', array (
 						'dataProvider' => $dataProvider,
 						'columns' => array (
+								'ID',
 								'username',
 								'name',
 								array (

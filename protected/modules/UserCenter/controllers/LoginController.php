@@ -24,7 +24,7 @@ class LoginController extends Controller {
 			if ($model->validate () && $model->login ())
 				$this->redirect ( Yii::app ()->user->returnUrl );
 			else {
-				var_dump ( $mode->erros );
+				//var_dump ( $model->errors );
 			}
 		}
 		// display the login form
