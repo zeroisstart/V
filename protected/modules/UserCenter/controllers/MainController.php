@@ -77,7 +77,11 @@ class MainController extends Controller {
 				if ($profile && $user->userProfile->User_category == 2) {
 					$this->_actionAssessment ();
 				} else {
-					$this->render ( 'main' );
+					$news = News::model ()->findByPk ( '230' );
+					
+					$this->render ( 'main', array (
+							'model' => $news 
+					) );
 				}
 				break;
 		}

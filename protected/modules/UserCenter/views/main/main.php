@@ -6,6 +6,8 @@
 		<div class="user_data_info">
 			
 			<p>竞赛通知</p>
+			
+			<?php echo $model -> text;?>
 		</div>
 	</div>
 	<div id="leftColumns">
