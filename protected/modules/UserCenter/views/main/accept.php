@@ -15,10 +15,11 @@ $this->widget ( 'ext.popup.popup' );
 				$this->widget ( 'widget.helper.GridView', array (
 						'dataProvider' => $dataProvider,
 						'columns' => array (
+								'UID',
 								'username',
-								'name',
 								array (
-										'template'=>'{add} {no}',
+										'header'=>'操作',
+										'template'=>'{yes} {no}',
 										'buttons' => array (
 												'yes' => array (
 														'label' => '申请加入',

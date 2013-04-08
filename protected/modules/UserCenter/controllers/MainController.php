@@ -186,7 +186,7 @@ class MainController extends Controller {
 		$uid = $user->id;
 		
 		$userGroup = UserGroup::model ()->findByAttributes ( array (
-				'uid' => $uid 
+				'UID' => $uid 
 		) );
 		
 		if (empty ( $userGroup )) {

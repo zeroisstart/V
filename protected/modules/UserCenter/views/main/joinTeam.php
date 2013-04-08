@@ -55,9 +55,9 @@ $this->widget ( 'ext.popup.popup' );
 																			case "3":
 																			hm.alert({
 																				noTitle : true, 
-																				text : "您有在申请哦!", 
+																				text : "您有在申请哦!请耐心等待。", 
 																				height : "auto",
-																				width : 210,
+																				width : 250,
 																			})
 																				break;
 																			default:

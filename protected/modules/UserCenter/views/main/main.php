@@ -7,7 +7,11 @@
 			
 			<p>竞赛通知</p>
 			
-			<?php echo $model -> text;?>
+			<?php
+			if($model){
+				echo $model -> text;	
+			}
+			?>
 		</div>
 	</div>
 	<div id="leftColumns">
