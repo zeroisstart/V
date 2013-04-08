@@ -88,6 +88,11 @@ class UserGroup extends CActiveRecord {
 						self::HAS_MANY,
 						'UserGroupMember',
 						'gid' 
+				),
+				'product' => array (
+						self::HAS_ONE,
+						'UserProductGrade',
+						'gid' 
 				) 
 		);
 	}
@@ -112,7 +117,7 @@ class UserGroup extends CActiveRecord {
 	 *
 	 * @param int $uid        	
 	 */
-	public function isLeader($uid=false) {
+	public function isLeader($uid = false) {
 		if ($this->UID) {
 			return ($this->UID == $uid) ? true : false;
 		} else {

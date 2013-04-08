@@ -102,6 +102,7 @@ class UserProfile extends CActiveRecord {
 				'ID' => 'ID',
 				'Nickname' => 'Nickname',
 				'Realname' => 'Realname',
+				'IDNum'=>'身份证号',
 				'Company_name' => 'Company Name',
 				'Mobile' => 'Mobile',
 				'Email' => 'Email',
