@@ -255,16 +255,16 @@ class MainController extends Controller {
 		$user = Yii::app ()->user;
 		$uid = $user->id;
 		
+		$req = Yii::app ()->request;
+		
 		$groupMemberModel = UserGroupMember::model ();
 		$groupMemberModel = $groupMemberModel->findByAttributes ( array (
 				'UID' => $uid,
-				'state' => '1' 
+				'state' => 1 
 		) );
 		$product = '';
 		$group = '';
 		
-		// ar_dump($groupMemberModel);
-		// ie;
 		if ($groupMemberModel) {
 			
 			$group = UserGroup::model ()->findByAttributes ( array (
@@ -276,19 +276,134 @@ class MainController extends Controller {
 			) );
 		}
 		
-		if (! ($group)) {
+		if (! ($group) ) {
 			$this->render ( 'no_grp', array () );
 		} elseif (! ($product)) {
+			$model = new UserProductGrade ();
+			$group = UserGroup::model ();
+			$id = ( int ) $req->getParam ( 'id' );
+			if ($id) {
+				$model = UserProductGrade::model ()->findByPk ( $id );
+				if (empty ( $model )) {
+					$this->redirect ( $this->createUrl ( '/UserCenter/main/main', array (
+							'ac' => 'product' 
+					) ) );
+				}
+				if (isset ( $_POST ['UserProductGrade'] )) {
+					$model = $this->_updatePro ();
+				}
+			} else {
+				if (isset ( $_POST ['UserProductGrade'] )) {
+					$model = $this->_addPro ();
+				}
+			}
 			$this->render ( 'no_pro', array (
+					'model' => $model,
 					'groupMember' => $groupMemberModel,
 					'group' => $group 
 			) );
 		} else {
-			
 			$this->render ( 'product', array (
+					'product'=>$product,
 					'model' => $groupMemberModel 
 			) );
 		}
+	}
+	/**
+	 * 更新作品
+	 *
+	 * @return UserProductGrade
+	 */
+	public function _updatePro() {
+		$req = Yii::app ()->request;
+		$id = ( int ) $req->getParam ( 'id' );
+		
+		$model = UserProductGrade::model ()->findByAttributes ( array (
+				'ID' => $id,
+				'uid' => Yii::app ()->user->id 
+		) );
+		
+		if ($model->edit_count >= 3) {
+			$model->addError ( 'edit_count', "不能修改作品超过三次,谢谢!" );
+		}
+		
+		$model = $this->_validateProductModel ( $model );
+		$model->edit_count = ( int ) ($model->edit_count) + 1;
+		if ($model->update ()) {
+			Yii::app ()->user->setFlash ( 'success', "作品修改成功!" );
+			$this->redirect ( $this->createUrl ( '/UserCenter/main/main', array (
+					'ac' => 'product' 
+			) ) );
+		}
+		return $model;
+	}
+	
+	/**
+	 * 添加作品
+	 *
+	 * @return UserProductGrade
+	 */
+	public function _addPro() {
+		$model = new UserProductGrade ();
+		$model = $this->_validateProductModel ( $model );
+		$model->edit_count = 0;
+		if ($model->save ()) {
+			Yii::app ()->user->setFlash ( 'success', "作品新增成功!" );
+			$this->redirect ( $this->createUrl ( '/UserCenter/main/main', array (
+					'ac' => 'product' 
+			) ) );
+		}
+		return $model;
+	}
+	/**
+	 * 保存上传的文件
+	 *
+	 * @param UploadedFile $upload        	
+	 * @return string
+	 */
+	public function _model_file_save(CUploadedFile $upload, $key = 'imgUploadPath') {
+		$ext = $upload->getExtensionName ();
+		$name = md5 ( $upload->getName () . time () );
+		$name = $name . '.' . $ext;
+		$path = Yii::app ()->getParams ();
+		$imgUploadPath = $path->$key;
+		$folder = UploadedFile::getFolder ( $imgUploadPath );
+		// save before action
+		$upload->saveAs ( $folder . '/' . $name );
+		$savePath = (substr ( $folder, strpos ( $folder, '../' ) + 5 )) . '/' . $name;
+		// save before action
+		$upload->saveAs ( $folder . '/' . $name );
+		return $savePath;
+	}
+	
+	/**
+	 *
+	 * @param UserProductGrade $model        	
+	 */
+	public function _validateProductModel($model) {
+		$user = Yii::app ()->user;
+		
+		$groupModel = UserGroup::model ()->findByAttributes ( array (
+				'UID' => $user->id 
+		) );
+		$model->uid = $user->id;
+		$model->attributes = $_POST ['UserProductGrade'];
+		$model->gid = $groupModel->ID;
+		// $model->
+		$model->doc = UploadedFile::getInstance ( $model, 'doc' );
+		$model->img = UploadedFile::getInstance ( $model, 'img' );
+		$model->create_time = date ( 'Y-m-d H:i:s', time () );
+		$model->type = 1;
+		if ($model->validate ()) {
+			// 保存文档文件
+			$model->doc = $this->_model_file_save ( $model->doc, 'attachmentUploadPath' );
+			// 保存图片文件
+			$model->img = $this->_model_file_save ( $model->img );
+		} else {
+			// ar_dump ( $model->errors );
+		}
+		
+		return $model;
 	}
 	/**
 	 * 参赛状态

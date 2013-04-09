@@ -2,7 +2,7 @@
 class User extends ActiveRecord {
 	/**
 	 * The followings are the available columns in table 'tbl_user':
-	 * 
+	 *
 	 * @var integer $id
 	 * @var string $username
 	 * @var string $password
@@ -46,7 +46,7 @@ class User extends ActiveRecord {
 	
 	/**
 	 * Returns the static model of the specified AR class.
-	 * 
+	 *
 	 * @return CActiveRecord the static model class
 	 */
 	public static function model($className = __CLASS__) {
@@ -110,6 +110,11 @@ class User extends ActiveRecord {
 						self::HAS_ONE,
 						'UserProfile',
 						'ID' 
+				),
+				'group' => array (
+						self::BELONGS_TO,
+						'UserGroup',
+						'id' 
 				) 
 		);
 	}
@@ -131,7 +136,7 @@ class User extends ActiveRecord {
 	
 	/**
 	 * Checks if the given password is correct.
-	 * 
+	 *
 	 * @param
 	 *        	string the password to be validated
 	 * @return boolean whether the password is valid
@@ -142,7 +147,7 @@ class User extends ActiveRecord {
 	
 	/**
 	 * 验证md5密码
-	 * 
+	 *
 	 * @param string $password        	
 	 * @return boolean
 	 */
@@ -152,7 +157,7 @@ class User extends ActiveRecord {
 	
 	/**
 	 * Generates the password hash.
-	 * 
+	 *
 	 * @param
 	 *        	string password
 	 * @return string hash
@@ -223,7 +228,7 @@ class User extends ActiveRecord {
 			$criteria->with = array (
 					'userProfile' 
 			);
-			$criteria->compare('userProfile.User_category', $t);
+			$criteria->compare ( 'userProfile.User_category', $t );
 		}
 		
 		return new CActiveDataProvider ( $this, array (
@@ -236,7 +241,7 @@ class User extends ActiveRecord {
 	
 	/**
 	 * 密码验证逻辑
-	 * 
+	 *
 	 * @return boolean
 	 */
 	public function authenticate() {
@@ -247,7 +252,7 @@ class User extends ActiveRecord {
 	
 	/**
 	 * 执行登陆操作
-	 * 
+	 *
 	 * @return boolean
 	 */
 	public function login() {

@@ -53,9 +53,27 @@ class UserProductGrade extends CActiveRecord {
 						'integerOnly' => true 
 				),
 				array (
-						'title, doc, img',
+						'title',
 						'length',
 						'max' => 255 
+				),
+				array (
+						'doc',
+						'file',
+						'types' => array (
+								'doc',
+								'docx' 
+						) 
+				),
+				array (
+						'img',
+						'file',
+						'types' => array (
+								'jpg',
+								'jpeg',
+								'png',
+								'gif' 
+						) 
 				),
 				array (
 						'detail',
@@ -74,7 +92,7 @@ class UserProductGrade extends CActiveRecord {
 				// The following rule is used by search().
 				// Please remove those attributes that should not be searched.
 				array (
-						'ID, uid, title, detail, text, doc, img, os, hard_driver, ep_num, edit_count, type, create_time',
+						'ID, uid, gid, title, detail, text, doc, img, os, hard_driver, ep_num, edit_count, type, create_time',
 						'safe',
 						'on' => 'search' 
 				) 
@@ -106,17 +124,17 @@ class UserProductGrade extends CActiveRecord {
 				'ID' => 'ID',
 				'uid' => 'Uid',
 				'gid' => '用户组 ID',
-				'title' => 'Title',
-				'detail' => 'Detail',
-				'text' => 'Text',
-				'doc' => 'Doc',
-				'img' => 'Img',
-				'os' => 'Os',
-				'hard_driver' => 'Hard Driver',
+				'title' => '作品名称',
+				'detail' => '介绍',
+				'text' => '详情',
+				'doc' => '文档上传',
+				'img' => '作品图片',
+				'os' => '操作系统',
+				'hard_driver' => '硬件',
 				'ep_num' => 'Ep Num',
-				'edit_count' => 'Edit Count',
+				'edit_count' => '修改次数',
 				'type' => 'Type',
-				'create_time' => 'Create Time' 
+				'create_time' => '提交时间' 
 		);
 	}
 	/**
@@ -175,6 +193,7 @@ class UserProductGrade extends CActiveRecord {
 		
 		$criteria->compare ( 'ID', $this->ID );
 		$criteria->compare ( 'uid', $this->uid );
+		$criteria->compare ( 'gid', $this->gid );
 		$criteria->compare ( 'title', $this->title, true );
 		$criteria->compare ( 'detail', $this->detail, true );
 		$criteria->compare ( 'text', $this->text, true );

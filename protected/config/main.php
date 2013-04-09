@@ -40,8 +40,8 @@ $components = require 'components.php';
 // CWebApplication properties can be configured here.
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
-	//'name'=>'Top\'s Vengeance ',
-	'name'=>'2013全国移动互联网创新大赛',
+	'name'=>'Top\'s Vengeance ',
+	//'name'=>'2013全国移动互联网创新大赛',
     'timeZone'=>'Asia/Shanghai', //设置时区为上海
     'language'=>'zh_cn',
 
@@ -81,7 +81,7 @@ return array(
 		'imgAccessPath'=>'/ea/',
 		'imgUploadPath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'../../img/',
 		'attachmentUploadPath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'../../attachment/',
-		
+		'attachmentAccessPath'=>'/V/',
 		'save_site_actions' => true,
 		'multilanguage_support' => false,
 		'collect_routes_from_modules' => true,

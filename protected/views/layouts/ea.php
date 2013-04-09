@@ -10,7 +10,7 @@
     	$cs = Yii::app() -> clientScript;
     	$cs -> registerCoreScript('jquery');
     	
-    	$css = array('css/global.css','css/home.css','css/user.profile.css','css/user.login.css');
+    	$css = array('css/global.css','css/home.css','css/user.profile.css','css/user.login.css','css/widget.btn.css');
     	
     	
     	$this -> widget('widget.ClientScript.autoRegisterFile',array('css'=>$css));
