@@ -276,7 +276,7 @@ class MainController extends Controller {
 			) );
 		}
 		
-		if (! ($group) ) {
+		if (! ($group)) {
 			$this->render ( 'no_grp', array () );
 		} elseif (! ($product)) {
 			$model = new UserProductGrade ();
@@ -304,7 +304,7 @@ class MainController extends Controller {
 			) );
 		} else {
 			$this->render ( 'product', array (
-					'product'=>$product,
+					'product' => $product,
 					'model' => $groupMemberModel 
 			) );
 		}
@@ -409,7 +409,24 @@ class MainController extends Controller {
 	 * 参赛状态
 	 */
 	public function _actionState() {
-		$this->render ( 'state' );
+		$user = Yii::app ()->user;
+		/*
+		 * $groupModel = UserGroup::model ()->findByAttributes ( array ( 'UID'
+		 * => $user->id ) );
+		 */
+		$groupMemberModel = UserGroupMember::model ()->findByAttributes ( array (
+				'UID' => $user->id 
+		) );
+		$booked = UserBooked::model ();
+		
+		$booked = $booked->findByAttributes ( array (
+				'UID' => $user->id 
+		) );
+		
+		$this->render ( 'state', array (
+				'groupMemberModel' => $groupMemberModel,
+				'booked' => $booked 
+		) );
 	}
 	/**
 	 * 我要报名
