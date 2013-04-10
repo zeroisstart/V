@@ -17,18 +17,19 @@ class UserProfile extends CActiveRecord {
 	
 	/**
 	 * 用户的类型
+	 *
 	 * @var array
 	 */
 	public $user_category = array (
-				'1' => '学生',
-				'2' => '评委',
-				'3' => '非学生',
-				'4' => '企业' 
-		);
+			'1' => '学生',
+			'2' => '评委',
+			'3' => '非学生',
+			'4' => '企业' 
+	);
 	
 	/**
 	 * Returns the static model of the specified AR class.
-	 * 
+	 *
 	 * @param string $className
 	 *        	active record class name.
 	 * @return UserProfile the static model class
@@ -64,9 +65,20 @@ class UserProfile extends CActiveRecord {
 						'max' => 255 
 				),
 				array (
+						'Mobile,IDNum',
+						'numerical' 
+				),
+				array (
+						'IDNum',
+						'length',
+						'max' => '18',
+						'min' => '15' 
+				),
+				array (
 						'Mobile',
 						'length',
-						'max' => 12 
+						'min' => 11,
+						'max' => 11 
 				),
 				array (
 						'User_category',
@@ -76,7 +88,7 @@ class UserProfile extends CActiveRecord {
 				// The following rule is used by search().
 				// Please remove those attributes that should not be searched.
 				array (
-						'ID, Nickname, Realname, Company_name, Mobile, Email, City, User_category',
+						'ID, Nickname, Realname, Company_name, Mobile, Email, IDNum,City, User_category',
 						'safe',
 						'on' => 'search' 
 				) 
@@ -100,29 +112,29 @@ class UserProfile extends CActiveRecord {
 	public function attributeLabels() {
 		return array (
 				'ID' => 'ID',
-				'Nickname' => 'Nickname',
-				'Realname' => 'Realname',
-				'IDNum'=>'身份证号',
-				'Company_name' => 'Company Name',
-				'Mobile' => 'Mobile',
-				'Email' => 'Email',
-				'City' => 'City',
+				'Nickname' => '昵称',
+				'Realname' => '真实姓名',
+				'IDNum' => '身份证号',
+				'Company_name' => '机构名称',
+				'Mobile' => '手机号码',
+				'Email' => '邮箱',
+				'City' => '所在地址',
 				'User_category' => 'User Category' 
 		);
 	}
 	
 	/**
 	 * 获取用户的类型
-	 * 
+	 *
 	 * @return Ambigous <string>
 	 */
 	public function getUserCategory() {
-		return $this -> user_category [$this->User_category];
+		return $this->user_category [$this->User_category];
 	}
 	
 	/**
 	 * Retrieves a list of models based on the current search/filter conditions.
-	 * 
+	 *
 	 * @return CActiveDataProvider the data provider that can return the models
 	 *         based on the search/filter conditions.
 	 */
@@ -138,6 +150,7 @@ class UserProfile extends CActiveRecord {
 		$criteria->compare ( 'Mobile', $this->Mobile, true );
 		$criteria->compare ( 'Email', $this->Email, true );
 		$criteria->compare ( 'City', $this->City, true );
+		$criteria->compare ( 'IDNum', $this->IDNum, true );
 		$criteria->compare ( 'User_category', $this->User_category, true );
 		
 		return new CActiveDataProvider ( $this, array (

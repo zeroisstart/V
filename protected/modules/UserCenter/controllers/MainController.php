@@ -53,6 +53,9 @@ class MainController extends Controller {
 			case 'join' :
 				$this->_actionJoin ();
 				break;
+			case 'info' :
+				$this->_actionInfo ();
+				break;
 			case 'book' :
 				$this->_actionBook ();
 				break;
@@ -432,7 +435,11 @@ class MainController extends Controller {
 	 * 我要报名
 	 */
 	public function _actionBook() {
-		$this->render ( 'book' );
+		$this->layout = 'test';
+		$bookModel = UserBooked::model ();
+		$this->render ( 'book', array (
+				'model' => $bookModel 
+		) );
 	}
 	
 	/**
@@ -511,6 +518,24 @@ class MainController extends Controller {
 		$this->render ( 'assessmented', array (
 				'model' => $productGrade,
 				'dataProvider' => $dataProvider 
+		) );
+	}
+	/**
+	 * 个人用户信息
+	 */
+	public function _actionInfo() {
+		$this->layout = 'test';
+		$user = Yii::app ()->user;
+		$userInfo = UserProfile::model ()->findByPk ( $user->id );
+		
+		$req = Yii::app ()->request;
+		$edit = false;
+		if ($req->getParam ( 'edit' )) {
+			$edit = true;
+		}
+		$this->render ( 'info', array (
+				'model' => $userInfo,
+				'edit' => $edit 
 		) );
 	}
 }

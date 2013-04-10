@@ -110,7 +110,7 @@
         		</ul>
         	</div>
         	<div class="copy-right">
-        	Copyright © 2013 zeroisstart. All Rights Reserved.
+        	Copyright © 2013 miic.qceit.org.cn. All Rights Reserved.  京ICP备12041980号-3
         	</div>
         </div>
     </div>

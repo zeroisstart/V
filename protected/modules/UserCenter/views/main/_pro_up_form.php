@@ -19,7 +19,6 @@ if ($model->isNewRecord) {
 	$_form ['title'] = '编辑';
 	$_form ['submit'] = '编辑';
 }
-$_form ['content'] = $model -> text;
 $_form ['uploadUrl'] = $this->createUrl ( '/Admin/Content/upload' );
  
 $_form ['fileUpload'] = $this->createUrl ( '/Admin/Content/fileUpload' );
@@ -27,7 +26,6 @@ $_form ['accessPath'] = Yii::app ()->params ['imgAccessPath'];
 $_form ['fileAccessUrl'] = Yii::app ()->params ['fileAccessPath'];
 
 ?>
-
 
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'pro_form',
