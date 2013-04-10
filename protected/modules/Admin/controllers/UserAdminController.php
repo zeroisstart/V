@@ -3,7 +3,35 @@ class UserAdminController extends Controller {
 	public $layout = 'admin';
 	public $title = '用户信息管理';
 	public function actionCreate() {
-		$this->render ( 'create' );
+		$model = new RegisterForm ();
+		
+		$profileModel = new UserProfile ();
+		// $profileModel = new
+		// if it is ajax validation request
+		if (isset ( $_POST ['ajax'] ) && $_POST ['ajax'] === 'register-form') {
+			echo CActiveForm::validate ( $model );
+			Yii::app ()->end ();
+		}
+		
+		// collect user input data
+		if (isset ( $_POST ['RegisterForm'] )) {
+			$model->setAttributes ( $_POST ['RegisterForm'], false );
+			$model->allowRegister = true;
+			// validate user input and redirect to the previous page if valid
+			if ($model->validate () && $model->register ()) {
+				// ii::app ()->user->setFlash ( 'success', '注册成功!' );
+				$this->redirect ( $this->createUrl ( '/Admin/UserAdmin/list', array (
+						't' => 2 
+				) ) );
+			} else {
+				var_dump ( $model->errors );
+			}
+			// $this->redirect ( Yii::app ()->user->returnUrl );
+		}
+		
+		$this->render ( 'create', array (
+				'model' => $model 
+		) );
 	}
 	public function actionList() {
 		$model = User::model ();

@@ -138,6 +138,9 @@ class UserGroupGrade extends CActiveRecord {
 		$criteria->compare ( 'technology', $this->technology );
 		$criteria->compare ( 'interface', $this->interface );
 		$criteria->compare ( 'operators', $this->operators );
+		if(!$this -> judges){
+			$criteria -> compare(judges, '','<>');
+		}
 		$criteria->compare ( 'integrity', $this->integrity );
 		$criteria->compare ( 'creative', $this->creative );
 		$criteria->compare ( 'is_checked', $this->is_checked );

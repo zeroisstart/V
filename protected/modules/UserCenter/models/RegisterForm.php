@@ -10,7 +10,6 @@ class RegisterForm extends CFormModel {
 	public $password;
 	public $password_confirm;
 	public $email;
-	
 	public $company_name;
 	public $contact;
 	public $mobile;
@@ -34,13 +33,23 @@ class RegisterForm extends CFormModel {
 				array (
 						'username',
 						'length',
-						'min'=>6,
-						'max' => 14
+						'min' => 6,
+						'max' => 14 
+				),
+				array (
+						'mobile',
+						'numerical' 
+				),
+				array (
+						'mobile',
+						'length',
+						'max' => '11',
+						'min' => '11' 
 				),
 				array (
 						'password',
 						'length',
-						'min'=>6,
+						'min' => 6,
 						'max' => 16 
 				),
 				array (
@@ -79,13 +88,13 @@ class RegisterForm extends CFormModel {
 				'password' => '密码',
 				'userType' => '用户类型',
 				'password_confirm' => '确认密码',
-				'company_name'=>'机构名称',
-				'contact'=>'联系人姓名',
-				'mobile'=>'手机',
-				'city'=>'所在城市',
-				'allowRegister'=>'同意大赛注册协议',
+				'company_name' => '机构名称',
+				'contact' => '联系人姓名',
+				'mobile' => '手机',
+				'city' => '所在城市',
+				'allowRegister' => '同意大赛注册协议',
 				'email' => '邮箱',
-				'allowRegister'=>'同意大赛注册协议',
+				'allowRegister' => '同意大赛注册协议',
 				'userType' 
 		);
 	}
@@ -154,10 +163,16 @@ class RegisterForm extends CFormModel {
 			
 			$user->save ();
 			$userProfile = new UserProfile ();
+			$userProfile->Company_name = $this->company_name;
+			$userProfile->Realname = $this->contact;
+			$userProfile->Mobile = $this->mobile;
+			$userProfile->Email = $this->email;
 			$userProfile->ID = $user->id;
 			$userProfile->User_category = $this->userType;
+			$userProfile->City = $this->city;
 			$userProfile->save ();
 			return true;
+			
 		} else {
 			YII_DEBUG && var_dump ( $user->errors );
 		}

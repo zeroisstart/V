@@ -6,7 +6,6 @@
 
 		<div class="user_data_info">
 						
-			
 		</div>
 		
 	</div>

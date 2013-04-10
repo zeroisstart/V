@@ -104,11 +104,8 @@ $form = $this->beginWidget ( 'CActiveForm', array (
 
 <script>
 $(document).ready(function(){
-
 	_form_reset= function(){
-		
 	}
-	
 	$(".reg_input").change(function(){
 		switch($(this).val()){
 			case '3':

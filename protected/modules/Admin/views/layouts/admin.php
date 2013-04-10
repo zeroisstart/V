@@ -49,7 +49,6 @@ Default colour scheme is blue. Uncomment prefered stylesheet to use it.
 <link rel="stylesheet" href="css/red.css" type="text/css" media="screen" />
 -->
 
-
 <!-- jQuery graph plugins -->
 <!--[if IE]><script type="text/javascript" src="js/flot/excanvas.min.js"></script><![endif]-->
 <!-- Internet Explorer Fixes --> 
@@ -61,32 +60,6 @@ Default colour scheme is blue. Uncomment prefered stylesheet to use it.
 <!--[if lt IE 8]>
 <script src="js/IE8.js"></script>
 <![endif]-->
-<script type="text/javascript">
-$(document).ready(function(){
-
-	/* flot graphs */
-	var sales = [{
-		label: 'Total Paid',
-		data: [[1, 0],[2,0],[3,0],[4,0],[5,0],[6,0],[7,900],[8,0],[9,0],[10,0],[11,0],[12,0]]
-	},{
-		label: 'Total Due',
-		data: [[1, 0],[2,0],[3,0],[4,0],[5,0],[6,422.10],[7,0],[8,0],[9,0],[10,0],[11,0],[12,0]]
-	}
-	];
-	/*
-	var plot = $.plot($("#placeholder"), sales, {
-		bars: { show: true, lineWidth: 1 },
-		legend: { position: "nw" },
-		xaxis: { ticks: [[1, "Jan"], [2, "Feb"], [3, "Mar"], [4, "Apr"], [5, "May"], [6, "Jun"], [7, "Jul"], [8, "Aug"], [9, "Sep"], [10, "Oct"], [11, "Nov"], [12, "Dec"]] },
-		yaxis: { min: 0, max: 1000 },
-		grid: { color: "#666" },
-		colors: ["#0a0", "#f00"]			
-    });*/
-
-
-});
-</script>
-<script type="text/javascript" src="<?php echo $baseUrl;?>/js/flot/jquery.flot.min.js"></script>
 </head>
 <body>
 	<!-- Header -->

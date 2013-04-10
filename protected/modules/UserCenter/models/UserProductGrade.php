@@ -19,6 +19,15 @@
  * @property string $create_time
  */
 class UserProductGrade extends CActiveRecord {
+	/**
+	 * 作品类型
+	 * 
+	 * @var array
+	 */
+	public $_type = array (
+			'1' => '初赛作品',
+			'2' => '决赛作品' 
+	);
 	
 	/**
 	 * Returns the static model of the specified AR class.
@@ -111,6 +120,11 @@ class UserProductGrade extends CActiveRecord {
 						self::HAS_ONE,
 						'UserGroup',
 						'gid' 
+				),
+				'groupName' => array (
+						self::BELONGS_TO,
+						'UserGroup',
+						'gid' 
 				) 
 		);
 	}
@@ -123,7 +137,7 @@ class UserProductGrade extends CActiveRecord {
 		return array (
 				'ID' => 'ID',
 				'uid' => 'Uid',
-				'gid' => '用户组 ID',
+				'gid' => '团队 ID',
 				'title' => '作品名称',
 				'detail' => '介绍',
 				'text' => '详情',
@@ -133,10 +147,14 @@ class UserProductGrade extends CActiveRecord {
 				'hard_driver' => '硬件',
 				'ep_num' => 'Ep Num',
 				'edit_count' => '修改次数',
-				'type' => 'Type',
+				'type' => '作品类型',
 				'create_time' => '提交时间' 
 		);
 	}
+	public function getTypeOfPro() {
+		return $this->_type [$this->type];
+	}
+	
 	/**
 	 *
 	 * @return NULL
@@ -178,6 +196,15 @@ class UserProductGrade extends CActiveRecord {
 			return null;
 		else
 			return $members;
+	}
+	
+	/**
+	 * 返回作品所属组的名称
+	 *
+	 * @return string
+	 */
+	public function getGroupName() {
+		return $this->groupName->name;
 	}
 	
 	/**

@@ -8,7 +8,19 @@ $this->breadcrumbs = array (
 		'List' 
 );
 ?>
-<h1>用户管理面板</h1>
+<?php 
+$req = Yii::app() -> request;
+if($req -> getParam('t') ==2){
+?>
+<h1>评委管理面板</h1>
+<?php 	
+}else{
+?>
+<h1>用户管理面板</h1>	
+<?php 
+
+}?>
+
 
 <?php
 $this->widget ( 'widget.Helper.SecNav', array (
@@ -16,13 +28,13 @@ $this->widget ( 'widget.Helper.SecNav', array (
 				'评委管理' => $this->createUrl ( '/Admin/UserAdmin/list', array (
 						't' => 2 
 				) ),
-				'新增评委' => $this->createUrl ( '/Admin/UserAdmin/list', array (
-						'ac'=>'create',
+				'新增评委' => $this->createUrl ( '/Admin/UserAdmin/create', array (
+						'ac' => 'create',
 						't' => 2 
 				) ) 
 		) 
 ) )?>
-		
+
 
 <div class="grid_form">
 <?php

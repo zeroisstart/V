@@ -435,7 +435,6 @@ class MainController extends Controller {
 	 * 我要报名
 	 */
 	public function _actionBook() {
-		$this->layout = 'test';
 		$bookModel = UserBooked::model ();
 		$this->render ( 'book', array (
 				'model' => $bookModel 

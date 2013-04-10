@@ -1,30 +1,30 @@
-<?php 
+<?php
 $this->widget ( 'ext.popup.popup' );
 ?>
 <div id="contextAdorn"></div>
 <div id="contextBox">
 	<div id="rightContent" class="user_profile_info">
 		<p class="user_notice">您好 <?php echo Yii::app() -> user->username;?></p>
-		
+
 		<div class="user_data_info">
-			
-				<div class="grid_form">
+
+			<div class="grid_form">
 				<?php
 				/* @var $this AdminController */
-				$access_path = Yii::app() -> params-> imgAccessPath;
+				$access_path = Yii::app ()->params->imgAccessPath;
 				$this->widget ( 'widget.helper.GridView', array (
 						'dataProvider' => $dataProvider,
 						'columns' => array (
 								'UID',
 								'username',
 								array (
-										'header'=>'操作',
-										'template'=>'{yes} {no}',
+										'header' => '操作',
+										'template' => '{yes} {no}',
 										'buttons' => array (
 												'yes' => array (
 														'label' => '申请加入',
 														'url' => 'Yii::app() -> createUrl("/UserCenter/main/main",array("ac"=>"acceptTeam","id"=>$data->ID))',
-														'imageUrl' => $access_path.'/images/yes.png',
+														'imageUrl' => $access_path . '/images/yes.png',
 														'click' => 'js:function(){
 																if(!confirm("确定加入?")) return false;
 																var _url = $(this).attr("href");
@@ -67,11 +67,12 @@ $this->widget ( 'ext.popup.popup' );
 																}
 																$.ajax(_opt);
 																return false;
-														}',
-												),'no' => array (
+														}' 
+												),
+												'no' => array (
 														'label' => '忽略',
 														'url' => 'Yii::app() -> createUrl("/UserCenter/main/main",array("ac"=>"acceptTeam","id"=>$data->ID))',
-														'imageUrl' => $access_path.'/images/no.png',
+														'imageUrl' => $access_path . '/images/no.png',
 														'click' => 'js:function(){
 																if(!confirm("确定忽略?")) return false;
 																var _url = $(this).attr("href");
@@ -114,8 +115,8 @@ $this->widget ( 'ext.popup.popup' );
 																}
 																$.ajax(_opt);
 																return false;
-														}',
-												)
+														}' 
+												) 
 										),
 										'class' => 'widget.helper.ButtonColumn',
 										'viewButtonUrl' => 'Yii::app()->controller->createUrl("/feeds/".$data->primaryKey)' 
@@ -123,7 +124,7 @@ $this->widget ( 'ext.popup.popup' );
 						) 
 				) )?>
 				</div>
-		
+
 		</div>
 	</div>
 	<div id="leftColumns">

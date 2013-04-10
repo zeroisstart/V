@@ -193,3 +193,8 @@ a:hover {COLOR: #000;}
 
 #popWin .layClose{height:17px;width:17px;background:#555;border-radius:10px;cursor: pointer;position:absolute;right:5px;top:5px;color:#ccc;text-align:center;line-height:17px;font-size:14px;}
 #popWin .layClose:hover{color:#c00;}
+
+
+.grid_form{
+	width:960px;
+}
