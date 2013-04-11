@@ -60,7 +60,7 @@ $this->widget ( 'widget.helper.GridView', array (
 				'UID' => array (
 						'name' => 'UID',
 						'type' => 'text',
-						'value' => '$data->username' 
+						'value' => '$data->getUserName()' 
 				),
 				'category' => array (
 						'name' => 'category',

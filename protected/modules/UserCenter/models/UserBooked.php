@@ -83,10 +83,25 @@ class UserBooked extends CActiveRecord {
 		);
 	}
 	/**
+	 */
+	public function getUserName() {
+		$uid = $this->UID;
+		$model = User::model ()->findByPk ( $uid );
+		return $model->username;
+	}
+	
+	/**
 	 *
 	 * @param int $uid        	
 	 */
 	public function isBooked() {
+	}
+	/**
+	 *
+	 * @return string
+	 */
+	public function getImageUrl() {
+		return '<img alt="" src="' . Yii::app ()->params->imgAccessPath . $this->img . '">';
 	}
 	
 	/**
