@@ -44,25 +44,43 @@ class leftLogin extends CWidget {
 		$assessmented = Yii::app ()->createUrl ( '/UserCenter/main/main', array (
 				'ac' => 'assessmented' 
 		) );
+		$admin = Yii::app ()->createUrl ( '/Admin/main/main' );
 		
 		$name = ($user->name);
 		$id = ($user->id);
-		if ($user->userProfile-> User_category == 2) {
+		if ($user->userProfile->User_category == 2) {
 			$tpl = '<div id="userLogin">
 					<div id="userLoginTitle">用户登陆信息</div>
 					<div id="userLoginBox">
 						<div class="user_info ">
-							<span><a href="profileUrl">$name</a> | <a href="logout">退出</a> </span>
-							<span><a href="assessment">待评定的作品</a> | <a href="assesmented">评过的作品</a></span>
+							<span><a href="profileUrl">name</a> | <a href="logout">退出</a> </span>
+							<span><a href="assessment">待评作品</a> | <a href="assesmented">评过的作品</a></span>
 						</div>
 					</div>
 				</div>';
 			$tpl = str_replace ( 'profileUrl', $profileUrl, $tpl );
 			$tpl = str_replace ( 'logout', $logout, $tpl );
-			$tpl = str_replace ( 'assessment', $logout, $tpl );
-			$tpl = str_replace ( 'assesmented', $logout, $tpl );
+			$tpl = str_replace ( 'assessment', $assessment, $tpl );
+			$tpl = str_replace ( 'assesmented', $assessmented, $tpl );
+			$tpl = str_replace ( 'name', $name, $tpl );
 			echo $tpl;
-		} else
+		} elseif ($user->userProfile->User_category == 5) {
+			$tpl = '<div id="userLogin">
+					<div id="userLoginTitle">用户登陆信息</div>
+					<div id="userLoginBox">
+						<div class="user_info ">
+							<span><a href="profileUrl">name</a> | <a href="logout">退出</a> </span>
+							<span><a href="admin">后台</a> 
+						</div>
+					</div>
+				</div>';
+			$tpl = str_replace ( 'profileUrl', $profileUrl, $tpl );
+			$tpl = str_replace ( 'logout', $logout, $tpl );
+			$tpl = str_replace ( 'assessment', $assessment, $tpl );
+			$tpl = str_replace ( 'admin', $admin, $tpl );
+			$tpl = str_replace ( 'name', $name, $tpl );
+			echo $tpl;
+		} else {
 			echo <<<EOT
 		<div id="userLogin">
 			<div id="userLoginTitle">用户登陆信息</div>
@@ -75,6 +93,7 @@ class leftLogin extends CWidget {
 			</div>
 		</div>		
 EOT;
+		}
 	}
 	private function _notLogin() {
 		$login = Yii::app ()->createUrl ( '/login' );
@@ -99,7 +118,7 @@ EOT;
 
 <?php
 		
-$form = $this->beginWidget ( 'CActiveForm', array (
+		$form = $this->beginWidget ( 'CActiveForm', array (
 				'action' => Yii::app ()->createUrl ( '/UserCenter/login/login' ),
 				'id' => 'login-form',
 				'enableClientValidation' => true,
