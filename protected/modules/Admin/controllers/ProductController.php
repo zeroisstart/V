@@ -53,4 +53,46 @@ class ProductController extends Controller {
 	public function actionView() {
 		$this->render ( 'view' );
 	}
+	/**
+	 */
+	public function actionSelectJudges() {
+		$req = Yii::app ()->request;
+		$user = Yii::app ()->user;
+		if ($user->UserProfile->userProfile->User_category == 2) {
+			$id = $req->getParam ( 'id' );
+			$pid = $req->getParam ( 'pid' );
+			if ($pid && $id) {
+				$product = UserProductGrade::model ()->findByPk ( $pid );
+				
+				$UserGroupGrade = UserGroupGrade::model ()->findByAttributes ( array (
+						'pid' => $pid 
+				) );
+				
+				if (empty ( $UserGroupGrade )) {
+					$UserGroupGrade = new UserGroupGrade ();
+					$UserGroupGrade->ID = NULL;
+					$UserGroupGrade->pid = $pid;
+					$UserGroupGrade->title = $product->title;
+					$UserGroupGrade->judges = $id;
+					$UserGroupGrade->is_checked = 0;
+					$UserGroupGrade->create_time = date ( 'Y-m-d H:i:s', time () );
+					$UserGroupGrade->save ();
+				} else {
+					$UserGroupGrade->judges = $id;
+					$UserGroupGrade->is_checked = 0;
+					$UserGroupGrade->create_time = date ( 'Y-m-d H:i:s', time () );
+					$UserGroupGrade->update ();
+				}
+				echo CJavaScript::jsonEncode ( array (
+						'status' => 0,
+						'msg' => '分配成功!' 
+				) );
+				die ();
+			} else {
+				die ( '缺少 作品ID 或者评委ID' );
+			}
+		} else {
+			die ( 'access Daned' );
+		}
+	}
 }

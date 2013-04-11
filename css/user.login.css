@@ -29,7 +29,7 @@
     margin-right: 10px;
 }
 
-.login_form .login_input, .login_form .reg_input {
+.login_form .login_input, .login_form .reg_input ,.ipt{
     display: inline-block;
     background-color: white;
     font-size: 14px;

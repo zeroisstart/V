@@ -90,7 +90,7 @@ $form = $this->beginWidget ( 'CActiveForm', array (
 		<?php echo $form->error($model,'allowRegister'); ?>
 	</div>
 
-			<div class="registerBtn">
+	<div class="registerBtn">
 				<a href="javascript:void();" class="submit_btn">注册</a>
 		<?php // echo CHtml::submitButton('注册'); ?>
 	</div>

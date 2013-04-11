@@ -435,7 +435,33 @@ class MainController extends Controller {
 	 * 我要报名
 	 */
 	public function _actionBook() {
-		$bookModel = UserBooked::model ();
+		$bookModel = new UserBooked ();
+		$user = Yii::app ()->user;
+		$bookModel_already = $bookModel->findByAttributes ( array (
+				'UID' => $user->id 
+		) );
+		if (empty ( $bookModel_already )) {
+			if (isset ( $_POST ['UserBooked'] )) {
+				$bookModel->attributes = $_POST ['UserBooked'];
+				$bookModel->UID = $user->id;
+				$bookModel->state = 0;
+				$bookModel->img = UploadedFile::getInstance ( $bookModel, 'img' );
+				if ($bookModel->validate ()) {
+					$path = $this->_model_file_save ( $bookModel->img );
+					$bookModel->img = $path;
+					if ($bookModel->save ()) {
+						$user->setFlash ( 'success', '报名申请提交成功，请耐心等待验证哦!' );
+						$this->redirect ( $this->createUrl ( '/UserCenter/main/main', array (
+								'ac' => 'book' 
+						) ) );
+					}
+				} else {
+					YII_DEBUG && var_dump ( $bookModel->errors );
+				}
+			}
+		} else {
+			$bookModel = $bookModel_already;
+		}
 		$this->render ( 'book', array (
 				'model' => $bookModel 
 		) );

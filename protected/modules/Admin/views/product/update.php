@@ -9,6 +9,10 @@ $this->breadcrumbs = array (
 );
 ?>
 
+<?php 
+	$this -> widget('ext.popup.popup');
+?>
+
 <div class="grid_mini_form">
 <?php
 /* @var $this AdminController */
@@ -37,7 +41,16 @@ $this->widget ( 'widget.helper.GridView', array (
 														_opt.async=false;
 														_opt.success=function(res){
 															res = eval("("+res+")");
-															console.log(res);
+															if(res.status==0){
+																hm.alert({
+																	noTitle : true,
+																	text : res.msg, 
+																	height : "auto", 
+																	width : 220,
+																	confirm:"确定"
+																});
+																window.location.reload();
+															}
 														}
 														$.ajax(_opt);
 														return false;

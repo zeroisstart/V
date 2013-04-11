@@ -36,11 +36,7 @@ class UserBooked extends CActiveRecord {
 		// will receive user inputs.
 		return array (
 				array (
-						'ID',
-						'required' 
-				),
-				array (
-						'ID, UID',
+						'UID',
 						'numerical',
 						'integerOnly' => true 
 				),

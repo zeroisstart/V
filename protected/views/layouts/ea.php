@@ -65,7 +65,7 @@
 				noTitle : true, // 是否显示标题
 				text : "'.Yii::app()->user->getFlash('success').'", // 内容文
 				height : "auto", // 高度字
-				width : 220,// 宽度
+				width : 320,// 宽度
 				confirm : "确定"
 				})',
 		CClientScript::POS_READY

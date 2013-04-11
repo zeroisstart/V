@@ -1,4 +1,4 @@
-<?php
+ <?php
 /* @var $this NewsController */
 /* @var $model News */
 /* @var $form CActiveForm */

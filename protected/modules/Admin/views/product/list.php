@@ -20,7 +20,6 @@ $cs->registerScriptFile($baseUrl.'/js/jquery.tooltip-1.2.6.min.js');
 $cs->registerScriptFile($baseUrl.'/js/fancybox/jquery.fancybox-1.3.1.pack.js');
 $cs->registerCssFile($baseUrl.'/js/fancybox/jquery.fancybox-1.3.1.css');
 $cs-> registerScriptFile(Yii::app() -> baseUrl.'/js/gearman.js',CClientScript::POS_END);
-
 ?>
 
 <h1><?php echo $this->id . '/' . $this->action->id; ?></h1>
