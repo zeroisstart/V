@@ -44,6 +44,11 @@ class leftLogin extends CWidget {
 		$assessmented = Yii::app ()->createUrl ( '/UserCenter/main/main', array (
 				'ac' => 'assessmented' 
 		) );
+		
+		$info = Yii::app ()->createUrl ( '/UserCenter/main/main', array (
+				'ac' => 'info' 
+		) );
+		
 		$admin = Yii::app ()->createUrl ( '/Admin/main/main' );
 		
 		$name = ($user->name);
@@ -87,7 +92,7 @@ class leftLogin extends CWidget {
 			<div id="userLoginBox">
 				<div class="user_info ">
 					<span><a href="$profileUrl">$name</a> | <a href="$logout">退出</a> </span>
-					<span><a href="$team">我的队伍</a> | <a href="$profileUrl">完善资料</a></span>
+					<span><a href="$team">我的队伍</a> | <a href="$info">完善资料</a></span>
 					<span><a href="$mineProduct">我的作品</a> | <a href="$members">报名</a></span>
 				</div>
 			</div>

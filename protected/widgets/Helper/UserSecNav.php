@@ -4,6 +4,7 @@ class UserSecNav extends CWidget {
 			'main' => '我的首页',
 			'team' => '我的团队',
 			'product' => '我的作品',
+			'info' => '我的资料',
 			'state' => '参赛状态' 
 	);
 	public $current = 'main';
@@ -18,6 +19,10 @@ class UserSecNav extends CWidget {
 		$userGroup = UserGroup::model ();
 		if ($userGroup->isLeader ( $uid )) {
 			$this->ary_nav ['accept'] = '队员申请';
+		}
+		
+		if (! $user->isBooked ()) {
+			$this->ary_nav ['book'] = '报名';
 		}
 		$userModel = $user->getModel ();
 		$profile = ($user->getModel ()->userProfile);
@@ -48,14 +53,10 @@ class UserSecNav extends CWidget {
 			<?php foreach($this -> ary_nav as $key => $val):?>
 				<?php if($this -> current == $key):?>
 					<li class="active_nav"><a
-			href="<?php echo Yii::app() -> createUrl('/UserCenter/main/main',array('ac'=>$key))?>">
-							<?php echo $val?>
-						</a></li>
+			href="<?php echo Yii::app() -> createUrl('/UserCenter/main/main',array('ac'=>$key))?>"><?php echo $val?></a></li>
 				<?php else:?>
 					<li><a
-			href="<?php echo Yii::app() -> createUrl('/UserCenter/main/main',array('ac'=>$key))?>">
-							<?php echo $val?>
-						</a></li>
+			href="<?php echo Yii::app() -> createUrl('/UserCenter/main/main',array('ac'=>$key))?>"><?php echo $val?></a></li>
 				<?php endif;?>
 			<?php endforeach;?>
 			</ul>

@@ -129,6 +129,8 @@ class UserProfile extends CActiveRecord {
 	 * @return Ambigous <string>
 	 */
 	public function getUserCategory() {
+		if($this -> User_category == 5)
+			return "管理员";
 		return $this->user_category [$this->User_category];
 	}
 	

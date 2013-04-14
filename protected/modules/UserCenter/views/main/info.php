@@ -2,6 +2,8 @@
 <div id="contextBox">
 	<div id="rightContent" class="user_profile_info">
 		<p class="user_notice">您好 <?php echo Yii::app() -> user->username;?></p>
+		
+	
 
 		<div class="user_data_info">
 			<?php if($edit):?>
@@ -14,6 +16,7 @@
 						'IDNum',
 						'Company_name',
 						'Mobile',
+						'IDNum',
 						'Email',
 						'City' 
 				);
@@ -21,8 +24,13 @@
 				?>				
 				<p><span><?php echo $model ->getAttributeLabel($key);?></span> ：<?php echo $model -> $key?></p>
 				<?php endforeach;?>
+				<div class="div_btn">
+					<a href="<?php echo $this -> createUrl('/UserCenter/main/main',array('ac'=>'info','edit'=>true))?>" class="green_btn">编辑</a>
+				</div>
 			<?php endif;?>				
 		</div>
+		
+		
 
 	</div>
 	<div id="leftColumns">

@@ -9,10 +9,25 @@ $this->breadcrumbs = array (
 );
 ?>
 
+<?php
+$this->widget ( 'widget.Helper.SecNav', array (
+		'tabs' => array (
+				'已审核用户' => $this->createUrl ( '/Admin/book/list', array (
+						'state' => 1 
+				) ),
+				'未审核用户' => $this->createUrl ( '/Admin/book/list', array (
+						'state' => 0 
+				) ) 
+		) 
+) );
+?>
 
 <div class="grid_form">
 
+
+
 <?php
+
 $access_path = Yii::app ()->params->imgAccessPath;
 $this->widget ( 'widget.helper.GridView', array (
 		'dataProvider' => $dataProvider,
@@ -36,14 +51,16 @@ $this->widget ( 'widget.helper.GridView', array (
 				),*/
 				array (
 						'header' => '操作',
+						'visible' => $state == 1 ? false : true,
 						'template' => '{yes} {no}',
 						'buttons' => array (
 								'yes' => array (
 										'label' => '申请加入',
-										'url' => 'Yii::app() -> createUrl("/UserCenter/main/main",array("ac"=>"acceptTeam","id"=>$data->ID))',
+										'url' => 'Yii::app() -> createUrl("/Admin/book/Accept",array("id"=>$data->UID))',
 										'imageUrl' => $access_path . '/images/yes.png',
 										'click' => 'js:function(){
-												if(!confirm("确定加入?")) return false;
+												if(!confirm("确定同意?")) return false;else 
+										return true;
 												var _url = $(this).attr("href");
 												var _opt = {};
 												_opt.url=_url;
@@ -51,36 +68,6 @@ $this->widget ( 'widget.helper.GridView', array (
 												_opt.async=false;
 												_opt.success=function(res){
 													res = eval("("+res+")");
-													console.log(res);
-													if(res.status){
-															hm.alert({
-															noTitle : true,
-															text : "请耐心等待!",
-															height : "auto",
-															width : 210,
-														})
-													}else{
-														switch(res.code){
-															case "2":
-															hm.alert({
-																noTitle : true,
-																text : "小队不存在!",
-																height : "auto",
-																width : 210,
-															})
-																break;
-															case "3":
-															hm.alert({
-																noTitle : true,
-																text : "您有在申请哦!",
-																height : "auto",
-																width : 210,
-															})
-																break;
-															default:
-																break;
-														}
-													}
 												}
 												$.ajax(_opt);
 												return false;
@@ -88,7 +75,7 @@ $this->widget ( 'widget.helper.GridView', array (
 								),
 								'no' => array (
 										'label' => '忽略',
-										'url' => 'Yii::app() -> createUrl("/UserCenter/main/main",array("ac"=>"acceptTeam","id"=>$data->ID))',
+										'url' => 'Yii::app() -> createUrl("/Admin/book/Refused",array("id"=>$data->ID))',
 										'imageUrl' => $access_path . '/images/no.png',
 										'click' => 'js:function(){
 													if(!confirm("确定忽略?")) return false;
@@ -100,42 +87,13 @@ $this->widget ( 'widget.helper.GridView', array (
 													_opt.success=function(res){
 														res = eval("("+res+")");
 														console.log(res);
-														if(res.status){
-																hm.alert({
-																noTitle : true, 
-																text : "请耐心等待!", 
-																height : "auto",
-																width : 210,
-															})
-														}else{
-															switch(res.code){
-																case "2":
-																hm.alert({
-																	noTitle : true, 
-																	text : "小队不存在!", 
-																	height : "auto",
-																	width : 210,
-																})
-																	break;
-																case "3":
-																hm.alert({
-																	noTitle : true, 
-																	text : "您有在申请哦!", 
-																	height : "auto",
-																	width : 210,
-																})
-																	break;
-																default:
-																	break;
-															}
-														}
 													}
 													$.ajax(_opt);
 													return false;
 											}' 
 								) 
 						),
-						'class' => 'widget.helper.ButtonColumn',
+						'class' => 'widget.helper.ButtonColumn' 
 				) 
 		) 
 ) )?>
