@@ -1,7 +1,7 @@
 <?php
 
 if (substr ( $_SERVER ['DOCUMENT_ROOT'], - 1 ) != '/') {
-	$_SERVER ['DOCUMENT_ROOT'] = $_SERVER ['DOCUMENT_ROOT'] . '/ea/';
+	$_SERVER ['DOCUMENT_ROOT'] = $_SERVER ['DOCUMENT_ROOT'] . '/';
 }
 
 require_once $_SERVER ['DOCUMENT_ROOT'] . 'protected/config/constants.php';
@@ -11,7 +11,7 @@ $yii = LIBRARY_PATH . 'yii/yii.php';
 ini_set ( "display_errors", 1 );
 error_reporting ( E_ALL );
 
-defined ( 'YII_DEBUG' ) or define ( 'YII_DEBUG', true );
+defined ( 'YII_DEBUG' ) or define ( 'YII_DEBUG', false );
 
 defined ( 'YII_TRACE_LEVEL' ) or define ( 'YII_TRACE_LEVEL', 3 );
 
