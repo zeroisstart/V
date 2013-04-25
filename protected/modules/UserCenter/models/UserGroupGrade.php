@@ -24,6 +24,10 @@ class UserGroupGrade extends CActiveRecord {
 			'integrity',
 			'creative' 
 	);
+	public $ary_type = array (
+			1 => '初赛',
+			2 => '决赛' 
+	);
 	/**
 	 * Returns the static model of the specified AR class.
 	 *
@@ -81,8 +85,14 @@ class UserGroupGrade extends CActiveRecord {
 				'product' => array (
 						self::HAS_ONE,
 						'UserProductGrade',
-						false,'on'=>"t.pid=product.ID" 
-				)
+						false,
+						'on' => "t.pid=product.ID" 
+				),
+				'pro' => array (
+						self::BELONGS_TO,
+						'UserProductGrade',
+						'pid' 
+				) 
 		);
 	}
 	
@@ -93,7 +103,7 @@ class UserGroupGrade extends CActiveRecord {
 	public function attributeLabels() {
 		return array (
 				'ID' => 'ID',
-				'pid' => 'Pid',
+				'pid' => '作品ID',
 				'title' => '作品名称',
 				'judges' => '评委老师',
 				'technology' => '技术',
@@ -122,6 +132,17 @@ class UserGroupGrade extends CActiveRecord {
 	}
 	
 	/**
+	 */
+	public function getGroupName() {
+		if ($this->pro)
+			return $this->pro->getTeamName ();
+	}
+	public function getTypeOfPro() {
+		if ($this->pro)
+			return $this->ary_type [$this->pro->type];
+	}
+	
+	/**
 	 * Retrieves a list of models based on the current search/filter conditions.
 	 *
 	 * @return CActiveDataProvider the data provider that can return the models
@@ -138,8 +159,8 @@ class UserGroupGrade extends CActiveRecord {
 		$criteria->compare ( 'technology', $this->technology );
 		$criteria->compare ( 'interface', $this->interface );
 		$criteria->compare ( 'operators', $this->operators );
-		if(!$this -> judges){
-			$criteria -> compare(judges, '','<>');
+		if ($this->judges == NULL) {
+			$criteria->compare ( 'judges', NULL, '<>' );
 		}
 		$criteria->compare ( 'integrity', $this->integrity );
 		$criteria->compare ( 'creative', $this->creative );

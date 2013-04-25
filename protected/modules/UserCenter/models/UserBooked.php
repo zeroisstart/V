@@ -104,6 +104,10 @@ class UserBooked extends CActiveRecord {
 		return '<img alt="" src="' . Yii::app ()->params->imgAccessPath . $this->img . '">';
 	}
 	
+	public function isShowTool(){
+		return $this -> state ==1? false :true;
+	}
+	
 	/**
 	 * Retrieves a list of models based on the current search/filter conditions.
 	 *
@@ -117,6 +121,7 @@ class UserBooked extends CActiveRecord {
 		
 		$criteria->compare ( 'ID', $this->ID );
 		$criteria->compare ( 'UID', $this->UID );
+		$criteria->compare ( 'state', $this->state );
 		
 		return new CActiveDataProvider ( $this, array (
 				'criteria' => $criteria 

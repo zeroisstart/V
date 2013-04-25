@@ -7,9 +7,9 @@
 <div class="form">
 
 <?php
-$cate = array();// $model->getAllCate ();
+$cate = array (); // $model->getAllCate ();
 
-$cate['0'] = '其他';
+$cate ['0'] = '其他';
 
 $_form = array ();
 
@@ -18,26 +18,30 @@ if ($model->isNewRecord) {
 	$_form ['submit'] = '保存';
 } else {
 	$_form ['title'] = '编辑';
-	$_form ['submit'] = '编辑';
+	$_form ['submit'] = '保存';
 }
 $_form ['uploadUrl'] = $this->createUrl ( '/Admin/Content/upload' );
- 
+
 $_form ['fileUpload'] = $this->createUrl ( '/Admin/Content/fileUpload' );
 $_form ['accessPath'] = Yii::app ()->params ['imgAccessPath'];
 $_form ['fileAccessUrl'] = Yii::app ()->params ['fileAccessPath'];
 
 ?>
 
-<?php $form=$this->beginWidget('CActiveForm', array(
-	'id'=>'info-form',
-	'enableAjaxValidation'=>false,
-	'enableClientValidation'=>true,
-)); ?>
+<?php
+
+$form = $this->beginWidget ( 'CActiveForm', array (
+		'id' => 'info-form',
+		'enableAjaxValidation' => false,
+		'enableClientValidation' => true 
+) );
+?>
 
  	<?php echo $form->errorSummary($model); ?>
 	
 	<div class="row">
-		<p><span>用户身份</span>: <?php echo $model ->getUserCategory();?></p>
+		<p>
+			<span>用户身份</span>: <?php echo $model ->getUserCategory();?></p>
 	</div>
 
 	<div class="row">
@@ -45,7 +49,7 @@ $_form ['fileAccessUrl'] = Yii::app ()->params ['fileAccessPath'];
 		<?php echo $form->textField($model,'Nickname'); ?>
 		<?php echo $form->error($model,'Nickname'); ?>
 	</div>
-	
+
 	<div class="row">
 		<?php echo $form->labelEx($model,'IDNum'); ?>
 		<?php echo $form->textField($model,'IDNum'); ?>
@@ -69,7 +73,7 @@ $_form ['fileAccessUrl'] = Yii::app ()->params ['fileAccessPath'];
 		<?php echo $form->textField($model,'Company_name'); ?>
 		<?php echo $form->error($model,'Company_name'); ?>
 	</div>
-	
+
 	<div class="row">
 		<?php echo $form->labelEx($model,'Email'); ?>
 		<?php echo $form->textField($model,'Email'); ?>
@@ -88,7 +92,8 @@ $_form ['fileAccessUrl'] = Yii::app ()->params ['fileAccessPath'];
 
 <?php $this->endWidget(); ?>
 
-</div><!-- form -->
+</div>
+<!-- form -->
 
 <script>
 	$(document).ready(function(){

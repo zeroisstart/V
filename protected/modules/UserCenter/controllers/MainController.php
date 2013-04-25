@@ -97,6 +97,12 @@ class MainController extends Controller {
 		$user = Yii::app ()->user;
 		$uid = $user->id;
 		
+		if (! $user->isBooked ()) {
+			$this->redirect ( $this->createUrl ( '/UserCenter/main/main', array (
+					'ac' => 'book' 
+			) ) );
+		}
+		
 		$group_member_model = UserGroupMember::model ();
 		$row = $group_member_model->findByAttributes ( array (
 				'UID' => $uid,
@@ -257,6 +263,12 @@ class MainController extends Controller {
 	public function _actionProduct() {
 		$user = Yii::app ()->user;
 		$uid = $user->id;
+		
+		if (! $user->isBooked ()) {
+			$this->redirect ( $this->createUrl ( '/UserCenter/main/main', array (
+					'ac' => 'book' 
+			) ) );
+		}
 		
 		$req = Yii::app ()->request;
 		
@@ -549,13 +561,23 @@ class MainController extends Controller {
 	 * 个人用户信息
 	 */
 	public function _actionInfo() {
-		$this->layout = 'test';
 		$user = Yii::app ()->user;
 		$userInfo = UserProfile::model ()->findByPk ( $user->id );
 		
 		$req = Yii::app ()->request;
 		$edit = false;
 		if ($req->getParam ( 'edit' )) {
+			if (isset ( $_POST ['UserProfile'] )) {
+				$userInfo->attributes = $_POST ['UserProfile'];
+				if ($userInfo->validate ()) {
+					$userInfo->save ();
+					Yii::app ()->user->setFlash ( 'success', '修改成功!' );
+					$this->redirect ( $this->createUrl ( '/UserCenter/main/main', array (
+							'ac' => 'info' 
+					) ) );
+				}
+			}
+			
 			$edit = true;
 		}
 		$this->render ( 'info', array (

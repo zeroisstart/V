@@ -3,7 +3,7 @@ class RegisterController extends Controller {
 	public $defaultAction = 'register';
 	public $layout = '//layouts/ea';
 	public function actionRegister() {
-		if (! Yii::app ()->isGuest ()) {
+		if (! Yii::app ()->user->isGuest) {
 			$this->redirect ( $this->createUrl ( '/' ) );
 		}
 		

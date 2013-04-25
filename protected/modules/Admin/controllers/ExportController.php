@@ -24,7 +24,7 @@ class ExportController extends Controller {
 		
 		$groupModel = UserGroup::model ();
 		$groupModels = $groupModel->findAllByAttributes ( array (
-				'state' => '1' 
+				'state' => 1 
 		) );
 		
 		$ary_group = array ();
@@ -46,7 +46,9 @@ class ExportController extends Controller {
 		
 		foreach ( $groupModels as $_model ) {
 			foreach ( $_model->members as $_member ) {
-				$ary_group [$_model->ID] [] = $_member;
+				if($_member -> state ==1){
+					$ary_group [$_model->ID] [] = $_member;
+				}
 			}
 		}
 		
@@ -90,41 +92,49 @@ class ExportController extends Controller {
 		}
 		
 		$start = 2;
+		
+		#var_dump($ary_group);
+		#die;
 		foreach ( $ary_group as $key => $group ) {
 			
 			$c_num = count ( $group );
-			//合并B  	'作品类型', '作品名称'
-			$b = sprintf("B%d:B%d",$start,$start+$c_num-1);
-			$c = sprintf("C%d:C%d",$start,$start+$c_num-1);
+			// 合并B '作品类型', '作品名称'
+			$b = sprintf ( "B%d:B%d", $start, $start + $c_num - 1 );
+			$c = sprintf ( "C%d:C%d", $start, $start + $c_num - 1 );
 			
-			$sheet->setCellValue ( 'B' . $start, '文档');
-			$objStyle =$sheet -> getStyle('B' . $start);
-			$objStyle -> getAlignment() -> setVertical(PHPExcel_Style_Alignment::VERTICAL_CENTER);
+			$sheet->setCellValue ( 'B' . $start, '文档' );
+			$objStyle = $sheet->getStyle ( 'B' . $start );
+			$objStyle->getAlignment ()->setVertical ( PHPExcel_Style_Alignment::VERTICAL_CENTER );
 			
-			$groupProduct = UserProductGrade::model()->findByAttributes(array('gid'=>$key));
+			$groupProduct = UserProductGrade::model ()->findByAttributes ( array (
+					'gid' => $key 
+			) );
 			
-			
-			$sheet->setCellValue ( 'C' . $start, $groupProduct -> title);
-			$objStyle =$sheet -> getStyle('C' . $start);
-			$objStyle -> getAlignment() -> setVertical(PHPExcel_Style_Alignment::VERTICAL_CENTER);
+			$sheet->setCellValue ( 'C' . $start, $groupProduct->title );
+			$objStyle = $sheet->getStyle ( 'C' . $start );
+			$objStyle->getAlignment ()->setVertical ( PHPExcel_Style_Alignment::VERTICAL_CENTER );
 			
 			$sheet->mergeCells ( $b );
 			$sheet->mergeCells ( $c );
+			
+		
 			foreach ( $group as $_k => $member ) {
-				$sheet->setCellValue ( 'A' . $start, $start+1 );
+				#var_dump($member -> user);
 				
-				$sheet->setCellValue ( 'D' . $start, $member -> user->userProfile -> User_category);
-				$sheet->setCellValue ( 'E' . $start, $member -> user->userProfile -> Realname );
-				$sheet->setCellValue ( 'F' . $start, $member -> user->userProfile -> Company_name);
-				/* '职务',
-				'电话',
-				'邮件',
-				'身份证号' */
-				$sheet->setCellValue ( 'G' . $start, $member -> user->userProfile -> Company_name);
-				$sheet->setCellValueExplicit ( 'H' . $start, $member -> user->userProfile -> Mobile );
-				$sheet->setCellValue ( 'I' . $start, $member -> user->userProfile -> Email );
-				$sheet->setCellValueExplicit ( 'J' . $start, $member -> user->userProfile -> IDNum,PHPExcel_Cell_DataType::TYPE_STRING );
-				$start +=1;
+				
+				$sheet->setCellValue ( 'A' . $start, $start + 1 );
+				
+				$sheet->setCellValue ( 'D' . $start, $member->user->userProfile->getUserCategory() );
+				$sheet->setCellValue ( 'E' . $start, $member->user->userProfile->Realname );
+				$sheet->setCellValue ( 'F' . $start, $member->user->userProfile->Company_name );
+				/*
+				 * '职务', '电话', '邮件', '身份证号'
+				 */
+				$sheet->setCellValue ( 'G' . $start, $member->user->userProfile->Company_name );
+				$sheet->setCellValueExplicit ( 'H' . $start, $member->user->userProfile->Mobile );
+				$sheet->setCellValue ( 'I' . $start, $member->user->userProfile->Email );
+				$sheet->setCellValueExplicit ( 'J' . $start, $member->user->userProfile->IDNum, PHPExcel_Cell_DataType::TYPE_STRING );
+				$start += 1;
 			}
 		}
 		

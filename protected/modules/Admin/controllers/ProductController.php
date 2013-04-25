@@ -26,7 +26,9 @@ class ProductController extends Controller {
 	 */
 	public function actionList() {
 		$productModel = UserGroupGrade::model ();
+		$productModel->judges = 0;
 		$dataProvider = $productModel->search ();
+		
 		$this->render ( 'list', array (
 				'model' => $productModel,
 				'dataProvider' => $dataProvider 
@@ -58,7 +60,7 @@ class ProductController extends Controller {
 	public function actionSelectJudges() {
 		$req = Yii::app ()->request;
 		$user = Yii::app ()->user;
-		if ($user->UserProfile->userProfile->User_category == 2) {
+		if ($user->model->userProfile->User_category == 5) {
 			$id = $req->getParam ( 'id' );
 			$pid = $req->getParam ( 'pid' );
 			if ($pid && $id) {
@@ -83,6 +85,8 @@ class ProductController extends Controller {
 					$UserGroupGrade->create_time = date ( 'Y-m-d H:i:s', time () );
 					$UserGroupGrade->update ();
 				}
+				
+				$this->redirect ( $this->createUrl ( '/Admin/Product/list' ) );
 				echo CJavaScript::jsonEncode ( array (
 						'status' => 0,
 						'msg' => '分配成功!' 

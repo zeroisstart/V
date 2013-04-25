@@ -67,7 +67,7 @@ Default colour scheme is blue. Uncomment prefered stylesheet to use it.
 		<div class="wrapper">
 			<!-- Title/Logo - can use text instead of image -->
 			<div id="title">
-					<a href="<?php echo $this -> createUrl('/admin')?>"><img SRC="<?php echo $baseUrl;?>/img/admin_logo.png"  alt="logo" /></a><!--<span>Administry</span> demo-->
+					<a href="<?php echo $this -> createUrl('/')?>"><img SRC="<?php echo $baseUrl;?>/img/admin_logo.png"  alt="logo" /></a><!--<span>Administry</span> demo-->
 			</div>
 			<!-- Top navigation -->
 			<div id="topnav">
