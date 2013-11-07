@@ -10,6 +10,7 @@ body {
     height: 100%;
     font-size: 13px;
     font-family: "微软雅黑", Arial, Helvetica, sans-serif;
+	overflow:hidden;
 }
 
 img {
