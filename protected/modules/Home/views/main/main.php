@@ -1,3 +1,7 @@
+<?php 
+$this -> registerPopupBox();
+?>
+
 <div id="contextAdorn"></div>
             <div id="contextBox">
                 <div id="rightContent">
