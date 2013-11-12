@@ -80,7 +80,7 @@ return array(
 		'imgPath'=>'/ea/',
 		'uploadPath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'../../upload/',
 		'fileAccessPath'=>'/ea/',
-		'imgAccessPath'=>'/ea/',
+		'imgAccessPath'=>'/V/',
 		'imgUploadPath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'../../img/',
 		'attachmentUploadPath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'../../attachment/',
 		'attachmentAccessPath'=>'/V/',

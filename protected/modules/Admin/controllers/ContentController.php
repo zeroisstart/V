@@ -156,7 +156,6 @@ class ContentController extends Controller {
 				// form inputs are valid, do something here
 			} else {
 				YII_DEBUG && var_dump ( $model->errors );
-				die ();
 			}
 		}
 		
@@ -236,6 +235,8 @@ class ContentController extends Controller {
 					'model' => $model 
 			) );
 		} else {
+			$this->run ( 'list' );
+			Yii::app ()->end ();
 			// 没有找到这篇新闻
 		}
 	}
@@ -254,7 +255,7 @@ class ContentController extends Controller {
 		if (isset ( $_FILES ['News'] )) {
 			$upload = UploadedFile::getInstance ( $model, 'photo' );
 			$model->photo = $upload;
-			if ($model->validate () || 1) {
+			if ($model->validate ()) {
 				$ext = $upload->getExtensionName ();
 				$name = md5 ( $upload->getName () . time () );
 				$name = $name . '.' . $ext;
@@ -266,7 +267,7 @@ class ContentController extends Controller {
 				$upload->saveAs ( $folder . '/' . $name );
 				$model->photo = $savePath;
 			} else {
-				var_dump ( $model->errors );
+				//var_dump ( $model->errors );
 			}
 		}
 		
