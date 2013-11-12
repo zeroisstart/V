@@ -29,6 +29,7 @@ class UserIdentity extends CUserIdentity
 			$this->_id=$user->id;
 			$this->username=$user->username;
 			$this->errorCode=self::ERROR_NONE;
+			$this->setState('isAdmin', ($this->name == 'admin'));
 		}
 		return $this->errorCode==self::ERROR_NONE;
 	}

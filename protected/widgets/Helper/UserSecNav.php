@@ -20,8 +20,8 @@ class UserSecNav extends CWidget {
 		if ($userGroup->isLeader ( $uid )) {
 			$this->ary_nav ['accept'] = '队员申请';
 		}
-		
-		if (! $user->isBooked ()) {
+		$info = $user->isBooked ();
+		if (!$info || !$info['state']) {
 			$this->ary_nav ['book'] = '报名';
 		}
 		$userModel = $user->getModel ();

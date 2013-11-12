@@ -17,6 +17,7 @@ return array (
 		'urlManager' => array (
 				'urlFormat' => 'path',
 				'showScriptName' => false,
+				//'caseSensitive'=>false,
 				'rules' => require 'routes.php' 
 		),
 		// uncomment the following to use a MySQL database

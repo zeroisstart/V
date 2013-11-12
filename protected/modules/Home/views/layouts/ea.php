@@ -43,6 +43,7 @@
 						array('label'=>'竞赛动态', 'url'=>array('/Home/feeds/main')),
 						array('label'=>'历届回顾', 'url'=>array('/Home/history/main')),
 						array('label'=>'风采展示', 'url'=>array('/Home/gallery/main')),
+						array('label'=>'论坛', 'url'=>array('/')),
 					),
 				)); ?>	
             </div>

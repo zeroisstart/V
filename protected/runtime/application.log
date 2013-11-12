@@ -7795,3 +7795,1535 @@ REQUEST_URI=/V/Admin/export
 in D:\webaccess\V\V\protected\libs\phpexcel\Classes\PHPExcel\Autoloader.php (29)
 in D:\webaccess\V\V\protected\libs\phpexcel\Classes\PHPExcel.php (32)
 in D:\webaccess\V\V\protected\modules\Admin\controllers\ExportController.php (38)
+2013/11/09 15:08:33 [error] [exception.CException] exception 'CException' with message '属性 "Forumuser.firstseen" 未被定义.' in /cde/www/ea/protected/libs/yii/base/CComponent.php:173
+Stack trace:
+#0 /cde/www/ea/protected/libs/yii/db/ar/CActiveRecord.php(159): CComponent->__set('firstseen', 1383980913)
+#1 /cde/www/ea/protected/modules/YiiForum/components/ForumBaseController.php(27): CActiveRecord->__set('firstseen', 1383980913)
+#2 /cde/www/ea/protected/libs/yii/web/CController.php(306): ForumBaseController->beforeAction(Object(CInlineAction))
+#3 /cde/www/ea/protected/libs/yii/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 /cde/www/ea/protected/libs/yii/web/filters/CFilter.php(40): CFilterChain->run()
+#5 /cde/www/ea/protected/libs/yii/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 /cde/www/ea/protected/libs/yii/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 /cde/www/ea/protected/libs/yii/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 /cde/www/ea/protected/libs/yii/web/CController.php(291): CFilterChain->run()
+#9 /cde/www/ea/protected/libs/yii/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(282): CController->run('index')
+#11 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('YiiForum/forum/...')
+#12 /cde/www/ea/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#13 /cde/www/ea/index.php(35): CApplication->run()
+#14 {main}
+REQUEST_URI=/ea/forum
+HTTP_REFERER=http://localhost/ea/
+---
+2013/11/09 15:11:08 [error] [exception.CException] exception 'CException' with message '属性 "Forumuser.firstseen" 未被定义.' in /cde/www/ea/protected/libs/yii/base/CComponent.php:173
+Stack trace:
+#0 /cde/www/ea/protected/libs/yii/db/ar/CActiveRecord.php(159): CComponent->__set('firstseen', 1383981068)
+#1 /cde/www/ea/protected/modules/YiiForum/components/ForumBaseController.php(27): CActiveRecord->__set('firstseen', 1383981068)
+#2 /cde/www/ea/protected/libs/yii/web/CController.php(306): ForumBaseController->beforeAction(Object(CInlineAction))
+#3 /cde/www/ea/protected/libs/yii/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 /cde/www/ea/protected/libs/yii/web/filters/CFilter.php(40): CFilterChain->run()
+#5 /cde/www/ea/protected/libs/yii/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 /cde/www/ea/protected/libs/yii/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 /cde/www/ea/protected/libs/yii/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 /cde/www/ea/protected/libs/yii/web/CController.php(291): CFilterChain->run()
+#9 /cde/www/ea/protected/libs/yii/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(282): CController->run('index')
+#11 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('YiiForum/forum/...')
+#12 /cde/www/ea/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#13 /cde/www/ea/index.php(35): CApplication->run()
+#14 {main}
+REQUEST_URI=/ea/forum
+HTTP_REFERER=http://localhost/ea/
+---
+2013/11/09 15:14:07 [error] [exception.CException] exception 'CException' with message '属性 "User.isAdmin" 未被定义.' in /cde/www/ea/protected/components/ActiveRecord.php:143
+Stack trace:
+#0 /cde/www/ea/protected/components/WebUser.php(47): ActiveRecord->__get('isAdmin')
+#1 /cde/www/ea/protected/modules/YiiForum/views/forum/index.php(6): WebUser->__get('isAdmin')
+#2 /cde/www/ea/protected/libs/yii/web/CBaseController.php(126): require('/cde/www/ea/pro...')
+#3 /cde/www/ea/protected/libs/yii/web/CBaseController.php(95): CBaseController->renderInternal('/cde/www/ea/pro...', Array, true)
+#4 /cde/www/ea/protected/libs/yii/web/CController.php(869): CBaseController->renderFile('/cde/www/ea/pro...', Array, true)
+#5 /cde/www/ea/protected/libs/yii/web/CController.php(782): CController->renderPartial('index', Array, true)
+#6 /cde/www/ea/protected/modules/YiiForum/controllers/ForumController.php(56): CController->render('index', Array)
+#7 /cde/www/ea/protected/libs/yii/web/actions/CInlineAction.php(49): ForumController->actionIndex()
+#8 /cde/www/ea/protected/libs/yii/web/CController.php(308): CInlineAction->runWithParams(Array)
+#9 /cde/www/ea/protected/libs/yii/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 /cde/www/ea/protected/libs/yii/web/filters/CFilter.php(40): CFilterChain->run()
+#11 /cde/www/ea/protected/libs/yii/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#12 /cde/www/ea/protected/libs/yii/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#13 /cde/www/ea/protected/libs/yii/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#14 /cde/www/ea/protected/libs/yii/web/CController.php(291): CFilterChain->run()
+#15 /cde/www/ea/protected/libs/yii/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(282): CController->run('index')
+#17 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('YiiForum/forum/...')
+#18 /cde/www/ea/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#19 /cde/www/ea/index.php(35): CApplication->run()
+#20 {main}
+REQUEST_URI=/ea/forum
+HTTP_REFERER=http://localhost/ea/
+---
+2013/11/09 15:14:08 [error] [exception.CException] exception 'CException' with message '属性 "User.isAdmin" 未被定义.' in /cde/www/ea/protected/components/ActiveRecord.php:143
+Stack trace:
+#0 /cde/www/ea/protected/components/WebUser.php(47): ActiveRecord->__get('isAdmin')
+#1 /cde/www/ea/protected/modules/YiiForum/views/forum/index.php(6): WebUser->__get('isAdmin')
+#2 /cde/www/ea/protected/libs/yii/web/CBaseController.php(126): require('/cde/www/ea/pro...')
+#3 /cde/www/ea/protected/libs/yii/web/CBaseController.php(95): CBaseController->renderInternal('/cde/www/ea/pro...', Array, true)
+#4 /cde/www/ea/protected/libs/yii/web/CController.php(869): CBaseController->renderFile('/cde/www/ea/pro...', Array, true)
+#5 /cde/www/ea/protected/libs/yii/web/CController.php(782): CController->renderPartial('index', Array, true)
+#6 /cde/www/ea/protected/modules/YiiForum/controllers/ForumController.php(56): CController->render('index', Array)
+#7 /cde/www/ea/protected/libs/yii/web/actions/CInlineAction.php(49): ForumController->actionIndex()
+#8 /cde/www/ea/protected/libs/yii/web/CController.php(308): CInlineAction->runWithParams(Array)
+#9 /cde/www/ea/protected/libs/yii/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 /cde/www/ea/protected/libs/yii/web/filters/CFilter.php(40): CFilterChain->run()
+#11 /cde/www/ea/protected/libs/yii/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#12 /cde/www/ea/protected/libs/yii/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#13 /cde/www/ea/protected/libs/yii/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#14 /cde/www/ea/protected/libs/yii/web/CController.php(291): CFilterChain->run()
+#15 /cde/www/ea/protected/libs/yii/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(282): CController->run('index')
+#17 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('YiiForum/forum/...')
+#18 /cde/www/ea/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#19 /cde/www/ea/index.php(35): CApplication->run()
+#20 {main}
+REQUEST_URI=/ea/forum
+HTTP_REFERER=http://localhost/ea/
+---
+2013/11/09 15:14:08 [error] [exception.CException] exception 'CException' with message '属性 "User.isAdmin" 未被定义.' in /cde/www/ea/protected/components/ActiveRecord.php:143
+Stack trace:
+#0 /cde/www/ea/protected/components/WebUser.php(47): ActiveRecord->__get('isAdmin')
+#1 /cde/www/ea/protected/modules/YiiForum/views/forum/index.php(6): WebUser->__get('isAdmin')
+#2 /cde/www/ea/protected/libs/yii/web/CBaseController.php(126): require('/cde/www/ea/pro...')
+#3 /cde/www/ea/protected/libs/yii/web/CBaseController.php(95): CBaseController->renderInternal('/cde/www/ea/pro...', Array, true)
+#4 /cde/www/ea/protected/libs/yii/web/CController.php(869): CBaseController->renderFile('/cde/www/ea/pro...', Array, true)
+#5 /cde/www/ea/protected/libs/yii/web/CController.php(782): CController->renderPartial('index', Array, true)
+#6 /cde/www/ea/protected/modules/YiiForum/controllers/ForumController.php(56): CController->render('index', Array)
+#7 /cde/www/ea/protected/libs/yii/web/actions/CInlineAction.php(49): ForumController->actionIndex()
+#8 /cde/www/ea/protected/libs/yii/web/CController.php(308): CInlineAction->runWithParams(Array)
+#9 /cde/www/ea/protected/libs/yii/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 /cde/www/ea/protected/libs/yii/web/filters/CFilter.php(40): CFilterChain->run()
+#11 /cde/www/ea/protected/libs/yii/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#12 /cde/www/ea/protected/libs/yii/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#13 /cde/www/ea/protected/libs/yii/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#14 /cde/www/ea/protected/libs/yii/web/CController.php(291): CFilterChain->run()
+#15 /cde/www/ea/protected/libs/yii/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(282): CController->run('index')
+#17 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('YiiForum/forum/...')
+#18 /cde/www/ea/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#19 /cde/www/ea/index.php(35): CApplication->run()
+#20 {main}
+REQUEST_URI=/ea/forum
+HTTP_REFERER=http://localhost/ea/
+---
+2013/11/09 15:14:08 [error] [exception.CException] exception 'CException' with message '属性 "User.isAdmin" 未被定义.' in /cde/www/ea/protected/components/ActiveRecord.php:143
+Stack trace:
+#0 /cde/www/ea/protected/components/WebUser.php(47): ActiveRecord->__get('isAdmin')
+#1 /cde/www/ea/protected/modules/YiiForum/views/forum/index.php(6): WebUser->__get('isAdmin')
+#2 /cde/www/ea/protected/libs/yii/web/CBaseController.php(126): require('/cde/www/ea/pro...')
+#3 /cde/www/ea/protected/libs/yii/web/CBaseController.php(95): CBaseController->renderInternal('/cde/www/ea/pro...', Array, true)
+#4 /cde/www/ea/protected/libs/yii/web/CController.php(869): CBaseController->renderFile('/cde/www/ea/pro...', Array, true)
+#5 /cde/www/ea/protected/libs/yii/web/CController.php(782): CController->renderPartial('index', Array, true)
+#6 /cde/www/ea/protected/modules/YiiForum/controllers/ForumController.php(56): CController->render('index', Array)
+#7 /cde/www/ea/protected/libs/yii/web/actions/CInlineAction.php(49): ForumController->actionIndex()
+#8 /cde/www/ea/protected/libs/yii/web/CController.php(308): CInlineAction->runWithParams(Array)
+#9 /cde/www/ea/protected/libs/yii/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 /cde/www/ea/protected/libs/yii/web/filters/CFilter.php(40): CFilterChain->run()
+#11 /cde/www/ea/protected/libs/yii/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#12 /cde/www/ea/protected/libs/yii/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#13 /cde/www/ea/protected/libs/yii/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#14 /cde/www/ea/protected/libs/yii/web/CController.php(291): CFilterChain->run()
+#15 /cde/www/ea/protected/libs/yii/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(282): CController->run('index')
+#17 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('YiiForum/forum/...')
+#18 /cde/www/ea/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#19 /cde/www/ea/index.php(35): CApplication->run()
+#20 {main}
+REQUEST_URI=/ea/forum
+HTTP_REFERER=http://localhost/ea/
+---
+2013/11/09 15:14:08 [error] [exception.CException] exception 'CException' with message '属性 "User.isAdmin" 未被定义.' in /cde/www/ea/protected/components/ActiveRecord.php:143
+Stack trace:
+#0 /cde/www/ea/protected/components/WebUser.php(47): ActiveRecord->__get('isAdmin')
+#1 /cde/www/ea/protected/modules/YiiForum/views/forum/index.php(6): WebUser->__get('isAdmin')
+#2 /cde/www/ea/protected/libs/yii/web/CBaseController.php(126): require('/cde/www/ea/pro...')
+#3 /cde/www/ea/protected/libs/yii/web/CBaseController.php(95): CBaseController->renderInternal('/cde/www/ea/pro...', Array, true)
+#4 /cde/www/ea/protected/libs/yii/web/CController.php(869): CBaseController->renderFile('/cde/www/ea/pro...', Array, true)
+#5 /cde/www/ea/protected/libs/yii/web/CController.php(782): CController->renderPartial('index', Array, true)
+#6 /cde/www/ea/protected/modules/YiiForum/controllers/ForumController.php(56): CController->render('index', Array)
+#7 /cde/www/ea/protected/libs/yii/web/actions/CInlineAction.php(49): ForumController->actionIndex()
+#8 /cde/www/ea/protected/libs/yii/web/CController.php(308): CInlineAction->runWithParams(Array)
+#9 /cde/www/ea/protected/libs/yii/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 /cde/www/ea/protected/libs/yii/web/filters/CFilter.php(40): CFilterChain->run()
+#11 /cde/www/ea/protected/libs/yii/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#12 /cde/www/ea/protected/libs/yii/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#13 /cde/www/ea/protected/libs/yii/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#14 /cde/www/ea/protected/libs/yii/web/CController.php(291): CFilterChain->run()
+#15 /cde/www/ea/protected/libs/yii/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(282): CController->run('index')
+#17 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('YiiForum/forum/...')
+#18 /cde/www/ea/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#19 /cde/www/ea/index.php(35): CApplication->run()
+#20 {main}
+REQUEST_URI=/ea/forum
+HTTP_REFERER=http://localhost/ea/
+---
+2013/11/09 15:14:09 [error] [exception.CException] exception 'CException' with message '属性 "User.isAdmin" 未被定义.' in /cde/www/ea/protected/components/ActiveRecord.php:143
+Stack trace:
+#0 /cde/www/ea/protected/components/WebUser.php(47): ActiveRecord->__get('isAdmin')
+#1 /cde/www/ea/protected/modules/YiiForum/views/forum/index.php(6): WebUser->__get('isAdmin')
+#2 /cde/www/ea/protected/libs/yii/web/CBaseController.php(126): require('/cde/www/ea/pro...')
+#3 /cde/www/ea/protected/libs/yii/web/CBaseController.php(95): CBaseController->renderInternal('/cde/www/ea/pro...', Array, true)
+#4 /cde/www/ea/protected/libs/yii/web/CController.php(869): CBaseController->renderFile('/cde/www/ea/pro...', Array, true)
+#5 /cde/www/ea/protected/libs/yii/web/CController.php(782): CController->renderPartial('index', Array, true)
+#6 /cde/www/ea/protected/modules/YiiForum/controllers/ForumController.php(56): CController->render('index', Array)
+#7 /cde/www/ea/protected/libs/yii/web/actions/CInlineAction.php(49): ForumController->actionIndex()
+#8 /cde/www/ea/protected/libs/yii/web/CController.php(308): CInlineAction->runWithParams(Array)
+#9 /cde/www/ea/protected/libs/yii/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 /cde/www/ea/protected/libs/yii/web/filters/CFilter.php(40): CFilterChain->run()
+#11 /cde/www/ea/protected/libs/yii/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#12 /cde/www/ea/protected/libs/yii/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#13 /cde/www/ea/protected/libs/yii/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#14 /cde/www/ea/protected/libs/yii/web/CController.php(291): CFilterChain->run()
+#15 /cde/www/ea/protected/libs/yii/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(282): CController->run('index')
+#17 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('YiiForum/forum/...')
+#18 /cde/www/ea/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#19 /cde/www/ea/index.php(35): CApplication->run()
+#20 {main}
+REQUEST_URI=/ea/forum
+HTTP_REFERER=http://localhost/ea/
+---
+2013/11/09 15:14:09 [error] [exception.CException] exception 'CException' with message '属性 "User.isAdmin" 未被定义.' in /cde/www/ea/protected/components/ActiveRecord.php:143
+Stack trace:
+#0 /cde/www/ea/protected/components/WebUser.php(47): ActiveRecord->__get('isAdmin')
+#1 /cde/www/ea/protected/modules/YiiForum/views/forum/index.php(6): WebUser->__get('isAdmin')
+#2 /cde/www/ea/protected/libs/yii/web/CBaseController.php(126): require('/cde/www/ea/pro...')
+#3 /cde/www/ea/protected/libs/yii/web/CBaseController.php(95): CBaseController->renderInternal('/cde/www/ea/pro...', Array, true)
+#4 /cde/www/ea/protected/libs/yii/web/CController.php(869): CBaseController->renderFile('/cde/www/ea/pro...', Array, true)
+#5 /cde/www/ea/protected/libs/yii/web/CController.php(782): CController->renderPartial('index', Array, true)
+#6 /cde/www/ea/protected/modules/YiiForum/controllers/ForumController.php(56): CController->render('index', Array)
+#7 /cde/www/ea/protected/libs/yii/web/actions/CInlineAction.php(49): ForumController->actionIndex()
+#8 /cde/www/ea/protected/libs/yii/web/CController.php(308): CInlineAction->runWithParams(Array)
+#9 /cde/www/ea/protected/libs/yii/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 /cde/www/ea/protected/libs/yii/web/filters/CFilter.php(40): CFilterChain->run()
+#11 /cde/www/ea/protected/libs/yii/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#12 /cde/www/ea/protected/libs/yii/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#13 /cde/www/ea/protected/libs/yii/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#14 /cde/www/ea/protected/libs/yii/web/CController.php(291): CFilterChain->run()
+#15 /cde/www/ea/protected/libs/yii/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(282): CController->run('index')
+#17 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('YiiForum/forum/...')
+#18 /cde/www/ea/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#19 /cde/www/ea/index.php(35): CApplication->run()
+#20 {main}
+REQUEST_URI=/ea/forum
+HTTP_REFERER=http://localhost/ea/
+---
+2013/11/09 15:14:09 [error] [exception.CException] exception 'CException' with message '属性 "User.isAdmin" 未被定义.' in /cde/www/ea/protected/components/ActiveRecord.php:143
+Stack trace:
+#0 /cde/www/ea/protected/components/WebUser.php(47): ActiveRecord->__get('isAdmin')
+#1 /cde/www/ea/protected/modules/YiiForum/views/forum/index.php(6): WebUser->__get('isAdmin')
+#2 /cde/www/ea/protected/libs/yii/web/CBaseController.php(126): require('/cde/www/ea/pro...')
+#3 /cde/www/ea/protected/libs/yii/web/CBaseController.php(95): CBaseController->renderInternal('/cde/www/ea/pro...', Array, true)
+#4 /cde/www/ea/protected/libs/yii/web/CController.php(869): CBaseController->renderFile('/cde/www/ea/pro...', Array, true)
+#5 /cde/www/ea/protected/libs/yii/web/CController.php(782): CController->renderPartial('index', Array, true)
+#6 /cde/www/ea/protected/modules/YiiForum/controllers/ForumController.php(56): CController->render('index', Array)
+#7 /cde/www/ea/protected/libs/yii/web/actions/CInlineAction.php(49): ForumController->actionIndex()
+#8 /cde/www/ea/protected/libs/yii/web/CController.php(308): CInlineAction->runWithParams(Array)
+#9 /cde/www/ea/protected/libs/yii/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 /cde/www/ea/protected/libs/yii/web/filters/CFilter.php(40): CFilterChain->run()
+#11 /cde/www/ea/protected/libs/yii/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#12 /cde/www/ea/protected/libs/yii/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#13 /cde/www/ea/protected/libs/yii/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#14 /cde/www/ea/protected/libs/yii/web/CController.php(291): CFilterChain->run()
+#15 /cde/www/ea/protected/libs/yii/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(282): CController->run('index')
+#17 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('YiiForum/forum/...')
+#18 /cde/www/ea/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#19 /cde/www/ea/index.php(35): CApplication->run()
+#20 {main}
+REQUEST_URI=/ea/forum
+HTTP_REFERER=http://localhost/ea/
+---
+2013/11/09 15:14:09 [error] [exception.CException] exception 'CException' with message '属性 "User.isAdmin" 未被定义.' in /cde/www/ea/protected/components/ActiveRecord.php:143
+Stack trace:
+#0 /cde/www/ea/protected/components/WebUser.php(47): ActiveRecord->__get('isAdmin')
+#1 /cde/www/ea/protected/modules/YiiForum/views/forum/index.php(6): WebUser->__get('isAdmin')
+#2 /cde/www/ea/protected/libs/yii/web/CBaseController.php(126): require('/cde/www/ea/pro...')
+#3 /cde/www/ea/protected/libs/yii/web/CBaseController.php(95): CBaseController->renderInternal('/cde/www/ea/pro...', Array, true)
+#4 /cde/www/ea/protected/libs/yii/web/CController.php(869): CBaseController->renderFile('/cde/www/ea/pro...', Array, true)
+#5 /cde/www/ea/protected/libs/yii/web/CController.php(782): CController->renderPartial('index', Array, true)
+#6 /cde/www/ea/protected/modules/YiiForum/controllers/ForumController.php(56): CController->render('index', Array)
+#7 /cde/www/ea/protected/libs/yii/web/actions/CInlineAction.php(49): ForumController->actionIndex()
+#8 /cde/www/ea/protected/libs/yii/web/CController.php(308): CInlineAction->runWithParams(Array)
+#9 /cde/www/ea/protected/libs/yii/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 /cde/www/ea/protected/libs/yii/web/filters/CFilter.php(40): CFilterChain->run()
+#11 /cde/www/ea/protected/libs/yii/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#12 /cde/www/ea/protected/libs/yii/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#13 /cde/www/ea/protected/libs/yii/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#14 /cde/www/ea/protected/libs/yii/web/CController.php(291): CFilterChain->run()
+#15 /cde/www/ea/protected/libs/yii/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(282): CController->run('index')
+#17 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('YiiForum/forum/...')
+#18 /cde/www/ea/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#19 /cde/www/ea/index.php(35): CApplication->run()
+#20 {main}
+REQUEST_URI=/ea/forum
+HTTP_REFERER=http://localhost/ea/
+---
+2013/11/09 15:16:03 [error] [exception.CException] exception 'CException' with message '属性 "User.isAdmin" 未被定义.' in /cde/www/ea/protected/components/ActiveRecord.php:143
+Stack trace:
+#0 /cde/www/ea/protected/components/WebUser.php(47): ActiveRecord->__get('isAdmin')
+#1 /cde/www/ea/protected/modules/YiiForum/views/forum/index.php(6): WebUser->__get('isAdmin')
+#2 /cde/www/ea/protected/libs/yii/web/CBaseController.php(126): require('/cde/www/ea/pro...')
+#3 /cde/www/ea/protected/libs/yii/web/CBaseController.php(95): CBaseController->renderInternal('/cde/www/ea/pro...', Array, true)
+#4 /cde/www/ea/protected/libs/yii/web/CController.php(869): CBaseController->renderFile('/cde/www/ea/pro...', Array, true)
+#5 /cde/www/ea/protected/libs/yii/web/CController.php(782): CController->renderPartial('index', Array, true)
+#6 /cde/www/ea/protected/modules/YiiForum/controllers/ForumController.php(56): CController->render('index', Array)
+#7 /cde/www/ea/protected/libs/yii/web/actions/CInlineAction.php(49): ForumController->actionIndex()
+#8 /cde/www/ea/protected/libs/yii/web/CController.php(308): CInlineAction->runWithParams(Array)
+#9 /cde/www/ea/protected/libs/yii/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 /cde/www/ea/protected/libs/yii/web/filters/CFilter.php(40): CFilterChain->run()
+#11 /cde/www/ea/protected/libs/yii/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#12 /cde/www/ea/protected/libs/yii/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#13 /cde/www/ea/protected/libs/yii/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#14 /cde/www/ea/protected/libs/yii/web/CController.php(291): CFilterChain->run()
+#15 /cde/www/ea/protected/libs/yii/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(282): CController->run('index')
+#17 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('YiiForum/forum/...')
+#18 /cde/www/ea/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#19 /cde/www/ea/index.php(35): CApplication->run()
+#20 {main}
+REQUEST_URI=/ea/forum
+HTTP_REFERER=http://localhost/ea/
+---
+2013/11/09 15:16:05 [error] [exception.CException] exception 'CException' with message '属性 "User.isAdmin" 未被定义.' in /cde/www/ea/protected/components/ActiveRecord.php:143
+Stack trace:
+#0 /cde/www/ea/protected/components/WebUser.php(47): ActiveRecord->__get('isAdmin')
+#1 /cde/www/ea/protected/modules/YiiForum/views/forum/index.php(6): WebUser->__get('isAdmin')
+#2 /cde/www/ea/protected/libs/yii/web/CBaseController.php(126): require('/cde/www/ea/pro...')
+#3 /cde/www/ea/protected/libs/yii/web/CBaseController.php(95): CBaseController->renderInternal('/cde/www/ea/pro...', Array, true)
+#4 /cde/www/ea/protected/libs/yii/web/CController.php(869): CBaseController->renderFile('/cde/www/ea/pro...', Array, true)
+#5 /cde/www/ea/protected/libs/yii/web/CController.php(782): CController->renderPartial('index', Array, true)
+#6 /cde/www/ea/protected/modules/YiiForum/controllers/ForumController.php(56): CController->render('index', Array)
+#7 /cde/www/ea/protected/libs/yii/web/actions/CInlineAction.php(49): ForumController->actionIndex()
+#8 /cde/www/ea/protected/libs/yii/web/CController.php(308): CInlineAction->runWithParams(Array)
+#9 /cde/www/ea/protected/libs/yii/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 /cde/www/ea/protected/libs/yii/web/filters/CFilter.php(40): CFilterChain->run()
+#11 /cde/www/ea/protected/libs/yii/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#12 /cde/www/ea/protected/libs/yii/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#13 /cde/www/ea/protected/libs/yii/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#14 /cde/www/ea/protected/libs/yii/web/CController.php(291): CFilterChain->run()
+#15 /cde/www/ea/protected/libs/yii/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(282): CController->run('index')
+#17 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('YiiForum/forum/...')
+#18 /cde/www/ea/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#19 /cde/www/ea/index.php(35): CApplication->run()
+#20 {main}
+REQUEST_URI=/ea/forum
+HTTP_REFERER=http://localhost/ea/
+---
+2013/11/09 15:16:05 [error] [exception.CException] exception 'CException' with message '属性 "User.isAdmin" 未被定义.' in /cde/www/ea/protected/components/ActiveRecord.php:143
+Stack trace:
+#0 /cde/www/ea/protected/components/WebUser.php(47): ActiveRecord->__get('isAdmin')
+#1 /cde/www/ea/protected/modules/YiiForum/views/forum/index.php(6): WebUser->__get('isAdmin')
+#2 /cde/www/ea/protected/libs/yii/web/CBaseController.php(126): require('/cde/www/ea/pro...')
+#3 /cde/www/ea/protected/libs/yii/web/CBaseController.php(95): CBaseController->renderInternal('/cde/www/ea/pro...', Array, true)
+#4 /cde/www/ea/protected/libs/yii/web/CController.php(869): CBaseController->renderFile('/cde/www/ea/pro...', Array, true)
+#5 /cde/www/ea/protected/libs/yii/web/CController.php(782): CController->renderPartial('index', Array, true)
+#6 /cde/www/ea/protected/modules/YiiForum/controllers/ForumController.php(56): CController->render('index', Array)
+#7 /cde/www/ea/protected/libs/yii/web/actions/CInlineAction.php(49): ForumController->actionIndex()
+#8 /cde/www/ea/protected/libs/yii/web/CController.php(308): CInlineAction->runWithParams(Array)
+#9 /cde/www/ea/protected/libs/yii/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 /cde/www/ea/protected/libs/yii/web/filters/CFilter.php(40): CFilterChain->run()
+#11 /cde/www/ea/protected/libs/yii/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#12 /cde/www/ea/protected/libs/yii/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#13 /cde/www/ea/protected/libs/yii/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#14 /cde/www/ea/protected/libs/yii/web/CController.php(291): CFilterChain->run()
+#15 /cde/www/ea/protected/libs/yii/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(282): CController->run('index')
+#17 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('YiiForum/forum/...')
+#18 /cde/www/ea/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#19 /cde/www/ea/index.php(35): CApplication->run()
+#20 {main}
+REQUEST_URI=/ea/forum
+HTTP_REFERER=http://localhost/ea/
+---
+2013/11/09 15:16:06 [error] [exception.CException] exception 'CException' with message '属性 "User.isAdmin" 未被定义.' in /cde/www/ea/protected/components/ActiveRecord.php:143
+Stack trace:
+#0 /cde/www/ea/protected/components/WebUser.php(47): ActiveRecord->__get('isAdmin')
+#1 /cde/www/ea/protected/modules/YiiForum/views/forum/index.php(6): WebUser->__get('isAdmin')
+#2 /cde/www/ea/protected/libs/yii/web/CBaseController.php(126): require('/cde/www/ea/pro...')
+#3 /cde/www/ea/protected/libs/yii/web/CBaseController.php(95): CBaseController->renderInternal('/cde/www/ea/pro...', Array, true)
+#4 /cde/www/ea/protected/libs/yii/web/CController.php(869): CBaseController->renderFile('/cde/www/ea/pro...', Array, true)
+#5 /cde/www/ea/protected/libs/yii/web/CController.php(782): CController->renderPartial('index', Array, true)
+#6 /cde/www/ea/protected/modules/YiiForum/controllers/ForumController.php(56): CController->render('index', Array)
+#7 /cde/www/ea/protected/libs/yii/web/actions/CInlineAction.php(49): ForumController->actionIndex()
+#8 /cde/www/ea/protected/libs/yii/web/CController.php(308): CInlineAction->runWithParams(Array)
+#9 /cde/www/ea/protected/libs/yii/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 /cde/www/ea/protected/libs/yii/web/filters/CFilter.php(40): CFilterChain->run()
+#11 /cde/www/ea/protected/libs/yii/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#12 /cde/www/ea/protected/libs/yii/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#13 /cde/www/ea/protected/libs/yii/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#14 /cde/www/ea/protected/libs/yii/web/CController.php(291): CFilterChain->run()
+#15 /cde/www/ea/protected/libs/yii/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(282): CController->run('index')
+#17 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('YiiForum/forum/...')
+#18 /cde/www/ea/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#19 /cde/www/ea/index.php(35): CApplication->run()
+#20 {main}
+REQUEST_URI=/ea/forum
+HTTP_REFERER=http://localhost/ea/
+---
+2013/11/09 15:16:06 [error] [exception.CException] exception 'CException' with message '属性 "User.isAdmin" 未被定义.' in /cde/www/ea/protected/components/ActiveRecord.php:143
+Stack trace:
+#0 /cde/www/ea/protected/components/WebUser.php(47): ActiveRecord->__get('isAdmin')
+#1 /cde/www/ea/protected/modules/YiiForum/views/forum/index.php(6): WebUser->__get('isAdmin')
+#2 /cde/www/ea/protected/libs/yii/web/CBaseController.php(126): require('/cde/www/ea/pro...')
+#3 /cde/www/ea/protected/libs/yii/web/CBaseController.php(95): CBaseController->renderInternal('/cde/www/ea/pro...', Array, true)
+#4 /cde/www/ea/protected/libs/yii/web/CController.php(869): CBaseController->renderFile('/cde/www/ea/pro...', Array, true)
+#5 /cde/www/ea/protected/libs/yii/web/CController.php(782): CController->renderPartial('index', Array, true)
+#6 /cde/www/ea/protected/modules/YiiForum/controllers/ForumController.php(56): CController->render('index', Array)
+#7 /cde/www/ea/protected/libs/yii/web/actions/CInlineAction.php(49): ForumController->actionIndex()
+#8 /cde/www/ea/protected/libs/yii/web/CController.php(308): CInlineAction->runWithParams(Array)
+#9 /cde/www/ea/protected/libs/yii/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 /cde/www/ea/protected/libs/yii/web/filters/CFilter.php(40): CFilterChain->run()
+#11 /cde/www/ea/protected/libs/yii/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#12 /cde/www/ea/protected/libs/yii/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#13 /cde/www/ea/protected/libs/yii/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#14 /cde/www/ea/protected/libs/yii/web/CController.php(291): CFilterChain->run()
+#15 /cde/www/ea/protected/libs/yii/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(282): CController->run('index')
+#17 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('YiiForum/forum/...')
+#18 /cde/www/ea/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#19 /cde/www/ea/index.php(35): CApplication->run()
+#20 {main}
+REQUEST_URI=/ea/forum
+HTTP_REFERER=http://localhost/ea/
+---
+2013/11/09 15:16:06 [error] [exception.CException] exception 'CException' with message '属性 "User.isAdmin" 未被定义.' in /cde/www/ea/protected/components/ActiveRecord.php:143
+Stack trace:
+#0 /cde/www/ea/protected/components/WebUser.php(47): ActiveRecord->__get('isAdmin')
+#1 /cde/www/ea/protected/modules/YiiForum/views/forum/index.php(6): WebUser->__get('isAdmin')
+#2 /cde/www/ea/protected/libs/yii/web/CBaseController.php(126): require('/cde/www/ea/pro...')
+#3 /cde/www/ea/protected/libs/yii/web/CBaseController.php(95): CBaseController->renderInternal('/cde/www/ea/pro...', Array, true)
+#4 /cde/www/ea/protected/libs/yii/web/CController.php(869): CBaseController->renderFile('/cde/www/ea/pro...', Array, true)
+#5 /cde/www/ea/protected/libs/yii/web/CController.php(782): CController->renderPartial('index', Array, true)
+#6 /cde/www/ea/protected/modules/YiiForum/controllers/ForumController.php(56): CController->render('index', Array)
+#7 /cde/www/ea/protected/libs/yii/web/actions/CInlineAction.php(49): ForumController->actionIndex()
+#8 /cde/www/ea/protected/libs/yii/web/CController.php(308): CInlineAction->runWithParams(Array)
+#9 /cde/www/ea/protected/libs/yii/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 /cde/www/ea/protected/libs/yii/web/filters/CFilter.php(40): CFilterChain->run()
+#11 /cde/www/ea/protected/libs/yii/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#12 /cde/www/ea/protected/libs/yii/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#13 /cde/www/ea/protected/libs/yii/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#14 /cde/www/ea/protected/libs/yii/web/CController.php(291): CFilterChain->run()
+#15 /cde/www/ea/protected/libs/yii/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(282): CController->run('index')
+#17 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('YiiForum/forum/...')
+#18 /cde/www/ea/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#19 /cde/www/ea/index.php(35): CApplication->run()
+#20 {main}
+REQUEST_URI=/ea/forum
+HTTP_REFERER=http://localhost/ea/
+---
+2013/11/09 15:16:06 [error] [exception.CException] exception 'CException' with message '属性 "User.isAdmin" 未被定义.' in /cde/www/ea/protected/components/ActiveRecord.php:143
+Stack trace:
+#0 /cde/www/ea/protected/components/WebUser.php(47): ActiveRecord->__get('isAdmin')
+#1 /cde/www/ea/protected/modules/YiiForum/views/forum/index.php(6): WebUser->__get('isAdmin')
+#2 /cde/www/ea/protected/libs/yii/web/CBaseController.php(126): require('/cde/www/ea/pro...')
+#3 /cde/www/ea/protected/libs/yii/web/CBaseController.php(95): CBaseController->renderInternal('/cde/www/ea/pro...', Array, true)
+#4 /cde/www/ea/protected/libs/yii/web/CController.php(869): CBaseController->renderFile('/cde/www/ea/pro...', Array, true)
+#5 /cde/www/ea/protected/libs/yii/web/CController.php(782): CController->renderPartial('index', Array, true)
+#6 /cde/www/ea/protected/modules/YiiForum/controllers/ForumController.php(56): CController->render('index', Array)
+#7 /cde/www/ea/protected/libs/yii/web/actions/CInlineAction.php(49): ForumController->actionIndex()
+#8 /cde/www/ea/protected/libs/yii/web/CController.php(308): CInlineAction->runWithParams(Array)
+#9 /cde/www/ea/protected/libs/yii/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 /cde/www/ea/protected/libs/yii/web/filters/CFilter.php(40): CFilterChain->run()
+#11 /cde/www/ea/protected/libs/yii/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#12 /cde/www/ea/protected/libs/yii/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#13 /cde/www/ea/protected/libs/yii/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#14 /cde/www/ea/protected/libs/yii/web/CController.php(291): CFilterChain->run()
+#15 /cde/www/ea/protected/libs/yii/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(282): CController->run('index')
+#17 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('YiiForum/forum/...')
+#18 /cde/www/ea/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#19 /cde/www/ea/index.php(35): CApplication->run()
+#20 {main}
+REQUEST_URI=/ea/forum
+HTTP_REFERER=http://localhost/ea/
+---
+2013/11/09 15:16:06 [error] [exception.CException] exception 'CException' with message '属性 "User.isAdmin" 未被定义.' in /cde/www/ea/protected/components/ActiveRecord.php:143
+Stack trace:
+#0 /cde/www/ea/protected/components/WebUser.php(47): ActiveRecord->__get('isAdmin')
+#1 /cde/www/ea/protected/modules/YiiForum/views/forum/index.php(6): WebUser->__get('isAdmin')
+#2 /cde/www/ea/protected/libs/yii/web/CBaseController.php(126): require('/cde/www/ea/pro...')
+#3 /cde/www/ea/protected/libs/yii/web/CBaseController.php(95): CBaseController->renderInternal('/cde/www/ea/pro...', Array, true)
+#4 /cde/www/ea/protected/libs/yii/web/CController.php(869): CBaseController->renderFile('/cde/www/ea/pro...', Array, true)
+#5 /cde/www/ea/protected/libs/yii/web/CController.php(782): CController->renderPartial('index', Array, true)
+#6 /cde/www/ea/protected/modules/YiiForum/controllers/ForumController.php(56): CController->render('index', Array)
+#7 /cde/www/ea/protected/libs/yii/web/actions/CInlineAction.php(49): ForumController->actionIndex()
+#8 /cde/www/ea/protected/libs/yii/web/CController.php(308): CInlineAction->runWithParams(Array)
+#9 /cde/www/ea/protected/libs/yii/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 /cde/www/ea/protected/libs/yii/web/filters/CFilter.php(40): CFilterChain->run()
+#11 /cde/www/ea/protected/libs/yii/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#12 /cde/www/ea/protected/libs/yii/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#13 /cde/www/ea/protected/libs/yii/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#14 /cde/www/ea/protected/libs/yii/web/CController.php(291): CFilterChain->run()
+#15 /cde/www/ea/protected/libs/yii/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(282): CController->run('index')
+#17 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('YiiForum/forum/...')
+#18 /cde/www/ea/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#19 /cde/www/ea/index.php(35): CApplication->run()
+#20 {main}
+REQUEST_URI=/ea/forum
+HTTP_REFERER=http://localhost/ea/
+---
+2013/11/09 15:16:06 [error] [exception.CException] exception 'CException' with message '属性 "User.isAdmin" 未被定义.' in /cde/www/ea/protected/components/ActiveRecord.php:143
+Stack trace:
+#0 /cde/www/ea/protected/components/WebUser.php(47): ActiveRecord->__get('isAdmin')
+#1 /cde/www/ea/protected/modules/YiiForum/views/forum/index.php(6): WebUser->__get('isAdmin')
+#2 /cde/www/ea/protected/libs/yii/web/CBaseController.php(126): require('/cde/www/ea/pro...')
+#3 /cde/www/ea/protected/libs/yii/web/CBaseController.php(95): CBaseController->renderInternal('/cde/www/ea/pro...', Array, true)
+#4 /cde/www/ea/protected/libs/yii/web/CController.php(869): CBaseController->renderFile('/cde/www/ea/pro...', Array, true)
+#5 /cde/www/ea/protected/libs/yii/web/CController.php(782): CController->renderPartial('index', Array, true)
+#6 /cde/www/ea/protected/modules/YiiForum/controllers/ForumController.php(56): CController->render('index', Array)
+#7 /cde/www/ea/protected/libs/yii/web/actions/CInlineAction.php(49): ForumController->actionIndex()
+#8 /cde/www/ea/protected/libs/yii/web/CController.php(308): CInlineAction->runWithParams(Array)
+#9 /cde/www/ea/protected/libs/yii/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 /cde/www/ea/protected/libs/yii/web/filters/CFilter.php(40): CFilterChain->run()
+#11 /cde/www/ea/protected/libs/yii/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#12 /cde/www/ea/protected/libs/yii/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#13 /cde/www/ea/protected/libs/yii/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#14 /cde/www/ea/protected/libs/yii/web/CController.php(291): CFilterChain->run()
+#15 /cde/www/ea/protected/libs/yii/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(282): CController->run('index')
+#17 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('YiiForum/forum/...')
+#18 /cde/www/ea/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#19 /cde/www/ea/index.php(35): CApplication->run()
+#20 {main}
+REQUEST_URI=/ea/forum
+HTTP_REFERER=http://localhost/ea/
+---
+2013/11/09 15:16:06 [error] [exception.CException] exception 'CException' with message '属性 "User.isAdmin" 未被定义.' in /cde/www/ea/protected/components/ActiveRecord.php:143
+Stack trace:
+#0 /cde/www/ea/protected/components/WebUser.php(47): ActiveRecord->__get('isAdmin')
+#1 /cde/www/ea/protected/modules/YiiForum/views/forum/index.php(6): WebUser->__get('isAdmin')
+#2 /cde/www/ea/protected/libs/yii/web/CBaseController.php(126): require('/cde/www/ea/pro...')
+#3 /cde/www/ea/protected/libs/yii/web/CBaseController.php(95): CBaseController->renderInternal('/cde/www/ea/pro...', Array, true)
+#4 /cde/www/ea/protected/libs/yii/web/CController.php(869): CBaseController->renderFile('/cde/www/ea/pro...', Array, true)
+#5 /cde/www/ea/protected/libs/yii/web/CController.php(782): CController->renderPartial('index', Array, true)
+#6 /cde/www/ea/protected/modules/YiiForum/controllers/ForumController.php(56): CController->render('index', Array)
+#7 /cde/www/ea/protected/libs/yii/web/actions/CInlineAction.php(49): ForumController->actionIndex()
+#8 /cde/www/ea/protected/libs/yii/web/CController.php(308): CInlineAction->runWithParams(Array)
+#9 /cde/www/ea/protected/libs/yii/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 /cde/www/ea/protected/libs/yii/web/filters/CFilter.php(40): CFilterChain->run()
+#11 /cde/www/ea/protected/libs/yii/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#12 /cde/www/ea/protected/libs/yii/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#13 /cde/www/ea/protected/libs/yii/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#14 /cde/www/ea/protected/libs/yii/web/CController.php(291): CFilterChain->run()
+#15 /cde/www/ea/protected/libs/yii/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(282): CController->run('index')
+#17 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('YiiForum/forum/...')
+#18 /cde/www/ea/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#19 /cde/www/ea/index.php(35): CApplication->run()
+#20 {main}
+REQUEST_URI=/ea/forum
+HTTP_REFERER=http://localhost/ea/
+---
+2013/11/09 15:16:06 [error] [exception.CException] exception 'CException' with message '属性 "User.isAdmin" 未被定义.' in /cde/www/ea/protected/components/ActiveRecord.php:143
+Stack trace:
+#0 /cde/www/ea/protected/components/WebUser.php(47): ActiveRecord->__get('isAdmin')
+#1 /cde/www/ea/protected/modules/YiiForum/views/forum/index.php(6): WebUser->__get('isAdmin')
+#2 /cde/www/ea/protected/libs/yii/web/CBaseController.php(126): require('/cde/www/ea/pro...')
+#3 /cde/www/ea/protected/libs/yii/web/CBaseController.php(95): CBaseController->renderInternal('/cde/www/ea/pro...', Array, true)
+#4 /cde/www/ea/protected/libs/yii/web/CController.php(869): CBaseController->renderFile('/cde/www/ea/pro...', Array, true)
+#5 /cde/www/ea/protected/libs/yii/web/CController.php(782): CController->renderPartial('index', Array, true)
+#6 /cde/www/ea/protected/modules/YiiForum/controllers/ForumController.php(56): CController->render('index', Array)
+#7 /cde/www/ea/protected/libs/yii/web/actions/CInlineAction.php(49): ForumController->actionIndex()
+#8 /cde/www/ea/protected/libs/yii/web/CController.php(308): CInlineAction->runWithParams(Array)
+#9 /cde/www/ea/protected/libs/yii/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 /cde/www/ea/protected/libs/yii/web/filters/CFilter.php(40): CFilterChain->run()
+#11 /cde/www/ea/protected/libs/yii/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#12 /cde/www/ea/protected/libs/yii/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#13 /cde/www/ea/protected/libs/yii/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#14 /cde/www/ea/protected/libs/yii/web/CController.php(291): CFilterChain->run()
+#15 /cde/www/ea/protected/libs/yii/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(282): CController->run('index')
+#17 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('YiiForum/forum/...')
+#18 /cde/www/ea/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#19 /cde/www/ea/index.php(35): CApplication->run()
+#20 {main}
+REQUEST_URI=/ea/forum
+HTTP_REFERER=http://localhost/ea/
+---
+2013/11/09 15:16:07 [error] [exception.CException] exception 'CException' with message '属性 "User.isAdmin" 未被定义.' in /cde/www/ea/protected/components/ActiveRecord.php:143
+Stack trace:
+#0 /cde/www/ea/protected/components/WebUser.php(47): ActiveRecord->__get('isAdmin')
+#1 /cde/www/ea/protected/modules/YiiForum/views/forum/index.php(6): WebUser->__get('isAdmin')
+#2 /cde/www/ea/protected/libs/yii/web/CBaseController.php(126): require('/cde/www/ea/pro...')
+#3 /cde/www/ea/protected/libs/yii/web/CBaseController.php(95): CBaseController->renderInternal('/cde/www/ea/pro...', Array, true)
+#4 /cde/www/ea/protected/libs/yii/web/CController.php(869): CBaseController->renderFile('/cde/www/ea/pro...', Array, true)
+#5 /cde/www/ea/protected/libs/yii/web/CController.php(782): CController->renderPartial('index', Array, true)
+#6 /cde/www/ea/protected/modules/YiiForum/controllers/ForumController.php(56): CController->render('index', Array)
+#7 /cde/www/ea/protected/libs/yii/web/actions/CInlineAction.php(49): ForumController->actionIndex()
+#8 /cde/www/ea/protected/libs/yii/web/CController.php(308): CInlineAction->runWithParams(Array)
+#9 /cde/www/ea/protected/libs/yii/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 /cde/www/ea/protected/libs/yii/web/filters/CFilter.php(40): CFilterChain->run()
+#11 /cde/www/ea/protected/libs/yii/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#12 /cde/www/ea/protected/libs/yii/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#13 /cde/www/ea/protected/libs/yii/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#14 /cde/www/ea/protected/libs/yii/web/CController.php(291): CFilterChain->run()
+#15 /cde/www/ea/protected/libs/yii/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(282): CController->run('index')
+#17 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('YiiForum/forum/...')
+#18 /cde/www/ea/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#19 /cde/www/ea/index.php(35): CApplication->run()
+#20 {main}
+REQUEST_URI=/ea/forum
+HTTP_REFERER=http://localhost/ea/
+---
+2013/11/09 15:16:07 [error] [exception.CException] exception 'CException' with message '属性 "User.isAdmin" 未被定义.' in /cde/www/ea/protected/components/ActiveRecord.php:143
+Stack trace:
+#0 /cde/www/ea/protected/components/WebUser.php(47): ActiveRecord->__get('isAdmin')
+#1 /cde/www/ea/protected/modules/YiiForum/views/forum/index.php(6): WebUser->__get('isAdmin')
+#2 /cde/www/ea/protected/libs/yii/web/CBaseController.php(126): require('/cde/www/ea/pro...')
+#3 /cde/www/ea/protected/libs/yii/web/CBaseController.php(95): CBaseController->renderInternal('/cde/www/ea/pro...', Array, true)
+#4 /cde/www/ea/protected/libs/yii/web/CController.php(869): CBaseController->renderFile('/cde/www/ea/pro...', Array, true)
+#5 /cde/www/ea/protected/libs/yii/web/CController.php(782): CController->renderPartial('index', Array, true)
+#6 /cde/www/ea/protected/modules/YiiForum/controllers/ForumController.php(56): CController->render('index', Array)
+#7 /cde/www/ea/protected/libs/yii/web/actions/CInlineAction.php(49): ForumController->actionIndex()
+#8 /cde/www/ea/protected/libs/yii/web/CController.php(308): CInlineAction->runWithParams(Array)
+#9 /cde/www/ea/protected/libs/yii/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 /cde/www/ea/protected/libs/yii/web/filters/CFilter.php(40): CFilterChain->run()
+#11 /cde/www/ea/protected/libs/yii/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#12 /cde/www/ea/protected/libs/yii/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#13 /cde/www/ea/protected/libs/yii/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#14 /cde/www/ea/protected/libs/yii/web/CController.php(291): CFilterChain->run()
+#15 /cde/www/ea/protected/libs/yii/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(282): CController->run('index')
+#17 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('YiiForum/forum/...')
+#18 /cde/www/ea/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#19 /cde/www/ea/index.php(35): CApplication->run()
+#20 {main}
+REQUEST_URI=/ea/forum
+HTTP_REFERER=http://localhost/ea/
+---
+2013/11/09 15:16:07 [error] [exception.CException] exception 'CException' with message '属性 "User.isAdmin" 未被定义.' in /cde/www/ea/protected/components/ActiveRecord.php:143
+Stack trace:
+#0 /cde/www/ea/protected/components/WebUser.php(47): ActiveRecord->__get('isAdmin')
+#1 /cde/www/ea/protected/modules/YiiForum/views/forum/index.php(6): WebUser->__get('isAdmin')
+#2 /cde/www/ea/protected/libs/yii/web/CBaseController.php(126): require('/cde/www/ea/pro...')
+#3 /cde/www/ea/protected/libs/yii/web/CBaseController.php(95): CBaseController->renderInternal('/cde/www/ea/pro...', Array, true)
+#4 /cde/www/ea/protected/libs/yii/web/CController.php(869): CBaseController->renderFile('/cde/www/ea/pro...', Array, true)
+#5 /cde/www/ea/protected/libs/yii/web/CController.php(782): CController->renderPartial('index', Array, true)
+#6 /cde/www/ea/protected/modules/YiiForum/controllers/ForumController.php(56): CController->render('index', Array)
+#7 /cde/www/ea/protected/libs/yii/web/actions/CInlineAction.php(49): ForumController->actionIndex()
+#8 /cde/www/ea/protected/libs/yii/web/CController.php(308): CInlineAction->runWithParams(Array)
+#9 /cde/www/ea/protected/libs/yii/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 /cde/www/ea/protected/libs/yii/web/filters/CFilter.php(40): CFilterChain->run()
+#11 /cde/www/ea/protected/libs/yii/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#12 /cde/www/ea/protected/libs/yii/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#13 /cde/www/ea/protected/libs/yii/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#14 /cde/www/ea/protected/libs/yii/web/CController.php(291): CFilterChain->run()
+#15 /cde/www/ea/protected/libs/yii/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(282): CController->run('index')
+#17 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('YiiForum/forum/...')
+#18 /cde/www/ea/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#19 /cde/www/ea/index.php(35): CApplication->run()
+#20 {main}
+REQUEST_URI=/ea/forum
+HTTP_REFERER=http://localhost/ea/
+---
+2013/11/09 15:16:07 [error] [exception.CException] exception 'CException' with message '属性 "User.isAdmin" 未被定义.' in /cde/www/ea/protected/components/ActiveRecord.php:143
+Stack trace:
+#0 /cde/www/ea/protected/components/WebUser.php(47): ActiveRecord->__get('isAdmin')
+#1 /cde/www/ea/protected/modules/YiiForum/views/forum/index.php(6): WebUser->__get('isAdmin')
+#2 /cde/www/ea/protected/libs/yii/web/CBaseController.php(126): require('/cde/www/ea/pro...')
+#3 /cde/www/ea/protected/libs/yii/web/CBaseController.php(95): CBaseController->renderInternal('/cde/www/ea/pro...', Array, true)
+#4 /cde/www/ea/protected/libs/yii/web/CController.php(869): CBaseController->renderFile('/cde/www/ea/pro...', Array, true)
+#5 /cde/www/ea/protected/libs/yii/web/CController.php(782): CController->renderPartial('index', Array, true)
+#6 /cde/www/ea/protected/modules/YiiForum/controllers/ForumController.php(56): CController->render('index', Array)
+#7 /cde/www/ea/protected/libs/yii/web/actions/CInlineAction.php(49): ForumController->actionIndex()
+#8 /cde/www/ea/protected/libs/yii/web/CController.php(308): CInlineAction->runWithParams(Array)
+#9 /cde/www/ea/protected/libs/yii/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 /cde/www/ea/protected/libs/yii/web/filters/CFilter.php(40): CFilterChain->run()
+#11 /cde/www/ea/protected/libs/yii/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#12 /cde/www/ea/protected/libs/yii/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#13 /cde/www/ea/protected/libs/yii/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#14 /cde/www/ea/protected/libs/yii/web/CController.php(291): CFilterChain->run()
+#15 /cde/www/ea/protected/libs/yii/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(282): CController->run('index')
+#17 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('YiiForum/forum/...')
+#18 /cde/www/ea/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#19 /cde/www/ea/index.php(35): CApplication->run()
+#20 {main}
+REQUEST_URI=/ea/forum
+HTTP_REFERER=http://localhost/ea/
+---
+2013/11/09 15:16:07 [error] [exception.CException] exception 'CException' with message '属性 "User.isAdmin" 未被定义.' in /cde/www/ea/protected/components/ActiveRecord.php:143
+Stack trace:
+#0 /cde/www/ea/protected/components/WebUser.php(47): ActiveRecord->__get('isAdmin')
+#1 /cde/www/ea/protected/modules/YiiForum/views/forum/index.php(6): WebUser->__get('isAdmin')
+#2 /cde/www/ea/protected/libs/yii/web/CBaseController.php(126): require('/cde/www/ea/pro...')
+#3 /cde/www/ea/protected/libs/yii/web/CBaseController.php(95): CBaseController->renderInternal('/cde/www/ea/pro...', Array, true)
+#4 /cde/www/ea/protected/libs/yii/web/CController.php(869): CBaseController->renderFile('/cde/www/ea/pro...', Array, true)
+#5 /cde/www/ea/protected/libs/yii/web/CController.php(782): CController->renderPartial('index', Array, true)
+#6 /cde/www/ea/protected/modules/YiiForum/controllers/ForumController.php(56): CController->render('index', Array)
+#7 /cde/www/ea/protected/libs/yii/web/actions/CInlineAction.php(49): ForumController->actionIndex()
+#8 /cde/www/ea/protected/libs/yii/web/CController.php(308): CInlineAction->runWithParams(Array)
+#9 /cde/www/ea/protected/libs/yii/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 /cde/www/ea/protected/libs/yii/web/filters/CFilter.php(40): CFilterChain->run()
+#11 /cde/www/ea/protected/libs/yii/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#12 /cde/www/ea/protected/libs/yii/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#13 /cde/www/ea/protected/libs/yii/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#14 /cde/www/ea/protected/libs/yii/web/CController.php(291): CFilterChain->run()
+#15 /cde/www/ea/protected/libs/yii/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(282): CController->run('index')
+#17 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('YiiForum/forum/...')
+#18 /cde/www/ea/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#19 /cde/www/ea/index.php(35): CApplication->run()
+#20 {main}
+REQUEST_URI=/ea/forum
+HTTP_REFERER=http://localhost/ea/
+---
+2013/11/09 15:16:07 [error] [exception.CException] exception 'CException' with message '属性 "User.isAdmin" 未被定义.' in /cde/www/ea/protected/components/ActiveRecord.php:143
+Stack trace:
+#0 /cde/www/ea/protected/components/WebUser.php(47): ActiveRecord->__get('isAdmin')
+#1 /cde/www/ea/protected/modules/YiiForum/views/forum/index.php(6): WebUser->__get('isAdmin')
+#2 /cde/www/ea/protected/libs/yii/web/CBaseController.php(126): require('/cde/www/ea/pro...')
+#3 /cde/www/ea/protected/libs/yii/web/CBaseController.php(95): CBaseController->renderInternal('/cde/www/ea/pro...', Array, true)
+#4 /cde/www/ea/protected/libs/yii/web/CController.php(869): CBaseController->renderFile('/cde/www/ea/pro...', Array, true)
+#5 /cde/www/ea/protected/libs/yii/web/CController.php(782): CController->renderPartial('index', Array, true)
+#6 /cde/www/ea/protected/modules/YiiForum/controllers/ForumController.php(56): CController->render('index', Array)
+#7 /cde/www/ea/protected/libs/yii/web/actions/CInlineAction.php(49): ForumController->actionIndex()
+#8 /cde/www/ea/protected/libs/yii/web/CController.php(308): CInlineAction->runWithParams(Array)
+#9 /cde/www/ea/protected/libs/yii/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 /cde/www/ea/protected/libs/yii/web/filters/CFilter.php(40): CFilterChain->run()
+#11 /cde/www/ea/protected/libs/yii/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#12 /cde/www/ea/protected/libs/yii/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#13 /cde/www/ea/protected/libs/yii/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#14 /cde/www/ea/protected/libs/yii/web/CController.php(291): CFilterChain->run()
+#15 /cde/www/ea/protected/libs/yii/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(282): CController->run('index')
+#17 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('YiiForum/forum/...')
+#18 /cde/www/ea/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#19 /cde/www/ea/index.php(35): CApplication->run()
+#20 {main}
+REQUEST_URI=/ea/forum
+HTTP_REFERER=http://localhost/ea/
+---
+2013/11/09 15:16:07 [error] [exception.CException] exception 'CException' with message '属性 "User.isAdmin" 未被定义.' in /cde/www/ea/protected/components/ActiveRecord.php:143
+Stack trace:
+#0 /cde/www/ea/protected/components/WebUser.php(47): ActiveRecord->__get('isAdmin')
+#1 /cde/www/ea/protected/modules/YiiForum/views/forum/index.php(6): WebUser->__get('isAdmin')
+#2 /cde/www/ea/protected/libs/yii/web/CBaseController.php(126): require('/cde/www/ea/pro...')
+#3 /cde/www/ea/protected/libs/yii/web/CBaseController.php(95): CBaseController->renderInternal('/cde/www/ea/pro...', Array, true)
+#4 /cde/www/ea/protected/libs/yii/web/CController.php(869): CBaseController->renderFile('/cde/www/ea/pro...', Array, true)
+#5 /cde/www/ea/protected/libs/yii/web/CController.php(782): CController->renderPartial('index', Array, true)
+#6 /cde/www/ea/protected/modules/YiiForum/controllers/ForumController.php(56): CController->render('index', Array)
+#7 /cde/www/ea/protected/libs/yii/web/actions/CInlineAction.php(49): ForumController->actionIndex()
+#8 /cde/www/ea/protected/libs/yii/web/CController.php(308): CInlineAction->runWithParams(Array)
+#9 /cde/www/ea/protected/libs/yii/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 /cde/www/ea/protected/libs/yii/web/filters/CFilter.php(40): CFilterChain->run()
+#11 /cde/www/ea/protected/libs/yii/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#12 /cde/www/ea/protected/libs/yii/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#13 /cde/www/ea/protected/libs/yii/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#14 /cde/www/ea/protected/libs/yii/web/CController.php(291): CFilterChain->run()
+#15 /cde/www/ea/protected/libs/yii/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(282): CController->run('index')
+#17 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('YiiForum/forum/...')
+#18 /cde/www/ea/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#19 /cde/www/ea/index.php(35): CApplication->run()
+#20 {main}
+REQUEST_URI=/ea/forum
+HTTP_REFERER=http://localhost/ea/
+---
+2013/11/09 15:16:07 [error] [exception.CException] exception 'CException' with message '属性 "User.isAdmin" 未被定义.' in /cde/www/ea/protected/components/ActiveRecord.php:143
+Stack trace:
+#0 /cde/www/ea/protected/components/WebUser.php(47): ActiveRecord->__get('isAdmin')
+#1 /cde/www/ea/protected/modules/YiiForum/views/forum/index.php(6): WebUser->__get('isAdmin')
+#2 /cde/www/ea/protected/libs/yii/web/CBaseController.php(126): require('/cde/www/ea/pro...')
+#3 /cde/www/ea/protected/libs/yii/web/CBaseController.php(95): CBaseController->renderInternal('/cde/www/ea/pro...', Array, true)
+#4 /cde/www/ea/protected/libs/yii/web/CController.php(869): CBaseController->renderFile('/cde/www/ea/pro...', Array, true)
+#5 /cde/www/ea/protected/libs/yii/web/CController.php(782): CController->renderPartial('index', Array, true)
+#6 /cde/www/ea/protected/modules/YiiForum/controllers/ForumController.php(56): CController->render('index', Array)
+#7 /cde/www/ea/protected/libs/yii/web/actions/CInlineAction.php(49): ForumController->actionIndex()
+#8 /cde/www/ea/protected/libs/yii/web/CController.php(308): CInlineAction->runWithParams(Array)
+#9 /cde/www/ea/protected/libs/yii/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 /cde/www/ea/protected/libs/yii/web/filters/CFilter.php(40): CFilterChain->run()
+#11 /cde/www/ea/protected/libs/yii/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#12 /cde/www/ea/protected/libs/yii/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#13 /cde/www/ea/protected/libs/yii/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#14 /cde/www/ea/protected/libs/yii/web/CController.php(291): CFilterChain->run()
+#15 /cde/www/ea/protected/libs/yii/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(282): CController->run('index')
+#17 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('YiiForum/forum/...')
+#18 /cde/www/ea/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#19 /cde/www/ea/index.php(35): CApplication->run()
+#20 {main}
+REQUEST_URI=/ea/forum
+HTTP_REFERER=http://localhost/ea/
+---
+2013/11/09 15:16:07 [error] [exception.CException] exception 'CException' with message '属性 "User.isAdmin" 未被定义.' in /cde/www/ea/protected/components/ActiveRecord.php:143
+Stack trace:
+#0 /cde/www/ea/protected/components/WebUser.php(47): ActiveRecord->__get('isAdmin')
+#1 /cde/www/ea/protected/modules/YiiForum/views/forum/index.php(6): WebUser->__get('isAdmin')
+#2 /cde/www/ea/protected/libs/yii/web/CBaseController.php(126): require('/cde/www/ea/pro...')
+#3 /cde/www/ea/protected/libs/yii/web/CBaseController.php(95): CBaseController->renderInternal('/cde/www/ea/pro...', Array, true)
+#4 /cde/www/ea/protected/libs/yii/web/CController.php(869): CBaseController->renderFile('/cde/www/ea/pro...', Array, true)
+#5 /cde/www/ea/protected/libs/yii/web/CController.php(782): CController->renderPartial('index', Array, true)
+#6 /cde/www/ea/protected/modules/YiiForum/controllers/ForumController.php(56): CController->render('index', Array)
+#7 /cde/www/ea/protected/libs/yii/web/actions/CInlineAction.php(49): ForumController->actionIndex()
+#8 /cde/www/ea/protected/libs/yii/web/CController.php(308): CInlineAction->runWithParams(Array)
+#9 /cde/www/ea/protected/libs/yii/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 /cde/www/ea/protected/libs/yii/web/filters/CFilter.php(40): CFilterChain->run()
+#11 /cde/www/ea/protected/libs/yii/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#12 /cde/www/ea/protected/libs/yii/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#13 /cde/www/ea/protected/libs/yii/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#14 /cde/www/ea/protected/libs/yii/web/CController.php(291): CFilterChain->run()
+#15 /cde/www/ea/protected/libs/yii/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(282): CController->run('index')
+#17 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('YiiForum/forum/...')
+#18 /cde/www/ea/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#19 /cde/www/ea/index.php(35): CApplication->run()
+#20 {main}
+REQUEST_URI=/ea/forum
+HTTP_REFERER=http://localhost/ea/
+---
+2013/11/09 15:16:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "forum/forum/create"。' in /cde/www/ea/protected/libs/yii/web/CWebApplication.php:286
+Stack trace:
+#0 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('forum/forum/cre...')
+#1 /cde/www/ea/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /cde/www/ea/index.php(35): CApplication->run()
+#3 {main}
+REQUEST_URI=/ea/forum/forum/create
+HTTP_REFERER=http://localhost/ea/forum
+---
+2013/11/09 15:16:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "forum/forum/create"。' in /cde/www/ea/protected/libs/yii/web/CWebApplication.php:286
+Stack trace:
+#0 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('forum/forum/cre...')
+#1 /cde/www/ea/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /cde/www/ea/index.php(35): CApplication->run()
+#3 {main}
+REQUEST_URI=/ea/forum/forum/create
+HTTP_REFERER=http://localhost/ea/forum
+---
+2013/11/09 15:16:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "forum/forum/create"。' in /cde/www/ea/protected/libs/yii/web/CWebApplication.php:286
+Stack trace:
+#0 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('forum/forum/cre...')
+#1 /cde/www/ea/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /cde/www/ea/index.php(35): CApplication->run()
+#3 {main}
+REQUEST_URI=/ea/forum/forum/create
+HTTP_REFERER=http://localhost/ea/forum
+---
+2013/11/09 15:16:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "forum/forum/create"。' in /cde/www/ea/protected/libs/yii/web/CWebApplication.php:286
+Stack trace:
+#0 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('forum/forum/cre...')
+#1 /cde/www/ea/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /cde/www/ea/index.php(35): CApplication->run()
+#3 {main}
+REQUEST_URI=/ea/forum/forum/create
+HTTP_REFERER=http://localhost/ea/forum
+---
+2013/11/09 15:16:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "forum/forum/create"。' in /cde/www/ea/protected/libs/yii/web/CWebApplication.php:286
+Stack trace:
+#0 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('forum/forum/cre...')
+#1 /cde/www/ea/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /cde/www/ea/index.php(35): CApplication->run()
+#3 {main}
+REQUEST_URI=/ea/forum/forum/create
+HTTP_REFERER=http://localhost/ea/forum
+---
+2013/11/09 15:16:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "forum/forum/create"。' in /cde/www/ea/protected/libs/yii/web/CWebApplication.php:286
+Stack trace:
+#0 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('forum/forum/cre...')
+#1 /cde/www/ea/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /cde/www/ea/index.php(35): CApplication->run()
+#3 {main}
+REQUEST_URI=/ea/forum/forum/create
+HTTP_REFERER=http://localhost/ea/forum
+---
+2013/11/09 15:16:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "forum/forum/create"。' in /cde/www/ea/protected/libs/yii/web/CWebApplication.php:286
+Stack trace:
+#0 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('forum/forum/cre...')
+#1 /cde/www/ea/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /cde/www/ea/index.php(35): CApplication->run()
+#3 {main}
+REQUEST_URI=/ea/forum/forum/create
+HTTP_REFERER=http://localhost/ea/forum
+---
+2013/11/09 15:16:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "forum/forum/create"。' in /cde/www/ea/protected/libs/yii/web/CWebApplication.php:286
+Stack trace:
+#0 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('forum/forum/cre...')
+#1 /cde/www/ea/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /cde/www/ea/index.php(35): CApplication->run()
+#3 {main}
+REQUEST_URI=/ea/forum/forum/create
+HTTP_REFERER=http://localhost/ea/forum
+---
+2013/11/09 15:16:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "forum/forum/create"。' in /cde/www/ea/protected/libs/yii/web/CWebApplication.php:286
+Stack trace:
+#0 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('forum/forum/cre...')
+#1 /cde/www/ea/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /cde/www/ea/index.php(35): CApplication->run()
+#3 {main}
+REQUEST_URI=/ea/forum/forum/create
+HTTP_REFERER=http://localhost/ea/forum
+---
+2013/11/09 15:16:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "forum/forum/create"。' in /cde/www/ea/protected/libs/yii/web/CWebApplication.php:286
+Stack trace:
+#0 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('forum/forum/cre...')
+#1 /cde/www/ea/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /cde/www/ea/index.php(35): CApplication->run()
+#3 {main}
+REQUEST_URI=/ea/forum/forum/create
+HTTP_REFERER=http://localhost/ea/forum
+---
+2013/11/09 15:16:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "forum/forum/create"。' in /cde/www/ea/protected/libs/yii/web/CWebApplication.php:286
+Stack trace:
+#0 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('forum/forum/cre...')
+#1 /cde/www/ea/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /cde/www/ea/index.php(35): CApplication->run()
+#3 {main}
+REQUEST_URI=/ea/forum/forum/create
+HTTP_REFERER=http://localhost/ea/forum
+---
+2013/11/09 15:16:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "forum/forum/create"。' in /cde/www/ea/protected/libs/yii/web/CWebApplication.php:286
+Stack trace:
+#0 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('forum/forum/cre...')
+#1 /cde/www/ea/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /cde/www/ea/index.php(35): CApplication->run()
+#3 {main}
+REQUEST_URI=/ea/forum/forum/create
+HTTP_REFERER=http://localhost/ea/forum
+---
+2013/11/09 15:16:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "forum/forum/create"。' in /cde/www/ea/protected/libs/yii/web/CWebApplication.php:286
+Stack trace:
+#0 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('forum/forum/cre...')
+#1 /cde/www/ea/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /cde/www/ea/index.php(35): CApplication->run()
+#3 {main}
+REQUEST_URI=/ea/forum/forum/create
+HTTP_REFERER=http://localhost/ea/forum
+---
+2013/11/09 15:16:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "forum/forum/create"。' in /cde/www/ea/protected/libs/yii/web/CWebApplication.php:286
+Stack trace:
+#0 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('forum/forum/cre...')
+#1 /cde/www/ea/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /cde/www/ea/index.php(35): CApplication->run()
+#3 {main}
+REQUEST_URI=/ea/forum/forum/create
+HTTP_REFERER=http://localhost/ea/forum
+---
+2013/11/09 15:16:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "forum/forum/create"。' in /cde/www/ea/protected/libs/yii/web/CWebApplication.php:286
+Stack trace:
+#0 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('forum/forum/cre...')
+#1 /cde/www/ea/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /cde/www/ea/index.php(35): CApplication->run()
+#3 {main}
+REQUEST_URI=/ea/forum/forum/create
+HTTP_REFERER=http://localhost/ea/forum
+---
+2013/11/09 15:16:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "forum/forum/create"。' in /cde/www/ea/protected/libs/yii/web/CWebApplication.php:286
+Stack trace:
+#0 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('forum/forum/cre...')
+#1 /cde/www/ea/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /cde/www/ea/index.php(35): CApplication->run()
+#3 {main}
+REQUEST_URI=/ea/forum/forum/create
+HTTP_REFERER=http://localhost/ea/forum
+---
+2013/11/09 15:16:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "forum/forum/create"。' in /cde/www/ea/protected/libs/yii/web/CWebApplication.php:286
+Stack trace:
+#0 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('forum/forum/cre...')
+#1 /cde/www/ea/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /cde/www/ea/index.php(35): CApplication->run()
+#3 {main}
+REQUEST_URI=/ea/forum/forum/create
+HTTP_REFERER=http://localhost/ea/forum
+---
+2013/11/09 15:16:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "forum/forum/create"。' in /cde/www/ea/protected/libs/yii/web/CWebApplication.php:286
+Stack trace:
+#0 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('forum/forum/cre...')
+#1 /cde/www/ea/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /cde/www/ea/index.php(35): CApplication->run()
+#3 {main}
+REQUEST_URI=/ea/forum/forum/create
+HTTP_REFERER=http://localhost/ea/forum
+---
+2013/11/09 15:16:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "forum/forum/create"。' in /cde/www/ea/protected/libs/yii/web/CWebApplication.php:286
+Stack trace:
+#0 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('forum/forum/cre...')
+#1 /cde/www/ea/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /cde/www/ea/index.php(35): CApplication->run()
+#3 {main}
+REQUEST_URI=/ea/forum/forum/create
+HTTP_REFERER=http://localhost/ea/forum
+---
+2013/11/09 15:16:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "forum/forum/create"。' in /cde/www/ea/protected/libs/yii/web/CWebApplication.php:286
+Stack trace:
+#0 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('forum/forum/cre...')
+#1 /cde/www/ea/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /cde/www/ea/index.php(35): CApplication->run()
+#3 {main}
+REQUEST_URI=/ea/forum/forum/create
+HTTP_REFERER=http://localhost/ea/forum
+---
+2013/11/09 15:17:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "forum/forum/create"。' in /cde/www/ea/protected/libs/yii/web/CWebApplication.php:286
+Stack trace:
+#0 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('forum/forum/cre...')
+#1 /cde/www/ea/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /cde/www/ea/index.php(35): CApplication->run()
+#3 {main}
+REQUEST_URI=/ea/forum/forum/create
+HTTP_REFERER=http://localhost/ea/forum
+---
+2013/11/09 15:17:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "forum/forum/create"。' in /cde/www/ea/protected/libs/yii/web/CWebApplication.php:286
+Stack trace:
+#0 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('forum/forum/cre...')
+#1 /cde/www/ea/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /cde/www/ea/index.php(35): CApplication->run()
+#3 {main}
+REQUEST_URI=/ea/forum/forum/create
+HTTP_REFERER=http://localhost/ea/forum
+---
+2013/11/09 15:17:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "forum/forum/create"。' in /cde/www/ea/protected/libs/yii/web/CWebApplication.php:286
+Stack trace:
+#0 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('forum/forum/cre...')
+#1 /cde/www/ea/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /cde/www/ea/index.php(35): CApplication->run()
+#3 {main}
+REQUEST_URI=/ea/forum/forum/create
+HTTP_REFERER=http://localhost/ea/forum
+---
+2013/11/09 15:17:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "forum"。' in /cde/www/ea/protected/libs/yii/web/CWebApplication.php:286
+Stack trace:
+#0 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('forum')
+#1 /cde/www/ea/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /cde/www/ea/index.php(35): CApplication->run()
+#3 {main}
+REQUEST_URI=/ea/forum
+---
+2013/11/09 15:17:40 [error] [exception.CException] exception 'CException' with message '别名 "Forum.ForumModule" 无效。请确认它指向一个存在的PHP文件。' in /cde/www/ea/protected/libs/yii/YiiBase.php:316
+Stack trace:
+#0 /cde/www/ea/protected/libs/yii/YiiBase.php(196): YiiBase::import('Forum.ForumModu...', true)
+#1 /cde/www/ea/protected/libs/yii/base/CModule.php(282): YiiBase::createComponent('Forum.ForumModu...', 'Forum', NULL, Array)
+#2 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(337): CModule->getModule('Forum')
+#3 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(276): CWebApplication->createController('Forum')
+#4 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('Forum')
+#5 /cde/www/ea/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#6 /cde/www/ea/index.php(35): CApplication->run()
+#7 {main}
+REQUEST_URI=/ea/Forum
+---
+2013/11/09 15:18:12 [error] [exception.CException] exception 'CException' with message 'Asset文件 "/cde/www/ea/protected/modules/YiiForum/assets" 不存在.' in /cde/www/ea/protected/libs/yii/web/CAssetManager.php:257
+Stack trace:
+#0 /cde/www/ea/protected/modules/Forum/ForumModule.php(57): CAssetManager->publish('/cde/www/ea/pro...', false, -1, true)
+#1 /cde/www/ea/protected/modules/Forum/ForumModule.php(68): ForumModule->getAssetsUrl()
+#2 /cde/www/ea/protected/modules/Forum/ForumModule.php(38): ForumModule->registerAssets()
+#3 /cde/www/ea/protected/libs/yii/base/CModule.php(90): ForumModule->init()
+#4 /cde/www/ea/protected/libs/yii/YiiBase.php(206): CModule->__construct('Forum', NULL, Array)
+#5 /cde/www/ea/protected/libs/yii/base/CModule.php(282): YiiBase::createComponent('Forum.ForumModu...', 'Forum', NULL, Array)
+#6 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(337): CModule->getModule('Forum')
+#7 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(276): CWebApplication->createController('Forum')
+#8 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('Forum')
+#9 /cde/www/ea/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#10 /cde/www/ea/index.php(35): CApplication->run()
+#11 {main}
+REQUEST_URI=/ea/Forum
+---
+2013/11/09 15:18:13 [error] [exception.CException] exception 'CException' with message 'Asset文件 "/cde/www/ea/protected/modules/YiiForum/assets" 不存在.' in /cde/www/ea/protected/libs/yii/web/CAssetManager.php:257
+Stack trace:
+#0 /cde/www/ea/protected/modules/Forum/ForumModule.php(57): CAssetManager->publish('/cde/www/ea/pro...', false, -1, true)
+#1 /cde/www/ea/protected/modules/Forum/ForumModule.php(68): ForumModule->getAssetsUrl()
+#2 /cde/www/ea/protected/modules/Forum/ForumModule.php(38): ForumModule->registerAssets()
+#3 /cde/www/ea/protected/libs/yii/base/CModule.php(90): ForumModule->init()
+#4 /cde/www/ea/protected/libs/yii/YiiBase.php(206): CModule->__construct('Forum', NULL, Array)
+#5 /cde/www/ea/protected/libs/yii/base/CModule.php(282): YiiBase::createComponent('Forum.ForumModu...', 'Forum', NULL, Array)
+#6 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(337): CModule->getModule('Forum')
+#7 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(276): CWebApplication->createController('Forum')
+#8 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('Forum')
+#9 /cde/www/ea/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#10 /cde/www/ea/index.php(35): CApplication->run()
+#11 {main}
+REQUEST_URI=/ea/Forum
+---
+2013/11/09 15:18:13 [error] [exception.CException] exception 'CException' with message 'Asset文件 "/cde/www/ea/protected/modules/YiiForum/assets" 不存在.' in /cde/www/ea/protected/libs/yii/web/CAssetManager.php:257
+Stack trace:
+#0 /cde/www/ea/protected/modules/Forum/ForumModule.php(57): CAssetManager->publish('/cde/www/ea/pro...', false, -1, true)
+#1 /cde/www/ea/protected/modules/Forum/ForumModule.php(68): ForumModule->getAssetsUrl()
+#2 /cde/www/ea/protected/modules/Forum/ForumModule.php(38): ForumModule->registerAssets()
+#3 /cde/www/ea/protected/libs/yii/base/CModule.php(90): ForumModule->init()
+#4 /cde/www/ea/protected/libs/yii/YiiBase.php(206): CModule->__construct('Forum', NULL, Array)
+#5 /cde/www/ea/protected/libs/yii/base/CModule.php(282): YiiBase::createComponent('Forum.ForumModu...', 'Forum', NULL, Array)
+#6 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(337): CModule->getModule('Forum')
+#7 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(276): CWebApplication->createController('Forum')
+#8 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('Forum')
+#9 /cde/www/ea/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#10 /cde/www/ea/index.php(35): CApplication->run()
+#11 {main}
+REQUEST_URI=/ea/Forum
+---
+2013/11/09 15:18:13 [error] [php] filemtime() [<a href='function.filemtime'>function.filemtime</a>]: stat failed for /cde/www/ea/protected/modules/YiiForum/assets (/cde/www/ea/protected/libs/yii/web/CAssetManager.php:330)
+Stack trace:
+#0 /cde/www/ea/protected/modules/Forum/ForumModule.php(57): CAssetManager->publish()
+#1 /cde/www/ea/protected/modules/Forum/ForumModule.php(68): ForumModule->getAssetsUrl()
+#2 /cde/www/ea/protected/modules/Forum/ForumModule.php(38): ForumModule->registerAssets()
+#3 /cde/www/ea/protected/libs/yii/base/CModule.php(90): ForumModule->init()
+#4 /cde/www/ea/protected/libs/yii/YiiBase.php(206): ForumModule->__construct()
+#5 /cde/www/ea/protected/libs/yii/base/CModule.php(282): createComponent()
+#6 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(337): CWebApplication->getModule()
+#7 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(276): CWebApplication->createController()
+#8 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /cde/www/ea/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#10 /cde/www/ea/index.php(35): CWebApplication->run()
+REQUEST_URI=/ea/Forum
+in /cde/www/ea/protected/modules/Forum/ForumModule.php (57)
+in /cde/www/ea/protected/modules/Forum/ForumModule.php (68)
+in /cde/www/ea/protected/modules/Forum/ForumModule.php (38)
+2013/11/09 15:18:14 [error] [exception.CException] exception 'CException' with message 'Asset文件 "/cde/www/ea/protected/modules/YiiForum/assets" 不存在.' in /cde/www/ea/protected/libs/yii/web/CAssetManager.php:257
+Stack trace:
+#0 /cde/www/ea/protected/modules/Forum/ForumModule.php(57): CAssetManager->publish('/cde/www/ea/pro...', false, -1, true)
+#1 /cde/www/ea/protected/modules/Forum/ForumModule.php(68): ForumModule->getAssetsUrl()
+#2 /cde/www/ea/protected/modules/Forum/ForumModule.php(38): ForumModule->registerAssets()
+#3 /cde/www/ea/protected/libs/yii/base/CModule.php(90): ForumModule->init()
+#4 /cde/www/ea/protected/libs/yii/YiiBase.php(206): CModule->__construct('Forum', NULL, Array)
+#5 /cde/www/ea/protected/libs/yii/base/CModule.php(282): YiiBase::createComponent('Forum.ForumModu...', 'Forum', NULL, Array)
+#6 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(337): CModule->getModule('Forum')
+#7 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(276): CWebApplication->createController('Forum')
+#8 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('Forum')
+#9 /cde/www/ea/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#10 /cde/www/ea/index.php(35): CApplication->run()
+#11 {main}
+REQUEST_URI=/ea/Forum
+---
+2013/11/09 15:18:14 [error] [exception.CException] exception 'CException' with message 'Asset文件 "/cde/www/ea/protected/modules/YiiForum/assets" 不存在.' in /cde/www/ea/protected/libs/yii/web/CAssetManager.php:257
+Stack trace:
+#0 /cde/www/ea/protected/modules/Forum/ForumModule.php(57): CAssetManager->publish('/cde/www/ea/pro...', false, -1, true)
+#1 /cde/www/ea/protected/modules/Forum/ForumModule.php(68): ForumModule->getAssetsUrl()
+#2 /cde/www/ea/protected/modules/Forum/ForumModule.php(38): ForumModule->registerAssets()
+#3 /cde/www/ea/protected/libs/yii/base/CModule.php(90): ForumModule->init()
+#4 /cde/www/ea/protected/libs/yii/YiiBase.php(206): CModule->__construct('Forum', NULL, Array)
+#5 /cde/www/ea/protected/libs/yii/base/CModule.php(282): YiiBase::createComponent('Forum.ForumModu...', 'Forum', NULL, Array)
+#6 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(337): CModule->getModule('Forum')
+#7 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(276): CWebApplication->createController('Forum')
+#8 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('Forum')
+#9 /cde/www/ea/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#10 /cde/www/ea/index.php(35): CApplication->run()
+#11 {main}
+REQUEST_URI=/ea/Forum
+---
+2013/11/09 15:18:14 [error] [exception.CException] exception 'CException' with message 'Asset文件 "/cde/www/ea/protected/modules/YiiForum/assets" 不存在.' in /cde/www/ea/protected/libs/yii/web/CAssetManager.php:257
+Stack trace:
+#0 /cde/www/ea/protected/modules/Forum/ForumModule.php(57): CAssetManager->publish('/cde/www/ea/pro...', false, -1, true)
+#1 /cde/www/ea/protected/modules/Forum/ForumModule.php(68): ForumModule->getAssetsUrl()
+#2 /cde/www/ea/protected/modules/Forum/ForumModule.php(38): ForumModule->registerAssets()
+#3 /cde/www/ea/protected/libs/yii/base/CModule.php(90): ForumModule->init()
+#4 /cde/www/ea/protected/libs/yii/YiiBase.php(206): CModule->__construct('Forum', NULL, Array)
+#5 /cde/www/ea/protected/libs/yii/base/CModule.php(282): YiiBase::createComponent('Forum.ForumModu...', 'Forum', NULL, Array)
+#6 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(337): CModule->getModule('Forum')
+#7 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(276): CWebApplication->createController('Forum')
+#8 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('Forum')
+#9 /cde/www/ea/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#10 /cde/www/ea/index.php(35): CApplication->run()
+#11 {main}
+REQUEST_URI=/ea/Forum
+---
+2013/11/09 15:20:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "forum/forum/create"。' in /cde/www/ea/protected/libs/yii/web/CWebApplication.php:286
+Stack trace:
+#0 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('forum/forum/cre...')
+#1 /cde/www/ea/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /cde/www/ea/index.php(35): CApplication->run()
+#3 {main}
+REQUEST_URI=/ea/forum/forum/create
+HTTP_REFERER=http://localhost/ea/Forum
+---
+2013/11/09 15:20:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "forum/forum/view/id/1"。' in /cde/www/ea/protected/libs/yii/web/CWebApplication.php:286
+Stack trace:
+#0 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('forum/forum/vie...')
+#1 /cde/www/ea/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /cde/www/ea/index.php(35): CApplication->run()
+#3 {main}
+REQUEST_URI=/ea/forum/forum/view/id/1
+HTTP_REFERER=http://localhost/ea/Forum/forum/create
+---
+2013/11/09 15:26:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "Forum/forum/create"。' in /cde/www/ea/protected/libs/yii/web/CWebApplication.php:286
+Stack trace:
+#0 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('Forum/forum/cre...')
+#1 /cde/www/ea/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /cde/www/ea/index.php(35): CApplication->run()
+#3 {main}
+REQUEST_URI=/ea/Forum/forum/create
+---
+2013/11/09 15:26:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "Forum/forum/create"。' in /cde/www/ea/protected/libs/yii/web/CWebApplication.php:286
+Stack trace:
+#0 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('Forum/forum/cre...')
+#1 /cde/www/ea/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /cde/www/ea/index.php(35): CApplication->run()
+#3 {main}
+REQUEST_URI=/ea/Forum/forum/create
+---
+2013/11/09 15:26:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "Forum/forum/create"。' in /cde/www/ea/protected/libs/yii/web/CWebApplication.php:286
+Stack trace:
+#0 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('Forum/forum/cre...')
+#1 /cde/www/ea/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /cde/www/ea/index.php(35): CApplication->run()
+#3 {main}
+REQUEST_URI=/ea/Forum/forum/create
+---
+2013/11/09 15:26:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "Forum/forum/create"。' in /cde/www/ea/protected/libs/yii/web/CWebApplication.php:286
+Stack trace:
+#0 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('Forum/forum/cre...')
+#1 /cde/www/ea/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /cde/www/ea/index.php(35): CApplication->run()
+#3 {main}
+REQUEST_URI=/ea/Forum/forum/create
+---
+2013/11/09 15:26:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "Forum/forum/create"。' in /cde/www/ea/protected/libs/yii/web/CWebApplication.php:286
+Stack trace:
+#0 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('Forum/forum/cre...')
+#1 /cde/www/ea/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /cde/www/ea/index.php(35): CApplication->run()
+#3 {main}
+REQUEST_URI=/ea/Forum/forum/create
+---
+2013/11/09 15:26:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "forum/forum/create"。' in /cde/www/ea/protected/libs/yii/web/CWebApplication.php:286
+Stack trace:
+#0 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('forum/forum/cre...')
+#1 /cde/www/ea/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /cde/www/ea/index.php(35): CApplication->run()
+#3 {main}
+REQUEST_URI=/ea/forum/forum/create
+---
+2013/11/09 15:26:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "forum/forum/create"。' in /cde/www/ea/protected/libs/yii/web/CWebApplication.php:286
+Stack trace:
+#0 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('forum/forum/cre...')
+#1 /cde/www/ea/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /cde/www/ea/index.php(35): CApplication->run()
+#3 {main}
+REQUEST_URI=/ea/forum/forum/create
+---
+2013/11/09 15:26:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "forum/forum/create"。' in /cde/www/ea/protected/libs/yii/web/CWebApplication.php:286
+Stack trace:
+#0 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('forum/forum/cre...')
+#1 /cde/www/ea/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /cde/www/ea/index.php(35): CApplication->run()
+#3 {main}
+REQUEST_URI=/ea/forum/forum/create
+---
+2013/11/09 15:26:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "forum/forum/create"。' in /cde/www/ea/protected/libs/yii/web/CWebApplication.php:286
+Stack trace:
+#0 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('forum/forum/cre...')
+#1 /cde/www/ea/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /cde/www/ea/index.php(35): CApplication->run()
+#3 {main}
+REQUEST_URI=/ea/forum/forum/create
+---
+2013/11/09 15:26:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "forum/forum/create"。' in /cde/www/ea/protected/libs/yii/web/CWebApplication.php:286
+Stack trace:
+#0 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('forum/forum/cre...')
+#1 /cde/www/ea/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /cde/www/ea/index.php(35): CApplication->run()
+#3 {main}
+REQUEST_URI=/ea/forum/forum/create
+---
+2013/11/09 15:26:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "forum/forum/create"。' in /cde/www/ea/protected/libs/yii/web/CWebApplication.php:286
+Stack trace:
+#0 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('forum/forum/cre...')
+#1 /cde/www/ea/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /cde/www/ea/index.php(35): CApplication->run()
+#3 {main}
+REQUEST_URI=/ea/forum/forum/create
+---
+2013/11/09 15:26:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "forum"。' in /cde/www/ea/protected/libs/yii/web/CWebApplication.php:286
+Stack trace:
+#0 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('forum')
+#1 /cde/www/ea/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /cde/www/ea/index.php(35): CApplication->run()
+#3 {main}
+REQUEST_URI=/ea/forum
+---
+2013/11/09 15:26:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "forum"。' in /cde/www/ea/protected/libs/yii/web/CWebApplication.php:286
+Stack trace:
+#0 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('forum')
+#1 /cde/www/ea/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /cde/www/ea/index.php(35): CApplication->run()
+#3 {main}
+REQUEST_URI=/ea/forum
+---
+2013/11/09 15:26:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "forum"。' in /cde/www/ea/protected/libs/yii/web/CWebApplication.php:286
+Stack trace:
+#0 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('forum')
+#1 /cde/www/ea/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /cde/www/ea/index.php(35): CApplication->run()
+#3 {main}
+REQUEST_URI=/ea/forum
+---
+2013/11/09 15:26:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "forum"。' in /cde/www/ea/protected/libs/yii/web/CWebApplication.php:286
+Stack trace:
+#0 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('forum')
+#1 /cde/www/ea/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /cde/www/ea/index.php(35): CApplication->run()
+#3 {main}
+REQUEST_URI=/ea/forum
+---
+2013/11/09 15:26:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "forum"。' in /cde/www/ea/protected/libs/yii/web/CWebApplication.php:286
+Stack trace:
+#0 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('forum')
+#1 /cde/www/ea/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /cde/www/ea/index.php(35): CApplication->run()
+#3 {main}
+REQUEST_URI=/ea/forum
+---
+2013/11/09 15:26:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "forum"。' in /cde/www/ea/protected/libs/yii/web/CWebApplication.php:286
+Stack trace:
+#0 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('forum')
+#1 /cde/www/ea/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /cde/www/ea/index.php(35): CApplication->run()
+#3 {main}
+REQUEST_URI=/ea/forum
+---
+2013/11/09 15:26:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "forum"。' in /cde/www/ea/protected/libs/yii/web/CWebApplication.php:286
+Stack trace:
+#0 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('forum')
+#1 /cde/www/ea/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /cde/www/ea/index.php(35): CApplication->run()
+#3 {main}
+REQUEST_URI=/ea/forum
+---
+2013/11/09 15:26:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "forum"。' in /cde/www/ea/protected/libs/yii/web/CWebApplication.php:286
+Stack trace:
+#0 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('forum')
+#1 /cde/www/ea/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /cde/www/ea/index.php(35): CApplication->run()
+#3 {main}
+REQUEST_URI=/ea/forum
+---
+2013/11/09 15:26:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "forum"。' in /cde/www/ea/protected/libs/yii/web/CWebApplication.php:286
+Stack trace:
+#0 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('forum')
+#1 /cde/www/ea/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /cde/www/ea/index.php(35): CApplication->run()
+#3 {main}
+REQUEST_URI=/ea/forum
+---
+2013/11/09 15:26:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "forum"。' in /cde/www/ea/protected/libs/yii/web/CWebApplication.php:286
+Stack trace:
+#0 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('forum')
+#1 /cde/www/ea/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /cde/www/ea/index.php(35): CApplication->run()
+#3 {main}
+REQUEST_URI=/ea/forum
+---
+2013/11/09 15:26:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "forum"。' in /cde/www/ea/protected/libs/yii/web/CWebApplication.php:286
+Stack trace:
+#0 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('forum')
+#1 /cde/www/ea/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /cde/www/ea/index.php(35): CApplication->run()
+#3 {main}
+REQUEST_URI=/ea/forum
+---
+2013/11/09 15:26:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "forum"。' in /cde/www/ea/protected/libs/yii/web/CWebApplication.php:286
+Stack trace:
+#0 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('forum')
+#1 /cde/www/ea/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /cde/www/ea/index.php(35): CApplication->run()
+#3 {main}
+REQUEST_URI=/ea/forum
+---
+2013/11/09 15:26:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "forum"。' in /cde/www/ea/protected/libs/yii/web/CWebApplication.php:286
+Stack trace:
+#0 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('forum')
+#1 /cde/www/ea/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /cde/www/ea/index.php(35): CApplication->run()
+#3 {main}
+REQUEST_URI=/ea/forum
+---
+2013/11/09 15:26:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "Forum"。' in /cde/www/ea/protected/libs/yii/web/CWebApplication.php:286
+Stack trace:
+#0 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('Forum')
+#1 /cde/www/ea/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /cde/www/ea/index.php(35): CApplication->run()
+#3 {main}
+REQUEST_URI=/ea/Forum
+---
+2013/11/09 15:26:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "Forum"。' in /cde/www/ea/protected/libs/yii/web/CWebApplication.php:286
+Stack trace:
+#0 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('Forum')
+#1 /cde/www/ea/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /cde/www/ea/index.php(35): CApplication->run()
+#3 {main}
+REQUEST_URI=/ea/Forum
+---
+2013/11/09 15:26:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "Forum"。' in /cde/www/ea/protected/libs/yii/web/CWebApplication.php:286
+Stack trace:
+#0 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('Forum')
+#1 /cde/www/ea/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /cde/www/ea/index.php(35): CApplication->run()
+#3 {main}
+REQUEST_URI=/ea/Forum
+---
+2013/11/09 15:26:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "Forum"。' in /cde/www/ea/protected/libs/yii/web/CWebApplication.php:286
+Stack trace:
+#0 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('Forum')
+#1 /cde/www/ea/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /cde/www/ea/index.php(35): CApplication->run()
+#3 {main}
+REQUEST_URI=/ea/Forum
+---
+2013/11/09 15:26:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "Forum"。' in /cde/www/ea/protected/libs/yii/web/CWebApplication.php:286
+Stack trace:
+#0 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('Forum')
+#1 /cde/www/ea/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /cde/www/ea/index.php(35): CApplication->run()
+#3 {main}
+REQUEST_URI=/ea/Forum
+---
+2013/11/09 15:26:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "Home/main/index"。' in /cde/www/ea/protected/libs/yii/web/CWebApplication.php:286
+Stack trace:
+#0 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('Home/main/index')
+#1 /cde/www/ea/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /cde/www/ea/index.php(35): CApplication->run()
+#3 {main}
+REQUEST_URI=/ea/
+---
+2013/11/09 15:27:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "Home/main/index"。' in /cde/www/ea/protected/libs/yii/web/CWebApplication.php:286
+Stack trace:
+#0 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('Home/main/index')
+#1 /cde/www/ea/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /cde/www/ea/index.php(35): CApplication->run()
+#3 {main}
+REQUEST_URI=/ea/
+---
+2013/11/09 15:27:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "forum/forum/create"。' in /cde/www/ea/protected/libs/yii/web/CWebApplication.php:286
+Stack trace:
+#0 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('forum/forum/cre...')
+#1 /cde/www/ea/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /cde/www/ea/index.php(35): CApplication->run()
+#3 {main}
+REQUEST_URI=/ea/forum/forum/create
+---
+2013/11/09 15:29:25 [error] [exception.CException] exception 'CException' with message '属性 "User.isAdmin" 未被定义.' in /cde/www/ea/protected/components/ActiveRecord.php:143
+Stack trace:
+#0 /cde/www/ea/protected/components/WebUser.php(47): ActiveRecord->__get('isAdmin')
+#1 /cde/www/ea/protected/modules/forum/views/forum/index.php(6): WebUser->__get('isAdmin')
+#2 /cde/www/ea/protected/libs/yii/web/CBaseController.php(126): require('/cde/www/ea/pro...')
+#3 /cde/www/ea/protected/libs/yii/web/CBaseController.php(95): CBaseController->renderInternal('/cde/www/ea/pro...', Array, true)
+#4 /cde/www/ea/protected/libs/yii/web/CController.php(869): CBaseController->renderFile('/cde/www/ea/pro...', Array, true)
+#5 /cde/www/ea/protected/libs/yii/web/CController.php(782): CController->renderPartial('index', Array, true)
+#6 /cde/www/ea/protected/modules/forum/controllers/ForumController.php(56): CController->render('index', Array)
+#7 /cde/www/ea/protected/libs/yii/web/actions/CInlineAction.php(49): ForumController->actionIndex()
+#8 /cde/www/ea/protected/libs/yii/web/CController.php(308): CInlineAction->runWithParams(Array)
+#9 /cde/www/ea/protected/libs/yii/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 /cde/www/ea/protected/libs/yii/web/filters/CFilter.php(40): CFilterChain->run()
+#11 /cde/www/ea/protected/libs/yii/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#12 /cde/www/ea/protected/libs/yii/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#13 /cde/www/ea/protected/libs/yii/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#14 /cde/www/ea/protected/libs/yii/web/CController.php(291): CFilterChain->run()
+#15 /cde/www/ea/protected/libs/yii/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(282): CController->run('')
+#17 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('forum')
+#18 /cde/www/ea/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#19 /cde/www/ea/index.php(35): CApplication->run()
+#20 {main}
+REQUEST_URI=/ea/forum
+HTTP_REFERER=http://localhost/ea/
+---
+2013/11/09 15:29:25 [error] [exception.CException] exception 'CException' with message '属性 "User.isAdmin" 未被定义.' in /cde/www/ea/protected/components/ActiveRecord.php:143
+Stack trace:
+#0 /cde/www/ea/protected/components/WebUser.php(47): ActiveRecord->__get('isAdmin')
+#1 /cde/www/ea/protected/modules/forum/views/forum/index.php(6): WebUser->__get('isAdmin')
+#2 /cde/www/ea/protected/libs/yii/web/CBaseController.php(126): require('/cde/www/ea/pro...')
+#3 /cde/www/ea/protected/libs/yii/web/CBaseController.php(95): CBaseController->renderInternal('/cde/www/ea/pro...', Array, true)
+#4 /cde/www/ea/protected/libs/yii/web/CController.php(869): CBaseController->renderFile('/cde/www/ea/pro...', Array, true)
+#5 /cde/www/ea/protected/libs/yii/web/CController.php(782): CController->renderPartial('index', Array, true)
+#6 /cde/www/ea/protected/modules/forum/controllers/ForumController.php(56): CController->render('index', Array)
+#7 /cde/www/ea/protected/libs/yii/web/actions/CInlineAction.php(49): ForumController->actionIndex()
+#8 /cde/www/ea/protected/libs/yii/web/CController.php(308): CInlineAction->runWithParams(Array)
+#9 /cde/www/ea/protected/libs/yii/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 /cde/www/ea/protected/libs/yii/web/filters/CFilter.php(40): CFilterChain->run()
+#11 /cde/www/ea/protected/libs/yii/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#12 /cde/www/ea/protected/libs/yii/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#13 /cde/www/ea/protected/libs/yii/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#14 /cde/www/ea/protected/libs/yii/web/CController.php(291): CFilterChain->run()
+#15 /cde/www/ea/protected/libs/yii/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(282): CController->run('')
+#17 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('forum')
+#18 /cde/www/ea/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#19 /cde/www/ea/index.php(35): CApplication->run()
+#20 {main}
+REQUEST_URI=/ea/forum
+HTTP_REFERER=http://localhost/ea/
+---
+2013/11/09 15:32:31 [error] [exception.CException] exception 'CException' with message '属性 "User.isAdmin" 未被定义.' in /cde/www/ea/protected/components/ActiveRecord.php:143
+Stack trace:
+#0 /cde/www/ea/protected/components/WebUser.php(47): ActiveRecord->__get('isAdmin')
+#1 /cde/www/ea/protected/modules/forum/views/forum/index.php(6): WebUser->__get('isAdmin')
+#2 /cde/www/ea/protected/libs/yii/web/CBaseController.php(126): require('/cde/www/ea/pro...')
+#3 /cde/www/ea/protected/libs/yii/web/CBaseController.php(95): CBaseController->renderInternal('/cde/www/ea/pro...', Array, true)
+#4 /cde/www/ea/protected/libs/yii/web/CController.php(869): CBaseController->renderFile('/cde/www/ea/pro...', Array, true)
+#5 /cde/www/ea/protected/libs/yii/web/CController.php(782): CController->renderPartial('index', Array, true)
+#6 /cde/www/ea/protected/modules/forum/controllers/ForumController.php(56): CController->render('index', Array)
+#7 /cde/www/ea/protected/libs/yii/web/actions/CInlineAction.php(49): ForumController->actionIndex()
+#8 /cde/www/ea/protected/libs/yii/web/CController.php(308): CInlineAction->runWithParams(Array)
+#9 /cde/www/ea/protected/libs/yii/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 /cde/www/ea/protected/libs/yii/web/filters/CFilter.php(40): CFilterChain->run()
+#11 /cde/www/ea/protected/libs/yii/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#12 /cde/www/ea/protected/libs/yii/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#13 /cde/www/ea/protected/libs/yii/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#14 /cde/www/ea/protected/libs/yii/web/CController.php(291): CFilterChain->run()
+#15 /cde/www/ea/protected/libs/yii/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(282): CController->run('')
+#17 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('forum')
+#18 /cde/www/ea/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#19 /cde/www/ea/index.php(35): CApplication->run()
+#20 {main}
+REQUEST_URI=/ea/forum
+HTTP_REFERER=http://localhost/ea/
+---
+2013/11/09 15:41:29 [error] [exception.CException] exception 'CException' with message '别名 "widget.helper.CGridView" 无效。请确认它指向一个存在的PHP文件。' in /cde/www/ea/protected/libs/yii/YiiBase.php:316
+Stack trace:
+#0 /cde/www/ea/protected/libs/yii/web/CWidgetFactory.php(146): YiiBase::import('widget.helper.C...', true)
+#1 /cde/www/ea/protected/libs/yii/web/CBaseController.php(146): CWidgetFactory->createWidget(Object(GroupController), 'widget.helper.C...', Array)
+#2 /cde/www/ea/protected/libs/yii/web/CBaseController.php(172): CBaseController->createWidget('widget.helper.C...', Array)
+#3 /cde/www/ea/protected/modules/Admin/views/group/list.php(38): CBaseController->widget('widget.helper.C...', Array)
+#4 /cde/www/ea/protected/libs/yii/web/CBaseController.php(126): require('/cde/www/ea/pro...')
+#5 /cde/www/ea/protected/libs/yii/web/CBaseController.php(95): CBaseController->renderInternal('/cde/www/ea/pro...', Array, true)
+#6 /cde/www/ea/protected/libs/yii/web/CController.php(869): CBaseController->renderFile('/cde/www/ea/pro...', Array, true)
+#7 /cde/www/ea/protected/libs/yii/web/CController.php(782): CController->renderPartial('list', Array, true)
+#8 /cde/www/ea/protected/modules/Admin/controllers/GroupController.php(30): CController->render('list', Array)
+#9 /cde/www/ea/protected/libs/yii/web/actions/CInlineAction.php(49): GroupController->actionList()
+#10 /cde/www/ea/protected/libs/yii/web/CController.php(308): CInlineAction->runWithParams(Array)
+#11 /cde/www/ea/protected/libs/yii/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 /cde/www/ea/protected/libs/yii/web/filters/CFilter.php(40): CFilterChain->run()
+#13 /cde/www/ea/protected/libs/yii/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 /cde/www/ea/protected/libs/yii/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 /cde/www/ea/protected/libs/yii/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 /cde/www/ea/protected/libs/yii/web/filters/CFilter.php(40): CFilterChain->run()
+#17 /cde/www/ea/protected/libs/yii/web/filters/CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#18 /cde/www/ea/protected/libs/yii/web/filters/CFilter.php(40): CFilterChain->run()
+#19 /cde/www/ea/protected/libs/yii/web/filters/CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#20 /cde/www/ea/protected/libs/yii/web/filters/CFilter.php(40): CFilterChain->run()
+#21 /cde/www/ea/protected/libs/yii/web/filters/CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#22 /cde/www/ea/protected/libs/yii/web/filters/CFilter.php(40): CFilterChain->run()
+#23 /cde/www/ea/protected/libs/yii/web/filters/CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#24 /cde/www/ea/protected/libs/yii/web/filters/CFilter.php(40): CFilterChain->run()
+#25 /cde/www/ea/protected/libs/yii/web/filters/CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#26 /cde/www/ea/protected/libs/yii/web/filters/CFilter.php(40): CFilterChain->run()
+#27 /cde/www/ea/protected/libs/yii/web/filters/CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#28 /cde/www/ea/protected/libs/yii/web/filters/CFilter.php(40): CFilterChain->run()
+#29 /cde/www/ea/protected/libs/yii/web/filters/CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#30 /cde/www/ea/protected/libs/yii/web/filters/CFilter.php(40): CFilterChain->run()
+#31 /cde/www/ea/protected/libs/yii/web/filters/CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#32 /cde/www/ea/protected/components/filters/RbacFilter.php(17): CFilterChain->run()
+#33 /cde/www/ea/protected/libs/yii/web/filters/CFilter.php(38): RbacFilter->preFilter(Object(CFilterChain))
+#34 /cde/www/ea/protected/libs/yii/web/filters/CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#35 /cde/www/ea/protected/libs/yii/web/CController.php(291): CFilterChain->run()
+#36 /cde/www/ea/protected/libs/yii/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#37 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(282): CController->run('list')
+#38 /cde/www/ea/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('Admin/group/lis...')
+#39 /cde/www/ea/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#40 /cde/www/ea/index.php(35): CApplication->run()
+#41 {main}
+REQUEST_URI=/ea/Admin/group/list
+---

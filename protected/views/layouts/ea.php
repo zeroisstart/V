@@ -41,13 +41,14 @@
 						array('label'=>'首页', 'url'=>array('/Home/main/index'),'htmlOptions'=>array('class'=>'noSpacing')),
 						array('label'=>'关于竞赛', 'url'=>array('/Home/about/main')),
 						array('label'=>'参赛办法', 'url'=>array('/Home/join/main')),
-						array('label'=>'企业命题', 'url'=>array('/Home/companyq/main')),
-						array('label'=>'企业导师', 'url'=>array('/Home/master/main')),
-						array('label'=>'风采展示', 'url'=>array('/Home/gallery/main')),
+						#array('label'=>'企业命题', 'url'=>array('/Home/companyq/main')),
+						#array('label'=>'企业导师', 'url'=>array('/Home/master/main')),
+						#array('label'=>'风采展示', 'url'=>array('/Home/gallery/main')),
 
 						#array('label'=>'竞赛动态', 'url'=>array('/Home/feeds/main'),'visable'=>false),
-						#array('label'=>'历届回顾', 'url'=>array('/Home/history/main'),'visable'=>false),
-						#array('label'=>'风采展示', 'url'=>array('/Home/gallery/main')),
+						array('label'=>'历届回顾', 'url'=>array('/Home/history/main'),'visable'=>false),
+						array('label'=>'风采展示', 'url'=>array('/Home/gallery/main')),
+						array('label'=>'论坛', 'url'=>array('/forum')),
 						array('label'=>'个人中心', 'url'=>array('/UserCenter/main/main'),'visible'=>!Yii::app()->user->isGuest)
 					),
 				)); ?>	
@@ -105,7 +106,7 @@
         				<li>
         					<a href="<?php echo $this -> createUrl('/Home/gallery/main')?>">风采展示</a>
         				</li>
-        				
+
         				
         		</ul>
         	</div>

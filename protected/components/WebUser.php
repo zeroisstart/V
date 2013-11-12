@@ -66,12 +66,11 @@ class WebUser extends CWebUser {
 		if (! $user)
 			return false;
 		$model = UserBooked::model ()->findByAttributes ( array (
-				'state' => '1',
 				'UID' => $user->id 
 		) );
 		
 		if ($model)
-			return true;
+			return $model->attributes;
 		return false;
 	}
 }
