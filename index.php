@@ -1,7 +1,7 @@
 <?php
 
 if (substr ( $_SERVER ['DOCUMENT_ROOT'], - 1 ) != '/') {
-	$_SERVER ['DOCUMENT_ROOT'] = $_SERVER ['DOCUMENT_ROOT'] . '/';
+	$_SERVER ['DOCUMENT_ROOT'] = $_SERVER ['DOCUMENT_ROOT'] . '/V/';
 }
 
 require_once $_SERVER ['DOCUMENT_ROOT'] . 'protected/config/constants.php';

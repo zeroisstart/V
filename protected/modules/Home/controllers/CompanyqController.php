@@ -28,6 +28,7 @@ class CompanyqController extends Controller {
 					'title' => $model->title 
 			);
 		}
+		
 		$current_model = $current_model ? $current_model : reset ( $data );
 		
 		$this->render ( 'main', array (

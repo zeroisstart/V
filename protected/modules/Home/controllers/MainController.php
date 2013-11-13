@@ -11,6 +11,7 @@ class MainController extends Controller {
 		$slider_model = Slider::model ();
 		$dataProvider = $slider_model->search ();
 		
+		
 		// header("Location:/V/admin");
 		
 		// var_dump($slider_model);

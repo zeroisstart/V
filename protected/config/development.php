@@ -8,7 +8,7 @@ return CMap::mergeArray(
             	'tablePrefix'      =>'tbl_',
 		        'emulatePrepare'   => true,
 		        'username'         => 'root',
-		        'password'         => '',
+		        'password'         => '1',
 		        'charset'          => 'utf8',
 		        'enableProfiling'  => true,
 	        )

@@ -22,19 +22,13 @@ class FeedsController extends Controller {
 		
 		if (! empty ( $model )) {
 			$data = $model->attributes;
-			$this->render ( 'view', array (
-					'data' => $data,
-					'model' => $model 
-			) );
+			$this->render ( 'view', array ('data' => $data, 'model' => $model ) );
 		} else {
 			
 			$model = News::model ();
 			$model->category = 18;
 			$dataProvider = $model->search ();
-			$this->render ( 'main', array (
-					'dataProvider' => $dataProvider,
-					'model' => $model 
-			) );
+			$this->render ( 'main', array ('dataProvider' => $dataProvider, 'model' => $model ) );
 		}
 	}
 }
