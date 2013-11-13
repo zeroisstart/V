@@ -31,7 +31,6 @@ if(in_array( $_SERVER ['REMOTE_ADDR'], array('::1','127.0.0.1'))){
 }else{
 	$config = 'production';
 }
-
 $config = PROTECTED_PATH . '/config/' . $config . '.php';
 Yii::createWebApplication ( $config )->run ();
 

@@ -15,14 +15,17 @@ $this->breadcrumbs = array (
 <?php
 /* @var $this AdminController */
 
+#var_dump($dataProvider -> data);
+#die;
+
 $this->widget ( 'widget.helper.GridView', array (
 		'dataProvider' => $dataProvider,
 		'columns' => array (
 				'ID',
 				'name' => array (
 						'name' => 'name',
-						'type' => 'html',
-						'value' => '$data -> getMemberLink($data->name);' 
+						'type'=>'raw',
+						'value' => '$data -> getMemberLink($data->name);',
 				),
 				'username',
 				'create_time',

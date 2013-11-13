@@ -97,7 +97,15 @@ class MainController extends Controller {
 		$user = Yii::app ()->user;
 		$uid = $user->id;
 		
-		if (! $user->isBooked ()) {
+		$bookinfo = $user->isBooked ();
+		
+		if (!$bookinfo || !$bookinfo ['state']) {
+			
+			if(!$bookinfo)
+				Yii::app ()->user->setFlash ( 'success', "请先报名!" );
+			else
+				Yii::app ()->user->setFlash ( 'success', "请耐心等待审核" );
+			
 			$this->redirect ( $this->createUrl ( '/UserCenter/main/main', array (
 					'ac' => 'book' 
 			) ) );
@@ -264,7 +272,15 @@ class MainController extends Controller {
 		$user = Yii::app ()->user;
 		$uid = $user->id;
 		
-		if (! $user->isBooked ()) {
+		$bookinfo = $user-> isBooked();
+		
+		if (!$bookinfo || !$bookinfo ['state']) {
+			
+			if(!$bookinfo)
+				Yii::app ()->user->setFlash ( 'success', "请先报名!" );
+			else
+				Yii::app ()->user->setFlash ( 'success', "请耐心等待审核" );
+			
 			$this->redirect ( $this->createUrl ( '/UserCenter/main/main', array (
 					'ac' => 'book' 
 			) ) );

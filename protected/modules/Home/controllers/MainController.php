@@ -1,6 +1,10 @@
 <?php
 class MainController extends Controller {
 	public function actionIndex() {
+		
+		
+		$this -> redirect($this -> createUrl('/forum'));
+		
 		$cdbcriteria = new CDbCriteria ();
 		$cdbcriteria->compare ( 'category', 19 );
 		$cdbcriteria->limit = 10;
@@ -10,6 +14,7 @@ class MainController extends Controller {
 		
 		$slider_model = Slider::model ();
 		$dataProvider = $slider_model->search ();
+
 		
 		
 		// header("Location:/V/admin");
@@ -23,10 +28,10 @@ class MainController extends Controller {
 		
 		// var_dump($user-> id);
 		
-		$img = array ();
-		// Yii::app() -> user -> setFlash('success','注册成功!');
-		// var_dump(Yii::app() -> params -> imgAccessPath);
-		// die;
+		//$img = array ();
+		//Yii::app() -> user -> setFlash('success','注册成功!');
+		#var_dump(Yii::app() -> params -> imgAccessPath);
+		#die;
 		
 		foreach ( $dataProvider->data as $_model ) {
 			$img [] = (Yii::app ()->params->imgAccessPath . 'img/' . $_model->img);

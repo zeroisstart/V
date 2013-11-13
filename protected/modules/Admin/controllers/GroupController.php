@@ -21,6 +21,9 @@ class GroupController extends Controller {
 		// ie;
 		$dataProvider = $group->search ();
 		
+		#var_dump($dataProvider -> data);
+		#die;
+		//error_reporting(E_ALL);
 		$this->render ( 'list', array (
 				'model' => $group,
 				'dataProvider' => $dataProvider 
