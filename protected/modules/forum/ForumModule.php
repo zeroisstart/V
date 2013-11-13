@@ -3,6 +3,8 @@
 class ForumModule extends CWebModule
 {
     public $defaultController = 'forum';
+    
+    public $layout='//layouts/ea';
 
     public $userUrl;
 

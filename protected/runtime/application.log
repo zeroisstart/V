@@ -4405,3 +4405,187 @@ Stack trace:
 REQUEST_URI=/V/img/201303/25/7da31c52eb5d9f867ab72d29ff604a24.png
 HTTP_REFERER=http://localhost/V/
 ---
+2013/11/13 11:36:57 [error] [exception.CDbException] SQLSTATE[28000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+2013/11/13 11:36:57 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection.' in C:\webaccess\V\V\protected\libs\yii\db\CDbConnection.php:387
+Stack trace:
+#0 C:\webaccess\V\V\protected\libs\yii\db\CDbConnection.php(330): CDbConnection->open()
+#1 C:\webaccess\V\V\protected\libs\yii\db\CDbConnection.php(308): CDbConnection->setActive(true)
+#2 C:\webaccess\V\V\protected\libs\yii\base\CModule.php(387): CDbConnection->init()
+#3 C:\webaccess\V\V\protected\libs\yii\base\CApplication.php(438): CModule->getComponent('db')
+#4 C:\webaccess\V\V\protected\libs\yii\db\ar\CActiveRecord.php(623): CApplication->getDb()
+#5 C:\webaccess\V\V\protected\libs\yii\db\ar\CActiveRecord.php(2309): CActiveRecord->getDbConnection()
+#6 C:\webaccess\V\V\protected\libs\yii\db\ar\CActiveRecord.php(387): CActiveRecordMetaData->__construct(Object(Forum))
+#7 C:\webaccess\V\V\protected\modules\forum\models\Forum.php(26): CActiveRecord::model('Forum')
+#8 C:\webaccess\V\V\protected\modules\forum\controllers\ForumController.php(55): Forum::model()
+#9 C:\webaccess\V\V\protected\libs\yii\web\actions\CInlineAction.php(49): ForumController->actionIndex()
+#10 C:\webaccess\V\V\protected\libs\yii\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\webaccess\V\V\protected\libs\yii\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\webaccess\V\V\protected\libs\yii\web\filters\CFilter.php(40): CFilterChain->run()
+#13 C:\webaccess\V\V\protected\libs\yii\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 C:\webaccess\V\V\protected\libs\yii\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\webaccess\V\V\protected\libs\yii\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\webaccess\V\V\protected\libs\yii\web\CController.php(291): CFilterChain->run()
+#17 C:\webaccess\V\V\protected\libs\yii\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\webaccess\V\V\protected\libs\yii\web\CWebApplication.php(282): CController->run('')
+#19 C:\webaccess\V\V\protected\libs\yii\web\CWebApplication.php(141): CWebApplication->runController('forum')
+#20 C:\webaccess\V\V\protected\libs\yii\base\CApplication.php(169): CWebApplication->processRequest()
+#21 C:\webaccess\V\V\index.php(35): CApplication->run()
+#22 {main}
+REQUEST_URI=/V/forum
+---
+2013/11/13 12:52:22 [error] [exception.CDbException] SQLSTATE[28000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+2013/11/13 12:52:22 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection.' in C:\webaccess\V\V\protected\libs\yii\db\CDbConnection.php:387
+Stack trace:
+#0 C:\webaccess\V\V\protected\libs\yii\db\CDbConnection.php(330): CDbConnection->open()
+#1 C:\webaccess\V\V\protected\libs\yii\db\CDbConnection.php(308): CDbConnection->setActive(true)
+#2 C:\webaccess\V\V\protected\libs\yii\base\CModule.php(387): CDbConnection->init()
+#3 C:\webaccess\V\V\protected\libs\yii\base\CApplication.php(438): CModule->getComponent('db')
+#4 C:\webaccess\V\V\protected\libs\yii\db\ar\CActiveRecord.php(623): CApplication->getDb()
+#5 C:\webaccess\V\V\protected\libs\yii\db\ar\CActiveRecord.php(2309): CActiveRecord->getDbConnection()
+#6 C:\webaccess\V\V\protected\libs\yii\db\ar\CActiveRecord.php(387): CActiveRecordMetaData->__construct(Object(Forum))
+#7 C:\webaccess\V\V\protected\modules\forum\models\Forum.php(26): CActiveRecord::model('Forum')
+#8 C:\webaccess\V\V\protected\modules\forum\controllers\ForumController.php(55): Forum::model()
+#9 C:\webaccess\V\V\protected\libs\yii\web\actions\CInlineAction.php(49): ForumController->actionIndex()
+#10 C:\webaccess\V\V\protected\libs\yii\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\webaccess\V\V\protected\libs\yii\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\webaccess\V\V\protected\libs\yii\web\filters\CFilter.php(40): CFilterChain->run()
+#13 C:\webaccess\V\V\protected\libs\yii\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 C:\webaccess\V\V\protected\libs\yii\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\webaccess\V\V\protected\libs\yii\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\webaccess\V\V\protected\libs\yii\web\CController.php(291): CFilterChain->run()
+#17 C:\webaccess\V\V\protected\libs\yii\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\webaccess\V\V\protected\libs\yii\web\CWebApplication.php(282): CController->run('')
+#19 C:\webaccess\V\V\protected\libs\yii\web\CWebApplication.php(141): CWebApplication->runController('forum')
+#20 C:\webaccess\V\V\protected\libs\yii\base\CApplication.php(169): CWebApplication->processRequest()
+#21 C:\webaccess\V\V\index.php(35): CApplication->run()
+#22 {main}
+REQUEST_URI=/V/forum
+---
+2013/11/13 12:59:15 [error] [exception.CDbException] SQLSTATE[28000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+2013/11/13 12:59:15 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection.' in C:\webaccess\V\V\protected\libs\yii\db\CDbConnection.php:387
+Stack trace:
+#0 C:\webaccess\V\V\protected\libs\yii\db\CDbConnection.php(330): CDbConnection->open()
+#1 C:\webaccess\V\V\protected\libs\yii\db\CDbConnection.php(308): CDbConnection->setActive(true)
+#2 C:\webaccess\V\V\protected\libs\yii\base\CModule.php(387): CDbConnection->init()
+#3 C:\webaccess\V\V\protected\libs\yii\base\CApplication.php(438): CModule->getComponent('db')
+#4 C:\webaccess\V\V\protected\libs\yii\db\ar\CActiveRecord.php(623): CApplication->getDb()
+#5 C:\webaccess\V\V\protected\libs\yii\db\ar\CActiveRecord.php(2309): CActiveRecord->getDbConnection()
+#6 C:\webaccess\V\V\protected\libs\yii\db\ar\CActiveRecord.php(387): CActiveRecordMetaData->__construct(Object(Forum))
+#7 C:\webaccess\V\V\protected\modules\forum\models\Forum.php(26): CActiveRecord::model('Forum')
+#8 C:\webaccess\V\V\protected\modules\forum\controllers\ForumController.php(55): Forum::model()
+#9 C:\webaccess\V\V\protected\libs\yii\web\actions\CInlineAction.php(49): ForumController->actionIndex()
+#10 C:\webaccess\V\V\protected\libs\yii\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\webaccess\V\V\protected\libs\yii\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\webaccess\V\V\protected\libs\yii\web\filters\CFilter.php(40): CFilterChain->run()
+#13 C:\webaccess\V\V\protected\libs\yii\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 C:\webaccess\V\V\protected\libs\yii\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\webaccess\V\V\protected\libs\yii\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\webaccess\V\V\protected\libs\yii\web\CController.php(291): CFilterChain->run()
+#17 C:\webaccess\V\V\protected\libs\yii\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\webaccess\V\V\protected\libs\yii\web\CWebApplication.php(282): CController->run('')
+#19 C:\webaccess\V\V\protected\libs\yii\web\CWebApplication.php(141): CWebApplication->runController('forum')
+#20 C:\webaccess\V\V\protected\libs\yii\base\CApplication.php(169): CWebApplication->processRequest()
+#21 C:\webaccess\V\V\index.php(35): CApplication->run()
+#22 {main}
+REQUEST_URI=/V/forum
+---
+2013/11/13 13:15:29 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'ea_1.thread' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `thread`.
+2013/11/13 13:15:29 [error] [exception.CDbException] exception 'CDbException' with message '数据库中无法找到 active record class "Thread" 对应的 table "thread".' in C:\webaccess\V\V\protected\libs\yii\db\ar\CActiveRecord.php:2310
+Stack trace:
+#0 C:\webaccess\V\V\protected\libs\yii\db\ar\CActiveRecord.php(387): CActiveRecordMetaData->__construct(Object(Thread))
+#1 C:\webaccess\V\V\protected\libs\yii\db\ar\CActiveFinder.php(215): CActiveRecord::model('Thread')
+#2 C:\webaccess\V\V\protected\libs\yii\db\ar\CActiveFinder.php(48): CActiveFinder->buildJoinTree(Object(CJoinElement), 'threadCount')
+#3 C:\webaccess\V\V\protected\libs\yii\db\ar\CActiveRecord.php(271): CActiveFinder->__construct(Object(Forum), 'threadCount')
+#4 C:\webaccess\V\V\protected\libs\yii\db\ar\CActiveRecord.php(179): CActiveRecord->getRelated('threadCount')
+#5 C:\webaccess\V\V\protected\libs\yii\web\helpers\CHtml.php(1898): CActiveRecord->__isset('threadCount')
+#6 C:\webaccess\V\V\protected\libs\yii\zii\widgets\grid\CDataColumn.php(133): CHtml::value(Object(Forum), 'threadCount')
+#7 C:\webaccess\V\V\protected\libs\yii\zii\widgets\grid\CGridColumn.php(144): CDataColumn->renderDataCellContent(0, Object(Forum))
+#8 C:\webaccess\V\V\protected\modules\forum\extensions\groupgridview\GroupGridView.php(211): CGridColumn->renderDataCell(0)
+#9 C:\webaccess\V\V\protected\libs\yii\zii\widgets\grid\CGridView.php(545): GroupGridView->renderTableRow(0)
+#10 C:\webaccess\V\V\protected\modules\forum\extensions\groupgridview\GroupGridView.php(84): CGridView->renderTableBody()
+#11 C:\webaccess\V\V\protected\libs\yii\zii\widgets\grid\CGridView.php(455): GroupGridView->renderTableBody()
+#12 C:\webaccess\V\V\protected\libs\yii\zii\widgets\CBaseListView.php(160): CGridView->renderItems()
+#13 [internal function]: CBaseListView->renderSection(Array)
+#14 C:\webaccess\V\V\protected\libs\yii\zii\widgets\CBaseListView.php(143): preg_replace_callback('/{(\w+)}/', Array, '{summary}?{item...')
+#15 C:\webaccess\V\V\protected\libs\yii\zii\widgets\CBaseListView.php(128): CBaseListView->renderContent()
+#16 C:\webaccess\V\V\protected\libs\yii\web\CBaseController.php(173): CBaseListView->run()
+#17 C:\webaccess\V\V\protected\modules\forum\views\forum\_subforums.php(93): CBaseController->widget('forum.extension...', Array)
+#18 C:\webaccess\V\V\protected\libs\yii\web\CBaseController.php(126): require('C:\webaccess\V\...')
+#19 C:\webaccess\V\V\protected\libs\yii\web\CBaseController.php(95): CBaseController->renderInternal('C:\webaccess\V\...', Array, true)
+#20 C:\webaccess\V\V\protected\libs\yii\web\CController.php(869): CBaseController->renderFile('C:\webaccess\V\...', Array, true)
+#21 C:\webaccess\V\V\protected\modules\forum\views\forum\index.php(21): CController->renderPartial('_subforums', Array)
+#22 C:\webaccess\V\V\protected\libs\yii\web\CBaseController.php(126): require('C:\webaccess\V\...')
+#23 C:\webaccess\V\V\protected\libs\yii\web\CBaseController.php(95): CBaseController->renderInternal('C:\webaccess\V\...', Array, true)
+#24 C:\webaccess\V\V\protected\libs\yii\web\CController.php(869): CBaseController->renderFile('C:\webaccess\V\...', Array, true)
+#25 C:\webaccess\V\V\protected\libs\yii\web\CController.php(782): CController->renderPartial('index', Array, true)
+#26 C:\webaccess\V\V\protected\modules\forum\controllers\ForumController.php(56): CController->render('index', Array)
+#27 C:\webaccess\V\V\protected\libs\yii\web\actions\CInlineAction.php(49): ForumController->actionIndex()
+#28 C:\webaccess\V\V\protected\libs\yii\web\CController.php(308): CInlineAction->runWithParams(Array)
+#29 C:\webaccess\V\V\protected\libs\yii\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#30 C:\webaccess\V\V\protected\libs\yii\web\filters\CFilter.php(40): CFilterChain->run()
+#31 C:\webaccess\V\V\protected\libs\yii\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#32 C:\webaccess\V\V\protected\libs\yii\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#33 C:\webaccess\V\V\protected\libs\yii\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#34 C:\webaccess\V\V\protected\libs\yii\web\CController.php(291): CFilterChain->run()
+#35 C:\webaccess\V\V\protected\libs\yii\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#36 C:\webaccess\V\V\protected\libs\yii\web\CWebApplication.php(282): CController->run('')
+#37 C:\webaccess\V\V\protected\libs\yii\web\CWebApplication.php(141): CWebApplication->runController('forum')
+#38 C:\webaccess\V\V\protected\libs\yii\base\CApplication.php(169): CWebApplication->processRequest()
+#39 C:\webaccess\V\V\index.php(35): CApplication->run()
+#40 {main}
+REQUEST_URI=/V/forum
+---
+2013/11/13 14:51:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "Admin"。' in C:\webaccess\V\V\protected\libs\yii\web\CWebApplication.php:286
+Stack trace:
+#0 C:\webaccess\V\V\protected\libs\yii\web\CWebApplication.php(141): CWebApplication->runController('Admin')
+#1 C:\webaccess\V\V\protected\libs\yii\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\webaccess\V\V\index.php(35): CApplication->run()
+#3 {main}
+REQUEST_URI=/V/Admin/
+---
+2013/11/13 14:53:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "Admin"。' in C:\webaccess\V\V\protected\libs\yii\web\CWebApplication.php:286
+Stack trace:
+#0 C:\webaccess\V\V\protected\libs\yii\web\CWebApplication.php(141): CWebApplication->runController('Admin')
+#1 C:\webaccess\V\V\protected\libs\yii\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\webaccess\V\V\index.php(35): CApplication->run()
+#3 {main}
+REQUEST_URI=/V/Admin/
+---
+2013/11/13 14:54:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "admin/book"。' in C:\webaccess\V\V\protected\libs\yii\web\CWebApplication.php:286
+Stack trace:
+#0 C:\webaccess\V\V\protected\libs\yii\web\CWebApplication.php(141): CWebApplication->runController('admin/book')
+#1 C:\webaccess\V\V\protected\libs\yii\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\webaccess\V\V\index.php(35): CApplication->run()
+#3 {main}
+REQUEST_URI=/V/admin/book
+---
+2013/11/13 15:41:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in C:\webaccess\V\V\protected\modules\forum\controllers\ForumController.php:68
+Stack trace:
+#0 [internal function]: ForumController->actionView('5')
+#1 C:\webaccess\V\V\protected\libs\yii\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ForumController), Array)
+#2 C:\webaccess\V\V\protected\libs\yii\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ForumController), Object(ReflectionMethod), Array)
+#3 C:\webaccess\V\V\protected\libs\yii\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\webaccess\V\V\protected\libs\yii\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\webaccess\V\V\protected\libs\yii\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\webaccess\V\V\protected\libs\yii\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 C:\webaccess\V\V\protected\libs\yii\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\webaccess\V\V\protected\libs\yii\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\webaccess\V\V\protected\libs\yii\web\CController.php(291): CFilterChain->run()
+#10 C:\webaccess\V\V\protected\libs\yii\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\webaccess\V\V\protected\libs\yii\web\CWebApplication.php(282): CController->run('view')
+#12 C:\webaccess\V\V\protected\libs\yii\web\CWebApplication.php(141): CWebApplication->runController('forum/forum/vie...')
+#13 C:\webaccess\V\V\protected\libs\yii\base\CApplication.php(169): CWebApplication->processRequest()
+#14 C:\webaccess\V\V\index.php(35): CApplication->run()
+#15 {main}
+REQUEST_URI=/V/forum/forum/view/id/5
+HTTP_REFERER=http://localhost/V/forum/forum/view/id/5
+---
+2013/11/13 16:18:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "forum/main/index"。' in C:\webaccess\V\V\protected\libs\yii\web\CWebApplication.php:286
+Stack trace:
+#0 C:\webaccess\V\V\protected\libs\yii\web\CWebApplication.php(141): CWebApplication->runController('forum/main/inde...')
+#1 C:\webaccess\V\V\protected\libs\yii\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\webaccess\V\V\index.php(35): CApplication->run()
+#3 {main}
+REQUEST_URI=/V/forum/main/index
+HTTP_REFERER=http://localhost/V/forum
+---

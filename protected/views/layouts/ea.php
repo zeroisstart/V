@@ -48,7 +48,7 @@
 						#array('label'=>'竞赛动态', 'url'=>array('/Home/feeds/main'),'visable'=>false),
 						array('label'=>'历届回顾', 'url'=>array('/Home/history/main'),'visable'=>false),
 						array('label'=>'风采展示', 'url'=>array('/Home/gallery/main')),
-						array('label'=>'论坛', 'url'=>array('/forum')),
+						array('label'=>'论坛', 'url'=>array('/forum/forum/index')),
 						array('label'=>'个人中心', 'url'=>array('/UserCenter/main/main'),'visible'=>!Yii::app()->user->isGuest)
 					),
 				)); ?>	
@@ -79,7 +79,15 @@
 		<?php endif;?>
 		<?php endif; ?>
     
+    
+    	
+    
         <div class="main">
+        	<?php if(isset($this->breadcrumbs)):?>
+			<?php $this->widget('zii.widgets.CBreadcrumbs', array(
+				'links'=>$this->breadcrumbs,
+			)); ?><!-- breadcrumbs -->
+			<?php endif?>
             <?php echo $content;?>
         </div>
     </div>
@@ -98,15 +106,14 @@
         					<a href="<?php echo $this -> createUrl('/Home/join/main');?>">参赛办法</a>
         				</li>
         				<li>
-        					<a href="<?php echo $this -> createUrl('/Home/companyq/main');?>">企业命题</a>
-        				</li>
-        				<li>
-        					<a href="<?php echo $this -> createUrl('/Home/master/main');?>">企业导师</a>
+        					<a href="<?php echo $this -> createUrl('/Home/master/main');?>">历届回顾</a>
         				</li>
         				<li>
         					<a href="<?php echo $this -> createUrl('/Home/gallery/main')?>">风采展示</a>
         				</li>
-
+						<li>
+        					<a href="<?php echo $this -> createUrl('/Home/gallery/main')?>">论坛</a>
+        				</li>
         				
         		</ul>
         	</div>
