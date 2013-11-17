@@ -1,15 +1,16 @@
 <?php
+/*
 $this->widget('zii.widgets.CBreadcrumbs', array(
     'links'=>array_merge(
         $model->getBreadcrumbs(!$model->isNewRecord),
         array($model->isNewRecord?'New forum':'Edit')
     )
-));
+));*/
 ?>
 <div class="form" style="margin:20px;">
 <?php $form=$this->beginWidget('CActiveForm'); ?>
 
-    <p class="note">Fields with <span class="required">*</span> are required.</p>
+    <p class="note">带星号 <span class="required">*</span> 为必填。</p>
 
     <div class="row">
         <?php echo $form->labelEx($model,'parent_id'); ?>
@@ -45,7 +46,7 @@ $this->widget('zii.widgets.CBreadcrumbs', array(
     </div>
 
     <div class="row buttons">
-        <?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
+        <?php echo CHtml::submitButton($model->isNewRecord ? '提交' : '保存',array('class'=>'button blue')); ?>
     </div>
 <?php $this->endWidget(); ?>
 </div><!-- form -->

@@ -1,19 +1,18 @@
 <?php
 
 if (substr ( $_SERVER ['DOCUMENT_ROOT'], - 1 ) != '/') {
-	$_SERVER ['DOCUMENT_ROOT'] = $_SERVER ['DOCUMENT_ROOT'] . '/V/';
+	$_SERVER ['DOCUMENT_ROOT'] = $_SERVER ['DOCUMENT_ROOT'] . '/ea/';
 }
 
 require_once $_SERVER ['DOCUMENT_ROOT'] . 'protected/config/constants.php';
 
 $yii = LIBRARY_PATH . 'yii/yii.php';
 
-ini_set ( "display_errors", 1 );
 error_reporting ( E_ALL );
 
-defined ( 'YII_DEBUG' ) or define ( 'YII_DEBUG', false );
+defined ( 'YII_DEBUG' ) or define ( 'YII_DEBUG', true );
 
-defined ( 'YII_TRACE_LEVEL' ) or define ( 'YII_TRACE_LEVEL', 3 );
+defined ( 'YII_TRACE_LEVEL' ) or define ( 'YII_TRACE_LEVEL', 5 );
 
 date_default_timezone_set ( 'Asia/Shanghai' );
 
@@ -31,6 +30,7 @@ if(in_array( $_SERVER ['REMOTE_ADDR'], array('::1','127.0.0.1'))){
 }else{
 	$config = 'production';
 }
+
 $config = PROTECTED_PATH . '/config/' . $config . '.php';
 Yii::createWebApplication ( $config )->run ();
 

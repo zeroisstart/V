@@ -63,6 +63,8 @@ class Ueditor extends CInputWidget
 	{
 		$dir = dirname(__FILE__) . DIRECTORY_SEPARATOR . 'ueditor';
 		$this->baseUrl = Yii::app()->getAssetManager()->publish($dir);
+		#var_dump($this->baseUrl);
+		#die;
 	}
 	
 	/**

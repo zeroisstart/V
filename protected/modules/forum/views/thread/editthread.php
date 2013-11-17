@@ -21,7 +21,7 @@
             <?php echo $form->textField($model,'subject'); ?>
             <?php echo $form->error($model,'subject'); ?>
         </div>
-
+        
         <div class="row rememberMe">
             <?php echo $form->checkBox($model,'is_sticky',array('uncheckValue'=>0)); ?>
             <?php echo $form->labelEx($model,'is_sticky'); ?>
@@ -38,4 +38,4 @@
             <?php echo CHtml::submitButton('Submit'); ?>
         </div>
     <?php $this->endWidget(); ?>
-</div><!-- form -->
+</div>

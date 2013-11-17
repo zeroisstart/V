@@ -114,11 +114,11 @@ class Forum extends CActiveRecord
     public function attributeLabels() {
         return array_merge(parent::attributeLabels(), array(
             'id' => 'ID',
-            'parent_id' => 'Parent ID',
-            'title'=>'Title',
-            'description'=>'Description',
-            'listorder' => 'Listorder',
-            'is_locaked' => 'Is locked?',
+            'parent_id' => '所属论坛',
+            'title'=>'论坛名称',
+            'description'=>'简述',
+            'listorder' => '排列顺序',
+            'is_locked' => '是否锁定?',
         ));
     }
 

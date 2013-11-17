@@ -75,7 +75,7 @@ class Post extends CActiveRecord
             'author_id'=>'Author',
             'thread_id'=>'Thread',
             'editor_id'=>'Editor',
-            'content'=>'Content',
+            'content'=>'内容',
             'created'=>'Created',
             'updated' => 'Updated',
         ));
