@@ -2,8 +2,7 @@
 class MainController extends Controller {
 	public function actionIndex() {
 		
-		
-		$this -> redirect($this -> createUrl('/forum'));
+		//$this -> redirect($this -> createUrl('/forum'));
 		
 		$cdbcriteria = new CDbCriteria ();
 		$cdbcriteria->compare ( 'category', 19 );

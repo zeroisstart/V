@@ -32,7 +32,6 @@
         <div class="main">
             <div id="headerBox"></div>
             <div id="nav">
-           
            		  <?php $this->widget('zii.widgets.CMenu',array(
 			  		'id'=>'navBox',
 	            	'htmlOptions'=>array('class'=>'navBox'),
@@ -43,7 +42,7 @@
 						array('label'=>'竞赛动态', 'url'=>array('/Home/feeds/main')),
 						array('label'=>'历届回顾', 'url'=>array('/Home/history/main')),
 						array('label'=>'风采展示', 'url'=>array('/Home/gallery/main')),
-						array('label'=>'论坛', 'url'=>array('/')),
+						array('label'=>'论坛', 'url'=>array('/forum/forum/index')),
 					),
 				)); ?>	
             </div>

@@ -1,7 +1,8 @@
 <?php
-$this->widget('zii.widgets.CBreadcrumbs', array(
-    'links'=>array('Forum')
-));
+
+#$this->widget('zii.widgets.CBreadcrumbs', array(
+#    'links'=>array('Forum')
+#));
 
 if(!Yii::app()->user->isGuest && Yii::app()->user->isAdmin)
 {

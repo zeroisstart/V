@@ -5,6 +5,7 @@ $isAdmin = !Yii::app()->user->isGuest && Yii::app()->user->isAdmin;
 $gridColumns = array(
     array(
         'name' => 'Forum',
+    	'header'=>'论坛',
         'headerHtmlOptions' => array('colspan' => '2'),
         'type' => 'html',
         'value' => 'CHtml::image(Yii::app()->controller->module->registerImage("on.gif"), "On")',
@@ -19,13 +20,13 @@ $gridColumns = array(
     array(
         'name' => 'threadCount',
         'headerHtmlOptions' => array('style' => 'text-align:center;'),
-        'header' => 'Threads',
+        'header' => '板块数',
         'htmlOptions' => array('style' => 'width:65px; text-align:center;'),
     ),
     array(
         'name' => 'postCount',
         'headerHtmlOptions' => array('style' => 'text-align:center;'),
-        'header' => 'Posts',
+        'header' => '帖子数',
         'htmlOptions' => array('style' => 'width:65px; text-align:center;'),
     ),
     array(

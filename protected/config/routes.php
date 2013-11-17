@@ -2,7 +2,7 @@
 return array (
 		'' => 'Home/main/index',
 		'/' => 'Home/main/index',
-		//'forum'=>'YiiForum/forum/index',
+		'forum'=>'forum/forum/index',
 		
 		
 		'admin' =>'Admin/main/main',
