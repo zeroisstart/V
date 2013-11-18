@@ -13,7 +13,7 @@ $newthread = $forum->is_locked?'':'<div class="newthread" style="float:right;">'
 
 $gridColumns = array(
     array(
-        'name' => 'Thread / Author',
+        'name' => '帖子 / 作者',
         'headerHtmlOptions' => array('colspan' => '2'),
         'type' => 'html',
         'value' => 'CHtml::image(Yii::app()->controller->module->registerImage("folder". ($data->is_locked?"locked":"") .".gif"), ($data->is_locked?"Locked":"Unlocked"), array("title"=>$data->is_locked?"Thread locked":"Thread unlocked"))',
@@ -27,18 +27,18 @@ $gridColumns = array(
     ),
     array(
         'name' => 'postCount',
-        'header' => 'Posts',
+        'header' => '帖子数',
         'headerHtmlOptions' => array('style' => 'text-align:center;'),
         'htmlOptions' => array('style' => 'width:65px; text-align:center;'),
     ),
     array(
         'name' => 'view_count',
-        'header' => 'Views',
+        'header' => '浏览数',
         'headerHtmlOptions' => array('style' => 'text-align:center;'),
         'htmlOptions' => array('style' => 'width:65px; text-align:center;'),
     ),
     array(
-        'name' => 'Last post',
+        'name' => '最后发表时间',
         'headerHtmlOptions' => array('style' => 'text-align:center;'),
         'type' => 'html',
         'value' => '$data->renderLastpostCell()',
@@ -54,7 +54,7 @@ if($isAdmin)
     $deleteConfirm = "Are you sure? All posts are permanently deleted as well!";
     $gridColumns[] = array(
         'class'=>'CButtonColumn',
-        'header'=>'Admin',
+        'header'=>'管理',
         'template'=>'{delete}{update}',
         'deleteConfirmation'=>"js:'".$deleteConfirm."'",
         'afterDelete'=>'function(){document.location.reload(true);}',

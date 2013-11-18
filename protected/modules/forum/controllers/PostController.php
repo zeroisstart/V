@@ -66,11 +66,14 @@ class PostController extends ForumBaseController
     public function actionUpdate($id)
     {
         $post = Post::model()->findByPk($id);
+        
+        if(isset($_POST['editorValue'])){
+        	$_POST['Post']['content'] = $_POST['editorValue']; 
+        }
         if(null == $post)
             throw new CHttpException(404, 'Post not found.');
         if(!Yii::app()->user->isAdmin && YII::app()->user->id != $post->author_id)
             throw new CHttpException(403, 'You are not allowed to edit this post.');
-
         if(isset($_POST['Post']))
         {
             $post->attributes=$_POST['Post'];

@@ -30,7 +30,7 @@ $gridColumns = array(
         'htmlOptions' => array('style' => 'width:65px; text-align:center;'),
     ),
     array(
-        'name' => 'Last post',
+        'name' => '最新文章',
         'headerHtmlOptions' => array('style' => 'text-align:center;'),
         'type' => 'html',
         'value' => '$data->renderLastpostCell()',
@@ -47,12 +47,13 @@ else
 if($isAdmin)
 {
     $deleteConfirm = "Are you sure? All subforums and threads are permanently deleted as well!";
+    $deleteConfirm = "你确定要删除? 所有子帖子都会被删除!";
 
     $adminheader =
         '<div class="admin" style="float:right; font-size:smaller;">'.
-            CHtml::link('New forum', array('/forum/forum/create', 'parentid'=>$forum->id)) .' | '.
-            CHtml::link('Edit', array('/forum/forum/update', 'id'=>$forum->id)) .' | '.
-            CHtml::ajaxLink('Delete category',
+            CHtml::link('新建论坛', array('/forum/forum/create', 'parentid'=>$forum->id)) .' | '.
+            CHtml::link('编辑', array('/forum/forum/update', 'id'=>$forum->id)) .' | '.
+            CHtml::ajaxLink('删除大栏',
                 array('/forum/forum/delete', 'id'=>$forum->id),
                 array('type'=>'POST', 'success'=>'function(){document.location.reload(true);}'),
                 array('confirm'=>$deleteConfirm)
@@ -64,7 +65,7 @@ if($isAdmin)
     // Admin links to show in extra column
     $gridColumns[] = array(
         'class'=>'CButtonColumn',
-        'header'=>'Admin',
+        'header'=>'管理',
         'template'=>'{delete}{update}',
         'deleteConfirmation'=>"js:'".$deleteConfirm."'",
         'afterDelete'=>'function(){document.location.reload(true);}',

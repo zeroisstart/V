@@ -56,3 +56,9 @@ ul, li {
 .small {font-size:12px;} 
 .medium{font-size:18px;} 
 .large{font-size:24px;} 
+
+.adminslidebar{
+	height:25px;
+	line-height:25px;
+}
+
