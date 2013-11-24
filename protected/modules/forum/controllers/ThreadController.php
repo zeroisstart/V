@@ -131,11 +131,13 @@ class ThreadController extends ForumBaseController
             throw new CHttpException(404, 'Thread not found.');
         if(!Yii::app()->user->isAdmin && $thread->is_locked)
             throw new CHttpException(403, 'Thread is locked.');
-
+        
         $model=new PostForm;
-        if(isset($_POST['PostForm']))
+        if(isset($_POST['PostForm']) && isset($_POST['editorValue']))
         {
+        	$_POST['PostForm']['content'] = $_POST['editorValue'];
             $model->attributes=$_POST['PostForm'];
+            
             if($model->validate())
             {
                 $post = new Post();

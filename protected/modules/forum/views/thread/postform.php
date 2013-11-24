@@ -8,7 +8,7 @@
     else $this->widget('zii.widgets.CBreadcrumbs', array(
         'links'=>array_merge(
             $thread->getBreadcrumbs(true),
-            array('New reply')
+            array('回复')
         ),
     ));
 ?>
@@ -38,7 +38,7 @@
             <?php endif;?>
             <?php echo $form->error($model,'content'); ?>
             <p class="hint">
-                Hint: You can use <?php echo CHtml::link('markdown', 'http://daringfireball.net/projects/markdown/syntax'); ?> syntax!
+                
             </p>
         </div>
 
@@ -74,7 +74,7 @@
         
 
         <div class="row buttons">
-            <?php echo CHtml::submitButton('Submit'); ?>
+            <?php echo CHtml::submitButton('回复'); ?>
         </div>
     <?php $this->endWidget(); ?>
 </div><!-- form -->

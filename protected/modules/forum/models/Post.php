@@ -86,12 +86,41 @@ class Post extends CActiveRecord
      */
     public function beforeSave()
     {
-        if($this->isNewRecord)
-            $this->created = time();
+        if($this->isNewRecord){
+        	$this->created = time();
+        }
+            
         $this->updated = time();
 
         return parent::beforeSave();
     }
+    
+    /**
+     * (non-PHPdoc)
+     * @see CActiveRecord::afterSave()
+     */
+    public function afterSave(){
+    	
+    	$userid = Yii::app() -> user -> id;
+		$author_id = $this -> author_id;
+		
+		if($userid != $author_id || 1){
+			$model_notify = new Notify();
+			$ary = array('fromuser'=>$userid,'touser'=>$author_id);
+			$ary['category'] = '1';
+			$ary['title'] = $this -> thread -> subject;
+			$ary['extid'] = $this -> author_id;
+			$ary['msg'] = $this -> content;
+			$ary['datetime'] = date('Y-m-d H:i:s',time());
+			#var_dump($ary);
+			#die;
+			$model_notify -> attributes = $ary;
+			$model_notify -> save();
+		}
+    	
+    	return true;
+    }
+    
 
     /**
      * Retrieves a list of models based on the current search/filter conditions.
