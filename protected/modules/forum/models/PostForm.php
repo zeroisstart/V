@@ -4,12 +4,6 @@
  * an existing one, depending on the model's current thread_id
  */
 
-/**
- * The following fields are availabe:
- * @property integer $thread_id
- * @property string $subject Read-only if thread_id<>null
- * @property string $content
- */
 class PostForm extends CFormModel
 {
     public $thread_id;
