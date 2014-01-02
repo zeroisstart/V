@@ -31,7 +31,6 @@ class AuthorizedController extends Controller {
 			echo CActiveForm::validate ( $model );
 			Yii::app ()->end ();
 		}
-		
 		// collect user input data
 		if (isset ( $_POST ['LoginForm'] )) {
 			$model->attributes = $_POST ['LoginForm'];
@@ -39,20 +38,19 @@ class AuthorizedController extends Controller {
 			if ($model->validate () && $model->login ())
 				$this->redirect ( Yii::app ()->user->returnUrl );
 			else {
-				/* $auth_error = array (
-						'msg' => $model -> errMsg,
-				); */
+				/*
+				 * $auth_error = array ( 'msg' => $model -> errMsg, );
+				 */
 			}
 		}
-		$ary = array (
-				'model' => $model 
-		) ;
-		if(isset($auth_error))
-		$ary ['auth_error'] = $auth_error;
-		
-		// display the login form
-		$this->render ( 'authLogin', $ary);
+		$ary = array ('model' => $model );
+		if (isset ( $auth_error ))
+			$ary ['auth_error'] = $auth_error;
+			
+			// display the login form
+		$this->render ( 'authLogin', $ary );
 	}
+	
 	public function actionLogout() {
 		$user = Yii::app ()->user;
 		if (! $user->isGuest) {

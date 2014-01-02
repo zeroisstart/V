@@ -1,13 +1,12 @@
 <?php
 
-class MainController extends Controller
-{
+class MainController extends AdminController {
+	
 	public $layout = 'admin';
-
+	
 	public $defaultAction = 'main';
 	
-	public function actionMain()
-	{
+	public function actionMain() {
 		
 		$user = Yii::app ()->user;
 		
@@ -15,7 +14,7 @@ class MainController extends Controller
 			$this->redirect ( $this->createUrl ( '/admin/login' ) );
 		}
 		
-		$this->render('main');
+		$this->render ( 'main' );
 	}
 
 }
