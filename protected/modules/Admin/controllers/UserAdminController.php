@@ -33,7 +33,30 @@ class UserAdminController extends Controller {
 				'model' => $model 
 		) );
 	}
-	public function actionList() {
+	
+	public function actionCreateArea(){
+		#$string ="广东省、广西省、海南省、香港特别行政区、澳门特别行政区";
+		#$id = 7;
+		#$ary_data = explode('、', $string);
+		#foreach($ary_data as $name){
+	#		$com = new CompetitionRegion();
+#			$com -> attributes = array('id'=>NULL,'cate'=>$id,'name'=>$name);
+#			$com -> save();#
+	#	}
+#		var_dump($ary_data);  #
+		#echo "TEST";
+		#die;
+		#$ary= array();
+		#$this->render ( 'area_list', $ary );
+	}
+	
+	
+	public function actionListArea(){
+		$ary= array();
+		$this->render ( 'area_list', $ary );
+	}
+	
+ 	public function actionList() {
 		$model = User::model ();
 		
 		if (isset ( $_POST ['User'] )) {

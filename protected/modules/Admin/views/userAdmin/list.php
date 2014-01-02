@@ -31,6 +31,10 @@ $this->widget ( 'widget.Helper.SecNav', array (
 				'新增评委' => $this->createUrl ( '/Admin/UserAdmin/create', array (
 						'ac' => 'create',
 						't' => 2 
+				) ) ,
+				'新增区域' => $this->createUrl ( '/Admin/UserAdmin/CreateArea', array (
+						'ac' => 'create',
+						't' => 2 
 				) ) 
 		) 
 ) )?>
@@ -40,10 +44,8 @@ $this->widget ( 'widget.Helper.SecNav', array (
 <?php
 
 /* @var $this AdminController */
-
 $this->widget ( 'widget.helper.GridView', array (
 		'dataProvider' => $dataProvider,
-		
 		'columns' => array (
 				'id',
 				'username',
