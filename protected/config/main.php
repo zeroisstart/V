@@ -41,7 +41,7 @@ $components = require 'components.php';
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 	'name'=>'Top\'s Vengeance',
-	'name'=>'2013全国移动互联网创新大赛',
+	'name'=>'第九届中国研究生电子设计大赛',
     'timeZone'=>'Asia/Shanghai', //设置时区为上海
     'language'=>'zh_cn',
 
