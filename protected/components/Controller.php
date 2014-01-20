@@ -111,11 +111,19 @@ class Controller extends CController {
 		$_baseUrl = Yii::app() -> baseUrl;
 		
 		foreach ( $css as $cssFile ) {
-			$this->cs->registerCssFile ( $_baseUrl . '/' . $cssFile );
+			if($_baseUrl){
+				$this->cs->registerCssFile ( $_baseUrl . '/' . $cssFile );
+			}else{
+				$this->cs->registerCssFile ($cssFile );
+			}
 		}
 		
 		foreach ( $js as $jsFile ) {
-			$this->cs->registerScriptFile ( $_baseUrl . '/' . $jsFile, CClientScript::POS_END );
+			if($_baseUrl){
+				$this->cs->registerScriptFile ( $_baseUrl . '/' . $jsFile, CClientScript::POS_END );
+			}else{
+				$this->cs->registerScriptFile ( $jsFile, CClientScript::POS_END );
+			}
 		}
 	}
 
