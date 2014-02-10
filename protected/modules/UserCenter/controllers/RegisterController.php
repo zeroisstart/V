@@ -8,7 +8,6 @@ class RegisterController extends Controller {
 		}
 		
 		$model = new RegisterForm ();
-		
 		$profileModel = new UserProfile ();
 		// $profileModel = new
 		// if it is ajax validation request
@@ -22,7 +21,11 @@ class RegisterController extends Controller {
 			$model->setAttributes ( $_POST ['RegisterForm'], false );
 			// validate user input and redirect to the previous page if valid
 			if ($model->validate () && $model->register ()) {
-				Yii::app ()->user->setFlash ( 'success', '注册成功!' );
+				$_identity=new UserIdentity($model->username,$model->password);
+				if($_identity->authenticate()){
+					Yii::app()->user->login($_identity,0);
+					Yii::app ()->user->setFlash ( 'success', '注册成功!' );
+				}
 				$this->redirect ( $this->createUrl ( '/' ) );
 			}
 			// $this->redirect ( Yii::app ()->user->returnUrl );

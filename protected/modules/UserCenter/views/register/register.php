@@ -25,13 +25,19 @@ $form = $this->beginWidget ( 'CActiveForm', array (
 				Fields with <span class="required">*</span> are required.
 			</p>
 
-			<div class="row">
+	<div class="row">
 		<?php echo $form->labelEx($model,'userType'); ?>
 		<?php echo $form->dropDownList ($model,'userType',$model-> user_type,array('class'=>'reg_select')); ?>
 		<?php echo $form->error($model,'userType'); ?>
 	</div>
+	
+	<div class="row">
+		<?php echo $form->labelEx($model,'district'); ?>
+		<?php echo $form->dropDownList ($model,'district',$model-> district_list,array('class'=>'reg_select')); ?>
+		<?php echo $form->error($model,'district'); ?>
+	</div>
 
-			<div class="row">
+	<div class="row">
 		<?php echo $form->labelEx($model,'username'); ?>
 		<?php echo $form->textField($model,'username',array('class'=>'reg_input')); ?>
 		<?php echo $form->error($model,'username'); ?>

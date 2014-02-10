@@ -15,6 +15,17 @@ class CompetitionRegion extends CActiveRecord
 	 * @param string $className active record class name.
 	 * @return CompetitionRegion the static model class
 	 */
+	
+	public $district = array(
+							1=>'东北分赛区',
+							2=>'华北分赛区',
+							3=>'西北分赛区',
+							4=>'西南分赛区',
+							5=>'华中分赛区',
+							6=>'华东分赛区',
+							7=>'华南分赛区'
+							);
+	
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
