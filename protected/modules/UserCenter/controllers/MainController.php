@@ -441,10 +441,7 @@ class MainController extends Controller {
 	 */
 	public function _actionState() {
 		$user = Yii::app ()->user;
-		/*
-		 * $groupModel = UserGroup::model ()->findByAttributes ( array ( 'UID'
-		 * => $user->id ) );
-		 */
+		
 		$groupMemberModel = UserGroupMember::model ()->findByAttributes ( array (
 				'UID' => $user->id 
 		) );
@@ -459,10 +456,27 @@ class MainController extends Controller {
 				'booked' => $booked 
 		) );
 	}
+	
 	/**
 	 * 我要报名
 	 */
-	public function _actionBook() {
+	public function _actionBook(){
+		$uid = Yii::app() -> user -> id;
+		$team = GrpTeamList::model();
+		$canBuild = $team -> canBuild($uid);
+		
+		if($canBuild){
+			$model = new GrpTeamList();
+			$this -> render('build_team',array('model'=>$model));
+		}else{
+			$this -> render('build_member');
+		}
+	}
+	
+	/**
+	 * 我要报名
+	 */
+	public function old_actionBook() {
 		$bookModel = new UserBooked ();
 		$user = Yii::app ()->user;
 		$bookModel_already = $bookModel->findByAttributes ( array (

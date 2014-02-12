@@ -92,7 +92,7 @@ Default colour scheme is blue. Uncomment prefered stylesheet to use it.
 							array('label'=>'首页滑动', 'url'=>array('/Admin/slider/main')),
 							array('label'=>'内容发布', 'url'=>array('/Admin/content/list')),
 							array('label'=>'参赛队伍', 'url'=>array('/Admin/group/list')),
-							array('label'=>'个人中心竞赛通知','url'=>array('/Admin/content/update/id/230')),
+							//array('label'=>'个人中心竞赛通知','url'=>array('/Admin/content/update/id/230')),
 							array('label'=>'作品评分分配','url'=>array('/Admin/product/list')),
 							array('label'=>'报名审核页面','url'=>array('/Admin/book/list')),
 							#array('label'=>'企业导师管理', 'url'=>array('/Admin/master/main')),

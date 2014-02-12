@@ -21,6 +21,7 @@ class AuthorizedController extends Controller {
 	/**
 	 */
 	public function actionLogin() {
+		
 		if (! Yii::app ()->user->isGuest)
 			$this->redirect ( $this->createUrl ( '/admin' ) );
 		

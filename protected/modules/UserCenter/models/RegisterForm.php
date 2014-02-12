@@ -179,7 +179,15 @@ class RegisterForm extends CFormModel {
 			$userProfile->User_category = $this->userType;
 			$userProfile->City = $this->city;
 			$userProfile->save ();
+			
+			$adminUser = new AdminUser();
+			$adminUser -> id =NULL;
+			$adminUser -> uid =$user->id;
+			$adminUser -> save();
+			
 			return true;
+			
+			
 			
 		} else {
 			YII_DEBUG && var_dump ( $user->errors );

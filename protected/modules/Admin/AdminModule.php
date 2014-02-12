@@ -10,6 +10,14 @@ class AdminModule extends CWebModule {
 		$this->setImport ( array ('application.components.*', 'Admin.models.*', 'Admin.components.*' ) );
 	}
 	public function beforeControllerAction($controller, $action) {
+		
+		$AdminUser = AdminUser::model(); 
+		$uid = Yii::app() -> user -> id;
+		
+		if(!$AdminUser -> canAdmin($uid)){
+			throw new CHttpException(404);
+		}
+		
 		if (parent::beforeControllerAction ( $controller, $action )) {
 			$user = Yii::app ()->user;
 			$req = Yii::app ()->request;

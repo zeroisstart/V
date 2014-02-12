@@ -21,7 +21,10 @@ $cs->registerCssFile ( $baseUrl . '/js/fancybox/jquery.fancybox-1.3.1.css' );
 $cs->registerScriptFile ( Yii::app ()->baseUrl . '/js/gearman.js', CClientScript::POS_END );
 ?>
 
+<h1>作品评分分配</h1>
+<?php if(0):?>
 <h1><?php echo $this->id . '/' . $this->action->id; ?></h1>
+<?php endif;?>
 
 
 <div class="grid_form">

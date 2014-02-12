@@ -25,11 +25,13 @@ $form = $this->beginWidget ( 'CActiveForm', array (
 				Fields with <span class="required">*</span> are required.
 			</p>
 
+	<?php if(0):?>
 	<div class="row">
 		<?php echo $form->labelEx($model,'userType'); ?>
 		<?php echo $form->dropDownList ($model,'userType',$model-> user_type,array('class'=>'reg_select')); ?>
 		<?php echo $form->error($model,'userType'); ?>
 	</div>
+	<?php endif;?>
 	
 	<div class="row">
 		<?php echo $form->labelEx($model,'district'); ?>
@@ -55,43 +57,46 @@ $form = $this->beginWidget ( 'CActiveForm', array (
 		<?php echo $form->error($model,'password_confirm'); ?>
 	</div>
 
-			<div class="row company_name_row">
+	<?php if(0):?>
+	<div class="row company_name_row">
 		<?php echo $form->labelEx($model,'company_name'); ?>
 		<?php echo $form->textField($model,'company_name',array('class'=>'reg_input')); ?>
 		<?php echo $form->error($model,'company_name'); ?>
 	</div>
+	<?php endif;?>
 
-			<div class="row">
+	<div class="row">
 		<?php echo $form->labelEx($model,'contact'); ?>
 		<?php echo $form->textField($model,'contact',array('class'=>'reg_input')); ?>
 		<?php echo $form->error($model,'contact'); ?>
 	</div>
-			<div class="row">
+	
+	<div class="row">
 		<?php echo $form->labelEx($model,'mobile'); ?>
 		<?php echo $form->textField($model,'mobile',array('class'=>'reg_input')); ?>
 		<?php echo $form->error($model,'mobile'); ?>
 	</div>
 
-			<div class="row">
+	<div class="row">
 		<?php echo $form->labelEx($model,'email'); ?>
 		<?php echo $form->textField($model,'email',array('class'=>'reg_input')); ?>
 		<?php echo $form->error($model,'email'); ?>
 	</div>
 
 
-			<div class="row">
+	<div class="row">
 		<?php echo $form->labelEx($model,'city'); ?>
 		<?php echo $form->textField($model,'city',array('class'=>'reg_input')); ?>
 		<?php echo $form->error($model,'city'); ?>
 	</div>
 
 
-			<div>
-				<span class="allowregister">
+	<div>
+		<span class="allowregister">
 		<?php echo $form->labelEx($model,'allowRegister'); ?>
 		<?php echo $form->checkBox($model,'allowRegister'); ?>
 		<a href="">查看大赛注册协议</a>
-				</span>
+		</span>
 		
 		<?php echo $form->error($model,'allowRegister'); ?>
 	</div>

@@ -5,10 +5,8 @@
 
 
 		<div class="user_data_info">
-			
 			<?php if($groupMemberModel):?>
 				<p>组队 ：成功</p>
-				
 				<?php if($booked):?>
 				<p>报名：成功</p>
 				<p>缴纳报名费：成功</p>
@@ -24,11 +22,8 @@
 				<p>初赛成绩：</p>
 				<?php endif;?>
 			<?php else:?>
-				<p>对不起，目前还没有成功加入团队.</p>
+				<h1>对不起，目前您还有没提交参加申请。</h1>
 			<?php endif;?>
-			
-			
-			
 		
 		</div>
 	</div>

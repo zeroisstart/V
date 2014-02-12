@@ -1,6 +1,5 @@
 <div class="topBar">
 	<div class="topContent">
-		<div class="logo">首页</div>
 	</div>
 </div>
 <div class="loginBox">
