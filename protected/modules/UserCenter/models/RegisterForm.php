@@ -14,10 +14,12 @@ class RegisterForm extends CFormModel {
 	public $contact;
 	public $mobile;
 	public $district;
+	public $area;
 	public $city;
 	public $allowRegister;
 	private $_identity;
 	public $userType;
+	
 	
 	/**
 	 * Declares the validation rules.
@@ -28,7 +30,7 @@ class RegisterForm extends CFormModel {
 		return array (
 				// username and password are required
 				array (
-						'district,username,allowRegister,password,password_confirm,email,contact,mobile,city',
+						'district,area,username,allowRegister,password,password_confirm,email,contact,mobile,city',
 						'required' 
 				),
 				array (
@@ -85,6 +87,20 @@ class RegisterForm extends CFormModel {
 		return $model -> district;
 	}
 	
+	
+	public function getArea_list(){
+		$Competition = CompetitionRegion::model();
+		
+		$criteria = new CDbCriteria();
+		$criteria -> order ="cate desc";
+		$data = $Competition -> findAll($criteria);
+		$ary_cate = array();
+		foreach($data as $_model){
+			$ary_cate[$_model -> id] = $_model -> name;
+		}
+		return $ary_cate;
+	}
+	
 	/**
 	 * Declares attribute labels.
 	 */
@@ -94,6 +110,7 @@ class RegisterForm extends CFormModel {
 				'password' => '密码',
 				'userType' => '用户类型',
 				'district' => '赛事地区',
+				'area' => '省市',
 				'password_confirm' => '确认密码',
 				'company_name' => '机构名称',
 				'contact' => '联系人姓名',

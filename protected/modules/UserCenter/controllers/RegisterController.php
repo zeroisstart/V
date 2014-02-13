@@ -6,7 +6,7 @@ class RegisterController extends Controller {
 		if (! Yii::app ()->user->isGuest) {
 			$this->redirect ( $this->createUrl ( '/' ) );
 		}
-		
+
 		$model = new RegisterForm ();
 		$profileModel = new UserProfile ();
 		// $profileModel = new
@@ -15,6 +15,17 @@ class RegisterController extends Controller {
 			echo CActiveForm::validate ( $model );
 			Yii::app ()->end ();
 		}
+		
+		$Competition = CompetitionRegion::model();
+		
+		$criteria = new CDbCriteria();
+		$criteria -> order ="cate desc";
+		$data = $Competition -> findAll($criteria);
+		$ary_cate = array();
+		foreach($data as $_model){
+			$ary_cate [$_model -> cate][] = $_model -> attributes;
+		}
+		$ary_area_json = CJavaScript::encode($ary_cate);
 		
 		// collect user input data
 		if (isset ( $_POST ['RegisterForm'] )) {
@@ -33,6 +44,7 @@ class RegisterController extends Controller {
 		
 		$this->render ( 'register', array (
 				'model' => $model,
+				'area_list_joson'=>$ary_area_json,
 				'profileModel' => $profileModel 
 		) );
 	}
