@@ -22,7 +22,7 @@ $form = $this->beginWidget ( 'CActiveForm', array (
 ?>
 
 	<p class="note">
-		Fields with <span class="required">*</span> are required.
+		带有 <span class="required">*</span> 为必填。
 	</p>
 
 	<?php echo $form->errorSummary($model); ?>

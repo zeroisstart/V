@@ -58,7 +58,7 @@ class leftLogin extends CWidget {
 					<div id="userLoginTitle">用户登陆信息</div>
 					<div id="userLoginBox">
 						<div class="user_info ">
-							<span><a href="profileUrl">name</a> | <a href="logout">退出</a> </span>
+							<span><a href="profileUrl">name</a> </span>
 							<span><a href="assessment">待评作品</a> | <a href="assesmented">评过的作品</a></span>
 						</div>
 					</div>
@@ -74,7 +74,7 @@ class leftLogin extends CWidget {
 					<div id="userLoginTitle">用户登陆信息</div>
 					<div id="userLoginBox">
 						<div class="user_info ">
-							<span><a href="profileUrl">name</a> | <a href="logout">退出</a> </span>
+							<span><a href="profileUrl">name</a> </span>
 							<span><a href="admin">后台</a> 
 						</div>
 					</div>
@@ -91,7 +91,7 @@ class leftLogin extends CWidget {
 			<div id="userLoginTitle">用户登陆信息</div>
 			<div id="userLoginBox">
 				<div class="user_info ">
-					<span><a href="$profileUrl">$name</a> | <a href="$logout">退出</a> </span>
+					<span><a href="$profileUrl">$name</a> </span>
 					<span><a href="$team">我的队伍</a> | <a href="$info">完善资料</a></span>
 					<span><a href="$mineProduct">我的作品</a> | <a href="$members">报名</a></span>
 				</div>

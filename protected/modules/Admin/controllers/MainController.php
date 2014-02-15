@@ -1,6 +1,6 @@
 <?php
 
-class MainController extends AdminController {
+class MainController extends Controller {
 	
 	public $layout = 'admin';
 	

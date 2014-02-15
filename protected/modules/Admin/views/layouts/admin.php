@@ -127,14 +127,16 @@ Default colour scheme is blue. Uncomment prefered stylesheet to use it.
 	<footer id="bottom">
 		<div class="wrapper">
 			<nav>
+			<?php if(0):?>
 			<a href="<?php echo  $this-> createUrl('/admin')?>">管理首页</a> &middot;
 			<a href="<?php echo  $this-> createUrl('/recommand/index')?>">首页推荐</a> &middot;
 			<a href="<?php echo  $this-> createUrl('/news/admin')?>">新闻</a> &middot;
 			<a href="<?php echo  $this-> createUrl('/association/admin')?>">协会</a> &middot;
 			<a href="<?php echo  $this-> createUrl('/event/admin')?>">赛事</a> &middot;
 			<a href="<?php echo  $this-> createUrl('/pic/admin')?>">图片</a> &middot;
+			<?php endif;?>
 			</nav>
-			<p>Copyright &copy; 2013</p>
+			<p>Copyright &copy; 2014</p>
 		</div>
 	</footer>
 	<!-- End of Page footer -->
