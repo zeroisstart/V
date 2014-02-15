@@ -30,4 +30,9 @@
 .user_profile_info .user_notice {
 	margin-right: 30px;
 	text-align: right;
+	font-size:17px;
+}
+
+.user_profile_info .user_notice span{
+	border-bottom:2px solid #DA2782;
 }

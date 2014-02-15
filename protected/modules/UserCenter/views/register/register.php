@@ -31,8 +31,7 @@ $this->breadcrumbs = array ('Register' );
 		<?php echo $form->error($model,'district'); ?>
 	</div>
 
-
-			<div class="row">
+	<div class="row">
 		<?php echo $form->labelEx($model,'area'); ?>
 		<?php echo $form->dropDownList ($model,'area',$model-> area_list,array('class'=>'reg_select')); ?>
 		<?php echo $form->error($model,'area'); ?>

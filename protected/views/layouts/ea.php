@@ -44,12 +44,12 @@
 						#array('label'=>'企业命题', 'url'=>array('/Home/companyq/main')),
 						#array('label'=>'企业导师', 'url'=>array('/Home/master/main')),
 						#array('label'=>'风采展示', 'url'=>array('/Home/gallery/main')),
-
 						#array('label'=>'竞赛动态', 'url'=>array('/Home/feeds/main'),'visable'=>false),
 						array('label'=>'历届回顾', 'url'=>array('/Home/history/main'),'visable'=>false),
 						array('label'=>'风采展示', 'url'=>array('/Home/gallery/main')),
 						#array('label'=>'论坛', 'url'=>array('/forum/forum/index')),
-						array('label'=>'个人中心', 'url'=>array('/UserCenter/main/main'),'visible'=>!Yii::app()->user->isGuest)
+						array('label'=>'个人中心', 'url'=>array('/UserCenter/main/main'),'visible'=>!Yii::app()->user->isGuest),
+						array('label'=>'退出', 'url'=>array('/logout'),'visible'=>!Yii::app()->user->isGuest)
 					),
 				)); ?>	
             </div>

@@ -37,7 +37,7 @@ $this->breadcrumbs = array ('Register' );
 		<?php echo $form->error($model,'area'); ?>
 	</div>
 
-			<div class="row">
+	<div class="row">
 		<?php echo $form->labelEx($model,'username'); ?>
 		<?php echo $form->textField($model,'username',array('class'=>'reg_input')); ?>
 		<?php echo $form->error($model,'username'); ?>
@@ -68,8 +68,21 @@ $this->breadcrumbs = array ('Register' );
 		<?php echo $form->textField($model,'contact',array('class'=>'reg_input')); ?>
 		<?php echo $form->error($model,'contact'); ?>
 	</div>
+	
+	
+	<div class="row">
+		<?php echo $form->labelEx($model,'company_name'); ?>
+		<?php echo $form->textField($model,'company_name',array('class'=>'reg_input')); ?>
+		<?php echo $form->error($model,'company_name'); ?>
+	</div>
+	
+	<div class="row">
+		<?php echo $form->labelEx($model,'job'); ?>
+		<?php echo $form->textField($model,'job',array('class'=>'reg_input')); ?>
+		<?php echo $form->error($model,'job'); ?>
+	</div>
 
-			<div class="row">
+	<div class="row">
 		<?php echo $form->labelEx($model,'mobile'); ?>
 		<?php echo $form->textField($model,'mobile',array('class'=>'reg_input')); ?>
 		<?php echo $form->error($model,'mobile'); ?>
@@ -80,6 +93,18 @@ $this->breadcrumbs = array ('Register' );
 		<?php echo $form->textField($model,'email',array('class'=>'reg_input')); ?>
 		<?php echo $form->error($model,'email'); ?>
 	</div>
+	
+				<div class="row">
+		<?php echo $form->labelEx($model,'idcard'); ?>
+		<?php echo $form->textField($model,'idcard',array('class'=>'reg_input')); ?>
+		<?php echo $form->error($model,'idcard'); ?>
+	</div>
+	
+				<div class="row">
+		<?php echo $form->labelEx($model,'address'); ?>
+		<?php echo $form->textField($model,'address',array('class'=>'reg_input')); ?>
+		<?php echo $form->error($model,'address'); ?>
+	</div>
 
 
 			<div class="row">
@@ -87,7 +112,6 @@ $this->breadcrumbs = array ('Register' );
 		<?php echo $form->textField($model,'city',array('class'=>'reg_input')); ?>
 		<?php echo $form->error($model,'city'); ?>
 	</div>
-
 
 			<div>
 				<span class="allowregister">

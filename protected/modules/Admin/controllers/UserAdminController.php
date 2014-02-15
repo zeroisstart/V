@@ -29,8 +29,22 @@ class UserAdminController extends Controller {
 			// $this->redirect ( Yii::app ()->user->returnUrl );
 		}
 		
+		
+		//地区
+		$Competition = CompetitionRegion::model();
+		
+		$criteria = new CDbCriteria();
+		$criteria -> order ="cate desc";
+		$data = $Competition -> findAll($criteria);
+		$ary_cate = array();
+		foreach($data as $_model){
+			$ary_cate [$_model -> cate][] = $_model -> attributes;
+		}
+		$ary_area_json = CJavaScript::encode($ary_cate);
+		
 		$this->render ( 'create', array (
-				'model' => $model 
+				'model' => $model,
+				'area_list_joson'=>$ary_area_json,
 		) );
 	}
 	

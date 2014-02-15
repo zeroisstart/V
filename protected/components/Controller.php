@@ -14,6 +14,8 @@ class Controller extends CController {
 	public $layout = '//layouts/column1';
 	
 	public $cs;
+	
+	public $user;
 	/**
 	 *
 	 * @var array context menu items. This property will be assigned to {@link
@@ -30,6 +32,7 @@ class Controller extends CController {
 	public function init() {
 		parent::init ();
 		$this->cs = Yii::app ()->clientScript;
+		$this -> user = Yii::app() -> user;
 	}
 	
 	/**

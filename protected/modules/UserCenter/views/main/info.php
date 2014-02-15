@@ -1,8 +1,10 @@
 <div id="contextAdorn"></div>
 <div id="contextBox">
 	<div id="rightContent" class="user_profile_info">
-		<p class="user_notice">您好 <?php echo Yii::app() -> user->username;?></p>
-		
+		<p class="user_notice"><span>您好：<?php echo Yii::app() -> user->username;?></span></p>
+		<p class="user_notice">
+			<span>用户身份：<?php echo $model ->getUserCategory();?></span>
+		</p>
 	
 
 		<div class="user_data_info">

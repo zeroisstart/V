@@ -76,7 +76,7 @@ class RegisterForm extends CFormModel {
 	}
 	public function getUser_type() {
 		return array (
-				'3' => '学生',
+				'1' => '学生',
 				'4' => '老师',
 				//'5' => '个人' 
 		);

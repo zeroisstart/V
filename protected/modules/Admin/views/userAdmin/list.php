@@ -32,10 +32,10 @@ $this->widget ( 'widget.Helper.SecNav', array (
 						'ac' => 'create',
 						't' => 2 
 				) ) ,
-				'新增区域' => $this->createUrl ( '/Admin/UserAdmin/CreateArea', array (
+				/*'新增区域' => $this->createUrl ( '/Admin/UserAdmin/CreateArea', array (
 						'ac' => 'create',
 						't' => 2 
-				) ) 
+				) )*/ 
 		) 
 ) )?>
 

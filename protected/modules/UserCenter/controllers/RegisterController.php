@@ -11,6 +11,11 @@ class RegisterController extends Controller {
 		$req = Yii::app() -> request;
 		
 		$userType =$req -> getParam('userType');
+		
+		if($userType == 4){
+			$model = new RegisterTeacherForm();
+		}
+		
 		if($userType){
 			$model -> userType =$userType; 
 		}
@@ -34,7 +39,7 @@ class RegisterController extends Controller {
 		}
 		$ary_area_json = CJavaScript::encode($ary_cate);
 		
-		// collect user input data
+		// collect user input data for student
 		if (isset ( $_POST ['RegisterForm'] )) {
 			$model->setAttributes ( $_POST ['RegisterForm'], false );
 			// validate user input and redirect to the previous page if valid
@@ -48,6 +53,23 @@ class RegisterController extends Controller {
 			}
 			// $this->redirect ( Yii::app ()->user->returnUrl );
 		}
+		// for teacher
+		
+		if (isset ( $_POST ['RegisterTeacherForm'] )) {
+			
+			$model->setAttributes ( $_POST ['RegisterTeacherForm'], false );
+			// validate user input and redirect to the previous page if valid
+			if ($model->validate () && $model->register ()) {
+				$_identity=new UserIdentity($model->username,$model->password);
+				if($_identity->authenticate()){
+					Yii::app()->user->login($_identity,0);
+					Yii::app ()->user->setFlash ( 'success', '注册成功!' );
+				}
+				$this->redirect ( $this->createUrl ( '/' ) );
+			}
+			// $this->redirect ( Yii::app ()->user->returnUrl );
+		}
+		
 		if($userType == 4){
 			$this->render ( 'registerTeacher', array (
 					'model' => $model,

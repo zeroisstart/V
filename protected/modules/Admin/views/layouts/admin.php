@@ -9,9 +9,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
 <![endif]-->
 <!-- Favicons --> 
-
 <?php 
-
 $css = array (
 		'css/style.css',
 		'css/custom.css',
@@ -72,7 +70,7 @@ Default colour scheme is blue. Uncomment prefered stylesheet to use it.
 			<!-- Top navigation -->
 			<div id="topnav">
 				<a href="#"><img class="avatar" SRC="<?php echo $baseUrl;?>/img/user_32.png" alt="" /></a>
-				<b><?php echo Yii::app() -> user -> name;?></b>
+				<b><?php echo $this -> user -> name;?></b>
 				<!-- 
 				<span>|</span> <a href="#">Settings</a>
 				 -->

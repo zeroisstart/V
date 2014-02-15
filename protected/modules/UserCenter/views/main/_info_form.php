@@ -39,10 +39,13 @@ $form = $this->beginWidget ( 'CActiveForm', array (
 
  	<?php echo $form->errorSummary($model); ?>
 	
+	<?php if(0):?>
 	<div class="row">
 		<p>
-			<span>用户身份</span>: <?php echo $model ->getUserCategory();?></p>
+			<span>用户身份</span>: <?php echo $model ->getUserCategory();?>
+		</p>
 	</div>
+	<?php endif;?>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'Nickname'); ?>

@@ -1,6 +1,8 @@
 <?php
 class WebUser extends CWebUser {
+	
 	private $_model = null;
+	
 	public $loginUrl = array (
 			'/UserCenter/login/login' 
 	);
@@ -50,6 +52,7 @@ class WebUser extends CWebUser {
 			}
 		}
 	}
+	
 	/**
 	 * 返回用户是否报名
 	 *
