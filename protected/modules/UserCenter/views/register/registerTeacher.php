@@ -5,7 +5,6 @@
 
 $this->breadcrumbs = array ('Register' );
 ?>
-
 <div class="registerFrame">
 	<div class="registerFrameBorder">
 		<div class="form login_form">

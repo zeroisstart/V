@@ -8,6 +8,13 @@ class RegisterController extends Controller {
 		}
 
 		$model = new RegisterForm ();
+		$req = Yii::app() -> request;
+		
+		$userType =$req -> getParam('userType');
+		if($userType){
+			$model -> userType =$userType; 
+		}
+		
 		$profileModel = new UserProfile ();
 		// $profileModel = new
 		// if it is ajax validation request
@@ -41,11 +48,18 @@ class RegisterController extends Controller {
 			}
 			// $this->redirect ( Yii::app ()->user->returnUrl );
 		}
-		
+		if($userType == 4){
+			$this->render ( 'registerTeacher', array (
+					'model' => $model,
+					'area_list_joson'=>$ary_area_json,
+					'profileModel' => $profileModel
+			) );
+		}else{
 		$this->render ( 'register', array (
 				'model' => $model,
 				'area_list_joson'=>$ary_area_json,
 				'profileModel' => $profileModel 
 		) );
+		}
 	}
 }
