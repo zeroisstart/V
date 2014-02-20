@@ -27,9 +27,10 @@ $js = array (
 		'js/flot/jquery.flot.min.js',
 	//	'footer'=>array()	
 );
-
+/* var_dump(Yii::getPathOfAlias ('widget.helper.Menu'));
+die; */
 $baseUrl = Yii::app ()->getAssetManager ()->publish ( Yii::getPathOfAlias ( 'application.assets.admin' ), false, - 1, YII_DEBUG );
-$this->widget ( 'widget.clientScript.autoRegisterFile', array (
+$this->widget ( 'widget.ClientScript.autoRegisterFile', array (
 		'jquery'=>true,
 		'css' => $css,
 		'js' => $js,
@@ -82,7 +83,7 @@ Default colour scheme is blue. Uncomment prefered stylesheet to use it.
 			<!-- End of Top navigation -->
 			<!-- Main navigation -->
 			<nav id="menu">
-			<?php $this -> widget('widget.helper.Menu',array(
+			<?php $this -> widget('widget.Helper.Menu',array(
 					'activeCssClass' => 'current',
 					'htmlOptions'=>array('class'=>'sf-menu sf-js-enabled sf-shadow'),
 					'items'=>array(
