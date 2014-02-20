@@ -74,8 +74,7 @@ class leftLogin extends CWidget {
 					<div id="userLoginTitle">用户登陆信息</div>
 					<div id="userLoginBox">
 						<div class="user_info ">
-							<span><a href="profileUrl">name</a> </span>
-							<span><a href="admin">后台</a> 
+							<span><a href="profileUrl">name</a> | <a href="admin">后台</a> </span>
 						</div>
 					</div>
 				</div>';
