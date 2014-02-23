@@ -181,25 +181,20 @@ EOT;
                             <div class="box">
                                 <div class="first"></div>
                                 <div class="text">
-                                    <p>
-                                        抢票热线：010-88454017/88454027
-                                        <br />
-                                        报名邮箱：cie-info@163.com
-                                    </p>
                                     <p style="margin: 8px 0px; text-align: center;">
                                         <a href="javascript:void(0);" class="blue_btn">会议合作</a>
                                     </p>
                                     <p>
                                         地址：北京市海淀区玉渊潭南路普惠<br />
                                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;南里13号楼<br />
-                                        信箱：北京165信箱<br />
+                                        组委会邮箱：cieeda@163.com<br />
                                         邮编：100036
                                     </p>
                                     <p>
-                                        联系人：陈枫<br />
-                                        010-68229381-829/13121398779                                       
+                                        联系人：王新霞 何文丹<br />
+                                        联系电话：010—68273817                                      
                                         <br />
-                                        Chen13121398779@sina.com
+                                        邮箱：Chen13121398779@sina.com
                                     </p>
                                 </div>
                                 <div class="last"></div>
