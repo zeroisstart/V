@@ -199,7 +199,12 @@ class ContentController extends Controller {
 			$this->run ( 'list' );
 			Yii::app ()->end ();
 		}
-		$model = News::model ()->findByPk ( $id );
+		if(in_array($id, array(19,20))){
+			$model = News::model ()->findByAttributes(array('category'=>$id));
+		}else{
+			$model = News::model ()->findByPk ( $id );
+		}
+		
 		if ($model) {
 			if (isset ( $_POST ['News'] )) {
 				$model->attributes = $_POST ['News'];

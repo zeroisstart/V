@@ -2,10 +2,10 @@
 $tab = array (
 		'新增新闻' => $this->createUrl ( '/Admin/content/create' ),
 		'关于竞赛' => $this->createUrl ( '/Admin/content/update', array (
-				'id' => '49569' 
+				'id' => '20' 
 		) ),
 		'参赛办法' => $this->createUrl ( '/Admin/content/update', array (
-				'id' => '49568' 
+				'id' => '19' 
 		) ),
 		'企业命题' => $this->createUrl ( '/Admin/content/list', array (
 				'c' => '21' 
