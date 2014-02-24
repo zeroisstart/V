@@ -107,7 +107,7 @@ class News extends CActiveRecord {
 				),
 				'category_data' => array (
 						self::HAS_MANY,
-						'category_data',
+						'Category_Data',
 						'sub_id' 
 				) 
 		);
@@ -172,11 +172,13 @@ class News extends CActiveRecord {
 	 */
 	public function getCateText() {
 		$category_model = $this->category_data;
+		
 		// var_dump($this -> attributes);
 		$titles = array ();
 		foreach ( $category_model as $key => $val ) {
 			$titles [$val->cate_id] = $val->cate->title;
 		}
+		
 		return empty ( $titles ) ? '其他' : implode ( ' ', $titles );
 	}
 	
