@@ -25,7 +25,7 @@ $this->widget ( 'widget.Helper.GridView', array (
 						'value' => '$data -> _state[$data -> state]'
 				),
 				array (
-						'class' => 'widget.helper.ButtonColumn',
+						'class' => 'widget.Helper.ButtonColumn',
 						//'template'=>'' 
 				// 'viewButtonUrl' =>
 				// 'Yii::app()->controller->createUrl("/news/".$data->primaryKey)'

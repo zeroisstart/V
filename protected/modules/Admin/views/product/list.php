@@ -68,7 +68,7 @@ $this->widget ( 'widget.Helper.GridView', array (
 				array (
 						'template' => '{update}',
 						'header' => '操作',
-						'class' => 'widget.helper.ButtonColumn',
+						'class' => 'widget.Helper.ButtonColumn',
 						'viewButtonUrl' => 'Yii::app()->controller->createUrl("/feeds/".$data->primaryKey)' 
 				) 
 		) 

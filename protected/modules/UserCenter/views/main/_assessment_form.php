@@ -37,7 +37,7 @@ if ($model->is_checked) {
 	$columns [] = array (
 		'header'=>'打分',
 		'template'=>'{update}',
-		'class' => 'widget.helper.ButtonColumn',
+		'class' => 'widget.Helper.ButtonColumn',
 		'updateButtonUrl' => 'Yii::app()->controller->createUrl("/UserCenter/main/main/",array("ac"=>"assessment","id"=>$data->primaryKey))' 
 	);
 }

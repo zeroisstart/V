@@ -66,7 +66,7 @@ $this->widget ( 'widget.Helper.GridView', array (
 				array (
 						'template' => '{delete}',
 						'header' => '操作',
-						'class' => 'widget.helper.ButtonColumn' 
+						'class' => 'widget.Helper.ButtonColumn' 
 				) 
 		) 
 ) )?>

@@ -118,7 +118,7 @@ $this->widget ( 'ext.popup.popup' );
 														}' 
 												) 
 										),
-										'class' => 'widget.helper.ButtonColumn',
+										'class' => 'widget.Helper.ButtonColumn',
 										'viewButtonUrl' => 'Yii::app()->controller->createUrl("/feeds/".$data->primaryKey)' 
 								) 
 						) 

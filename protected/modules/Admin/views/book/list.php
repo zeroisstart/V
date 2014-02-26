@@ -93,7 +93,7 @@ $this->widget ( 'widget.Helper.GridView', array (
 											}' 
 								) 
 						),
-						'class' => 'widget.helper.ButtonColumn' 
+						'class' => 'widget.Helper.ButtonColumn' 
 				) 
 		) 
 ) )?>

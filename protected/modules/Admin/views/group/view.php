@@ -49,7 +49,7 @@ $this->widget ( 'widget.Helper.GridView', array (
 				array (
 						'header' => "操作",
 						'template' => '{update}',
-						'class' => 'widget.helper.ButtonColumn' 
+						'class' => 'widget.Helper.ButtonColumn' 
 				) 
 		) 
 ) )?>
