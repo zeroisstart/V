@@ -19,7 +19,7 @@ $js = array (
 );
 
 $baseUrl = Yii::app ()->getAssetManager ()->publish ( Yii::getPathOfAlias ( 'application.assets.admin' ), false, - 1, YII_DEBUG );
-$this->widget ( 'widget.clientScript.autoRegisterFile', array (
+$this->widget ( 'widget.ClientScript.autoRegisterFile', array (
 		'css' => $css,
 		'js' => $js,
 		'baseUrl' => $baseUrl
