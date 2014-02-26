@@ -31,7 +31,7 @@ $cs->registerScriptFile ( Yii::app ()->baseUrl . '/js/gearman.js', CClientScript
 <?php
 /* @var $this AdminController */
 
-$this->widget ( 'widget.helper.GridView', array (
+$this->widget ( 'widget.Helper.GridView', array (
 		
 		'dataProvider' => $dataProvider,
 		'columns' => array (

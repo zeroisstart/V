@@ -18,7 +18,7 @@ $this->breadcrumbs = array (
 #var_dump($dataProvider -> data);
 #die;
 
-$this->widget ( 'widget.helper.GridView', array (
+$this->widget ( 'widget.Helper.GridView', array (
 		'dataProvider' => $dataProvider,
 		'columns' => array (
 				'ID',

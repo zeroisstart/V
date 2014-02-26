@@ -18,7 +18,7 @@ $this->breadcrumbs = array (
 /* @var $this AdminController */
 
 $access_path = Yii::app() -> params-> imgAccessPath;
-$this->widget ( 'widget.helper.GridView', array (
+$this->widget ( 'widget.Helper.GridView', array (
 		'dataProvider' => $dataProvider,
 		'columns' => array (
 				'ID',

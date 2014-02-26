@@ -12,7 +12,7 @@ $url = $this->createUrl ( '/category/admin/create', $args );
 </div>
 <div class="grid_form">
 <?php
-$this->widget ( 'widget.helper.GridView', array (
+$this->widget ( 'widget.Helper.GridView', array (
 		'dataProvider' => $dataProvider,
 		'columns' => array (
 				'ID',

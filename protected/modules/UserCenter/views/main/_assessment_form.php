@@ -43,7 +43,7 @@ if ($model->is_checked) {
 }
 
 
-$this->widget ( 'widget.helper.GridView', array (
+$this->widget ( 'widget.Helper.GridView', array (
 		'dataProvider' => $dataProvider,
 		'columns' => $columns 
 ) )?>

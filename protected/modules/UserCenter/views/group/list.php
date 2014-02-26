@@ -14,7 +14,7 @@ $this->breadcrumbs = array (
 <?php
 /* @var $this AdminController */
 
-$this->widget ( 'widget.helper.GridView', array (
+$this->widget ( 'widget.Helper.GridView', array (
 		'dataProvider' => $dataProvider,
 		
 		'columns' => array (
