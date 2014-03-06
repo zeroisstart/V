@@ -184,7 +184,6 @@ class RegisterForm extends CFormModel {
 		$user->password = md5 ( $this->password );
 		$user->email = $this->email;
 		if ($user->validate ()) {
-			
 			$user->save ();
 			$userProfile = new UserProfile ();
 			$userProfile->Company_name = $this->company_name;
@@ -195,7 +194,12 @@ class RegisterForm extends CFormModel {
 			$userProfile->District = $this -> district;
 			$userProfile->User_category = $this->userType;
 			$userProfile->City = $this->city;
-			$userProfile->save ();
+			if($userProfile -> validate()){
+				$userProfile->save ();
+			}else{
+				var_dump($userProfile -> errors);
+				die;
+			}
 			
 			$adminUser = new AdminUser();
 			$adminUser -> id =NULL;

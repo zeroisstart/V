@@ -26,9 +26,17 @@ $form = $this->beginWidget ( 'CActiveForm', array (
 	</p>
 
 	<div class="row">
+		<?php if(!$admin):?>
 		<?php echo $form->labelEx($model,'userType'); ?>
 		<?php echo $form->dropDownList ($model,'userType',array(2=>'评委'),array('class'=>'reg_select')); ?>
 		<?php echo $form->error($model,'userType'); ?>
+		<?php else:?>
+		<div style="display:none;">
+			<?php echo $form->labelEx($model,'userType'); ?>
+			<?php echo $form->dropDownList ($model,'userType',array(9=>'评委'),array('class'=>'reg_select')); ?>
+			<?php echo $form->error($model,'userType'); ?>
+		</div>
+		<?php endif;?>
 	</div>
 
 	

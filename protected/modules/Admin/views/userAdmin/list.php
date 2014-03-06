@@ -28,9 +28,16 @@ $this->widget ( 'widget.Helper.SecNav', array (
 				'评委管理' => $this->createUrl ( '/Admin/UserAdmin/list', array (
 						't' => 2 
 				) ),
+				'地区管理员管理' => $this->createUrl ( '/Admin/UserAdmin/list', array (
+						't' => 9
+				) ),
 				'新增评委' => $this->createUrl ( '/Admin/UserAdmin/create', array (
 						'ac' => 'create',
 						't' => 2 
+				) ) ,
+				'新增地区管理员' => $this->createUrl ( '/Admin/UserAdmin/createadmin', array (
+						'ac' => 'createadmin',
+						't' => 9
 				) ) ,
 				/*'新增区域' => $this->createUrl ( '/Admin/UserAdmin/CreateArea', array (
 						'ac' => 'create',

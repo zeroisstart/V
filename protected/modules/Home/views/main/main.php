@@ -48,12 +48,6 @@ $this -> registerPopupBox();
 					
 					
 					 <div class="contentBlock">
-					 	<div class="title titleBar">企业命题</div>
-                        <div class="contentBox"></div>
-                    </div>
-					
-					
-					 <div class="contentBlock">
 					 	<div class="title titleBar">合作伙伴</div>
                         <div class="contentBox"></div>
                     </div>

@@ -53,13 +53,14 @@ class leftLogin extends CWidget {
 		
 		$name = ($user->name);
 		$id = ($user->id);
-		if ($user->userProfile->User_category == 2) {
+		if ($user->userProfile && $user->userProfile->User_category == 2) {
 			$tpl = '<div id="userLogin">
 					<div id="userLoginTitle">用户登陆信息</div>
 					<div id="userLoginBox">
 						<div class="user_info ">
 							<span><a href="profileUrl">name</a> </span>
-							<span><a href="assessment">待评作品</a> | <a href="assesmented">评过的作品</a></span>
+							<span><a href="assessment">待评作品</a></span>
+							<span><a href="assesmented">评过的作品</a></span>
 						</div>
 					</div>
 				</div>';
@@ -69,7 +70,7 @@ class leftLogin extends CWidget {
 			$tpl = str_replace ( 'assesmented', $assessmented, $tpl );
 			$tpl = str_replace ( 'name', $name, $tpl );
 			echo $tpl;
-		} elseif ($user->userProfile->User_category == 5) {
+		} elseif ($user->userProfile && $user->userProfile->User_category == 5) {
 			$tpl = '<div id="userLogin">
 					<div id="userLoginTitle">用户登陆信息</div>
 					<div id="userLoginBox">

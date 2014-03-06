@@ -54,6 +54,16 @@ class WebUser extends CWebUser {
 	}
 	
 	/**
+	 * 获取个人信息
+	 */
+	public function getProfile(){
+		$id = $this -> id;
+		if($id)
+			return UserProfile::model()->findAllByPk($id);
+		return false;
+	}
+	
+	/**
 	 * 返回用户是否报名
 	 *
 	 * @param int $uid        	
