@@ -16,6 +16,8 @@ $css = array (
 		'css/form.css',
 );
 
+$profile =  $this -> user -> profile;
+
 $js = array (
 		'js/swfobject.js',
 		'js/jquery.ui.core.min.js',
@@ -83,10 +85,25 @@ Default colour scheme is blue. Uncomment prefered stylesheet to use it.
 			<!-- End of Top navigation -->
 			<!-- Main navigation -->
 			<nav id="menu">
-			<?php $this -> widget('widget.Helper.Menu',array(
-					'activeCssClass' => 'current',
-					'htmlOptions'=>array('class'=>'sf-menu sf-js-enabled sf-shadow'),
-					'items'=>array(
+			<?php 
+			if($profile){
+				if($profile -> User_category == 9){
+					$item = array(
+								
+							array('label'=>'管理首页', 'url'=>array('/Admin/main/main')),
+							array('label'=>'参赛队伍', 'url'=>array('/Admin/group/list')),
+							//array('label'=>'个人中心竞赛通知','url'=>array('/Admin/content/update/id/230')),
+							array('label'=>'作品评分分配','url'=>array('/Admin/product/list')),
+							array('label'=>'报名审核页面','url'=>array('/Admin/book/list')),
+							#array('label'=>'企业导师管理', 'url'=>array('/Admin/master/main')),
+							#array('label'=>'新闻', 'url'=>array('/news/admin/list')),
+							#array('label'=>'赛事', 'url'=>array('/event/admin/index')),
+							#array('label'=>'图片','url'=>array('/pic/slider/list')),
+							//array('label'=>'参赛用户数据导出','url'=>array('/Admin/export/main')),
+					);
+				}else{
+					$item = array(
+								
 							array('label'=>'管理首页', 'url'=>array('/Admin/main/main')),
 							array('label'=>'首页滑动', 'url'=>array('/Admin/slider/main')),
 							array('label'=>'内容发布', 'url'=>array('/Admin/content/list')),
@@ -100,7 +117,26 @@ Default colour scheme is blue. Uncomment prefered stylesheet to use it.
 							#array('label'=>'图片','url'=>array('/pic/slider/list')),
 							array('label'=>'用户管理','url'=>array('/Admin/UserAdmin/list')),
 							//array('label'=>'参赛用户数据导出','url'=>array('/Admin/export/main')),
-					)
+					);
+				}
+				
+			}else{
+				$item = array(
+						array('label'=>'管理首页', 'url'=>array('/Admin/main/main')),
+						array('label'=>'首页滑动', 'url'=>array('/Admin/slider/main')),
+						array('label'=>'内容发布', 'url'=>array('/Admin/content/list')),
+						array('label'=>'参赛队伍', 'url'=>array('/Admin/group/list')),
+						array('label'=>'作品评分分配','url'=>array('/Admin/product/list')),
+						array('label'=>'报名审核页面','url'=>array('/Admin/book/list')),
+						array('label'=>'用户管理','url'=>array('/Admin/UserAdmin/list')),
+				);
+			}
+			
+			
+			$this -> widget('widget.Helper.Menu',array(
+					'activeCssClass' => 'current',
+					'htmlOptions'=>array('class'=>'sf-menu sf-js-enabled sf-shadow'),
+					'items'=>$item,
 			));?>
 			</nav>
 			<!-- End of Main navigation -->

@@ -59,7 +59,7 @@ class WebUser extends CWebUser {
 	public function getProfile(){
 		$id = $this -> id;
 		if($id)
-			return UserProfile::model()->findAllByPk($id);
+			return UserProfile::model()->findByPk($id);
 		return false;
 	}
 	
