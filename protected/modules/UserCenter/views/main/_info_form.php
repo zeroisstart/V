@@ -66,6 +66,18 @@ $form = $this->beginWidget ( 'CActiveForm', array (
 	</div>
 
 	<div class="row">
+		<?php echo $form->labelEx($model,'Mobile'); ?>
+		<?php echo $form->textField($model,'Mobile'); ?>
+		<?php echo $form->error($model,'Mobile'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'Email'); ?>
+		<?php echo $form->textField($model,'Email'); ?>
+		<?php echo $form->error($model,'Email'); ?>
+	</div>
+	
+	<div class="row">
 		<?php echo $form->labelEx($model,'City'); ?>
 		<?php echo $form->textField($model,'City'); ?>
 		<?php echo $form->error($model,'City'); ?>
@@ -75,18 +87,6 @@ $form = $this->beginWidget ( 'CActiveForm', array (
 		<?php echo $form->labelEx($model,'Company_name'); ?>
 		<?php echo $form->textField($model,'Company_name'); ?>
 		<?php echo $form->error($model,'Company_name'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'Email'); ?>
-		<?php echo $form->textField($model,'Email'); ?>
-		<?php echo $form->error($model,'Email'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'Mobile'); ?>
-		<?php echo $form->textField($model,'Mobile'); ?>
-		<?php echo $form->error($model,'Mobile'); ?>
 	</div>
 
 	<div class="div_btn">

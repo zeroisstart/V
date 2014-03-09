@@ -29,14 +29,16 @@ $this->widget ( 'widget.Helper.GridView', array (
 				),
 				'username',
 				'create_time',
+				/*
 				'state' => array (
 						'name' => 'state',
 						'value' => '$data -> _state[$data -> state];' 
-				),
+				),*/
+				/*
 				array (
 						'template' => '{update}',
 						'class' => 'widget.Helper.ButtonColumn' 
-				) 
+				) */
 		) 
 ) )?>
 

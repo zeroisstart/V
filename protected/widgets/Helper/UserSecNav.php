@@ -4,8 +4,8 @@ class UserSecNav extends CWidget {
 			'main' => '我的首页',
 			'team' => '我的团队',
 			'product' => '我的作品',
-			//'info' => '我的资料',
-			'state' => '参赛状态' 
+			'info' => '我的资料',
+			//'state' => '参赛状态' 
 	);
 	public $current = 'main';
 	public function init() {

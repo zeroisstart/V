@@ -5,19 +5,22 @@
 		
 		
 		
-		
 		<div class="user_data_info">
 			
-			<p>组队 ：成功 </p>
-			<p>组名 ：<?php echo $group_model -> name;?> </p>
-			<p>队长 ：<?php echo $group_model -> username;?>
-			<p>报名 ：<?php echo $booked?"成功":"";?></p>
-			<p>缴纳报名费 ：<?php echo $booked?"成功":""?></p>
-			<p>初赛作品提交 ：<?php echo $product?"成功":'';?></p>
-			<p>初赛成绩 ：</p>
+			<p><span>组队</span> ：成功 </p>
+			<p><span>组名</span> ：<?php echo $group_model -> name;?> </p>
+			<p><span>队长</span> ：<?php echo $group_model -> username;?>
+			<?php if($teacher):?>
+			<p><span>指导老师</span> ：<?php echo $teacher -> profile -> Realname;?></p>
+			<?php else:?>
+			<p><span>指导老师</span> ：</p>
+			<?php endif;?>
+			<p><span>团队成员</span> ：<?php echo $memberList;?></p>
+			<p><span>初赛作品</span> ：<?php echo $product?"成功":'未提交';?></p>
+			<p><span>初赛成绩</span> ：</p>
 			<?php if(0):?>
-			<p>决赛作品提交 ：</p>
-			<p>决赛成绩 ：</p>
+			<p><span>决赛作品提交</span> ：</p>
+			<p><span>决赛成绩</span> ：</p>
 			<?php endif?>
 		
 		</div>

@@ -23,7 +23,7 @@ $this->widget ( 'ext.popup.popup' );
 										'buttons' => array (
 												'yes' => array (
 														'label' => '申请加入',
-														'url' => 'Yii::app() -> createUrl("/UserCenter/main/main",array("ac"=>"acceptTeam","id"=>$data->ID))',
+														'url' => 'Yii::app() -> createUrl("/UserCenter/main/main",array("ac"=>"acceptTeam","userid"=>$data->UID,"teamid"=>$data->gid))',
 														'imageUrl' => $access_path . '/images/yes.png',
 														'click' => 'js:function(){
 																if(!confirm("确定加入?")) return false;
@@ -35,13 +35,14 @@ $this->widget ( 'ext.popup.popup' );
 																_opt.success=function(res){
 																	res = eval("("+res+")");
 																	console.log(res);
-																	if(res.status){
+																	if(res.status==1){
 																			hm.alert({
 																			noTitle : true, 
-																			text : "请耐心等待!", 
+																			text : "加入成功!", 
 																			height : "auto",
 																			width : 210,
-																		})
+																		},function(){window.location.reload();})
+																		
 																	}else{
 																		switch(res.code){
 																			case "2":
@@ -50,7 +51,7 @@ $this->widget ( 'ext.popup.popup' );
 																				text : "小队不存在!", 
 																				height : "auto",
 																				width : 210,
-																			})
+																			},function(){window.location.reload();})
 																				break;
 																			case "3":
 																			hm.alert({
@@ -58,7 +59,7 @@ $this->widget ( 'ext.popup.popup' );
 																				text : "您有在申请哦!", 
 																				height : "auto",
 																				width : 210,
-																			})
+																			},function(){window.location.reload();})
 																				break;
 																			default:
 																				break;
@@ -71,7 +72,7 @@ $this->widget ( 'ext.popup.popup' );
 												),
 												'no' => array (
 														'label' => '忽略',
-														'url' => 'Yii::app() -> createUrl("/UserCenter/main/main",array("ac"=>"acceptTeam","id"=>$data->ID))',
+														'url' => 'Yii::app() -> createUrl("/UserCenter/main/main",array("ac"=>"rejectTeam","userid"=>$data->UID,"teamid"=>$data->gid))',
 														'imageUrl' => $access_path . '/images/no.png',
 														'click' => 'js:function(){
 																if(!confirm("确定忽略?")) return false;
@@ -86,10 +87,10 @@ $this->widget ( 'ext.popup.popup' );
 																	if(res.status){
 																			hm.alert({
 																			noTitle : true, 
-																			text : "请耐心等待!", 
+																			text : "忽略成功!", 
 																			height : "auto",
 																			width : 210,
-																		})
+																		},function(){window.location.reload();})
 																	}else{
 																		switch(res.code){
 																			case "2":
@@ -98,15 +99,9 @@ $this->widget ( 'ext.popup.popup' );
 																				text : "小队不存在!", 
 																				height : "auto",
 																				width : 210,
-																			})
+																			},function(){window.location.reload();})
 																				break;
 																			case "3":
-																			hm.alert({
-																				noTitle : true, 
-																				text : "您有在申请哦!", 
-																				height : "auto",
-																				width : 210,
-																			})
 																				break;
 																			default:
 																				break;

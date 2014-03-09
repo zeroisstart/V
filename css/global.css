@@ -62,3 +62,7 @@ ul, li {
 	line-height:25px;
 }
 
+.em_warning{
+	color:red;
+}
+.user_data_info p span{width:70px;display: inline-block;}

@@ -69,6 +69,9 @@ class WebUser extends CWebUser {
 	 * @param int $uid        	
 	 */
 	public function isBooked($uid = false) {
+		
+		return array('state'=>true);
+		
 		if (! $uid) {
 			$uid = $this->getModel ()->id;
 		}

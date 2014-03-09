@@ -6,6 +6,8 @@ $this->widget ( 'ext.popup.popup' );
 	<div id="rightContent" class="user_profile_info">
 		<p class="user_notice">您好 <?php echo Yii::app() -> user->username;?></p>
 		
+		<em class="em_warning">请选择想加入的队伍。</em>
+		
 		<div class="user_data_info">
 			
 				<div class="grid_form">

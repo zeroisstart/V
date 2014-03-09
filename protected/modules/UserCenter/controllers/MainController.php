@@ -63,6 +63,10 @@ class MainController extends Controller {
 				$this->_actionAccept ();
 				break;
 			case 'acceptTeam' :
+				$this -> acceptTeam();
+				break;
+			case 'rejectTeam':
+				$this -> rejectTeam();
 				break;
 			case 'assessment' :
 				$this->_actionAssessment ();
@@ -114,7 +118,6 @@ class MainController extends Controller {
 		$group_member_model = UserGroupMember::model ();
 		$row = $group_member_model->findByAttributes ( array (
 				'UID' => $uid,
-				'state' => '1' 
 		) );
 		
 		if (empty ( $row )) {
@@ -141,11 +144,23 @@ class MainController extends Controller {
 					'gid' => $row->gid 
 			) );
 			
+			$teacher = false;
+			$member = array();
+			foreach($group_model->members as $_mem){
+				if($_mem -> profile -> User_category== 4){
+					$teacher = $_mem;
+				}
+				$member [] = $_mem -> profile -> Realname;
+			}
+			$member_list = implode(',', $member);
+			
 			$this->render ( 'team', array (
 					'model' => $row,
 					'group_model' => $group_model,
 					'booked' => $booked,
-					'product' => $product 
+					'product' => $product,
+					'teacher'=>$teacher,
+					'memberList'=>$member_list
 			) );
 		}
 	}
@@ -222,6 +237,53 @@ class MainController extends Controller {
 	}
 	
 	/**
+	 * 拒绝申请
+	 */
+	public function rejectTeam(){
+		$user = Yii::app ()->user;
+		$uid = $user->id;
+		
+		$req = Yii::app ()->request;
+		
+		//@2
+		$teamid = ( int ) $req->getParam ( 'teamid' );
+		$joinUserID = $req->getParam ( 'userid' );
+		
+		$userGroup = UserGroup::model ()->findByAttributes ( array (
+				'UID' => $uid,
+				'ID' => $teamid
+		) );
+		
+		if (empty ( $userGroup ))
+			die ( CJavaScript::encode ( array (
+					'status' => '0',
+					'code' => 1,
+					'msg' => '您不是那个队的队长哦!'
+			) ) );
+		$userGroupMember = UserGroupMember::model ()->findByAttributes ( array (
+				'gid' => $userGroup->ID,
+				'UID' => $joinUserID
+		) );
+		
+		if (empty ( $userGroupMember )) {
+			die ( CJavaScript::encode ( array (
+					'status' => '0',
+					'code' => 2,
+					'msg' => '您不是那个队的队长哦!'
+			) ) );
+		}
+		
+		if ($userGroupMember->delete ()) {
+			// 成功加入
+			echo CJavaScript::encode ( array (
+					'status' => 1,
+					'code' => 0
+			) );
+		}
+	}
+	
+	/**
+	 * 接收申请
 	 */
 	public function acceptTeam() {
 		$user = Yii::app ()->user;
@@ -229,13 +291,15 @@ class MainController extends Controller {
 		
 		$req = Yii::app ()->request;
 		
+		//@2
 		$teamid = ( int ) $req->getParam ( 'teamid' );
 		$joinUserID = $req->getParam ( 'userid' );
 		
 		$userGroup = UserGroup::model ()->findByAttributes ( array (
-				'uid' => $uid,
+				'UID' => $uid,
 				'ID' => $teamid 
 		) );
+		
 		if (empty ( $userGroup ))
 			die ( CJavaScript::encode ( array (
 					'status' => '0',
@@ -244,7 +308,7 @@ class MainController extends Controller {
 			) ) );
 		$userGroupMember = UserGroupMember::model ()->findByAttributes ( array (
 				'gid' => $userGroup->ID,
-				'uid' => $joinUserID 
+				'UID' => $joinUserID 
 		) );
 		
 		if (empty ( $userGroupMember )) {

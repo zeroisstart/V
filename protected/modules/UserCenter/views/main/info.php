@@ -14,13 +14,12 @@
 				<?php
 				$ary_key = array (
 						'Nickname',
+						'IDNum',
 						'Realname',
-						'IDNum',
-						'Company_name',
 						'Mobile',
-						'IDNum',
 						'Email',
-						'City' 
+						'City',
+						'Company_name',
 				);
 				foreach ($ary_key as $key):
 				?>				

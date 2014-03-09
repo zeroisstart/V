@@ -79,7 +79,7 @@ class UserGroupMember extends CActiveRecord {
 						self::BELONGS_TO,
 						'User',
 						'UID' 
-				) 
+				),'profile'=>array(self::BELONGS_TO,'UserProfile','UID') 
 		);
 	}
 	
