@@ -203,10 +203,11 @@ class ContentController extends Controller {
 			$this->run ( 'list' );
 			Yii::app ()->end ();
 		}
+		$model = new News('update');
 		if(in_array($id, array(19,20))){
-			$model = News::model ()->findByAttributes(array('category'=>$id));
+			$model = $model->findByAttributes(array('category'=>$id));
 		}else{
-			$model = News::model ()->findByPk ( $id );
+			$model = $model->findByPk ( $id );
 		}
 		
 		if ($model) {
@@ -217,7 +218,7 @@ class ContentController extends Controller {
 					// $db = Yii::app ()->db;
 					$transaction = $model->dbConnection->beginTransaction ();
 					try {
-						$model->save ();
+						$model->update ();
 						$id = $model->ID;
 						if ($model->category) {
 							$cdbCriteria = new CDbCriteria ();
@@ -259,7 +260,7 @@ class ContentController extends Controller {
 		$model->date = date ( 'Y-m-d' );
 		$model->create_time = date ( 'Y-m-d H:i:s' );
 		
-		if (isset ( $_FILES ['News'] ) && $_FILES['News']['error']==4) {
+		if (isset ( $_FILES ['News'] ) && $_FILES['News']['error']['photo']==0) {
 			$upload = UploadedFile::getInstance ( $model, 'photo' );
 			$model->photo = $upload;
 			if ($model->validate ()) {
@@ -385,3 +386,4 @@ class ContentController extends Controller {
 		echo "{'url':'" . $info ["url"] . "','title':'" . $title . "','original':'" . $info ["originalName"] . "','state':'" . $info ["state"] . "'}";
 	}
 }
+
