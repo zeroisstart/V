@@ -34,11 +34,11 @@ class SliderController extends Controller {
 				
 				$savePath = str_replace ( $UploadPath, '', $imgPath );
 				$upload->saveAs ( $imgPath );
+				$model->img = $savePath;
+				$model->save ();
 			} else {
-				var_dump ( $model->errors );
+				//var_dump ( $model->errors );
 			}
-			$model->img = $savePath;
-			$model->save ();
 		}
 		
 		$this->render ( 'main', array (
