@@ -60,6 +60,11 @@ class GallerySecNav extends CWidget {
 						</a></li>
 				<?php endif;?>
 			<?php endforeach;?>
+			
+			<?php if(0):?>
+			<li><a href="<?php echo Yii::app() -> createUrl('/about')?>">关于竞赛</a></li>
+			<li><a href="<?php echo Yii::app() -> createUrl('/join')?>">参赛方法</a></li>
+			<?php endif;?>
 			</ul>
 </div>
 <?php

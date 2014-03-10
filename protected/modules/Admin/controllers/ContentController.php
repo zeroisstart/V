@@ -116,17 +116,21 @@ class ContentController extends Controller {
 		$user = Yii::app ()->user;
 		
 		$req = Yii::app ()->request;
-		$cate = $req->getParam ( 'c' );
+		if(isset($_POST ['News'])){
+			$cate = $_POST ['News']['category'];
+		}else{
+			$cate = false;
+		}
 		
 		if ($cate) {
 			$model->category = $cate;
 		} else {
 			$model->category = 18;
 		}
-		
+		#var_dump($model -> category);
+		#die;
 		if (isset ( $_POST ['News'] )) {
 			$model->attributes = $_POST ['News'];
-			
 			$model = $this->_validateForm ( $model );
 			
 			if ($model->validate ()) {
@@ -209,11 +213,9 @@ class ContentController extends Controller {
 			if (isset ( $_POST ['News'] )) {
 				$model->attributes = $_POST ['News'];
 				$model = $this->_validateForm ( $model );
-				if ($model->validate ()) {
-					
+				if ($model->validate () && 1) {
 					// $db = Yii::app ()->db;
 					$transaction = $model->dbConnection->beginTransaction ();
-					
 					try {
 						$model->save ();
 						$id = $model->ID;
@@ -257,7 +259,7 @@ class ContentController extends Controller {
 		$model->date = date ( 'Y-m-d' );
 		$model->create_time = date ( 'Y-m-d H:i:s' );
 		
-		if (isset ( $_FILES ['News'] )) {
+		if (isset ( $_FILES ['News'] ) && $_FILES['News']['error']==4) {
 			$upload = UploadedFile::getInstance ( $model, 'photo' );
 			$model->photo = $upload;
 			if ($model->validate ()) {

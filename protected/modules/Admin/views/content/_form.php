@@ -20,6 +20,10 @@
 
 $cate = array();// $model->getAllCate ();
 
+$cate['19'] = '竞赛资讯';
+$cate['11'] = '承办院校';
+$cate['12'] = '优秀作品展示';
+$cate['13'] = '合作伙伴';
 $cate['0'] = '其他';
 
 $_form = array ();
@@ -62,12 +66,12 @@ $form = $this->beginWidget ( 'CActiveForm', array (
 		<?php echo $form->textField($model,'title',array('class'=>'w_600')); ?>
 		<?php echo $form->error($model,'title'); ?>
 		
-		<?php if(0):?>
 		<span class="m_l_155">新闻分类:
 			<?php echo $form -> dropDownList($model, 'category', $cate,array('class'=>'w_200'))?>
 		</span>
-		<?php endif;?>
+		<?php if(0):?>
 		<?php echo $form -> hiddenField($model, 'category');?>
+		<?php endif;?>
 		
 	</div>
 

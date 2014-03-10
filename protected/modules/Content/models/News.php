@@ -72,11 +72,11 @@ class News extends CActiveRecord {
 						'length',
 						'max' => 250 
 				),
-				array (
+				/*array (
 						'photo',
 						'file',
-						'types'=>array('jpg','jpeg','gif','png')
-				),
+						'types'=>array('jpg','jpeg','gif','png'),
+				),*/
 				array (
 						'state',
 						'length',
@@ -176,7 +176,8 @@ class News extends CActiveRecord {
 		// var_dump($this -> attributes);
 		$titles = array ();
 		foreach ( $category_model as $key => $val ) {
-			$titles [$val->cate_id] = $val->cate->title;
+			if($val->cate)
+				$titles [$val->cate_id] = $val->cate->title;
 		}
 		
 		return empty ( $titles ) ? '其他' : implode ( ' ', $titles );
@@ -213,6 +214,23 @@ class News extends CActiveRecord {
 				) 
 		) );
 	}
+	/**
+	 * 
+	 * @param unknown_type $category
+	 */
+	public function getByCategory($category){
+		$cdbcriteria = new CDbCriteria ();
+		
+		$cdbcriteria->compare ( 'category', $category );
+		$cdbcriteria->limit = 10;
+		$cdbcriteria->order = "create_time desc";
+		
+		$news = News::model ()->findAll ( $cdbcriteria );
+		
+		$slider_model = Slider::model ();
+		$dataProvider = $slider_model->search ();
+	}
+	
 	/**
 	 * 获取推荐的文章
 	 *

@@ -17,8 +17,8 @@ $this -> registerPopupBox();
                             <ul class="competition_left">
                             <?php foreach($left as $_model):?>
                             	<li>
-                            		<a href="<?php echo $this -> createUrl('/Home/feeds/main',array('id'=>$_model -> ID))?>">
-                            		<?php echo $_model -> title;?>
+                            		<a href="<?php echo $this -> createUrl('/Home/feeds/main',array('id'=>$_model -> ID))?>" title="<?php echo $_model -> title;?>">
+                            			<?php echo mb_substr($_model -> title,0,60);?>
                             		</a>
                             	</li>
                             <?php endforeach;?>
@@ -37,15 +37,14 @@ $this -> registerPopupBox();
                     </div>
 
                     <div class="contentBlock">
-                        <div class="title titleBar">评审专家</div>
+                        <div class="title titleBar">承办院校</div>
                         <div class="contentBox"></div>
                     </div>
 					
 					 <div class="contentBlock">
-					 	<div class="title titleBar">竞赛导师</div>
+					 	<div class="title titleBar">优秀作品展示</div>
                         <div class="contentBox"></div>
                     </div>
-					
 					
 					 <div class="contentBlock">
 					 	<div class="title titleBar">合作伙伴</div>

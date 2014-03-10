@@ -6,6 +6,7 @@ class MainController extends Controller {
 		
 		
 		$cdbcriteria = new CDbCriteria ();
+		
 		$cdbcriteria->compare ( 'category', 19 );
 		$cdbcriteria->limit = 10;
 		$cdbcriteria->order = "create_time desc";
