@@ -5,22 +5,23 @@ class MainController extends Controller {
 		//$this -> redirect($this -> createUrl('/forum'));
 		
 		
-		$cdbcriteria = new CDbCriteria ();
+		$news = News::model();
+		//竞赛资讯
+		$data19 = $news -> getByCategory(19);
+		//承办学校
+		$data11 = $news -> getByCategory(11);
 		
-		$cdbcriteria->compare ( 'category', 19 );
-		$cdbcriteria->limit = 10;
-		$cdbcriteria->order = "create_time desc";
+		//优秀作品展示
+		$data12 = $news -> getByCategory(12);
+		//合作伙伴
+		$data13 = $news -> getByCategory(13);
 		
-		$news = News::model ()->findAll ( $cdbcriteria );
-		
-		$slider_model = Slider::model ();
-		$dataProvider = $slider_model->search ();
+		$news = array(11=>$data11,12=>$data12,13=>$data13,19=>$data19);
 
 		// header("Location:/V/admin");
 		
 		// var_dump($slider_model);
 		// die;
-		
 		// $user = Yii::app() ->user;
 		
 		// var_dump($user -> name);
@@ -32,16 +33,23 @@ class MainController extends Controller {
 		#var_dump(Yii::app() -> params -> imgAccessPath);
 		#die;
 		
-		foreach ( $dataProvider->data as $_model ) {
+		$slider_model = Slider::model ();
+		$dataProvider = $slider_model->search ();
+		
+		foreach ( $dataProvider -> data as $_model ) {
 			$img [] = (Yii::app ()->params->imgAccessPath . 'img/' . $_model->img);
 		}
 		
-		$left = array_slice($news, 0,5);
-		$right = array_slice($news, 5,5);
+		foreach($news as $key => $_val){
+			unset($news[$key]);
+			$news[$key]['left'] = array_slice($_val, 0,5);
+			$news[$key]['right'] = array_slice($_val, 5,5);
+		}
 		
 		$this->render ( 'main', array (
-				'left'=>$left,
-				'right'=>$right,
+				'news'=>$news,
+				#'left'=>$left,
+				#'right'=>$right,
 				'img' => $img,
 				'news' => $news 
 		) );

@@ -220,15 +220,13 @@ class News extends CActiveRecord {
 	 */
 	public function getByCategory($category){
 		$cdbcriteria = new CDbCriteria ();
-		
 		$cdbcriteria->compare ( 'category', $category );
 		$cdbcriteria->limit = 10;
 		$cdbcriteria->order = "create_time desc";
 		
 		$news = News::model ()->findAll ( $cdbcriteria );
 		
-		$slider_model = Slider::model ();
-		$dataProvider = $slider_model->search ();
+		return $news;
 	}
 	
 	/**
