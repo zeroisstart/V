@@ -1,5 +1,4 @@
 <?php
- 
 $modules_includes = array ();
 $modules_dirs = scandir ( MODULES_PATH );
 
@@ -62,11 +61,11 @@ return array(
       'anne' =>dirname(__FILE__).DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR,
       'alice' =>dirname(__FILE__).DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR,
       'components'=>'application.components', // 设置元件目录
-      'views'=>'application.views',           // 设置显示目录
-      'widget'=>'application.widgets',
-      'modules'=>'application.modules',
-      'forum'=>'modules.Forum',
-      'widgets'=>'application.widgets'),      // 设置小工具目录
+	      'views'=>'application.views',           // 设置显示目录
+	      'widget'=>'application.widgets',
+	      'modules'=>'application.modules',
+	      'forum'=>'modules.Forum',
+	      'widgets'=>'application.widgets'),      // 设置小工具目录
 	'modules'=>$modules,
 	// application components
 	'components'=>$components,

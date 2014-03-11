@@ -197,7 +197,7 @@ class News extends CActiveRecord {
 		$criteria->compare ( 'ID', $this->ID, true );
 		$criteria->compare ( 'UID', $this->UID, true );
 		$criteria->compare ( 'title', $this->title, true );
-		$criteria->compare ( 'category', $this->category );
+		$criteria->compare ( 'category', $this->category , true);
 		$criteria->compare ( 'text', $this->text, true );
 		$criteria->compare ( 'photo', $this->photo, true );
 		$criteria->compare ( 'state', $this->state, true );
@@ -205,7 +205,7 @@ class News extends CActiveRecord {
 		$criteria->compare ( 'create_time', $this->create_time, true );
 		$criteria->order = "create_time desc";
 		
-		$criteria->addCondition ( 'category not in (4,19,20)' );
+		//$criteria->addCondition ( 'category not in (4,19,20,11,12,13)' );
 		
 		return new CActiveDataProvider ( $this, array (
 				'criteria' => $criteria,
