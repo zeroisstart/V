@@ -1963,3 +1963,316 @@ Stack trace:
 REQUEST_URI=/V//img/201305/16/da032ae04c791881811770e34ca0febf.jpg
 HTTP_REFERER=http://localhost/V/Admin/book/list
 ---
+2014/03/12 00:20:38 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[28000] [1045] Access denied for user 'root'@'localhost' (using password: NO)' in /cde/www/V/protected/libs/yii/db/CDbConnection.php:381
+Stack trace:
+#0 /cde/www/V/protected/libs/yii/db/CDbConnection.php(330): CDbConnection->open()
+#1 /cde/www/V/protected/libs/yii/db/CDbConnection.php(308): CDbConnection->setActive(true)
+#2 /cde/www/V/protected/libs/yii/base/CModule.php(387): CDbConnection->init()
+#3 /cde/www/V/protected/libs/yii/base/CApplication.php(438): CModule->getComponent('db')
+#4 /cde/www/V/protected/libs/yii/db/ar/CActiveRecord.php(623): CApplication->getDb()
+#5 /cde/www/V/protected/libs/yii/db/ar/CActiveRecord.php(2309): CActiveRecord->getDbConnection()
+#6 /cde/www/V/protected/libs/yii/db/ar/CActiveRecord.php(387): CActiveRecordMetaData->__construct(Object(News))
+#7 /cde/www/V/protected/modules/Content/models/News.php(37): CActiveRecord::model('News')
+#8 /cde/www/V/protected/modules/Home/controllers/MainController.php(8): News::model()
+#9 /cde/www/V/protected/libs/yii/web/actions/CInlineAction.php(49): MainController->actionIndex()
+#10 /cde/www/V/protected/libs/yii/web/CController.php(308): CInlineAction->runWithParams(Array)
+#11 /cde/www/V/protected/libs/yii/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 /cde/www/V/protected/libs/yii/web/filters/CFilter.php(40): CFilterChain->run()
+#13 /cde/www/V/protected/libs/yii/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 /cde/www/V/protected/libs/yii/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 /cde/www/V/protected/libs/yii/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 /cde/www/V/protected/libs/yii/web/filters/CFilter.php(40): CFilterChain->run()
+#17 /cde/www/V/protected/libs/yii/web/filters/CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#18 /cde/www/V/protected/libs/yii/web/filters/CFilter.php(40): CFilterChain->run()
+#19 /cde/www/V/protected/libs/yii/web/filters/CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#20 /cde/www/V/protected/libs/yii/web/filters/CFilter.php(40): CFilterChain->run()
+#21 /cde/www/V/protected/libs/yii/web/filters/CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#22 /cde/www/V/protected/libs/yii/web/filters/CFilter.php(40): CFilterChain->run()
+#23 /cde/www/V/protected/libs/yii/web/filters/CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#24 /cde/www/V/protected/libs/yii/web/filters/CFilter.php(40): CFilterChain->run()
+#25 /cde/www/V/protected/libs/yii/web/filters/CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#26 /cde/www/V/protected/libs/yii/web/filters/CFilter.php(40): CFilterChain->run()
+#27 /cde/www/V/protected/libs/yii/web/filters/CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#28 /cde/www/V/protected/libs/yii/web/filters/CFilter.php(40): CFilterChain->run()
+#29 /cde/www/V/protected/libs/yii/web/filters/CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#30 /cde/www/V/protected/libs/yii/web/filters/CFilter.php(40): CFilterChain->run()
+#31 /cde/www/V/protected/libs/yii/web/filters/CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#32 /cde/www/V/protected/components/filters/RbacFilter.php(17): CFilterChain->run()
+#33 /cde/www/V/protected/libs/yii/web/filters/CFilter.php(38): RbacFilter->preFilter(Object(CFilterChain))
+#34 /cde/www/V/protected/libs/yii/web/filters/CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#35 /cde/www/V/protected/libs/yii/web/CController.php(291): CFilterChain->run()
+#36 /cde/www/V/protected/libs/yii/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#37 /cde/www/V/protected/libs/yii/web/CWebApplication.php(282): CController->run('index')
+#38 /cde/www/V/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('Home/main/index')
+#39 /cde/www/V/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#40 /cde/www/V/index.php(67): CApplication->run()
+#41 {main}
+REQUEST_URI=/V/
+---
+2014/03/12 00:20:40 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[28000] [1045] Access denied for user 'root'@'localhost' (using password: NO)' in /cde/www/V/protected/libs/yii/db/CDbConnection.php:381
+Stack trace:
+#0 /cde/www/V/protected/libs/yii/db/CDbConnection.php(330): CDbConnection->open()
+#1 /cde/www/V/protected/libs/yii/db/CDbConnection.php(308): CDbConnection->setActive(true)
+#2 /cde/www/V/protected/libs/yii/base/CModule.php(387): CDbConnection->init()
+#3 /cde/www/V/protected/libs/yii/base/CApplication.php(438): CModule->getComponent('db')
+#4 /cde/www/V/protected/libs/yii/db/ar/CActiveRecord.php(623): CApplication->getDb()
+#5 /cde/www/V/protected/libs/yii/db/ar/CActiveRecord.php(2309): CActiveRecord->getDbConnection()
+#6 /cde/www/V/protected/libs/yii/db/ar/CActiveRecord.php(387): CActiveRecordMetaData->__construct(Object(News))
+#7 /cde/www/V/protected/modules/Content/models/News.php(37): CActiveRecord::model('News')
+#8 /cde/www/V/protected/modules/Home/controllers/MainController.php(8): News::model()
+#9 /cde/www/V/protected/libs/yii/web/actions/CInlineAction.php(49): MainController->actionIndex()
+#10 /cde/www/V/protected/libs/yii/web/CController.php(308): CInlineAction->runWithParams(Array)
+#11 /cde/www/V/protected/libs/yii/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 /cde/www/V/protected/libs/yii/web/filters/CFilter.php(40): CFilterChain->run()
+#13 /cde/www/V/protected/libs/yii/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 /cde/www/V/protected/libs/yii/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 /cde/www/V/protected/libs/yii/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 /cde/www/V/protected/libs/yii/web/filters/CFilter.php(40): CFilterChain->run()
+#17 /cde/www/V/protected/libs/yii/web/filters/CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#18 /cde/www/V/protected/libs/yii/web/filters/CFilter.php(40): CFilterChain->run()
+#19 /cde/www/V/protected/libs/yii/web/filters/CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#20 /cde/www/V/protected/libs/yii/web/filters/CFilter.php(40): CFilterChain->run()
+#21 /cde/www/V/protected/libs/yii/web/filters/CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#22 /cde/www/V/protected/libs/yii/web/filters/CFilter.php(40): CFilterChain->run()
+#23 /cde/www/V/protected/libs/yii/web/filters/CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#24 /cde/www/V/protected/libs/yii/web/filters/CFilter.php(40): CFilterChain->run()
+#25 /cde/www/V/protected/libs/yii/web/filters/CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#26 /cde/www/V/protected/libs/yii/web/filters/CFilter.php(40): CFilterChain->run()
+#27 /cde/www/V/protected/libs/yii/web/filters/CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#28 /cde/www/V/protected/libs/yii/web/filters/CFilter.php(40): CFilterChain->run()
+#29 /cde/www/V/protected/libs/yii/web/filters/CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#30 /cde/www/V/protected/libs/yii/web/filters/CFilter.php(40): CFilterChain->run()
+#31 /cde/www/V/protected/libs/yii/web/filters/CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#32 /cde/www/V/protected/components/filters/RbacFilter.php(17): CFilterChain->run()
+#33 /cde/www/V/protected/libs/yii/web/filters/CFilter.php(38): RbacFilter->preFilter(Object(CFilterChain))
+#34 /cde/www/V/protected/libs/yii/web/filters/CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#35 /cde/www/V/protected/libs/yii/web/CController.php(291): CFilterChain->run()
+#36 /cde/www/V/protected/libs/yii/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#37 /cde/www/V/protected/libs/yii/web/CWebApplication.php(282): CController->run('index')
+#38 /cde/www/V/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('Home/main/index')
+#39 /cde/www/V/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#40 /cde/www/V/index.php(67): CApplication->run()
+#41 {main}
+REQUEST_URI=/V/
+---
+2014/03/12 00:20:40 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[28000] [1045] Access denied for user 'root'@'localhost' (using password: NO)' in /cde/www/V/protected/libs/yii/db/CDbConnection.php:381
+Stack trace:
+#0 /cde/www/V/protected/libs/yii/db/CDbConnection.php(330): CDbConnection->open()
+#1 /cde/www/V/protected/libs/yii/db/CDbConnection.php(308): CDbConnection->setActive(true)
+#2 /cde/www/V/protected/libs/yii/base/CModule.php(387): CDbConnection->init()
+#3 /cde/www/V/protected/libs/yii/base/CApplication.php(438): CModule->getComponent('db')
+#4 /cde/www/V/protected/libs/yii/db/ar/CActiveRecord.php(623): CApplication->getDb()
+#5 /cde/www/V/protected/libs/yii/db/ar/CActiveRecord.php(2309): CActiveRecord->getDbConnection()
+#6 /cde/www/V/protected/libs/yii/db/ar/CActiveRecord.php(387): CActiveRecordMetaData->__construct(Object(News))
+#7 /cde/www/V/protected/modules/Content/models/News.php(37): CActiveRecord::model('News')
+#8 /cde/www/V/protected/modules/Home/controllers/MainController.php(8): News::model()
+#9 /cde/www/V/protected/libs/yii/web/actions/CInlineAction.php(49): MainController->actionIndex()
+#10 /cde/www/V/protected/libs/yii/web/CController.php(308): CInlineAction->runWithParams(Array)
+#11 /cde/www/V/protected/libs/yii/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 /cde/www/V/protected/libs/yii/web/filters/CFilter.php(40): CFilterChain->run()
+#13 /cde/www/V/protected/libs/yii/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 /cde/www/V/protected/libs/yii/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 /cde/www/V/protected/libs/yii/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 /cde/www/V/protected/libs/yii/web/filters/CFilter.php(40): CFilterChain->run()
+#17 /cde/www/V/protected/libs/yii/web/filters/CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#18 /cde/www/V/protected/libs/yii/web/filters/CFilter.php(40): CFilterChain->run()
+#19 /cde/www/V/protected/libs/yii/web/filters/CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#20 /cde/www/V/protected/libs/yii/web/filters/CFilter.php(40): CFilterChain->run()
+#21 /cde/www/V/protected/libs/yii/web/filters/CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#22 /cde/www/V/protected/libs/yii/web/filters/CFilter.php(40): CFilterChain->run()
+#23 /cde/www/V/protected/libs/yii/web/filters/CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#24 /cde/www/V/protected/libs/yii/web/filters/CFilter.php(40): CFilterChain->run()
+#25 /cde/www/V/protected/libs/yii/web/filters/CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#26 /cde/www/V/protected/libs/yii/web/filters/CFilter.php(40): CFilterChain->run()
+#27 /cde/www/V/protected/libs/yii/web/filters/CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#28 /cde/www/V/protected/libs/yii/web/filters/CFilter.php(40): CFilterChain->run()
+#29 /cde/www/V/protected/libs/yii/web/filters/CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#30 /cde/www/V/protected/libs/yii/web/filters/CFilter.php(40): CFilterChain->run()
+#31 /cde/www/V/protected/libs/yii/web/filters/CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#32 /cde/www/V/protected/components/filters/RbacFilter.php(17): CFilterChain->run()
+#33 /cde/www/V/protected/libs/yii/web/filters/CFilter.php(38): RbacFilter->preFilter(Object(CFilterChain))
+#34 /cde/www/V/protected/libs/yii/web/filters/CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#35 /cde/www/V/protected/libs/yii/web/CController.php(291): CFilterChain->run()
+#36 /cde/www/V/protected/libs/yii/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#37 /cde/www/V/protected/libs/yii/web/CWebApplication.php(282): CController->run('index')
+#38 /cde/www/V/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('Home/main/index')
+#39 /cde/www/V/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#40 /cde/www/V/index.php(67): CApplication->run()
+#41 {main}
+REQUEST_URI=/V/
+---
+2014/03/12 00:20:40 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[28000] [1045] Access denied for user 'root'@'localhost' (using password: NO)' in /cde/www/V/protected/libs/yii/db/CDbConnection.php:381
+Stack trace:
+#0 /cde/www/V/protected/libs/yii/db/CDbConnection.php(330): CDbConnection->open()
+#1 /cde/www/V/protected/libs/yii/db/CDbConnection.php(308): CDbConnection->setActive(true)
+#2 /cde/www/V/protected/libs/yii/base/CModule.php(387): CDbConnection->init()
+#3 /cde/www/V/protected/libs/yii/base/CApplication.php(438): CModule->getComponent('db')
+#4 /cde/www/V/protected/libs/yii/db/ar/CActiveRecord.php(623): CApplication->getDb()
+#5 /cde/www/V/protected/libs/yii/db/ar/CActiveRecord.php(2309): CActiveRecord->getDbConnection()
+#6 /cde/www/V/protected/libs/yii/db/ar/CActiveRecord.php(387): CActiveRecordMetaData->__construct(Object(News))
+#7 /cde/www/V/protected/modules/Content/models/News.php(37): CActiveRecord::model('News')
+#8 /cde/www/V/protected/modules/Home/controllers/MainController.php(8): News::model()
+#9 /cde/www/V/protected/libs/yii/web/actions/CInlineAction.php(49): MainController->actionIndex()
+#10 /cde/www/V/protected/libs/yii/web/CController.php(308): CInlineAction->runWithParams(Array)
+#11 /cde/www/V/protected/libs/yii/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 /cde/www/V/protected/libs/yii/web/filters/CFilter.php(40): CFilterChain->run()
+#13 /cde/www/V/protected/libs/yii/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 /cde/www/V/protected/libs/yii/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 /cde/www/V/protected/libs/yii/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 /cde/www/V/protected/libs/yii/web/filters/CFilter.php(40): CFilterChain->run()
+#17 /cde/www/V/protected/libs/yii/web/filters/CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#18 /cde/www/V/protected/libs/yii/web/filters/CFilter.php(40): CFilterChain->run()
+#19 /cde/www/V/protected/libs/yii/web/filters/CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#20 /cde/www/V/protected/libs/yii/web/filters/CFilter.php(40): CFilterChain->run()
+#21 /cde/www/V/protected/libs/yii/web/filters/CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#22 /cde/www/V/protected/libs/yii/web/filters/CFilter.php(40): CFilterChain->run()
+#23 /cde/www/V/protected/libs/yii/web/filters/CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#24 /cde/www/V/protected/libs/yii/web/filters/CFilter.php(40): CFilterChain->run()
+#25 /cde/www/V/protected/libs/yii/web/filters/CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#26 /cde/www/V/protected/libs/yii/web/filters/CFilter.php(40): CFilterChain->run()
+#27 /cde/www/V/protected/libs/yii/web/filters/CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#28 /cde/www/V/protected/libs/yii/web/filters/CFilter.php(40): CFilterChain->run()
+#29 /cde/www/V/protected/libs/yii/web/filters/CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#30 /cde/www/V/protected/libs/yii/web/filters/CFilter.php(40): CFilterChain->run()
+#31 /cde/www/V/protected/libs/yii/web/filters/CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#32 /cde/www/V/protected/components/filters/RbacFilter.php(17): CFilterChain->run()
+#33 /cde/www/V/protected/libs/yii/web/filters/CFilter.php(38): RbacFilter->preFilter(Object(CFilterChain))
+#34 /cde/www/V/protected/libs/yii/web/filters/CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#35 /cde/www/V/protected/libs/yii/web/CController.php(291): CFilterChain->run()
+#36 /cde/www/V/protected/libs/yii/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#37 /cde/www/V/protected/libs/yii/web/CWebApplication.php(282): CController->run('index')
+#38 /cde/www/V/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('Home/main/index')
+#39 /cde/www/V/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#40 /cde/www/V/index.php(67): CApplication->run()
+#41 {main}
+REQUEST_URI=/V/
+---
+2014/03/12 00:21:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "img/201403/10/2fc96c9bae18832be9eb0710cadddd1e.jpg"。' in /cde/www/V/protected/libs/yii/web/CWebApplication.php:286
+Stack trace:
+#0 /cde/www/V/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('img/201403/10/2...')
+#1 /cde/www/V/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /cde/www/V/index.php(67): CApplication->run()
+#3 {main}
+REQUEST_URI=/V/img/201403/10/2fc96c9bae18832be9eb0710cadddd1e.jpg
+HTTP_REFERER=http://localhost/V/
+---
+2014/03/12 00:21:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "img/201403/10/dfed6950d94bd4b8ae2685b54e46b447.jpg"。' in /cde/www/V/protected/libs/yii/web/CWebApplication.php:286
+Stack trace:
+#0 /cde/www/V/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('img/201403/10/d...')
+#1 /cde/www/V/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /cde/www/V/index.php(67): CApplication->run()
+#3 {main}
+REQUEST_URI=/V/img/201403/10/dfed6950d94bd4b8ae2685b54e46b447.jpg
+HTTP_REFERER=http://localhost/V/
+---
+2014/03/12 00:21:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "img/201403/10/ad0d4d3c33e98a0fd5bfe154ef1c9d95.jpg"。' in /cde/www/V/protected/libs/yii/web/CWebApplication.php:286
+Stack trace:
+#0 /cde/www/V/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('img/201403/10/a...')
+#1 /cde/www/V/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /cde/www/V/index.php(67): CApplication->run()
+#3 {main}
+REQUEST_URI=/V/img/201403/10/ad0d4d3c33e98a0fd5bfe154ef1c9d95.jpg
+HTTP_REFERER=http://localhost/V/
+---
+2014/03/12 00:21:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "img/201403/04/f7bba375e2c36f477658ef55a7835795.jpg"。' in /cde/www/V/protected/libs/yii/web/CWebApplication.php:286
+Stack trace:
+#0 /cde/www/V/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('img/201403/04/f...')
+#1 /cde/www/V/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /cde/www/V/index.php(67): CApplication->run()
+#3 {main}
+REQUEST_URI=/V/img/201403/04/f7bba375e2c36f477658ef55a7835795.jpg
+HTTP_REFERER=http://localhost/V/
+---
+2014/03/12 00:21:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "img/201403/04/c75de1bc5e9e37a87ffc2e84cebb37e8.jpg"。' in /cde/www/V/protected/libs/yii/web/CWebApplication.php:286
+Stack trace:
+#0 /cde/www/V/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('img/201403/04/c...')
+#1 /cde/www/V/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /cde/www/V/index.php(67): CApplication->run()
+#3 {main}
+REQUEST_URI=/V/img/201403/04/c75de1bc5e9e37a87ffc2e84cebb37e8.jpg
+HTTP_REFERER=http://localhost/V/
+---
+2014/03/12 00:21:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "img/201403/04/f7bba375e2c36f477658ef55a7835795.jpg"。' in /cde/www/V/protected/libs/yii/web/CWebApplication.php:286
+Stack trace:
+#0 /cde/www/V/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('img/201403/04/f...')
+#1 /cde/www/V/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /cde/www/V/index.php(67): CApplication->run()
+#3 {main}
+REQUEST_URI=/V/img/201403/04/f7bba375e2c36f477658ef55a7835795.jpg
+HTTP_REFERER=http://localhost/V/
+---
+2014/03/12 00:21:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "img/201403/10/2fc96c9bae18832be9eb0710cadddd1e.jpg"。' in /cde/www/V/protected/libs/yii/web/CWebApplication.php:286
+Stack trace:
+#0 /cde/www/V/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('img/201403/10/2...')
+#1 /cde/www/V/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /cde/www/V/index.php(67): CApplication->run()
+#3 {main}
+REQUEST_URI=/V/img/201403/10/2fc96c9bae18832be9eb0710cadddd1e.jpg
+HTTP_REFERER=http://localhost/V/
+---
+2014/03/12 00:21:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "img/201403/10/ad0d4d3c33e98a0fd5bfe154ef1c9d95.jpg"。' in /cde/www/V/protected/libs/yii/web/CWebApplication.php:286
+Stack trace:
+#0 /cde/www/V/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('img/201403/10/a...')
+#1 /cde/www/V/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /cde/www/V/index.php(67): CApplication->run()
+#3 {main}
+REQUEST_URI=/V/img/201403/10/ad0d4d3c33e98a0fd5bfe154ef1c9d95.jpg
+HTTP_REFERER=http://localhost/V/
+---
+2014/03/12 00:21:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "img/201403/10/dfed6950d94bd4b8ae2685b54e46b447.jpg"。' in /cde/www/V/protected/libs/yii/web/CWebApplication.php:286
+Stack trace:
+#0 /cde/www/V/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('img/201403/10/d...')
+#1 /cde/www/V/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /cde/www/V/index.php(67): CApplication->run()
+#3 {main}
+REQUEST_URI=/V/img/201403/10/dfed6950d94bd4b8ae2685b54e46b447.jpg
+HTTP_REFERER=http://localhost/V/
+---
+2014/03/12 00:21:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "img/201403/04/c75de1bc5e9e37a87ffc2e84cebb37e8.jpg"。' in /cde/www/V/protected/libs/yii/web/CWebApplication.php:286
+Stack trace:
+#0 /cde/www/V/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController('img/201403/04/c...')
+#1 /cde/www/V/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /cde/www/V/index.php(67): CApplication->run()
+#3 {main}
+REQUEST_URI=/V/img/201403/04/c75de1bc5e9e37a87ffc2e84cebb37e8.jpg
+HTTP_REFERER=http://localhost/V/
+---
+2014/03/12 00:21:12 [error] [php] include(CdeSchoolList.php): failed to open stream: No such file or directory (/cde/www/V/protected/libs/yii/YiiBase.php:421)
+Stack trace:
+#0 /cde/www/V/protected/modules/UserCenter/controllers/RegisterController.php(59): spl_autoload_call()
+#1 /cde/www/V/protected/libs/yii/web/actions/CInlineAction.php(49): RegisterController->actionRegister()
+#2 /cde/www/V/protected/libs/yii/web/CController.php(308): CInlineAction->runWithParams()
+#3 /cde/www/V/protected/libs/yii/web/filters/CFilterChain.php(133): RegisterController->runAction()
+#4 /cde/www/V/protected/libs/yii/web/filters/CFilter.php(40): CFilterChain->run()
+#5 /cde/www/V/protected/libs/yii/web/CController.php(1145): CAccessControlFilter->filter()
+#6 /cde/www/V/protected/libs/yii/web/filters/CInlineFilter.php(58): RegisterController->filterAccessControl()
+#7 /cde/www/V/protected/libs/yii/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#8 /cde/www/V/protected/libs/yii/web/filters/CFilter.php(40): CFilterChain->run()
+#9 /cde/www/V/protected/libs/yii/web/filters/CFilterChain.php(130): JavaScriptYiiFilter->filter()
+#10 /cde/www/V/protected/libs/yii/web/filters/CFilter.php(40): CFilterChain->run()
+#11 /cde/www/V/protected/libs/yii/web/filters/CFilterChain.php(130): ReturnUrlFilter->filter()
+#12 /cde/www/V/protected/libs/yii/web/filters/CFilter.php(40): CFilterChain->run()
+#13 /cde/www/V/protected/libs/yii/web/filters/CFilterChain.php(130): ThemeFilter->filter()
+#14 /cde/www/V/protected/libs/yii/web/filters/CFilter.php(40): CFilterChain->run()
+#15 /cde/www/V/protected/libs/yii/web/filters/CFilterChain.php(130): StatisticFilter->filter()
+#16 /cde/www/V/protected/libs/yii/web/filters/CFilter.php(40): CFilterChain->run()
+#17 /cde/www/V/protected/libs/yii/web/filters/CFilterChain.php(130): XssFilter->filter()
+#18 /cde/www/V/protected/libs/yii/web/filters/CFilter.php(40): CFilterChain->run()
+#19 /cde/www/V/protected/libs/yii/web/filters/CFilterChain.php(130): HttpsFilter->filter()
+#20 /cde/www/V/protected/libs/yii/web/filters/CFilter.php(40): CFilterChain->run()
+#21 /cde/www/V/protected/libs/yii/web/filters/CFilterChain.php(130): SiteEnableFilter->filter()
+#22 /cde/www/V/protected/libs/yii/web/filters/CFilter.php(40): CFilterChain->run()
+#23 /cde/www/V/protected/libs/yii/web/filters/CFilterChain.php(130): LanguageFilter->filter()
+#24 /cde/www/V/protected/components/filters/RbacFilter.php(17): CFilterChain->run()
+#25 /cde/www/V/protected/libs/yii/web/filters/CFilter.php(38): RbacFilter->preFilter()
+#26 /cde/www/V/protected/libs/yii/web/filters/CFilterChain.php(130): RbacFilter->filter()
+#27 /cde/www/V/protected/libs/yii/web/CController.php(291): CFilterChain->run()
+#28 /cde/www/V/protected/libs/yii/web/CController.php(265): RegisterController->runActionWithFilters()
+#29 /cde/www/V/protected/libs/yii/web/CWebApplication.php(282): RegisterController->run()
+#30 /cde/www/V/protected/libs/yii/web/CWebApplication.php(141): CWebApplication->runController()
+#31 /cde/www/V/protected/libs/yii/base/CApplication.php(169): CWebApplication->processRequest()
+#32 /cde/www/V/index.php(67): CWebApplication->run()
+REQUEST_URI=/V/register
+in /cde/www/V/protected/modules/UserCenter/controllers/RegisterController.php (59)
+in /cde/www/V/protected/components/filters/RbacFilter.php (17)
+in /cde/www/V/index.php (67)
