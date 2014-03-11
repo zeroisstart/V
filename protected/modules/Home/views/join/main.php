@@ -7,19 +7,7 @@ $this->breadcrumbs=array(
 );
 ?>
 
-<div id="leftColumns">
-		<div class="user_sec_nav">
-					<ul>
-												<li class="active_nav">
-													<a href="/profile?ac=main">我的首页</a>
-													</li>
-																<li><a href="/profile?ac=team">参赛说明</a></li>
-																<li><a href="/profile?ac=product">命题说明</a></li>
-																<li><a href="/profile?ac=info">文件下载</a></li>
-																
-										</ul>
-		</div>
-</div>
+
 
 
 <div class="sba_title">
@@ -35,6 +23,16 @@ $this->breadcrumbs=array(
 	</span>
 </div>
 
+
+<div id="leftColumns">
+		<div class="user_sec_nav">
+					<ul>
+																<li><a href="/join?id=22">参赛说明</a></li>
+																<li><a href="/join?id=23">命题说明</a></li>
+																<li><a href="/join?id=24">文件下载</a></li>
+										</ul>
+		</div>
+</div>
 
 <div class="news_content">
 	<?php echo $data['text']?>

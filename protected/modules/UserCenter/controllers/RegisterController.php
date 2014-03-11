@@ -2,6 +2,32 @@
 class RegisterController extends Controller {
 	public $defaultAction = 'register';
 	public $layout = '//layouts/ea';
+	
+	public function actionGet_school(){
+		$name = Yii::app()->request->getParam('term');
+		$criteria = new CDbCriteria();
+		$criteria->compare('title', $name, true, 'like');
+		$schools = CdeSchoolList::model()->findAll($criteria);
+		$arr = array();
+		foreach ($schools as $school) {
+			$arr[] = $school->title;
+		}
+		echo json_encode($arr);
+	}
+	
+	
+	public function actionGet_majoy(){
+		$name = Yii::app()->request->getParam('term');
+		$criteria = new CDbCriteria();
+		$criteria->compare('title', $name, true, 'like');
+		$schools = CdeTitleList::model()->findAll($criteria);
+		$arr = array();
+		foreach ($schools as $school) {
+			$arr[] = $school->title;
+		}
+		echo json_encode($arr);
+	}
+	
 	public function actionRegister() {
 		if (! Yii::app ()->user->isGuest) {
 			$this->redirect ( $this->createUrl ( '/' ) );
@@ -28,6 +54,14 @@ class RegisterController extends Controller {
 			Yii::app ()->end ();
 		}
 		
+		//$cde_school_list = new 
+		
+		$cde_shool_list = CdeSchoolList::model();
+		//地区分类
+		$cde_area_list = $cde_shool_list -> getArea();
+		
+		$cde_school_list = $cde_shool_list -> getList();
+		
 		$Competition = CompetitionRegion::model();
 		
 		$criteria = new CDbCriteria();
@@ -50,6 +84,9 @@ class RegisterController extends Controller {
 					Yii::app ()->user->setFlash ( 'success', '注册成功!' );
 				}
 				$this->redirect ( $this->createUrl ( '/' ) );
+			}{
+				#var_dump($model -> errors);
+				#die;
 			}
 			// $this->redirect ( Yii::app ()->user->returnUrl );
 		}

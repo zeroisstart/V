@@ -204,22 +204,20 @@ class ContentController extends Controller {
 			Yii::app ()->end ();
 		}
 		$model = new News('update');
-		if(in_array($id, array(19,20))){
-			$model = $model->findByAttributes(array('category'=>$id));
-		}else{
-			$model = $model->findByPk ( $id );
-		}
+		
+		$model = $model->findByPk ( $id );
 		
 		if ($model) {
 			if (isset ( $_POST ['News'] )) {
 				$model->attributes = $_POST ['News'];
 				$model = $this->_validateForm ( $model );
-				if ($model->validate () && 1) {
+				if ($model->validate ()) {
 					// $db = Yii::app ()->db;
 					$transaction = $model->dbConnection->beginTransaction ();
 					try {
 						$model->update ();
 						$id = $model->ID;
+						
 						if ($model->category) {
 							$cdbCriteria = new CDbCriteria ();
 							$cdbCriteria->compare ( 'sub_id', $id );
@@ -228,8 +226,8 @@ class ContentController extends Controller {
 							$category_data->cate_id = $model->category;
 							$category_data->sub_id = $id;
 							$category_data->save ();
-							$transaction->commit ();
 						}
+						$transaction->commit ();
 					} catch ( Exception $e ) {
 						var_dump ( $e );
 						$transaction->rollback ();

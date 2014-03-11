@@ -269,4 +269,10 @@ class News extends CActiveRecord {
 				'id' => $this->ID 
 		) );
 	}
+	
+	public function getAdminUrl(){
+		return Yii::app ()->createUrl ( '/Admin/content/update', array (
+				'id' => $this->ID
+		) );
+	}
 }

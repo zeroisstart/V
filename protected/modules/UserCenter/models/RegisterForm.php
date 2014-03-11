@@ -16,10 +16,25 @@ class RegisterForm extends CFormModel {
 	public $district;
 	public $area;
 	public $city;
+	public $gender;
 	public $allowRegister;
 	private $_identity;
 	public $userType;
+	public $nation;
 	
+	public $qq;
+	public $idType;
+	public $idNum;
+	
+	public $schoolName;
+	
+	public $schoolType;
+	public $isSame;
+	public $sid;
+	public $majoy;
+	
+	public $degreeType;
+	public $joinDate;
 	
 	/**
 	 * Declares the validation rules.
@@ -30,7 +45,7 @@ class RegisterForm extends CFormModel {
 		return array (
 				// username and password are required
 				array (
-						'district,area,username,allowRegister,password,password_confirm,email,contact,mobile',
+						'district,area,username,allowRegister,password,password_confirm,email,contact,mobile,majoy,sid,isSame,idNum,idType,qq,joinDate,degreeType,schoolName',
 						'required' 
 				),
 				array (
@@ -82,6 +97,10 @@ class RegisterForm extends CFormModel {
 		);
 	}
 	
+	public function getGender_type(){
+		return array(0=>'女',1=>'男');	
+	}
+	
 	public function getDistrict_list(){
 		$model = CompetitionRegion::model();
 		return $model -> district;
@@ -102,6 +121,13 @@ class RegisterForm extends CFormModel {
 	}
 	
 	/**
+	 * 名族列表
+	 */
+	public function getNation_list(){
+		return array ('汉族', '阿昌族', '保安族', '布朗族', '布依族', '白族', '朝鲜族', '德昂族', '独龙族', '达斡尔族', '东乡族', '侗族', '傣族', '鄂伦春族', '俄罗斯族', '鄂温克族', '高山族', '哈尼族', '哈萨克族', '回族', '赫哲族', '基诺族', '景颇族', '京族', '柯尔克孜族', '珞巴族', '傈僳族', '黎族', '拉祜族', '门巴族', '蒙古族', '毛南族', '满族', '苗族', '仫佬族', '纳西族', '怒族', '普米族', '羌族', '撒拉族', '水族', '畲族', '塔吉克族', '土家族', '塔塔尔族', '土族', '维吾尔族', '壮族', '乌孜别克族', '锡伯族', '裕固族', '彝族', '瑶族', '仡佬族', '佤族', '藏族' ,'其他');
+	}
+	
+	/**
 	 * Declares attribute labels.
 	 */
 	public function attributeLabels() {
@@ -109,16 +135,28 @@ class RegisterForm extends CFormModel {
 				'username' => '用户名',
 				'password' => '密码',
 				'userType' => '用户类型',
+				'nation' => '名族',
 				'district' => '赛事地区',
 				'area' => '省市',
 				'password_confirm' => '确认密码',
 				'company_name' => '机构名称',
-				'contact' => '联系人姓名',
-				'mobile' => '手机',
+				'contact' => '姓名',
+				'qq'=>'QQ号',
+				'originArea'=>'原省市',
+				'schoolName'=>'就读学校',
+				'idType'=>'身份证件类型',
+				'idNum'=>'身份证件号',
+				'schoolType','学位类型',
+				'gender' =>'性别',
+				'mobile' => '手机号码',
+				'degreeType'=>'学位类型',
+				'isSame'=>'攻读专业与前置专业是否一致',
+				'majoy'=>'专业',
+				'joinDate'=>'入学年月',
+				'sid'=>'学号',
 				'city' => '所在城市',
 				'allowRegister' => '同意大赛注册协议',
 				'email' => '邮箱',
-				'allowRegister' => '同意大赛注册协议',
 				'userType' 
 		);
 	}
@@ -158,6 +196,13 @@ class RegisterForm extends CFormModel {
 		}
 	}
 	
+	public function getSchoolArea(){
+		$cde_shool_list = CdeSchoolList::model();
+		//地区分类
+		$cde_area_list = $cde_shool_list -> getArea();
+		return $cde_area_list;
+	}
+	
 	/**
 	 * 验证两次密码是否正确
 	 *
@@ -183,6 +228,7 @@ class RegisterForm extends CFormModel {
 		$user->username = $this->username;
 		$user->password = md5 ( $this->password );
 		$user->email = $this->email;
+		
 		if ($user->validate ()) {
 			$user->save ();
 			$userProfile = new UserProfile ();
@@ -194,6 +240,15 @@ class RegisterForm extends CFormModel {
 			$userProfile->District = $this -> district;
 			$userProfile->User_category = $this->userType;
 			$userProfile->City = $this->city;
+			$userProfile->qq = $this->qq;
+			$userProfile->IDNum = $this ->idNum;
+			$userProfile-> idType = $this -> idType;
+			$userProfile-> schoolType = $this -> schoolType;
+			$userProfile-> isSame = $this -> isSame;
+			$userProfile-> sid = $this -> sid;
+			$userProfile-> majoy = $this -> majoy;
+			$userProfile-> degreeType = $this -> degreeType;
+			$userProfile-> joinDate = $this -> joinDate;
 			if($userProfile -> validate()){
 				$userProfile->save ();
 			}else{
@@ -201,14 +256,12 @@ class RegisterForm extends CFormModel {
 				die;
 			}
 			
+			/*
 			$adminUser = new AdminUser();
 			$adminUser -> id =NULL;
 			$adminUser -> uid =$user->id;
-			$adminUser -> save();
-			
+			$adminUser -> save();*/
 			return true;
-			
-			
 			
 		} else {
 			YII_DEBUG && var_dump ( $user->errors );

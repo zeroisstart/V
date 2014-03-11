@@ -55,7 +55,7 @@ $this->widget ( 'widget.Helper.GridView', array (
 				'title' => array (
 						'name' => 'title',
 						'type' => 'html',
-						'value' => 'CHtml::link($data->title,$data->Url);' 
+						'value' => 'CHtml::link($data->title,$data->adminUrl);' 
 				),
 				'UID' => array (
 						'name' => 'UID',

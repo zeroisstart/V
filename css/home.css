@@ -495,7 +495,8 @@ a.blue_btn:hover {
     padding: 0;
     zoom: 1;
     display: block;
-    margin-left: 50px;
+	width:690px;
+	float:right;
 }
 
 .content_title_txt {
@@ -1042,4 +1043,18 @@ textarea {
 }
 .w250{
 	width:250px;
+}
+#RegisterForm_gender{
+	height:80px;
+	display:block;
+}
+.radio{
+	float:left;
+}
+div.form .radio label{
+	float:left;
+	font-size: 1.5em;
+}
+.radio input{
+	width:80px;
 }

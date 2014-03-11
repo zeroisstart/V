@@ -18,6 +18,13 @@ $this->breadcrumbs = array ('Register' );
 				Fields with <span class="required">*</span> are required.
 			</p>
 
+			
+	<div class="row">
+		<?php echo $form->labelEx($model,'contact'); ?>
+		<?php echo $form->textField($model,'contact',array('class'=>'reg_input')); ?>
+		<?php echo $form->error($model,'contact'); ?>
+	</div>
+			
 	<div class="row">
 		<?php echo $form->labelEx($model,'userType'); ?>
 		<?php echo $form->dropDownList ($model,'userType',$model-> user_type,array('class'=>'reg_select')); ?>
@@ -62,13 +69,6 @@ $this->breadcrumbs = array ('Register' );
 		<?php echo $form->error($model,'company_name'); ?>
 	</div>
 	<?php endif;?>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'contact'); ?>
-		<?php echo $form->textField($model,'contact',array('class'=>'reg_input')); ?>
-		<?php echo $form->error($model,'contact'); ?>
-	</div>
-	
 	
 	<div class="row">
 		<?php echo $form->labelEx($model,'company_name'); ?>
@@ -117,7 +117,7 @@ $this->breadcrumbs = array ('Register' );
 				<span class="allowregister">
 		<?php echo $form->labelEx($model,'allowRegister'); ?>
 		<?php echo $form->checkBox($model,'allowRegister'); ?>
-		<a href="">查看大赛注册协议</a>
+		<a href="javascript:void(0);">查看大赛注册协议</a>
 				</span>
 		
 		<?php echo $form->error($model,'allowRegister'); ?>
@@ -164,10 +164,10 @@ $(document).ready(function(){
 	});
 
 	var _area_list = <?php echo $area_list_joson;?>;
-	$("#RegisterForm_district").change(function(){
+	$("#RegisterTeacherForm_userType").change(function(){
 			var _p = $(this).val();
 			var _sub_area = _area_list[_p];
-			$("#RegisterForm_area").empty();
+			//$("#RegisterTeacherForm_userType").empty();
 			
 			$.each(_sub_area,function(k,v){
 				$("<option>").val(v.id).html(v.name).appendTo($("#RegisterForm_area"));
@@ -175,8 +175,7 @@ $(document).ready(function(){
 			
 	});
 	
-	$("#RegisterForm_district").change();
-	$("#RegisterForm_userType").change(function(){
+	$("#RegisterTeacherForm_userType").change(function(){
 		var _url="<?php echo $this -> createUrl('/register')?>";
 		var _id = $(this).val();
 		_url+='?userType='+_id;
