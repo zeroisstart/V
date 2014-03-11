@@ -40,6 +40,19 @@ $this -> registerPopupBox();
                         <div class="title titleBar">承办院校</div>
                         <div class="contentBox">
                         	<ul class="competition_left">
+                        	
+                        	<?php $first = array_shift($news['11']['left']);?>
+                        	
+                        	<?php if($first):?>
+                        	<li class="first">
+                        		<img class="small_intro_img" src="<?php echo $first['photo'];?>">
+                        		<a href="<?php echo $this -> createUrl('/Home/feeds/main',array('id'=>$first -> ID))?>" title="<?php echo $_model -> title;?>">
+                            			<?php echo mb_substr($_model -> title,0,60);?>
+                            	</a>
+                            	<span><?php echo substr(strip_tags($first['text']),0,125)?></span>
+                        	</li>
+                        	<?php endif;?>
+                        	
                             <?php foreach($news['11']['left'] as $_model):?>
                             	<li>
                             		<a href="<?php echo $this -> createUrl('/Home/feeds/main',array('id'=>$_model -> ID))?>" title="<?php echo $_model -> title;?>">
@@ -50,6 +63,19 @@ $this -> registerPopupBox();
                             </ul>
                             
                             <ul class="competition_right">
+                            
+                            <?php $first = array_shift($news['11']['right']);?>
+                            <?php if($first):?>
+                        	<li class="first">
+                        		<img class="small_intro_img" src="<?php echo $first['photo'];?>">
+                        		<a href="<?php echo $this -> createUrl('/Home/feeds/main',array('id'=>$first -> ID))?>" title="<?php echo $_model -> title;?>">
+                            			<?php echo mb_substr($_model -> title,0,60);?>
+                            	</a>
+                            	<span><?php echo substr(strip_tags($first['text']),0,125)?></span>
+                        		
+                        	</li>
+                        	<?php endif?>
+                            
                             <?php foreach($news['11']['right']  as $_model):?>
                             	<li>
                             		<a href="<?php echo $this -> createUrl('/Home/feeds/main',array('id'=>$_model -> ID))?>">

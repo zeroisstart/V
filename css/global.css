@@ -66,3 +66,19 @@ ul, li {
 	color:red;
 }
 .user_data_info p span{width:70px;display: inline-block;}
+
+.small_intro_img{
+	width:70px;
+	height:50px;
+	float:left;
+}
+.first span{text-indent:50px}
+.contentBox a{
+	color: rgb(45, 55, 75);
+}
+.contentBox .first a{
+	color:blue;
+}
+.contentBox a:hover{
+	color:red;
+}

@@ -72,11 +72,12 @@ class News extends CActiveRecord {
 						'length',
 						'max' => 250 
 				),
-				/*array (
+				array (
 						'photo',
 						'file',
 						'types'=>array('jpg','jpeg','gif','png'),
-				),*/
+						'on'=>'create'
+				),
 				array (
 						'state',
 						'length',
