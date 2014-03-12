@@ -90,7 +90,7 @@ class UserProfile extends CActiveRecord {
 				// The following rule is used by search().
 				// Please remove those attributes that should not be searched.
 				array (
-						'ID, District, Nickname, Realname, Company_name, job, address, Mobile, Email, IDNum,City, User_category',
+						'ID, District, Nickname, Realname, Company_name, job, address, Mobile, Email, IDNum,City, User_category,idType',
 						'safe',
 						'on' => 'search' 
 				) 
@@ -124,10 +124,17 @@ class UserProfile extends CActiveRecord {
 				'Mobile' => '手机号码',
 				'Email' => '邮箱',
 				'City' => '所在地址',
-				'User_category' => 'User Category' 
+				'User_category' => 'User Category',
+				'idType'=>'',
+				'schoolType'=>'',
+				'isSame'=>'',
+				'sid'=>'',
+				'majoy'=>'',
+				'degreeType'=>'',
+				'joinDate'=>''
+				
 		);
 	}
-	
 	/**
 	 * 获取用户的类型
 	 *

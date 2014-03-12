@@ -1,5 +1,4 @@
 <?php
-
 /**
  * LoginForm class.
  * LoginForm is the data structure for keeping
@@ -225,6 +224,7 @@ class RegisterForm extends CFormModel {
 	 */
 	public function register() {
 		$user = new User ();
+		
 		$user->username = $this->username;
 		$user->password = md5 ( $this->password );
 		$user->email = $this->email;
@@ -249,20 +249,20 @@ class RegisterForm extends CFormModel {
 			$userProfile-> majoy = $this -> majoy;
 			$userProfile-> degreeType = $this -> degreeType;
 			$userProfile-> joinDate = $this -> joinDate;
+			
 			if($userProfile -> validate()){
 				$userProfile->save ();
 			}else{
 				var_dump($userProfile -> errors);
 				die;
 			}
-			
 			/*
 			$adminUser = new AdminUser();
 			$adminUser -> id =NULL;
 			$adminUser -> uid =$user->id;
 			$adminUser -> save();*/
-			return true;
 			
+			return true;
 		} else {
 			YII_DEBUG && var_dump ( $user->errors );
 		}

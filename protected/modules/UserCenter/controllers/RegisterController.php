@@ -15,7 +15,6 @@ class RegisterController extends Controller {
 		echo json_encode($arr);
 	}
 	
-	
 	public function actionGet_majoy(){
 		$name = Yii::app()->request->getParam('term');
 		$criteria = new CDbCriteria();
@@ -29,10 +28,11 @@ class RegisterController extends Controller {
 	}
 	
 	public function actionRegister() {
+		
 		if (! Yii::app ()->user->isGuest) {
-			$this->redirect ( $this->createUrl ( '/' ) );
+			$this->redirect ($this->createAbsoluteUrl ( '/' ) );
 		}
-
+		
 		$model = new RegisterForm ();
 		$req = Yii::app() -> request;
 		
@@ -46,6 +46,8 @@ class RegisterController extends Controller {
 			$model -> userType =$userType; 
 		}
 		
+		
+		
 		$profileModel = new UserProfile ();
 		// $profileModel = new
 		// if it is ajax validation request
@@ -53,6 +55,7 @@ class RegisterController extends Controller {
 			echo CActiveForm::validate ( $model );
 			Yii::app ()->end ();
 		}
+
 		
 		//$cde_school_list = new 
 		
@@ -63,6 +66,7 @@ class RegisterController extends Controller {
 		$cde_school_list = $cde_shool_list -> getList();
 		
 		$Competition = CompetitionRegion::model();
+		
 		
 		$criteria = new CDbCriteria();
 		$criteria -> order ="cate desc";
@@ -75,6 +79,7 @@ class RegisterController extends Controller {
 		
 		// collect user input data for student
 		if (isset ( $_POST ['RegisterForm'] )) {
+			
 			$model->setAttributes ( $_POST ['RegisterForm'], false );
 			// validate user input and redirect to the previous page if valid
 			if ($model->validate () && $model->register ()) {
@@ -83,7 +88,7 @@ class RegisterController extends Controller {
 					Yii::app()->user->login($_identity,0);
 					Yii::app ()->user->setFlash ( 'success', '注册成功!' );
 				}
-				$this->redirect ( $this->createUrl ( '/' ) );
+				$this->redirect ( $this->createAbsoluteUrl ( '/' ) );
 			}{
 				#var_dump($model -> errors);
 				#die;
@@ -94,6 +99,7 @@ class RegisterController extends Controller {
 		
 		if (isset ( $_POST ['RegisterTeacherForm'] )) {
 			
+			
 			$model->setAttributes ( $_POST ['RegisterTeacherForm'], false );
 			// validate user input and redirect to the previous page if valid
 			if ($model->validate () && $model->register ()) {
@@ -102,7 +108,7 @@ class RegisterController extends Controller {
 					Yii::app()->user->login($_identity,0);
 					Yii::app ()->user->setFlash ( 'success', '注册成功!' );
 				}
-				$this->redirect ( $this->createUrl ( '/' ) );
+				$this->redirect ( $this->createAbsoluteUrl ( '/' ) );
 			}
 			// $this->redirect ( Yii::app ()->user->returnUrl );
 		}

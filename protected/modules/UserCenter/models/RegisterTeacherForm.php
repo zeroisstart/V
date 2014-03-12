@@ -23,7 +23,6 @@ class RegisterTeacherForm extends CFormModel {
 	private $_identity;
 	public $userType;
 	
-	
 	/**
 	 * Declares the validation rules.
 	 * The rules state that username and password are required,

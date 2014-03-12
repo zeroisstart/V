@@ -2,7 +2,6 @@
 /*
  * @var $this RegisterController
  */
-
 $this->breadcrumbs = array ('Register' );
 ?>
 <div class="registerFrame">

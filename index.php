@@ -1,7 +1,7 @@
 <?php
 
 if (substr ( $_SERVER ['DOCUMENT_ROOT'], - 1 ) != '/') {
-	$_SERVER ['DOCUMENT_ROOT'] = $_SERVER ['DOCUMENT_ROOT'] . '/';
+	$_SERVER ['DOCUMENT_ROOT'] = $_SERVER ['DOCUMENT_ROOT'] . '/C/';
 }
 
 function getIP()
@@ -32,8 +32,8 @@ $ary_ip= array('218.246.102.131','110.75.102.62','112.65.138.202','114.94.240.19
 $ip = getIp();
 
 if(!in_array($ip,$ary_ip)){
-echo file_get_contents("index.html");
-die;
+#echo file_get_contents("index.html");
+#die;
 }
 
 require_once $_SERVER ['DOCUMENT_ROOT'] . 'protected/config/constants.php';
