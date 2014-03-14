@@ -1,7 +1,8 @@
 <div id="contextAdorn"></div>
 <div id="contextBox">
 	<div id="rightContent" class="user_profile_info">
-		<p class="user_notice">您好 <?php echo Yii::app() -> user->username;?></p>
+		<p class="user_notice"><span>您好 <?php echo Yii::app() -> user->username;?></span></p>
+		<p class="user_notice"><span><a href="/profile?ac=export" target="_blank" style="color: red;text-decoration:none;">报名信息导出</a></span></p>
 
 
 		<?php if($model -> isNewRecord):?>

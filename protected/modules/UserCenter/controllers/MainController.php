@@ -68,6 +68,9 @@ class MainController extends Controller {
 			case 'rejectTeam':
 				$this -> rejectTeam();
 				break;
+			case 'export':
+				$this -> _export();
+				break;
 			case 'assessment' :
 				$this->_actionAssessment ();
 				break;
@@ -163,6 +166,10 @@ class MainController extends Controller {
 					'memberList'=>$member_list
 			) );
 		}
+	}
+	
+	public function _export(){
+		$this -> renderPartial('_export');
 	}
 	
 	/**

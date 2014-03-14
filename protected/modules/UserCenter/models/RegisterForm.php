@@ -35,6 +35,8 @@ class RegisterForm extends CFormModel {
 	public $degreeType;
 	public $joinDate;
 	
+	public $beforeleave;
+	
 	/**
 	 * Declares the validation rules.
 	 * The rules state that username and password are required,
@@ -44,7 +46,7 @@ class RegisterForm extends CFormModel {
 		return array (
 				// username and password are required
 				array (
-						'district,area,username,allowRegister,password,password_confirm,email,contact,mobile,majoy,sid,isSame,idNum,idType,qq,joinDate,degreeType,schoolName',
+						'district,area,username,allowRegister,password,password_confirm,email,contact,mobile,majoy,sid,isSame,idNum,idType,qq,joinDate,degreeType,schoolName,beforeleave',
 						'required' 
 				),
 				array (
@@ -156,6 +158,7 @@ class RegisterForm extends CFormModel {
 				'city' => '所在城市',
 				'allowRegister' => '同意大赛注册协议',
 				'email' => '邮箱',
+				'beforeleave'=>'攻读前户口所在省市',
 				'userType' 
 		);
 	}
@@ -249,6 +252,7 @@ class RegisterForm extends CFormModel {
 			$userProfile-> majoy = $this -> majoy;
 			$userProfile-> degreeType = $this -> degreeType;
 			$userProfile-> joinDate = $this -> joinDate;
+			$userProfile->beforeleave = $this -> beforeleave;
 			
 			if($userProfile -> validate()){
 				$userProfile->save ();

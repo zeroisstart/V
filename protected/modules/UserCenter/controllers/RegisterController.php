@@ -81,6 +81,8 @@ class RegisterController extends Controller {
 		if (isset ( $_POST ['RegisterForm'] )) {
 			
 			$model->setAttributes ( $_POST ['RegisterForm'], false );
+			$model ->beforeleave = $_POST['seachprov'].'|'.$_POST['homecity'].'|'.$_POST['seachdistrict'];
+			
 			// validate user input and redirect to the previous page if valid
 			if ($model->validate () && $model->register ()) {
 				$_identity=new UserIdentity($model->username,$model->password);

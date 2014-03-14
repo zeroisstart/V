@@ -167,6 +167,22 @@ $this->breadcrumbs = array ('Register' );
 		<?php echo $form->error($model,'isSame'); ?>
 	</div>
 	
+	<div class="row" style="margin:0px;height:40px;">
+		<?php echo $form->labelEx($model,'beforeleave'); ?>
+		<select id="seachprov" name="seachprov" onChange="changeComplexProvince(this.value, sub_array, 'seachcity', 'seachdistrict');"></select>
+		<?php if(0):?>
+			<input type="button"  value="获取地区" onClick="showAreaID()"/>
+		<?php endif;?>
+	</div>
+	<div class="row" style="margin:0px;height:25px;">
+		<select id="seachcity" name="homecity" onChange="changeCity(this.value,'seachdistrict','seachdistrict');"></select>
+		</div>
+		
+		<div class="row" style="margin:0px;height:25px;">
+					<span id="seachdistrict_div"><select id="seachdistrict" name="seachdistrict"></select></span>
+		</div>
+	
+	
 			<div class="row">
 		<?php echo $form->labelEx($model,'sid'); ?>
 		<?php echo $form->textField($model,'sid',array('class'=>'reg_input')); ?>
@@ -219,6 +235,8 @@ $this->breadcrumbs = array ('Register' );
 		<!-- form -->
 
 	</div>
+	
+	
 </div>
 
 <script>
@@ -270,4 +288,50 @@ $(document).ready(function(){
 	});
 });
 </script>
+
+<script src="js/Area.js" type="text/javascript"></script>
+<script src="js/AreaData_min.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(function (){
+	initComplexArea('seachprov', 'seachcity', 'seachdistrict', area_array, sub_array, '44', '0', '0');
+});
+
+//得到地区码
+function getAreaID(){
+	var area = 0;          
+	if($("#seachdistrict").val() != "0"){
+		area = $("#seachdistrict").val();                
+	}else if ($("#seachcity").val() != "0"){
+		area = $("#seachcity").val();
+	}else{
+		area = $("#seachprov").val();
+	}
+	return area;
+}
+
+function showAreaID() {
+	//地区码
+	var areaID = getAreaID();
+	//地区名
+	var areaName = getAreaNamebyID(areaID) ;
+	alert("您选择的地区码：" + areaID + "      地区名：" + areaName);            
+}
+
+//根据地区码查询地区名
+function getAreaNamebyID(areaID){
+	var areaName = "";
+	if(areaID.length == 2){
+		areaName = area_array[areaID];
+	}else if(areaID.length == 4){
+		var index1 = areaID.substring(0, 2);
+		areaName = area_array[index1] + " " + sub_array[index1][areaID];
+	}else if(areaID.length == 6){
+		var index1 = areaID.substring(0, 2);
+		var index2 = areaID.substring(0, 4);
+		areaName = area_array[index1] + " " + sub_array[index1][index2] + " " + sub_arr[index2][areaID];
+	}
+	return areaName;
+}
+</script>
+
 
