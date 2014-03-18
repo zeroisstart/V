@@ -49,14 +49,14 @@ $this -> registerPopupBox();
                         		<a href="<?php echo $this -> createUrl('/Home/feeds/main',array('id'=>$first -> ID))?>" title="<?php echo $_model -> title;?>">
                             			<?php echo mb_substr($_model -> title,0,60);?>
                             	</a>
-                            	<span><?php echo substr(strip_tags($first['text']),0,125)?></span>
+                            	<span><?php echo mb_substr(strip_tags($first['text']),0,32,'utf-8').'...'?></span>
                         	</li>
                         	<?php endif;?>
                         	
                             <?php foreach($news['11']['left'] as $_model):?>
                             	<li>
                             		<a href="<?php echo $this -> createUrl('/Home/feeds/main',array('id'=>$_model -> ID))?>" title="<?php echo $_model -> title;?>">
-                            			<?php echo mb_substr($_model -> title,0,60);?>
+                            			<?php echo mb_substr($_model -> title,0,40,'utf-8');?>
                             		</a>
                             	</li>
                             <?php endforeach;?>
@@ -69,9 +69,9 @@ $this -> registerPopupBox();
                         	<li class="first">
                         		<img class="small_intro_img" src="<?php echo $first['photo'];?>">
                         		<a href="<?php echo $this -> createUrl('/Home/feeds/main',array('id'=>$first -> ID))?>" title="<?php echo $_model -> title;?>">
-                            			<?php echo mb_substr($_model -> title,0,60);?>
+                            			<?php echo mb_substr($_model -> title,0,60,'utf-8');?>
                             	</a>
-                            	<span><?php echo substr(strip_tags($first['text']),0,125)?></span>
+                            	<span><?php echo mb_substr(strip_tags($first['text']),0,60)?></span>
                         		
                         	</li>
                         	<?php endif?>
@@ -91,10 +91,25 @@ $this -> registerPopupBox();
 					 	<div class="title titleBar">优秀作品展示</div>
                         <div class="contentBox">
                         <ul class="competition_left">
+                        
+                        
+                           	<?php $first = array_shift($news['12']['left']);?>
+                        	
+                        	<?php if($first):?>
+                        	<li class="first">
+                        		<img class="small_intro_img" src="<?php echo $first['photo'];?>">
+                        		<a href="<?php echo $this -> createUrl('/Home/feeds/main',array('id'=>$first -> ID))?>" title="<?php echo $_model -> title;?>">
+                            			<?php echo mb_substr($_model -> title,0,60);?>
+                            	</a>
+                            	<span><?php echo mb_substr(strip_tags($first['text']),0,32,'utf-8').'...'?></span>
+                        	</li>
+                        	<?php endif;?>
+                        	
+                        
                             <?php foreach($news['12']['left'] as $_model):?>
                             	<li>
                             		<a href="<?php echo $this -> createUrl('/Home/feeds/main',array('id'=>$_model -> ID))?>" title="<?php echo $_model -> title;?>">
-                            			<?php echo mb_substr($_model -> title,0,60);?>
+                            			<?php echo mb_substr($_model -> title,0,18,'utf-8').'...';?>
                             		</a>
                             	</li>
                             <?php endforeach;?>

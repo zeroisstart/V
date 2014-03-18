@@ -24,6 +24,7 @@ $cate['19'] = '竞赛资讯';
 $cate['11'] = '承办院校';
 $cate['12'] = '优秀作品展示';
 $cate['13'] = '合作伙伴';
+$cate['14'] = '参赛队风采';
 $cate['0'] = '其他';
 
 $_form = array ();
@@ -75,6 +76,12 @@ $form = $this->beginWidget ( 'CActiveForm', array (
 		
 	</div>
 
+	<?php if($model -> photo):?>
+	<div class="row">
+		<img src="<?php echo $model -> photo;?>" class="very_small"/>
+	</div>
+	<?php endif;?>
+	
 	<div class="row">
 		<?php echo $form->label($model, 'photo');?>
 		<?php echo $form->fileField($model, 'photo');?>

@@ -9,7 +9,7 @@
 #headerBox {
     width: 960px;
     height: 320px;
-    background-image: url('../images/header.jpg');
+    background-image: url('../images/banner2.jpg');
     background-repeat: no-repeat;
 }
 
@@ -343,7 +343,8 @@
     border-top: none;
     margin: 0px 5px 0px 5px;
     display: block;
-    height: 100px;
+    height: 136px;
+	
 }
 
 .cooperation {
@@ -497,6 +498,15 @@ a.blue_btn:hover {
     display: block;
 	width:690px;
 	float:right;
+}
+
+.feeds_content { /*width: 860px;*/
+    min-height: 600px;
+    _height: 600px;
+    margin: 0;
+    padding: 0;
+    zoom: 1;
+    display: block;
 }
 
 .content_title_txt {
@@ -1001,6 +1011,7 @@ a.blue_btn:hover {
 	margin-bottom:4px;
 }
 .competition ul li a {
+	display:block;
 	text-decoration:none;
 }
 .competition ul li a:hover{
@@ -1053,8 +1064,11 @@ textarea {
 }
 div.form .radio label{
 	float:left;
-	font-size: 1.5em;
 }
 .radio input{
 	width:80px;
+}
+
+div.form label{
+	font-size:15px !important;
 }

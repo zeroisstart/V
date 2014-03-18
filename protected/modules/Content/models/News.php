@@ -75,6 +75,7 @@ class News extends CActiveRecord {
 				array (
 						'photo',
 						'file',
+						'allowEmpty'=>true,
 						'types'=>array('jpg','jpeg','gif','png'),
 						'on'=>'create'
 				),

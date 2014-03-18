@@ -176,3 +176,8 @@ div.flash-success a
 .grid_mini_form{
 	width:860px;
 }
+
+.very_small{
+	width:50px;
+	height:60px;
+}

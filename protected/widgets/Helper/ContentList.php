@@ -45,7 +45,7 @@ class ContentList extends CWidget {
 <div class="feed_list">
 	<div class="feed_list_img">
 		<a href="<?php echo $url?>">
-			<img src="<?php echo Yii::app()->createUrl('/').'/'.$model -> photo;?>" />
+			<img src="<?php echo Yii::app()->createAbsoluteUrl('/').$model -> photo;?>" />
 		</a>
 	</div>
 
@@ -55,7 +55,9 @@ class ContentList extends CWidget {
 					<?php echo $model -> title?>
 		</a>
 		</span>
+		<?php if(0):?>
 		<p class="timeline"><?php echo $model -> create_time?></p>
+		<?php endif;?>
 		<p class="f_content">
 			<a href="<?php echo $url?>" />
 				<?php echo $this -> cut_str(strip_tags($model -> text),70).'...';?>

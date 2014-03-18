@@ -167,18 +167,18 @@ $this->breadcrumbs = array ('Register' );
 		<?php echo $form->error($model,'isSame'); ?>
 	</div>
 	
-	<div class="row" style="margin:0px;height:40px;">
+	<div class="row" style="margin:0px;height:70px;">
 		<?php echo $form->labelEx($model,'beforeleave'); ?>
 		<select id="seachprov" name="seachprov" onChange="changeComplexProvince(this.value, sub_array, 'seachcity', 'seachdistrict');"></select>
 		<?php if(0):?>
 			<input type="button"  value="获取地区" onClick="showAreaID()"/>
 		<?php endif;?>
 	</div>
-	<div class="row" style="margin:0px;height:25px;">
+	<div class="row" style="margin:0px;height:50px;">
 		<select id="seachcity" name="homecity" onChange="changeCity(this.value,'seachdistrict','seachdistrict');"></select>
 		</div>
 		
-		<div class="row" style="margin:0px;height:25px;">
+		<div class="row" style="margin:0px;height:50px;">
 					<span id="seachdistrict_div"><select id="seachdistrict" name="seachdistrict"></select></span>
 		</div>
 	

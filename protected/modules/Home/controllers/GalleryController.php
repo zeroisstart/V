@@ -28,25 +28,22 @@ class GalleryController extends Controller {
 	 */
 	public function _actionTeam() {
 		$model = News::model ();
-		$model->category = 20;
+		$model->category = 14;
 		$dataProvider = $model->search ();
-		$this->render ( 'team' );
-		/*
-		 * $this->render ( 'team', array ( 'model' => $model, 'dataProvider' =>
-		 * $dataProvider ) );
-		 */
+		// this->render ( 'team' );
+		$this->render ( 'team', array ('model' => $model, 'dataProvider' => $dataProvider ) );
+	
 	}
 	/**
 	 * 我的作品
 	 */
 	public function _actionProduct() {
 		$model = News::model ();
-		$model->category = 20;
+		$model->category = 12;
 		$dataProvider = $model->search ();
-		$this->render ( 'product', array (
-				'model' => $model,
-				'dataProvider' => $dataProvider 
-		) );
+		
+		$this->render ( 'product', array ('model' => $model, 'dataProvider' => $dataProvider ) );
+		
 		// this->render ( 'product' );
 	}
 	/**

@@ -15,6 +15,9 @@ class MainController extends Controller {
 		$data12 = $news -> getByCategory(12);
 		//合作伙伴
 		$data13 = $news -> getByCategory(13);
+
+		
+		//参赛队风采   14
 		
 		$news = array(11=>$data11,12=>$data12,13=>$data13,19=>$data19);
 

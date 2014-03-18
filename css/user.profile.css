@@ -4,6 +4,9 @@
 	width: 200px;
 	font-size: 20px;
 }
+.user_sec_nav a{
+	font-size: 15px;
+}
 
 .user_sec_nav ul li {
 	margin-top: 20px;
@@ -24,7 +27,7 @@
 }
 
 .user_profile_info p {
-	
+	margin-top: 30px;	
 }
 
 .user_profile_info .user_notice {

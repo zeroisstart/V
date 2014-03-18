@@ -12,6 +12,6 @@
 </div>
 
 
-<div class="news_content">
+<div class="feeds_content">
 	<?php echo $data['text']?>
 </div>
