@@ -169,7 +169,23 @@ class MainController extends Controller {
 	}
 	
 	public function _export(){
-		$this -> renderPartial('_export');
+		$user_model = Yii::app() -> user;
+		$leader = $user_model -> profile;
+		if(UserGroup::model() -> isLeader($user_model -> id)){
+			$leader = $user_model -> profile;
+		}else{
+			$member_model = UserGroup::model() -> findByAttributes(array('UID'=>$user_model -> id));
+		}
+		
+		$team_name = '作品名称';
+		$product_name = '作品名称';
+		$full_name ='全称';
+		$simple_name ='简称';
+		
+		#var_dump($user_model -> profile -> attributes);
+		#die;
+		
+		$this -> renderPartial('_export',array('full_name'=>$full_name,'simple_name'=>$simple_name, 'user'=>$user_model,'leader'=>$leader,'team_name'=>$team_name,'product_name'=>$product_name));
 	}
 	
 	/**
