@@ -169,8 +169,8 @@ EOT;
                             <div class="box">
                                 <div class="first"></div>
                                 <ul>
-                                    <li><a class="link" target="_blank" href="http://weibo.com/u/2463756001?topnav=1&wvr=5&from=company">竞赛微博</a></li>
-                                    <li><a class="link" href="http://gedc.net.cn/profile?ac=book">在线报名</a></li>
+                                	<li><a class="link" target="_blank" href="http://weibo.com/u/2463756001?topnav=1&wvr=5&from=company">竞赛微博</a></li>
+                                	<li><a class="link" href="http://gedc.net.cn/profile?ac=book">在线报名</a></li>	
                                     <li><a class="link" href="http://gedc.net.cn/profile?ac=product">作品提交</a></li>
                                     <li><a class="link" href="http://gedc.net.cn/join?id=24">资料下载</a></li>
                                 </ul>
@@ -185,6 +185,7 @@ EOT;
                                     <p style="margin: 8px 0px; text-align: center;">
                                         <a href="javascript:void(0);" class="blue_btn">会议合作</a>
                                     </p>
+                                    
                                     <p>
                                         地址：北京市海淀区玉渊潭南路普惠<br />
                                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;南里13号楼<br />

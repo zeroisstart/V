@@ -6,14 +6,14 @@ $this->widget ( 'ext.popup.popup' );
 	<div id="rightContent" class="user_profile_info">
 		<p class="user_notice">您好 <?php echo Yii::app() -> user->username;?></p>
 		
-		<em class="em_warning">请选择想加入的队伍。</em>
+		<em class="em_warning">请选择想加入的队伍或者。 <a class="create_team" href="<?php echo $this -> createUrl('/profile').'?ac=book'?>" target="_blank">创建自己的队伍</a></em>
 		
 		<div class="user_data_info">
 			
 				<div class="grid_form">
 				<?php
 				/* @var $this AdminController */
-				$access_path = Yii::app() -> params-> imgAccessPath;
+				$access_path = $this -> createAbsoluteUrl('/');// Yii::app() -> params-> imgAccessPath;
 				$this->widget ( 'widget.Helper.GridView', array (
 						'dataProvider' => $dataProvider,
 						'columns' => array (

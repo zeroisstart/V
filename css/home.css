@@ -1072,3 +1072,80 @@ div.form .radio label{
 div.form label{
 	font-size:15px !important;
 }
+ul.competition_logo {
+	float:left;
+	width:660px;
+}
+.competition_logo li{
+	width:100px;
+	height:100px;
+	float:left;
+	margin-left:6px;
+}
+.competition_logo li a img{
+	width:80px;
+	height:100px;
+}
+
+.school ul {
+	margin-top:5px;
+	display: inline-block;
+	width: 320px;
+	float: left;
+	width: 320px;
+	margin-left:15px;
+	height:100px;
+}
+
+.schoolblock ul li {
+	margin-bottom:36px;
+}
+.schoolblock ul li a {
+	display:block;
+	text-decoration:none;
+}
+.schoolblock ul li a:hover{
+	text-decoration:underline;
+}
+
+.school{
+	width:100%;
+	height:100%;
+}
+.school li{
+	width:120px;
+	height:80px;
+	float:left;
+	text-align:center;
+	margin-left:13px;
+	margin-top:5px;
+	margin-bottom:20px;
+}
+.school li img{
+	width:70px;
+	height:60px;
+	
+}
+
+.contentBlock .school_box{
+	height:250px;
+}
+
+.contentBlock .product_list li.first{
+	height:60px;
+}
+.contentBlock .product_list{
+	height:160px;
+}
+.first img{
+	margin-right:5px;
+} 
+.em_warning{
+	text-decoration:none;
+	font-style:normal;
+}
+.create_team{
+	color:#08c;
+	text-decoration:none;
+	font-size:17px;
+}

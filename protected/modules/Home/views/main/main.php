@@ -36,118 +36,80 @@ $this -> registerPopupBox();
                             </div>
                     </div>
 
-                    <div class="contentBlock competition">
+                    <div class="contentBlock schoolblock">
                         <div class="title titleBar">承办院校</div>
-                        <div class="contentBox">
-                        	<ul class="competition_left">
-                        	
-                        	<?php $first = array_shift($news['11']['left']);?>
-                        	
-                        	<?php if($first):?>
-                        	<li class="first">
-                        		<img class="small_intro_img" src="<?php echo $first['photo'];?>">
-                        		<a href="<?php echo $this -> createUrl('/Home/feeds/main',array('id'=>$first -> ID))?>" title="<?php echo $_model -> title;?>">
-                            			<?php echo mb_substr($_model -> title,0,60);?>
-                            	</a>
-                            	<span><?php echo mb_substr(strip_tags($first['text']),0,32,'utf-8').'...'?></span>
-                        	</li>
-                        	<?php endif;?>
-                        	
-                            <?php foreach($news['11']['left'] as $_model):?>
-                            	<li>
-                            		<a href="<?php echo $this -> createUrl('/Home/feeds/main',array('id'=>$_model -> ID))?>" title="<?php echo $_model -> title;?>">
-                            			<?php echo mb_substr($_model -> title,0,40,'utf-8');?>
-                            		</a>
-                            	</li>
-                            <?php endforeach;?>
-                            </ul>
-                            
-                            <ul class="competition_right">
-                            
-                            <?php $first = array_shift($news['11']['right']);?>
-                            <?php if($first):?>
-                        	<li class="first">
-                        		<img class="small_intro_img" src="<?php echo $first['photo'];?>">
-                        		<a href="<?php echo $this -> createUrl('/Home/feeds/main',array('id'=>$first -> ID))?>" title="<?php echo $_model -> title;?>">
-                            			<?php echo mb_substr($_model -> title,0,60,'utf-8');?>
-                            	</a>
-                            	<span><?php echo mb_substr(strip_tags($first['text']),0,60)?></span>
-                        		
-                        	</li>
-                        	<?php endif?>
-                            
-                            <?php foreach($news['11']['right']  as $_model):?>
-                            	<li>
-                            		<a href="<?php echo $this -> createUrl('/Home/feeds/main',array('id'=>$_model -> ID))?>">
-                            		<?php echo $_model -> title;?>
-                            		</a>
-                            	</li>
-                            <?php endforeach;?>
+                        <div class="contentBox school_box">
+                        	<ul class="school">
+	                        	<?php foreach($news['11'] as $_model):?>
+	                        		<li>
+	                        			<img src="<?php echo $_model -> photo?>" />
+	                        			<a href="<?php echo $this -> createUrl('/Home/feeds/main',array('id'=>$_model -> ID))?>">
+	                        				<?php echo $_model ->title ?>
+	                        			</a>
+	                        		</li>
+	                        	<?php endforeach;?>
                             </ul>
                         </div>
                     </div>
 					
-					 <div class="contentBlock competition">
+					 <div class="contentBlock schoolblock">
 					 	<div class="title titleBar">优秀作品展示</div>
-                        <div class="contentBox">
-                        <ul class="competition_left">
+                        <div class="contentBox school_box">
+                        <ul class="school">
                         
-                        
-                           	<?php $first = array_shift($news['12']['left']);?>
-                        	
-                        	<?php if($first):?>
-                        	<li class="first">
-                        		<img class="small_intro_img" src="<?php echo $first['photo'];?>">
-                        		<a href="<?php echo $this -> createUrl('/Home/feeds/main',array('id'=>$first -> ID))?>" title="<?php echo $_model -> title;?>">
-                            			<?php echo mb_substr($_model -> title,0,60);?>
-                            	</a>
-                            	<span><?php echo mb_substr(strip_tags($first['text']),0,32,'utf-8').'...'?></span>
-                        	</li>
-                        	<?php endif;?>
-                        	
-                        
-                            <?php foreach($news['12']['left'] as $_model):?>
-                            	<li>
+                          <?php foreach($news['12'] as $_model):?>
+                          		<li>
+                          			<img src="<?php echo $_model -> photo?>" />
                             		<a href="<?php echo $this -> createUrl('/Home/feeds/main',array('id'=>$_model -> ID))?>" title="<?php echo $_model -> title;?>">
                             			<?php echo mb_substr($_model -> title,0,18,'utf-8').'...';?>
                             		</a>
                             	</li>
-                            <?php endforeach;?>
-                            </ul>
-                            
-                            <ul class="competition_right">
-                            <?php foreach($news['12']['right']  as $_model):?>
-                            	<li>
-                            		<a href="<?php echo $this -> createUrl('/Home/feeds/main',array('id'=>$_model -> ID))?>">
-                            		<?php echo $_model -> title;?>
-                            		</a>
-                            	</li>
-                            <?php endforeach;?>
-                            </ul>
+                          <?php endforeach;?>
                         </div>
                     </div>
 					
 					 <div class="contentBlock competition">
 					 	<div class="title titleBar">合作伙伴</div>
                         <div class="contentBox">
-                        <ul class="competition_left">
-                            <?php foreach($news['13']['left'] as $_model):?>
-                            	<li>
-                            		<a href="<?php echo $this -> createUrl('/Home/feeds/main',array('id'=>$_model -> ID))?>" title="<?php echo $_model -> title;?>">
-                            			<?php echo mb_substr($_model -> title,0,60);?>
+                        <ul class="competition_logo">
+                        		<li>
+                            		<a href="http://www.huawei.com/cn/" target="_blank" title="">
+                            			<img src="/images/logo/huawei.jpg"  />
                             		</a>
                             	</li>
-                            <?php endforeach;?>
-                            </ul>
-                            
-                            <ul class="competition_right">
-                            <?php foreach($news['13']['right']  as $_model):?>
+                            	
                             	<li>
-                            		<a href="<?php echo $this -> createUrl('/Home/feeds/main',array('id'=>$_model -> ID))?>">
-                            		<?php echo $_model -> title;?>
+                            		<a href="http://www.altera.com.cn" target="_blank" title="">
+                            			<img src="/images/logo/altera.jpg"  />
                             		</a>
                             	</li>
-                            <?php endforeach;?>
+                            	
+                            	
+                            	<li>
+                            		<a href="http://www.ansys.com.cn" target="_blank" title="">
+                            			<img src="/images/logo/ansys.jpg"  />
+                            		</a>
+                            	</li>
+                            	
+                            	<li>
+                            		<a href="http://www.arm.com" target="_blank" title="">
+                            			<img src="/images/logo/ar.jpg"  />
+                            		</a>
+                            	</li>
+                            	
+                            	
+                            	<li>
+                            		<a href="http://www.synopsys.com" target="_blank" title="">
+                            			<img src="/images/logo/synopsis.jpg"  />
+                            		</a>
+                            	</li>
+                            	
+                            	<li>
+                            		<a href="http://www.mxchip.com/" target="_blank" title="">
+                            			<img src="/images/logo/qinke.jpg"  />
+                            		</a>
+                            	</li>
+                            	
                             </ul>
                         </div>
                     </div>

@@ -16,10 +16,9 @@ class MainController extends Controller {
 		//合作伙伴
 		$data13 = $news -> getByCategory(13);
 
-		
 		//参赛队风采   14
 		
-		$news = array(11=>$data11,12=>$data12,13=>$data13,19=>$data19);
+		$news = array(13=>$data13,19=>$data19);
 
 		// header("Location:/V/admin");
 		
@@ -48,6 +47,9 @@ class MainController extends Controller {
 			$news[$key]['left'] = array_slice($_val, 0,5);
 			$news[$key]['right'] = array_slice($_val, 5,5);
 		}
+		
+		$news['11'] = $data11;
+		$news['12'] =$data12;
 		
 		$this->render ( 'main', array (
 				'news'=>$news,
