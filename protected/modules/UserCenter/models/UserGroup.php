@@ -52,12 +52,12 @@ class UserGroup extends CActiveRecord {
 						'unique' 
 				),
 				array (
-						'uid',
+						'UID',
 						'numerical',
 						'integerOnly' => true 
 				),
 				array (
-						'name',
+						'username',
 						'length',
 						'max' => 255 
 				),
@@ -69,11 +69,25 @@ class UserGroup extends CActiveRecord {
 				// The following rule is used by search().
 				// Please remove those attributes that should not be searched.
 				array (
-						'id, uid, name, state',
+						'ID, UID, username, name, create_time, state',
 						'safe',
 						'on' => 'search' 
 				) 
 		);
+	}
+	
+	/**
+	 * 是否可以创建团队
+	 * @param integer $uid
+	 */
+	public function canBuild($uid){
+		$this -> UID = $uid;
+		$data = $this -> search();
+		$row = $data -> data;
+		if(!empty($row)){
+			return false;
+		}
+		return true;
 	}
 	
 	/**

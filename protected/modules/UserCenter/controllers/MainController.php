@@ -207,6 +207,19 @@ class MainController extends Controller {
 		}
 		
 		$userGroupModel = UserGroupMember::model ();
+		$cdbcriteria = new CDbCriteria();
+		$cdbcriteria -> compare('gid', $id);
+		$count = (int)$userGroupModel -> count($cdbcriteria);
+		
+		if($count > 3){
+			//人员满了
+			echo CJavaScript::encode ( array (
+					'status' => 0,
+					'code' => '-2'
+			) );
+			die;
+		}
+		
 		$user = Yii::app ()->user;
 		$uid = $user->id;
 		$username = $user->username;
@@ -394,6 +407,7 @@ class MainController extends Controller {
 			) );
 		}
 		
+	
 		if (! ($group)) {
 			$this->render ( 'no_grp', array () );
 		} elseif (! ($product)) {
@@ -403,6 +417,7 @@ class MainController extends Controller {
 			if ($id) {
 				$model = UserProductGrade::model ()->findByPk ( $id );
 				if (empty ( $model )) {
+
 					$this->redirect ( $this->createUrl ( '/UserCenter/main/main', array (
 							'ac' => 'product' 
 					) ) );
@@ -415,12 +430,16 @@ class MainController extends Controller {
 					$model = $this->_addPro ();
 				}
 			}
+			
+			
+			
 			$this->render ( 'no_pro', array (
 					'model' => $model,
 					'groupMember' => $groupMemberModel,
 					'group' => $group 
 			) );
 		} else {
+
 			$this->render ( 'product', array (
 					'product' => $product,
 					'model' => $groupMemberModel 
@@ -549,11 +568,40 @@ class MainController extends Controller {
 	 */
 	public function _actionBook(){
 		$uid = Yii::app() -> user -> id;
-		$team = GrpTeamList::model();
+		$team =  new UserGroup('create');
 		$canBuild = $team -> canBuild($uid);
+		$username= Yii::app() -> user -> name;
+		
+		if(!$canBuild){
+			$this -> redirect($this -> createUrl('/profile').'?ac=accept');
+			Yii::app() -> end();
+		}
+		
+		if(isset($_POST['UserGroup'])){
+			$team -> attributes = $_POST['UserGroup'];
+			$team -> create_time = date('Y-m-d H:i:s');
+			$team -> UID = $uid;
+			$team -> username =$username ;
+			$team -> state = 1;
+			
+			if($team -> validate()){
+				$team -> save();
+				
+				$model = new UserGroupMember ('create');
+				$model->UID = $uid;
+				$model->gid = $team -> ID;
+				$model->username = $username;
+				$model->state = 1;
+				$model->create_time = date ( 'Y-m-d H:i:s', time () );
+				$model ->save();
+				
+			}else{
+				YII_DEBUG &&var_dump($team -> errors); 
+			}
+		}
 		
 		if($canBuild){
-			$model = new GrpTeamList();
+			$model = new UserGroup();
 			$this -> render('build_team',array('model'=>$model));
 		}else{
 			$this -> render('build_member');

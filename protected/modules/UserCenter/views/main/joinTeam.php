@@ -46,6 +46,14 @@ $this->widget ( 'ext.popup.popup' );
 																		})
 																	}else{
 																		switch(res.code){
+																			case "-2":
+																		hm.alert({
+																				noTitle : true, 
+																				text : "小队成员满员!", 
+																				height : "auto",
+																				width : 210,
+																			})
+																			break;
 																			case "2":
 																			hm.alert({
 																				noTitle : true, 

@@ -8,7 +8,7 @@
 			<p class="user_data_info_title">
 				您好，你还没有加入团队，请申请加入,
 				<a href="<?php echo $this -> createUrl('/UserCenter/main/main',array('ac'=>'team'))?>">申请加入</a>,或者自己组建一个团队,
-				<a href="<?php echo $this -> createUrl('/UserCenter/main/main',array('ac'=>'team'))?>">我要建团</a>
+				<a href="<?php echo $this -> createUrl('/UserCenter/main/main',array('ac'=>'book'))?>">我要建团</a>
 			</p>
 
 		</div>

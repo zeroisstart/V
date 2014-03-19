@@ -25,18 +25,20 @@
 		
 		    <div class="row"> 
 		        <?php echo $form->labelEx($model,'name'); ?>
-		        <?php echo $form->textField($model,'name'); ?>
+		        <?php echo $form->textField($model,'name',array('class'=>'team_name')); ?>
 		        <?php echo $form->error($model,'name'); ?>
 		    </div>
 		    
+		    <?php if(0):?>
 		    <div class="row"> 
 		        <?php echo $form->labelEx($model,'belong'); ?>
 		        <?php echo $form->textField($model,'belong'); ?>
 		        <?php echo $form->error($model,'belong'); ?>
 		    </div> 
+		    <?php endif;?>
 		
 		    <div class="row buttons"> 
-		        <?php echo CHtml::submitButton('Submit'); ?>
+		        <?php echo CHtml::submitButton('创建'); ?>
 		    </div> 
 		
 		<?php $this->endWidget(); ?>
