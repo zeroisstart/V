@@ -1,7 +1,10 @@
+<?php 
+
+?>
 <html xmlns="http://www.w3.org/TR/REC-html40">
 
 <head>
-<meta http-equiv=Content-Type content="text/html; charset=x-cp20936">
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
 <meta name=ProgId content=Word.Document>
 <meta name=Generator content="Microsoft Word 15">
 <meta name=Originator content="Microsoft Word 15">

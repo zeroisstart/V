@@ -184,8 +184,11 @@ class MainController extends Controller {
 		
 		#var_dump($user_model -> profile -> attributes);
 		#die;
-		
+		ob_start();
 		$this -> renderPartial('_export',array('full_name'=>$full_name,'simple_name'=>$simple_name, 'user'=>$user_model,'leader'=>$leader,'team_name'=>$team_name,'product_name'=>$product_name));
+		$content = ob_get_clean();
+		
+		Yii::app() -> request -> sendFile("报名.doc", $content,'');
 	}
 	
 	/**
