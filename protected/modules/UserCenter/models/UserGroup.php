@@ -10,6 +10,10 @@
  * @property string $state
  */
 class UserGroup extends CActiveRecord {
+	
+	public $MasterName='';
+	public $MemberName='';
+	
 	public $_state = array (
 			'0' => '未审核',
 			'1' => '已审核',
@@ -119,6 +123,8 @@ class UserGroup extends CActiveRecord {
 		return array (
 				'ID' => '组ID',
 				'UID' => '队长ID',
+				'MasterName'=>'添加老师：自动补全',
+				'MemberName'=>'添加成员：自动补全',
 				'username' => '队长',
 				'name' => '组名',
 				'create_time' => '创建时间',

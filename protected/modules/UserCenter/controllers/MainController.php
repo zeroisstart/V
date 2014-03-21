@@ -266,7 +266,6 @@ class MainController extends Controller {
 		
 		$userGroupMember = UserGroupMember::model ();
 		$userGroupMember->gid = $userGroup->ID;
-		$userGroupMember->state = '0';
 		$dataProvider = $userGroupMember->search ();
 		
 		$this->render ( 'accept', array (
@@ -576,7 +575,7 @@ class MainController extends Controller {
 		$username= Yii::app() -> user -> name;
 		
 		if(!$canBuild){
-			$this -> redirect($this -> createUrl('/profile').'?ac=accept');
+			$this -> redirect($this -> createAbsoluteUrl('/profile').'?ac=accept');
 			Yii::app() -> end();
 		}
 		

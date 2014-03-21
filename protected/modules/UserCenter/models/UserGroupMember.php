@@ -105,11 +105,25 @@ class UserGroupMember extends CActiveRecord {
 				'ID' => 'ID',
 				'UID' => '用户ID',
 				'username' => '用户名',
+				'MasterName'=>'老师姓名',
+				'MemberName','成员姓名',
 				'gid' => '组ID',
 				'state' => '状态',
+				'Identity'=>'身份',
 				'create_time' => '创建时间' 
 		);
 	}
+
+	/**
+	 * 
+	 */
+	public function getIdentity(){
+		$uid = $this -> UID;
+		$profile_model = UserProfile::model()-> findByPk($uid);
+		$user_category = $profile_model ->user_category; 
+		return $user_category[$profile_model -> User_category];
+	}
+	
 	
 	/**
 	 * Retrieves a list of models based on the current search/filter conditions.

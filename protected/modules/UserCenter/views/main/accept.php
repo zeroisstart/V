@@ -5,9 +5,75 @@ $this->widget ( 'ext.popup.popup' );
 <div id="contextBox">
 	<div id="rightContent" class="user_profile_info">
 		<p class="user_notice">您好 <?php echo Yii::app() -> user->username;?></p>
+		
+		
+		<p>注意: 每个队伍只允许有四个队员，一个老师三个学生.</p>
 
 		<div class="user_data_info">
-
+		<?php
+		$form = $this->beginWidget ( 'CActiveForm', array ('id' => 'teacher','action'=>$this->createUrl("/userCenter/team/teacher"), 'enableClientValidation' => true, 'clientOptions' => array ('validateOnSubmit' => true ) ) );
+		?>
+		<div class="row">
+		<?php echo $form->labelEx($model,'MasterName'); ?>
+		 <?php
+          $this->widget('zii.widgets.jui.CJuiAutoComplete',array(
+ 			'model'=>$model,
+ 			'attribute' => 'MasterName',
+            'sourceUrl' => $this->createUrl('/UserCenter/team/get_user'),
+          	
+ 			//'source'=>array('ac1','ac2','ac3'),
+          	//'source'=>'js:function(){alert(/test/)}',
+ 			// additional javascript options for the autocomplete plugin
+          	'options'=>array(
+					'select' => 'js:function(){alert(/test/)}',
+ 					'minLength'=>'1',
+ 											),
+ 											'htmlOptions'=>array(
+ 											'class'=>'reg_input',
+											'style'=>'height:20px;'
+ 											),
+ 										));
+                                        ?>
+		<?php echo $form->error($model,'MasterName'); ?>
+	</div>
+	<div class="row">
+		<?php  echo CHtml::submitButton('添加'); ?>
+	</div>
+	<?php $this->endWidget(); ?>
+	
+	
+		<?php
+		$form = $this->beginWidget ( 'CActiveForm', array ('id' => 'member','action'=>$this->createUrl("/userCenter/team/member"), 'enableClientValidation' => true, 'clientOptions' => array ('validateOnSubmit' => true ) ) );
+		?>
+		<div class="row">
+		<?php echo $form->labelEx($model,'MemberName'); ?>
+		<?php
+          $this->widget('zii.widgets.jui.CJuiAutoComplete',array(
+ 			'model'=>$model,
+ 			'attribute' => 'MemberName',
+            'sourceUrl' => $this->createUrl('/UserCenter/team/get_user'),
+          	
+ 			//'source'=>array('ac1','ac2','ac3'),
+          	//'source'=>'js:function(){alert(/test/)}',
+ 			// additional javascript options for the autocomplete plugin
+          	'options'=>array(
+					//'select' => 'js:function(){alert(/test/)}',
+ 					'minLength'=>'1',
+ 											),
+ 											'htmlOptions'=>array(
+ 											'class'=>'reg_input',
+											'style'=>'height:20px;'
+ 											),
+ 										));
+                                        ?>
+		<?php echo $form->error($model,'MemberName'); ?>
+	</div>
+	<div class="row">
+		<?php  echo CHtml::submitButton('添加'); ?>
+	</div>
+	<?php $this->endWidget(); ?>
+	
+		
 			<div class="grid_form">
 				<?php
 				/* @var $this AdminController */
@@ -17,6 +83,8 @@ $this->widget ( 'ext.popup.popup' );
 						'columns' => array (
 								'UID',
 								'username',
+								'Identity'
+								/*
 								array (
 										'header' => '操作',
 										'template' => '{yes} {no}',
@@ -115,7 +183,7 @@ $this->widget ( 'ext.popup.popup' );
 										),
 										'class' => 'widget.Helper.ButtonColumn',
 										'viewButtonUrl' => 'Yii::app()->controller->createUrl("/feeds/".$data->primaryKey)' 
-								) 
+								) */
 						) 
 				) )?>
 				</div>
