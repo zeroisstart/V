@@ -33,34 +33,51 @@ class TeamController extends Controller {
 		}
 		echo json_encode ( $arr );
 	}
+	
 	public function actionTeacher() {
 		$UserGroup = Yii::app ()->request->getParam ( 'UserGroup' );
 		$MasterName = $UserGroup ['MasterName'];
+		
+		if(!$MasterName){
+			echo json_encode ( array ('status' => 1 ,'msg'=>'老师名字不能为空!') );
+			die;
+		}
+		
 		$criteria = new CDbCriteria ();
 		$criteria->compare ( 'Realname', $MasterName );
 		$criteria->compare ( 'User_category', '4' );
 		$profiles = UserProfile::model ()->find ( $criteria );
 		
 		if ($profiles) {
-			echo json_encode ( array () );
+			echo json_encode ( array ('status' => 0 ) );
 		} else {
-			$_model = UserGroup::model ();
-			$_model->addError ( 'MasterName', '没有找到对应的老师!' );
-			echo json_encode ( $_model->errors );
+			// _model = UserGroup::model ();
+			// _model->addError ( 'MasterName', '' );
+			echo json_encode ( array ('status' => 1, 'msg' => '没有找到对应的老师!' ) );
 		}
 	}
+	
+	
 	public function actionMember() {
-		$UserGroup = Yii::app ()->request->getParam ( 'UserGroup' );
-		$MasterName = $UserGroup ['UserGroup'];
-		$criteria = new CDbCriteria ();
-		$criteria->compare ( 'Realname', $MasterName, true, 'like' );
-		$criteria->compare ( 'User_category', '4' );
-		$profiles = UserProfile::model ()->findAll ( $criteria );
-		$arr = array ();
+	$UserGroup = Yii::app ()->request->getParam ( 'UserGroup' );
+		$MasterName = $UserGroup ['MemberName'];
 		
-		foreach ( $profiles as $profile ) {
-			$arr [] = $profile->Realname;
+		if(!$MasterName){
+			echo json_encode ( array ('status' => 1 ,'msg'=>'成员名字不能为空!') );
+			die;
 		}
-		echo json_encode ( $arr );
+		
+		$criteria = new CDbCriteria ();
+		$criteria->compare ( 'Realname', $MasterName );
+		$criteria->compare ( 'User_category', '1' );
+		$profiles = UserProfile::model ()->find ( $criteria );
+		
+		if ($profiles) {
+			echo json_encode ( array ('status' => 0 ) );
+		} else {
+			// _model = UserGroup::model ();
+			// _model->addError ( 'MasterName', '' );
+			echo json_encode ( array ('status' => 1, 'msg' => '没有找到对应的老师!' ) );
+		}
 	}
 }	

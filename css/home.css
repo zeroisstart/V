@@ -1154,3 +1154,12 @@ ul.competition_logo {
 	width:260px;
 	height:30px;	
 }
+#teacher_btn{
+	height:35px;
+}
+.member_list table.items tr td{
+	text-align:center;
+}
+.member_list_waring {
+	color:#DA2782;
+}

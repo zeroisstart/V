@@ -7,14 +7,13 @@ $this->widget ( 'ext.popup.popup' );
 		<p class="user_notice">您好 <?php echo Yii::app() -> user->username;?></p>
 		
 		
-		<p>注意: 每个队伍只允许有四个队员，一个老师三个学生.</p>
+		<p class="member_list_waring">注意: 每个队伍只允许有四个队员，一个老师三个学生.</p>
 
 		<div class="user_data_info">
 		<?php
 		$form = $this->beginWidget ( 'CActiveForm', 
 					array (
 						'id' => 'teacher',
-						'action'=>$this->createUrl("/UserCenter/team/teacher"), 
 						'enableClientValidation' => true,
 						'enableAjaxValidation'=>true,
 						'clientOptions' => array ('validateOnSubmit' => true ) ) );
@@ -51,17 +50,20 @@ $this->widget ( 'ext.popup.popup' );
 			            }',
 			            'success'=>'function(data,txt){
 							data = eval("("+data+")");
- 							$.each(data, function(key, val) {
-							//console.log("#teacher #UserGroup_"+key+"_em_");
-							$("#teacher #UserGroup_"+key+"_em_").text(val);
-			                $("#teacher #UserGroup_"+key+"_em_").show();})
-						
-							if(0){hm.alert({
-				                "text": "提交成功",
-				                "width": 200
-				            },function(){
-                                location.href = "' . $this->createUrl('/Home/manage/index') . '";
-                            });}
+			        		if(data.status == 0){
+								hm.alert({
+				                	"text": "添加成功!",
+				                	"width": 250
+				            	},function(){
+									window.location.reload();
+								})
+							}else{
+								hm.alert({
+				                	"text": data.msg,
+				                	"width": 250
+				            	})
+							}	
+					
 			            }',
 			        ),array('class'=>'button','id'=>'teacher_btn')
 			    );
@@ -70,10 +72,9 @@ $this->widget ( 'ext.popup.popup' );
 	<?php $this->endWidget(); ?>
 	
 	
-		<?php
+<?php
 		$form = $this->beginWidget ( 'CActiveForm', array (
 				'id' => 'member',
-				'action'=>$this->createUrl("/UserCenter/team/get_user",array('ac'=>2)), 
 				'enableClientValidation' => true, 
 				'clientOptions' => array ('validateOnSubmit' => true ) ) );
 		?>
@@ -83,7 +84,7 @@ $this->widget ( 'ext.popup.popup' );
           $this->widget('zii.widgets.jui.CJuiAutoComplete',array(
  			'model'=>$model,
  			'attribute' => 'MemberName',
-            'sourceUrl' => $this->createUrl('/UserCenter/team/get_user'),
+            'sourceUrl' => $this->createUrl('/UserCenter/team/get_user',array('ac'=>2)),
           	
  			//'source'=>array('ac1','ac2','ac3'),
           	//'source'=>'js:function(){alert(/test/)}',
@@ -101,12 +102,34 @@ $this->widget ( 'ext.popup.popup' );
 		<?php echo $form->error($model,'MemberName'); ?>
 	</div>
 	<div class="row">
-		<?php  echo CHtml::submitButton('添加'); ?>
+		<?php
+			echo  CHtml::ajaxSubmitButton(
+			        '添加',
+					$this->createUrl("/UserCenter/team/member"),
+			        array(
+			            'beforeSend'=>'function(){
+			           
+			            }',
+			            'success'=>'function(data,txt){
+							data = eval("("+data+")");
+			        		if(data.status == 0){
+
+							}else{
+								hm.alert({
+				                	"text": data.msg,
+				                	"width": 250
+				            	})
+							}	
+					
+			            }',
+			        ),array('class'=>'button','id'=>'member_btn')
+			    );
+			?>
 	</div>
 	<?php $this->endWidget(); ?>
 	
 		
-			<div class="grid_form">
+			<div class="grid_form member_list">
 				<?php
 				/* @var $this AdminController */
 				$access_path = Yii::app ()->params->imgAccessPath;
@@ -115,7 +138,8 @@ $this->widget ( 'ext.popup.popup' );
 						'columns' => array (
 								'UID',
 								'username',
-								'Identity'
+								'Identity',
+								'GroupIdentity',
 								/*
 								array (
 										'header' => '操作',
