@@ -9,7 +9,8 @@ $this->widget ( 'ext.popup.popup' );
 		<em class="em_warning">请选择想加入的队伍或者。 <a class="create_team" href="<?php echo $this -> createUrl('/profile').'?ac=book'?>" target="_blank">创建自己的队伍</a></em>
 		
 		<div class="user_data_info">
-			
+				
+				<?php if(0):?>
 				<div class="grid_form">
 				<?php
 				/* @var $this AdminController */
@@ -86,6 +87,7 @@ $this->widget ( 'ext.popup.popup' );
 						) 
 				) )?>
 				</div>
+				<?php endif;?>
 		
 		</div>
 	</div>

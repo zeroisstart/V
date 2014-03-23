@@ -597,6 +597,9 @@ class MainController extends Controller {
 				$model->create_time = date ( 'Y-m-d H:i:s', time () );
 				$model ->save();
 				
+				$this -> redirect($this -> createAbsoluteUrl('/profile').'?ac=accept');
+				Yii::app() -> end();
+				
 			}else{
 				YII_DEBUG &&var_dump($team -> errors); 
 			}
