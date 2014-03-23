@@ -11,7 +11,13 @@ $this->widget ( 'ext.popup.popup' );
 
 		<div class="user_data_info">
 		<?php
-		$form = $this->beginWidget ( 'CActiveForm', array ('id' => 'teacher','action'=>$this->createUrl("/userCenter/team/teacher"), 'enableClientValidation' => true, 'clientOptions' => array ('validateOnSubmit' => true ) ) );
+		$form = $this->beginWidget ( 'CActiveForm', 
+					array (
+						'id' => 'teacher',
+						'action'=>$this->createUrl("/UserCenter/team/teacher"), 
+						'enableClientValidation' => true,
+						'enableAjaxValidation'=>true,
+						'clientOptions' => array ('validateOnSubmit' => true ) ) );
 		?>
 		<div class="row">
 		<?php echo $form->labelEx($model,'MasterName'); ?>
@@ -19,7 +25,7 @@ $this->widget ( 'ext.popup.popup' );
           $this->widget('zii.widgets.jui.CJuiAutoComplete',array(
  			'model'=>$model,
  			'attribute' => 'MasterName',
-            'sourceUrl' => $this->createUrl('/UserCenter/team/get_user'),
+            'sourceUrl' => $this->createUrl('/UserCenter/team/get_user',array('ac'=>'1')),
           	
  			//'source'=>array('ac1','ac2','ac3'),
           	//'source'=>'js:function(){alert(/test/)}',
@@ -37,13 +43,52 @@ $this->widget ( 'ext.popup.popup' );
 		<?php echo $form->error($model,'MasterName'); ?>
 	</div>
 	<div class="row">
-		<?php  echo CHtml::submitButton('添加'); ?>
+		<?php
+			echo  CHtml::ajaxSubmitButton(
+			        '添加',
+					$this->createUrl("/UserCenter/team/teacher"),
+			        array(
+			            'beforeSend'=>'function(){
+			           
+			            }',
+			            'success'=>'function(data,txt){
+							data = eval("("+data+")");
+ 							$.each(data, function(key, val) {
+							console.log("#teacher #UserGroup_"+key+"_em_");
+							$("#teacher #UserGroup_"+key+"_em_").text(val);
+			                $("#teacher #UserGroup_"+key+"_em_").show();})
+							console.log(data);
+			        		if(!data){
+			        			data = txt;
+							}
+			        		//var data = eval("("+data+")");
+	                        if(data.status=="success"){
+			        		hm.alert({
+				                "text": "提交成功",
+				                "width": 200
+				            },function(){
+                                location.href = "' . $this->createUrl('/Home/manage/index') . '";
+                            });
+	                        }else{
+			        			 $.each(data, function(key, val) {
+			                        $("#project-budget #"+key+"_em_").text(val);
+			                        $("#project-budget #"+key+"_em_").show();
+			                     });
+	                        }
+			            }',
+			        ),array('class'=>'button','id'=>'submit_budget')
+			    );
+			?>
 	</div>
 	<?php $this->endWidget(); ?>
 	
 	
 		<?php
-		$form = $this->beginWidget ( 'CActiveForm', array ('id' => 'member','action'=>$this->createUrl("/userCenter/team/member"), 'enableClientValidation' => true, 'clientOptions' => array ('validateOnSubmit' => true ) ) );
+		$form = $this->beginWidget ( 'CActiveForm', array (
+				'id' => 'member',
+				'action'=>$this->createUrl("/UserCenter/team/get_user",array('ac'=>2)), 
+				'enableClientValidation' => true, 
+				'clientOptions' => array ('validateOnSubmit' => true ) ) );
 		?>
 		<div class="row">
 		<?php echo $form->labelEx($model,'MemberName'); ?>
