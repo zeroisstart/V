@@ -54,7 +54,7 @@ class UserAdminController extends Controller {
 	}
 	
 	public function actioncreateadmin(){
-		$model = new RegisterForm ();
+		$model = new RegisterTeacherForm();
 		
 		$profileModel = new UserProfile ();
 		// $profileModel = new
@@ -65,8 +65,8 @@ class UserAdminController extends Controller {
 		}
 		
 		// collect user input data
-		if (isset ( $_POST ['RegisterForm'] )) {
-			$model->setAttributes ( $_POST ['RegisterForm'], false );
+		if (isset ( $_POST ['RegisterTeacherForm'] )) {
+			$model->setAttributes ( $_POST ['RegisterTeacherForm'], false );
 			$model->allowRegister = true;
 			// validate user input and redirect to the previous page if valid
 			if ($model->validate () && $model->register ()) {
@@ -75,7 +75,7 @@ class UserAdminController extends Controller {
 						't' => 9
 				) ) );
 			} else {
-				/*var_dump ( $model->errors );*/
+				var_dump ( $model->errors );
 			}
 			// $this->redirect ( Yii::app ()->user->returnUrl );
 		}

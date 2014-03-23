@@ -26,12 +26,10 @@ $this->widget ( 'ext.popup.popup' );
  			'model'=>$model,
  			'attribute' => 'MasterName',
             'sourceUrl' => $this->createUrl('/UserCenter/team/get_user',array('ac'=>'1')),
-          	
  			//'source'=>array('ac1','ac2','ac3'),
           	//'source'=>'js:function(){alert(/test/)}',
  			// additional javascript options for the autocomplete plugin
           	'options'=>array(
-					'select' => 'js:function(){alert(/test/)}',
  					'minLength'=>'1',
  											),
  											'htmlOptions'=>array(
@@ -54,29 +52,18 @@ $this->widget ( 'ext.popup.popup' );
 			            'success'=>'function(data,txt){
 							data = eval("("+data+")");
  							$.each(data, function(key, val) {
-							console.log("#teacher #UserGroup_"+key+"_em_");
+							//console.log("#teacher #UserGroup_"+key+"_em_");
 							$("#teacher #UserGroup_"+key+"_em_").text(val);
 			                $("#teacher #UserGroup_"+key+"_em_").show();})
-							console.log(data);
-			        		if(!data){
-			        			data = txt;
-							}
-			        		//var data = eval("("+data+")");
-	                        if(data.status=="success"){
-			        		hm.alert({
+						
+							if(0){hm.alert({
 				                "text": "提交成功",
 				                "width": 200
 				            },function(){
                                 location.href = "' . $this->createUrl('/Home/manage/index') . '";
-                            });
-	                        }else{
-			        			 $.each(data, function(key, val) {
-			                        $("#project-budget #"+key+"_em_").text(val);
-			                        $("#project-budget #"+key+"_em_").show();
-			                     });
-	                        }
+                            });}
 			            }',
-			        ),array('class'=>'button','id'=>'submit_budget')
+			        ),array('class'=>'button','id'=>'teacher_btn')
 			    );
 			?>
 	</div>
