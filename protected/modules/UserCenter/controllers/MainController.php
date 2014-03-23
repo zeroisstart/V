@@ -267,7 +267,6 @@ class MainController extends Controller {
 		$userGroupMember = UserGroupMember::model ();
 		$userGroupMember->gid = $userGroup->ID;
 		$dataProvider = $userGroupMember->search ();
-		
 		$this->render ( 'accept', array (
 				'model' => $userGroup,
 				'dataProvider' => $dataProvider 
@@ -585,6 +584,7 @@ class MainController extends Controller {
 			$team -> UID = $uid;
 			$team -> username =$username ;
 			$team -> state = 1;
+			$team -> name = addslashes(strip_tags($team -> name));
 			
 			if($team -> validate()){
 				$team -> save();

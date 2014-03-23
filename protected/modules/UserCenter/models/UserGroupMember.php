@@ -64,6 +64,16 @@ class UserGroupMember extends CActiveRecord {
 	}
 	
 	/**
+	 * 
+	 * @param integer $gid
+	 */
+	public function getMember($gid){
+		$this -> gid = $gid;
+		$data = $this -> search();
+		return $data ->  data;
+	}
+	
+	/**
 	 *
 	 * @return array relational rules.
 	 */
@@ -115,7 +125,7 @@ class UserGroupMember extends CActiveRecord {
 				'create_time' => '创建时间' 
 		);
 	}
-
+	
 	/**
 	 * 
 	 */

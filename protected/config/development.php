@@ -4,11 +4,11 @@ return CMap::mergeArray(
         array(
         'components' => array(
             'db' => array(
-		        'connectionString' => 'mysql:host=localhost;dbname=ea_23',
+		        'connectionString' => 'mysql:host=localhost;dbname=ea_2',
             	'tablePrefix'      =>'tbl_',
 		        'emulatePrepare'   => true,
 		        'username'         => 'root',
-		        'password'         => '1',
+		        'password'         => '',
 		        'charset'          => 'utf8',
 		        'enableProfiling'  => true,
 	        )
