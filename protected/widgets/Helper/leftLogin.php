@@ -93,7 +93,7 @@ class leftLogin extends CWidget {
 				<div class="user_info ">
 					<span><a href="$profileUrl">$name</a> </span>
 					<span><a href="$team">我的队伍</a> | <a href="$info">完善资料</a></span>
-					<span><a href="$mineProduct">我的作品</a> | <a href="$members">报名</a></span>
+					<span><a href="$mineProduct">我的作品</a> | <a href="$members">我要组队</a></span>
 				</div>
 			</div>
 		</div>		

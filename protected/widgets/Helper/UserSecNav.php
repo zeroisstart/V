@@ -3,7 +3,7 @@ class UserSecNav extends CWidget {
 	public $ary_nav = array (
 			'main' => '我的首页',
 			'team' => '我的团队',
-			'product' => '我的作品',
+			//'product' => '我的作品',
 			'info' => '我的资料',
 			//'state' => '参赛状态' 
 	);
@@ -20,9 +20,10 @@ class UserSecNav extends CWidget {
 		if ($userGroup->isLeader ( $uid )) {
 			$this->ary_nav ['accept'] = '队员申请';
 		}
-		$info = $user->isBooked ();
+		
+		$info = true;// $user->isBooked ();
 		if (!$info || !$info['state']) {
-			$this->ary_nav ['book'] = '报名';
+			$this->ary_nav ['book'] = '我要组队';
 		}
 		$userModel = $user->getModel ();
 		$profile = ($user->getModel ()->userProfile);

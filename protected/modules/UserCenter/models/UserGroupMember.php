@@ -10,6 +10,7 @@
  * @property string $state
  */
 class UserGroupMember extends CActiveRecord {
+	
 	public $_state = array (
 			0 => '拒绝加入',
 			1 => '同意加入' 
@@ -63,6 +64,16 @@ class UserGroupMember extends CActiveRecord {
 	}
 	
 	/**
+	 * 
+	 * @param integer $gid
+	 */
+	public function getMember($gid){
+		$this -> gid = $gid;
+		$data = $this -> search();
+		return $data ->  data;
+	}
+	
+	/**
 	 *
 	 * @return array relational rules.
 	 */
@@ -110,10 +121,11 @@ class UserGroupMember extends CActiveRecord {
 				'gid' => '组ID',
 				'state' => '状态',
 				'Identity'=>'身份',
+				'GroupIdentity'=>'成员',
 				'create_time' => '创建时间' 
 		);
 	}
-
+	
 	/**
 	 * 
 	 */
@@ -124,6 +136,19 @@ class UserGroupMember extends CActiveRecord {
 		return $user_category[$profile_model -> User_category];
 	}
 	
+	/**
+	 * 
+	 */
+	public function getGroupIdentity(){
+		$uid = $this -> UID;
+		$group_model = UserGroup::model();
+		$isLeader = $group_model -> isLeader($uid);
+		if($isLeader){
+			return '队长';
+		}else{
+			return '成员';
+		}		
+	}
 	
 	/**
 	 * Retrieves a list of models based on the current search/filter conditions.

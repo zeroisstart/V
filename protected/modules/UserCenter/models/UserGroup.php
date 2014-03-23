@@ -149,6 +149,50 @@ class UserGroup extends CActiveRecord {
 	}
 	
 	/**
+	 * 
+	 * @param integer $uid
+	 */
+	public function getGidByUID($uid){
+		$criteria = new CDbCriteria();
+		$criteria -> compare('UID', $uid);
+		$criteria -> limit = 1;
+		$data = $this -> find($criteria);
+		return $data -> ID;
+	}
+	
+
+	/**
+	 * 
+	 * @param integer $gid
+	 */
+	public function canAddTeacher($uid,$gid){
+		$group_member = UserGroupMember::model();
+		$member_list = $group_member -> getMember($gid);
+		foreach ($member_list as $_member){
+			if($_member -> profile -> User_category  =='4'){
+				return false;
+			}
+		}
+		$row = $group_member -> findByAttributes(array('UID'=>$uid));
+		if(!$row){
+			return true;
+		}
+	}
+	
+	/**
+	 *
+	 * @param integer $gid
+	 */
+	public function canAddMember($uid,$gid){
+		$group_member = UserGroupMember::model();
+		$row = $group_member -> findByAttributes(array('UID'=>$uid));
+		if(!$row){
+			return true;
+		}
+	}
+	
+	
+	/**
 	 * 获取用户组成员的链接
 	 *
 	 * @param String $txt        	
