@@ -86,7 +86,7 @@ $this->breadcrumbs = array ('Register' );
 	
 	<div class="row">
 		<?php echo $form->labelEx($model,'degreeType'); ?>
-		<?php echo $form->textField($model,'degreeType',array('class'=>'reg_input')); ?>
+		<?php echo $form->dropDownList($model,'degreeType',array('学术学位'=>'学术学位','专业学位'=>'专业学位'),array('class'=>'reg_select')); ?>
 		<?php echo $form->error($model,'degreeType'); ?>	
 	</div>
 	
