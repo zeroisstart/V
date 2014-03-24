@@ -7,7 +7,11 @@
 		
 		<div class="user_data_info">
 			
+			<?php if($count > 3):?>
 			<p><span>组队</span> ：成功 </p>
+			<?php else:?>
+			<p><span>组队</span> ：不成功 （成员不足） </p>
+			<?php endif;?>
 			<p><span>组名</span> ：<?php echo $group_model -> name;?> </p>
 			<p><span>队长</span> ：<?php echo $group_model -> username;?>
 			<?php if($teacher):?>

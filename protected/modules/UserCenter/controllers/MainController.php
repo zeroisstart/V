@@ -149,15 +149,19 @@ class MainController extends Controller {
 			
 			$teacher = false;
 			$member = array();
+			$count = count($group_model->members);
+			
 			foreach($group_model->members as $_mem){
 				if($_mem -> profile -> User_category== 4){
 					$teacher = $_mem;
 				}
 				$member [] = $_mem -> profile -> Realname;
 			}
+			
 			$member_list = implode(',', $member);
 			
 			$this->render ( 'team', array (
+					'count'=>$count,
 					'model' => $row,
 					'group_model' => $group_model,
 					'booked' => $booked,

@@ -15,9 +15,13 @@
 				<?php
 				$ary_key = array (
 						'Nickname',
+						//'gender',
 						'IDNum',
 						'Realname',
 						'Mobile',
+						'job',
+						'address',
+						'schoolType',
 						'Email',
 						'City',
 						'Company_name',
