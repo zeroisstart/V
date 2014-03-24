@@ -196,7 +196,6 @@ EOT;
                                         联系人：王新霞 何文丹<br />
                                         联系电话：010—68273817                                      
                                         <br />
-                                        邮箱：Chen13121398779@sina.com
                                     </p>
                                 </div>
                                 <div class="last"></div>

@@ -5,7 +5,7 @@
 		<p class="user_notice">
 			<span>用户身份：<?php echo $model ->getUserCategory();?></span>
 		</p>
-		<p class="user_notice"><span><a href="<?php echo $this -> createUrl('/profile');?>?ac=export" target="_blank" style="color: red;text-decoration:none;">报名信息导出</a></span></p>
+		
 	
 
 		<div class="user_data_info">
