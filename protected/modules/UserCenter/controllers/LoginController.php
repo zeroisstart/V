@@ -8,7 +8,7 @@ class LoginController extends Controller {
 	public function actionLogin() {
 		$user = Yii::app ()->user;
 		if (! $user->isGuest) {
-			$this->redirect ( $this->createUrl ( '/' ) );
+			$this->redirect ( $this->createAbsoluteUrl ( '/' ) );
 		}
 		
 		$model = new LoginForm ();

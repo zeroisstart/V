@@ -85,10 +85,13 @@ class UserGroup extends CActiveRecord {
 	 * @param integer $uid
 	 */
 	public function canBuild($uid){
-		$this -> UID = $uid;
-		$data = $this -> search();
-		$row = $data -> data;
-		if(!empty($row)){
+		
+		$model = UserGroupMember::model();
+		$model -> UID = $uid;
+		$data = $model -> search();
+		$data = $data -> data;
+		
+		if(!empty($data)){
 			return false;
 		}
 		return true;

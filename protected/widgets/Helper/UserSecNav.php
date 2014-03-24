@@ -21,10 +21,16 @@ class UserSecNav extends CWidget {
 			$this->ary_nav ['accept'] = '队员申请';
 		}
 		
-		$info = true;// $user->isBooked ();
-		if (!$info || !$info['state']) {
-			$this->ary_nav ['book'] = '我要组队';
+		$userGroup = UserGroup::model();
+		if($userGroup -> canBuild($uid)){
+			$info = true;// $user->isBooked ();
+			if (!$info || !$info['state']) {
+				$this->ary_nav ['book'] = '我要组队';
+			}	
+		}else{
+		
 		}
+		
 		$userModel = $user->getModel ();
 		$profile = ($user->getModel ()->userProfile);
 		// 评委老师页面
