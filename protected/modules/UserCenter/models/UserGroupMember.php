@@ -146,7 +146,12 @@ class UserGroupMember extends CActiveRecord {
 		if($isLeader){
 			return '队长';
 		}else{
-			return '成员';
+			$userProfile = UserProfile::model()-> findByPk($uid);
+			if($userProfile -> User_category=='4'){
+				return '指导老师';
+			}else{
+				return '成员';
+			}
 		}		
 	}
 	

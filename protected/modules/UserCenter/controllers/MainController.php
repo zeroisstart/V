@@ -761,9 +761,18 @@ class MainController extends Controller {
 			
 			$edit = true;
 		}
-		$this->render ( 'info', array (
-				'model' => $userInfo,
-				'edit' => $edit 
-		) );
+		$user = Yii::app() -> user ;
+		$profile = $user -> profile;
+		if($profile -> User_category =='1'){
+			$this->render ( 'student_info', array (
+					'model' => $userInfo,
+					'edit' => $edit
+			) );
+		}else{	
+			$this->render ( 'info', array (
+					'model' => $userInfo,
+					'edit' => $edit 
+			) );
+		}
 	}
 }

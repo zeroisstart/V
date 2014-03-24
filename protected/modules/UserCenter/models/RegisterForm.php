@@ -247,6 +247,8 @@ class RegisterForm extends CFormModel {
 			$userProfile->gender = $this -> gender;
 			$userProfile->IDNum = $this ->idNum;
 			$userProfile-> idType = $this -> idType;
+			$userProfile->schoolName = $this -> schoolName;
+			$userProfile->nation = $this -> nation;
 			$userProfile-> schoolType = $this -> schoolType;
 			$userProfile-> isSame = $this -> isSame;
 			$userProfile-> sid = $this -> sid;
