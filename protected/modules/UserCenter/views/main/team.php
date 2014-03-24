@@ -4,7 +4,6 @@
 		<p class="user_notice">您好 <?php echo Yii::app() -> user->username;?></p>
 		<p class="user_notice"><span><a href="<?php echo $this -> createUrl('/profile');?>?ac=export" target="_blank" style="color: red;text-decoration:none;">报名信息导出</a></span></p>
 		
-		
 		<div class="user_data_info">
 			
 			<?php if($count > 3):?>
@@ -31,7 +30,35 @@
 			<p><span>决赛作品提交</span> ：</p>
 			<p><span>决赛成绩</span> ：</p>
 			<?php endif?>
+			
+			<?php if($userGroupModel -> gid):?>
+			<p><span>报名表</span> ：<img src="/img/<?php echo $userGroupModel -> bookimg;?>"/></p>
+			<?php endif;?>
+			
 		
+			<?php
+
+$form = $this->beginWidget ( 'CActiveForm', array (
+		'id' => 'bookimg-form',
+		'enableClientValidation' => true,
+		'method' => 'post',
+		'htmlOptions' => array (
+				'enctype' => "multipart/form-data" 
+		),
+		'clientOptions' => array (
+				'validateOnSubmit' => true 
+		) 
+) );?>
+			<div class="row">
+				<?php echo $form->labelEx($userGroupModel,'bookimg'); ?>
+				<?php echo $form->fileField($userGroupModel,'bookimg'); ?>
+				<?php echo $form->error($userGroupModel,'bookimg'); ?>
+			</div>
+			
+			<div class="div_btn row">
+				<?php echo CHtml::submitButton('上传报名表盖章件',array('class'=>'green_btn'))?>
+			</div>
+<?php $this->endWidget(); ?>			
 		</div>
 		
 	</div>

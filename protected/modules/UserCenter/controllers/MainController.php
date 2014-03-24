@@ -160,7 +160,51 @@ class MainController extends Controller {
 			
 			$member_list = implode(',', $member);
 			
+			$UserGroupBook = UserGroupBook::model();
+			$data = $UserGroupBook -> findByAttributes(array('gid'=>$row -> gid));
+			if(!$data){
+				$UserGroupBook = new UserGroupBook();
+			}else{
+				$UserGroupBook = $data;
+			}
+
+			if(isset($_FILES['UserGroupBook'])){
+				
+				$upload = UploadedFile::getInstance ( $UserGroupBook, 'bookimg' );
+				$UserGroupBook -> bookimg = $upload;
+				$UserGroupBook -> id = NULL;
+				$UserGroupBook -> gid = $row->gid ;
+				$UserGroupBook -> createdate = date('Y-m-d H:i:s');
+				
+				if($UserGroupBook -> validate()){
+					
+					$ext = $upload->getExtensionName ();
+					$name = md5 ( $upload->getName () . time () );
+					$name = $name . '.' . $ext;
+					$path = Yii::app ()->getParams ();
+					$UploadPath = $path->imgUploadPath;
+					$folder = UploadedFile::getFolder ( $UploadPath );
+					$imgPath = $folder . '/' . $name;
+					$savePath = str_replace ( $UploadPath, '', $imgPath );
+					$upload->saveAs ( $imgPath );
+					$UserGroupBook->bookimg = $savePath;
+					if($UserGroupBook -> isNewRecord){
+						$UserGroupBook -> save();
+					}else{
+						$UserGroupBook -> update();
+					}
+					
+					$redirect =$this -> createAbsoluteUrl('/profile').'?ac=team';
+					$this -> redirect($redirect);
+					Yii::app() -> end();
+					
+				}else{
+					var_dump($UserGroupBook -> errors);
+				}
+			}
+			
 			$this->render ( 'team', array (
+					'userGroupModel'=>$UserGroupBook,
 					'count'=>$count,
 					'model' => $row,
 					'group_model' => $group_model,

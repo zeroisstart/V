@@ -96,3 +96,9 @@ ul, li {
 #teacher .row input.reg_input,#member .row input.reg_input{
 	width:330px;
 }
+#bookimg-form{
+	margin-top:30px;
+}
+#bookimg-form .row{
+	margin-top:30px;
+}

@@ -22,3 +22,20 @@
 .div_btn a.green_btn:hover {
     background: #7a3;
 }
+
+.div_btn .green_btn {
+	width: 210px;
+    display: block;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    font-size: 16px;
+    color: #fff;
+    background: #80be2f;
+    border: 1px solid #67ad0c;
+	text-decoration:none;
+}
+
+.div_btn .green_btn:hover {
+    background: #7a3;
+}
