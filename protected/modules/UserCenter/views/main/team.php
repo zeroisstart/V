@@ -1,3 +1,6 @@
+<?php 
+$this -> registerPopupBox();
+?>
 <div id="contextAdorn"></div>
 <div id="contextBox">
 	<div id="rightContent" class="user_profile_info">
@@ -35,7 +38,6 @@
 			<p><span>报名表</span> ：<img src="/img/<?php echo $userGroupModel -> bookimg;?>"/></p>
 			<?php endif;?>
 			
-		
 			<?php
 
 $form = $this->beginWidget ( 'CActiveForm', array (

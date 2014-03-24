@@ -102,3 +102,7 @@ ul, li {
 #bookimg-form .row{
 	margin-top:30px;
 }
+
+#bookimg-form .errorMessage{
+	color:red;
+}

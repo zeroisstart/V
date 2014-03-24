@@ -162,19 +162,22 @@ class MainController extends Controller {
 			
 			$UserGroupBook = UserGroupBook::model();
 			$data = $UserGroupBook -> findByAttributes(array('gid'=>$row -> gid));
+			
 			if(!$data){
 				$UserGroupBook = new UserGroupBook();
 			}else{
 				$UserGroupBook = $data;
 			}
-
+			
+			$imgPath = $UserGroupBook -> bookimg;
+			
 			if(isset($_FILES['UserGroupBook'])){
 				
 				$upload = UploadedFile::getInstance ( $UserGroupBook, 'bookimg' );
-				$UserGroupBook -> bookimg = $upload;
 				$UserGroupBook -> id = NULL;
 				$UserGroupBook -> gid = $row->gid ;
 				$UserGroupBook -> createdate = date('Y-m-d H:i:s');
+				$UserGroupBook -> bookimg = $upload;
 				
 				if($UserGroupBook -> validate()){
 					
@@ -199,7 +202,8 @@ class MainController extends Controller {
 					Yii::app() -> end();
 					
 				}else{
-					var_dump($UserGroupBook -> errors);
+					$UserGroupBook -> bookimg = $imgPath;
+					//var_dump($UserGroupBook -> errors);
 				}
 			}
 			

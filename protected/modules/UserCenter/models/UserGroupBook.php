@@ -42,6 +42,8 @@ class UserGroupBook extends CActiveRecord
 			array (
 					'bookimg',
 					'file',
+					'maxSize'=>1024 * 512 * 1,
+					'tooLarge'=>'上传文件超过 512KB，无法上传。',
 					'types' => array (
 							'jpg',
 							'gif',
