@@ -160,6 +160,39 @@ class UserGroup extends CActiveRecord {
 		return $data -> ID;
 	}
 	
+	/**
+	 * 
+	 * @param integer $gid
+	 */
+	public function getTeacher($gid){
+		$group_member = UserGroupMember::model();
+		$member_list = $group_member -> getMember($gid);
+		
+		foreach ($member_list as $_member){
+			if($_member -> profile -> User_category  =='4'){
+				return $_member -> profile;
+			}
+		}
+		return array();
+	}
+	
+	/**
+	 *
+	 * @param integer $gid
+	 */
+	public function getMember($gid){
+		$group_member = UserGroupMember::model();
+		$member_list = $group_member -> getMember($gid);
+	
+		$ary_member = array();
+		
+		foreach ($member_list as $_member){
+			if($_member -> profile -> User_category  =='1'){
+				$ary_member [] =$_member -> profile;
+			}
+		}
+		return $ary_member;
+	}
 
 	/**
 	 * 

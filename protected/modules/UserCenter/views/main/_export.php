@@ -1,5 +1,4 @@
 <?php 
-
 ?>
 <html xmlns="http://www.w3.org/TR/REC-html40">
 
@@ -1771,6 +1770,8 @@ mso-bidi-font-family:宋体;mso-font-kerning:0pt'>参赛报名表<span lang=EN-U
   宋体;mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
   </td>
  </tr>
+ 
+ 
  <tr style='height:119.1pt'>
   <td width=103 style='width:77.4pt;border:solid windowtext 1.0pt;border-top:
   none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
