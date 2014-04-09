@@ -13,31 +13,10 @@ class MainController extends Controller {
 	 * @see CController::accessRules()
 	 */
 	public function accessRules() {
-		return array (
-				array (
-						'allow',
-						'actions' => array (
-								'main' 
-						),
-						'users' => array (
-								'@' 
-						),
-						'roles' => array (
-								'admin' 
-						) 
-				),
-				array (
-						'deny',
-						'actions' => array (
-								'main' 
-						),
-						'users' => array (
-								'?' 
-						) 
-				) 
-		);
+		return array (array ('allow', 'actions' => array ('main' ), 'users' => array ('@' ), 'roles' => array ('admin' ) ), array ('deny', 'actions' => array ('main' ), 'users' => array ('?' ) ) );
 	}
 	public function actionMain() {
+		
 		$req = Yii::app ()->request;
 		$ac = $req->getParam ( 'ac' );
 		switch ($ac) {
@@ -45,7 +24,10 @@ class MainController extends Controller {
 				$this->_actionTeam ();
 				break;
 			case 'product' :
-				$this->_actionProduct ();
+				#$this->_actionProduct ();
+				#break;
+			case 'info' :
+				$this->_actionInfo ();
 				break;
 			case 'state' :
 				$this->_actionState ();
@@ -53,9 +35,7 @@ class MainController extends Controller {
 			case 'join' :
 				$this->_actionJoin ();
 				break;
-			case 'info' :
-				$this->_actionInfo ();
-				break;
+			
 			case 'book' :
 				$this->_actionBook ();
 				break;
@@ -63,13 +43,13 @@ class MainController extends Controller {
 				$this->_actionAccept ();
 				break;
 			case 'acceptTeam' :
-				$this -> acceptTeam();
+				$this->acceptTeam ();
 				break;
-			case 'rejectTeam':
-				$this -> rejectTeam();
+			case 'rejectTeam' :
+				$this->rejectTeam ();
 				break;
-			case 'export':
-				$this -> _export();
+			case 'export' :
+				$this->_export ();
 				break;
 			case 'assessment' :
 				$this->_actionAssessment ();
@@ -89,9 +69,7 @@ class MainController extends Controller {
 				} else {
 					$news = News::model ()->findByPk ( '230' );
 					
-					$this->render ( 'main', array (
-							'model' => $news 
-					) );
+					$this->render ( 'main', array ('model' => $news ) );
 				}
 				break;
 		}
@@ -106,80 +84,69 @@ class MainController extends Controller {
 		
 		$bookinfo = $user->isBooked ();
 		
-		if (!$bookinfo || !$bookinfo ['state']) {
+		if (! $bookinfo || ! $bookinfo ['state']) {
 			
-			if(!$bookinfo)
+			if (! $bookinfo)
 				Yii::app ()->user->setFlash ( 'success', "请先报名!" );
 			else
 				Yii::app ()->user->setFlash ( 'success', "请耐心等待审核" );
 			
-			$this->redirect ( $this->createUrl ( '/UserCenter/main/main', array (
-					'ac' => 'book' 
-			) ) );
+			$this->redirect ( $this->createUrl ( '/UserCenter/main/main', array ('ac' => 'book' ) ) );
 		}
-		
+		//@top
 		$group_member_model = UserGroupMember::model ();
-		$row = $group_member_model->findByAttributes ( array (
-				'UID' => $uid,
-		) );
+		$row = $group_member_model->findByAttributes ( array ('UID' => $uid ) );
 		
 		if (empty ( $row )) {
 			
 			$group_model = UserGroup::model ();
 			$group_model->state = '1';
 			$dataProvider = $group_model->search ();
-			$this->render ( 'joinTeam', array (
-					'model' => $group_model,
-					'dataProvider' => $dataProvider 
-			) );
+			$this->render ( 'joinTeam', array ('model' => $group_model, 'dataProvider' => $dataProvider ) );
 		} else {
 			
 			$group_model = UserGroup::model ();
 			$group_model = $group_model->findByPk ( $row->gid );
 			
 			$booked = UserBooked::model ();
-			$booked = $booked->findByAttributes ( array (
-					'UID' => $uid 
-			) );
+			$booked = $booked->findByAttributes ( array ('UID' => $uid ) );
 			
 			$product = UserProductGrade::model ();
-			$product = $product->findByAttributes ( array (
-					'gid' => $row->gid 
-			) );
+			$product = $product->findByAttributes ( array ('gid' => $row->gid ) );
 			
 			$teacher = false;
-			$member = array();
-			$count = count($group_model->members);
+			$member = array ();
+			$count = count ( $group_model->members );
 			
-			foreach($group_model->members as $_mem){
-				if($_mem -> profile -> User_category== 4){
+			foreach ( $group_model->members as $_mem ) {
+				if ($_mem->profile->User_category == 4) {
 					$teacher = $_mem;
 				}
-				$member [] = $_mem -> profile -> Realname;
+				$member [] = $_mem->profile->Realname;
 			}
 			
-			$member_list = implode(',', $member);
+			$member_list = implode ( ',', $member );
 			
-			$UserGroupBook = UserGroupBook::model();
-			$data = $UserGroupBook -> findByAttributes(array('gid'=>$row -> gid));
+			$UserGroupBook = UserGroupBook::model ();
+			$data = $UserGroupBook->findByAttributes ( array ('gid' => $row->gid ) );
 			
-			if(!$data){
-				$UserGroupBook = new UserGroupBook();
-			}else{
+			if (! $data) {
+				$UserGroupBook = new UserGroupBook ();
+			} else {
 				$UserGroupBook = $data;
 			}
 			
-			$imgPath = $UserGroupBook -> bookimg;
+			$imgPath = $UserGroupBook->bookimg;
 			
-			if(isset($_FILES['UserGroupBook'])){
+			if (isset ( $_FILES ['UserGroupBook'] )) {
 				
 				$upload = UploadedFile::getInstance ( $UserGroupBook, 'bookimg' );
-				$UserGroupBook -> id = NULL;
-				$UserGroupBook -> gid = $row->gid ;
-				$UserGroupBook -> createdate = date('Y-m-d H:i:s');
-				$UserGroupBook -> bookimg = $upload;
+				$UserGroupBook->gid = $row->gid;
+				$UserGroupBook->createdate = date ( 'Y-m-d H:i:s' );
+				$UserGroupBook->bookimg = $upload;
+				$UserGroupBook->productname=addslashes(strip_tags($_POST['UserGroupBook']['productname']));
 				
-				if($UserGroupBook -> validate()){
+				if ($UserGroupBook->validate ()) {
 					
 					$ext = $upload->getExtensionName ();
 					$name = md5 ( $upload->getName () . time () );
@@ -191,63 +158,58 @@ class MainController extends Controller {
 					$savePath = str_replace ( $UploadPath, '', $imgPath );
 					$upload->saveAs ( $imgPath );
 					$UserGroupBook->bookimg = $savePath;
-					if($UserGroupBook -> isNewRecord){
-						$UserGroupBook -> save();
-					}else{
-						$UserGroupBook -> update();
+					if ($UserGroupBook->isNewRecord) {
+						$UserGroupBook->save ();
+					} else {
+						$UserGroupBook->update ();
 					}
 					
-					$redirect =$this -> createAbsoluteUrl('/profile').'?ac=team';
-					$this -> redirect($redirect);
-					Yii::app() -> end();
-					
-				}else{
-					$UserGroupBook -> bookimg = $imgPath;
-					//var_dump($UserGroupBook -> errors);
+					$redirect = $this->createAbsoluteUrl ( '/profile' ) . '?ac=team';
+					$this->redirect ( $redirect );
+					Yii::app ()->end ();
+				
+				} else {
+					$UserGroupBook->bookimg = $imgPath;
+					// var_dump($UserGroupBook -> errors);
 				}
 			}
 			
-			$this->render ( 'team', array (
-					'userGroupModel'=>$UserGroupBook,
-					'count'=>$count,
-					'model' => $row,
-					'group_model' => $group_model,
-					'booked' => $booked,
-					'product' => $product,
-					'teacher'=>$teacher,
-					'memberList'=>$member_list
-			) );
+			$isLeader = UserGroup::model ()->isLeader ( Yii::app ()->user->id );
+			
+			$this->render ( 'team', array ('isLeader' => $isLeader, 'userGroupModel' => $UserGroupBook, 'count' => $count, 'model' => $row, 'group_model' => $group_model, 'booked' => $booked, 'product' => $product, 'teacher' => $teacher, 'memberList' => $member_list ) );
 		}
 	}
 	
-	public function _export(){
-		$user_model = Yii::app() -> user;
+	public function _export() {
+		$user_model = Yii::app ()->user;
 		
-		$group_member = UserGroupMember::model();
-		$member = $group_member -> findByAttributes(array('UID'=>$user_model -> id));
-		$group = $member -> group;
-		$leader = $group -> getTeacher($group ->ID );
+		$group_member = UserGroupMember::model ();
+		$member = $group_member->findByAttributes ( array ('UID' => $user_model->id ) );
+		$group = $member->group;
+		$leader = $group->getTeacher ( $group->ID );
 		
-		$member_model = $group -> getMember($group ->ID );
+		$member_model = $group->getMember ( $group->ID );
 		
-		$team_name = $group -> name;
+		$team_name = $group->name;
 		$product_name = '作品名称';
-		$full_name ='全称';
-		$simple_name ='简称';
+		$full_name = $user_model->profile->schoolName;
+		$simple_name = '简称';
+	
+		foreach($member_model as $key => $val){
+			
+		}
 		
-		#var_dump($user_model -> profile -> attributes);
-		#die;
-		#ob_start();
-		$this -> renderPartial('_export',array(
-					'full_name'=>$full_name,
-					'simple_name'=>$simple_name, 
-					'user'=>$user_model,
-					'member_list' => $member_model,
-					'leader'=>$leader,
-					'team_name'=>$team_name,
-					'product_name'=>$product_name));
-		#$content = ob_get_clean();
-		#Yii::app() -> request -> sendFile("报名.doc", $content,'');
+		$group_member_model = UserGroupMember::model ();
+		$row = $group_member_model->findByAttributes ( array ('UID' => $user_model->id  ) );
+		$UserGroupBook = UserGroupBook::model ();
+		$data = $UserGroupBook->findByAttributes ( array ('gid' => $row->gid ) );
+		$product_name = $data -> productname;		
+		// ar_dump($user_model -> profile -> attributes);
+		// ie;
+		ob_start();
+		$this->renderPartial ( '_export_2', array ('full_name' => $full_name, 'simple_name' => $simple_name, 'user' => $user_model, 'member_list' => $member_model, 'leader' => $leader, 'team_name' => $team_name, 'product_name' => $product_name ) );
+		$content = ob_get_clean();
+		Yii::app() -> request -> sendFile("报名.doc", $content,'');
 	}
 	
 	/**
@@ -262,24 +224,18 @@ class MainController extends Controller {
 		
 		if (empty ( $userGroup )) {
 			// 组不存在
-			echo CJavaScript::encode ( array (
-					'status' => 0,
-					'code' => '2' 
-			) );
+			echo CJavaScript::encode ( array ('status' => 0, 'code' => '2' ) );
 		}
 		
 		$userGroupModel = UserGroupMember::model ();
-		$cdbcriteria = new CDbCriteria();
-		$cdbcriteria -> compare('gid', $id);
-		$count = (int)$userGroupModel -> count($cdbcriteria);
+		$cdbcriteria = new CDbCriteria ();
+		$cdbcriteria->compare ( 'gid', $id );
+		$count = ( int ) $userGroupModel->count ( $cdbcriteria );
 		
-		if($count > 3){
-			//人员满了
-			echo CJavaScript::encode ( array (
-					'status' => 0,
-					'code' => '-2'
-			) );
-			die;
+		if ($count > 3) {
+			// 人员满了
+			echo CJavaScript::encode ( array ('status' => 0, 'code' => '-2' ) );
+			die ();
 		}
 		
 		$user = Yii::app ()->user;
@@ -293,18 +249,12 @@ class MainController extends Controller {
 			$model->state = 0;
 			$model->create_time = date ( 'Y-m-d H:i:s', time () );
 			if ($model->save ()) {
-				echo CJavaScript::encode ( array (
-						'status' => 1,
-						'code' => '1' 
-				) );
+				echo CJavaScript::encode ( array ('status' => 1, 'code' => '1' ) );
 			} else {
 				var_dump ( $model->errors );
 			}
 		} else {
-			echo CJavaScript::encode ( array (
-					'status' => 0,
-					'code' => '3' 
-			) );
+			echo CJavaScript::encode ( array ('status' => 0, 'code' => '3' ) );
 		}
 	}
 	
@@ -315,9 +265,7 @@ class MainController extends Controller {
 		$user = Yii::app ()->user;
 		$uid = $user->id;
 		
-		$userGroup = UserGroup::model ()->findByAttributes ( array (
-				'UID' => $uid 
-		) );
+		$userGroup = UserGroup::model ()->findByAttributes ( array ('UID' => $uid ) );
 		
 		if (empty ( $userGroup )) {
 			$this->redirect ( $this->createUrl ( '/UserCenter/main/main' ) );
@@ -326,55 +274,35 @@ class MainController extends Controller {
 		$userGroupMember = UserGroupMember::model ();
 		$userGroupMember->gid = $userGroup->ID;
 		$dataProvider = $userGroupMember->search ();
-		$this->render ( 'accept', array (
-				'model' => $userGroup,
-				'dataProvider' => $dataProvider 
-		) );
+		$this->render ( 'accept', array ('model' => $userGroup, 'dataProvider' => $dataProvider ) );
 	}
 	
 	/**
 	 * 拒绝申请
 	 */
-	public function rejectTeam(){
+	public function rejectTeam() {
 		$user = Yii::app ()->user;
 		$uid = $user->id;
 		
 		$req = Yii::app ()->request;
 		
-		//@2
+		// @2
 		$teamid = ( int ) $req->getParam ( 'teamid' );
 		$joinUserID = $req->getParam ( 'userid' );
 		
-		$userGroup = UserGroup::model ()->findByAttributes ( array (
-				'UID' => $uid,
-				'ID' => $teamid
-		) );
+		$userGroup = UserGroup::model ()->findByAttributes ( array ('UID' => $uid, 'ID' => $teamid ) );
 		
 		if (empty ( $userGroup ))
-			die ( CJavaScript::encode ( array (
-					'status' => '0',
-					'code' => 1,
-					'msg' => '您不是那个队的队长哦!'
-			) ) );
-		$userGroupMember = UserGroupMember::model ()->findByAttributes ( array (
-				'gid' => $userGroup->ID,
-				'UID' => $joinUserID
-		) );
+			die ( CJavaScript::encode ( array ('status' => '0', 'code' => 1, 'msg' => '您不是那个队的队长哦!' ) ) );
+		$userGroupMember = UserGroupMember::model ()->findByAttributes ( array ('gid' => $userGroup->ID, 'UID' => $joinUserID ) );
 		
 		if (empty ( $userGroupMember )) {
-			die ( CJavaScript::encode ( array (
-					'status' => '0',
-					'code' => 2,
-					'msg' => '您不是那个队的队长哦!'
-			) ) );
+			die ( CJavaScript::encode ( array ('status' => '0', 'code' => 2, 'msg' => '您不是那个队的队长哦!' ) ) );
 		}
 		
 		if ($userGroupMember->delete ()) {
 			// 成功加入
-			echo CJavaScript::encode ( array (
-					'status' => 1,
-					'code' => 0
-			) );
+			echo CJavaScript::encode ( array ('status' => 1, 'code' => 0 ) );
 		}
 	}
 	
@@ -387,41 +315,24 @@ class MainController extends Controller {
 		
 		$req = Yii::app ()->request;
 		
-		//@2
+		// @2
 		$teamid = ( int ) $req->getParam ( 'teamid' );
 		$joinUserID = $req->getParam ( 'userid' );
 		
-		$userGroup = UserGroup::model ()->findByAttributes ( array (
-				'UID' => $uid,
-				'ID' => $teamid 
-		) );
+		$userGroup = UserGroup::model ()->findByAttributes ( array ('UID' => $uid, 'ID' => $teamid ) );
 		
 		if (empty ( $userGroup ))
-			die ( CJavaScript::encode ( array (
-					'status' => '0',
-					'code' => 1,
-					'msg' => '您不是那个队的队长哦!' 
-			) ) );
-		$userGroupMember = UserGroupMember::model ()->findByAttributes ( array (
-				'gid' => $userGroup->ID,
-				'UID' => $joinUserID 
-		) );
+			die ( CJavaScript::encode ( array ('status' => '0', 'code' => 1, 'msg' => '您不是那个队的队长哦!' ) ) );
+		$userGroupMember = UserGroupMember::model ()->findByAttributes ( array ('gid' => $userGroup->ID, 'UID' => $joinUserID ) );
 		
 		if (empty ( $userGroupMember )) {
-			die ( CJavaScript::encode ( array (
-					'status' => '0',
-					'code' => 2,
-					'msg' => '您不是那个队的队长哦!' 
-			) ) );
+			die ( CJavaScript::encode ( array ('status' => '0', 'code' => 2, 'msg' => '您不是那个队的队长哦!' ) ) );
 		}
 		
 		$userGroupMember->state = 1;
 		if ($userGroupMember->update ()) {
 			// 成功加入
-			echo CJavaScript::encode ( array (
-					'status' => 1,
-					'code' => 0 
-			) );
+			echo CJavaScript::encode ( array ('status' => 1, 'code' => 0 ) );
 		}
 	}
 	
@@ -432,42 +343,32 @@ class MainController extends Controller {
 		$user = Yii::app ()->user;
 		$uid = $user->id;
 		
-		$bookinfo = $user-> isBooked();
+		$bookinfo = $user->isBooked ();
 		
-		if (!$bookinfo || !$bookinfo ['state']) {
+		if (! $bookinfo || ! $bookinfo ['state']) {
 			
-			if(!$bookinfo)
+			if (! $bookinfo)
 				Yii::app ()->user->setFlash ( 'success', "请先报名!" );
 			else
 				Yii::app ()->user->setFlash ( 'success', "请耐心等待审核" );
 			
-			$this->redirect ( $this->createUrl ( '/UserCenter/main/main', array (
-					'ac' => 'book' 
-			) ) );
+			$this->redirect ( $this->createUrl ( '/UserCenter/main/main', array ('ac' => 'book' ) ) );
 		}
 		
 		$req = Yii::app ()->request;
 		
 		$groupMemberModel = UserGroupMember::model ();
-		$groupMemberModel = $groupMemberModel->findByAttributes ( array (
-				'UID' => $uid,
-				'state' => 1 
-		) );
+		$groupMemberModel = $groupMemberModel->findByAttributes ( array ('UID' => $uid, 'state' => 1 ) );
 		$product = '';
 		$group = '';
 		
 		if ($groupMemberModel) {
 			
-			$group = UserGroup::model ()->findByAttributes ( array (
-					'ID' => $groupMemberModel->gid 
-			) );
+			$group = UserGroup::model ()->findByAttributes ( array ('ID' => $groupMemberModel->gid ) );
 			
-			$product = UserProductGrade::model ()->findByAttributes ( array (
-					'gid' => $groupMemberModel->gid 
-			) );
+			$product = UserProductGrade::model ()->findByAttributes ( array ('gid' => $groupMemberModel->gid ) );
 		}
 		
-	
 		if (! ($group)) {
 			$this->render ( 'no_grp', array () );
 		} elseif (! ($product)) {
@@ -477,10 +378,8 @@ class MainController extends Controller {
 			if ($id) {
 				$model = UserProductGrade::model ()->findByPk ( $id );
 				if (empty ( $model )) {
-
-					$this->redirect ( $this->createUrl ( '/UserCenter/main/main', array (
-							'ac' => 'product' 
-					) ) );
+					
+					$this->redirect ( $this->createUrl ( '/UserCenter/main/main', array ('ac' => 'product' ) ) );
 				}
 				if (isset ( $_POST ['UserProductGrade'] )) {
 					$model = $this->_updatePro ();
@@ -491,19 +390,10 @@ class MainController extends Controller {
 				}
 			}
 			
-			
-			
-			$this->render ( 'no_pro', array (
-					'model' => $model,
-					'groupMember' => $groupMemberModel,
-					'group' => $group 
-			) );
+			$this->render ( 'no_pro', array ('model' => $model, 'groupMember' => $groupMemberModel, 'group' => $group ) );
 		} else {
-
-			$this->render ( 'product', array (
-					'product' => $product,
-					'model' => $groupMemberModel 
-			) );
+			
+			$this->render ( 'product', array ('product' => $product, 'model' => $groupMemberModel ) );
 		}
 	}
 	/**
@@ -515,10 +405,7 @@ class MainController extends Controller {
 		$req = Yii::app ()->request;
 		$id = ( int ) $req->getParam ( 'id' );
 		
-		$model = UserProductGrade::model ()->findByAttributes ( array (
-				'ID' => $id,
-				'uid' => Yii::app ()->user->id 
-		) );
+		$model = UserProductGrade::model ()->findByAttributes ( array ('ID' => $id, 'uid' => Yii::app ()->user->id ) );
 		
 		if ($model->edit_count >= 3) {
 			$model->addError ( 'edit_count', "不能修改作品超过三次,谢谢!" );
@@ -528,9 +415,7 @@ class MainController extends Controller {
 		$model->edit_count = ( int ) ($model->edit_count) + 1;
 		if ($model->update ()) {
 			Yii::app ()->user->setFlash ( 'success', "作品修改成功!" );
-			$this->redirect ( $this->createUrl ( '/UserCenter/main/main', array (
-					'ac' => 'product' 
-			) ) );
+			$this->redirect ( $this->createUrl ( '/UserCenter/main/main', array ('ac' => 'product' ) ) );
 		}
 		return $model;
 	}
@@ -546,16 +431,14 @@ class MainController extends Controller {
 		$model->edit_count = 0;
 		if ($model->save ()) {
 			Yii::app ()->user->setFlash ( 'success', "作品新增成功!" );
-			$this->redirect ( $this->createUrl ( '/UserCenter/main/main', array (
-					'ac' => 'product' 
-			) ) );
+			$this->redirect ( $this->createUrl ( '/UserCenter/main/main', array ('ac' => 'product' ) ) );
 		}
 		return $model;
 	}
 	/**
 	 * 保存上传的文件
 	 *
-	 * @param UploadedFile $upload        	
+	 * @param $upload UploadedFile       	
 	 * @return string
 	 */
 	public function _model_file_save(CUploadedFile $upload, $key = 'imgUploadPath') {
@@ -575,14 +458,12 @@ class MainController extends Controller {
 	
 	/**
 	 *
-	 * @param UserProductGrade $model        	
+	 * @param $model UserProductGrade       	
 	 */
 	public function _validateProductModel($model) {
 		$user = Yii::app ()->user;
 		
-		$groupModel = UserGroup::model ()->findByAttributes ( array (
-				'UID' => $user->id 
-		) );
+		$groupModel = UserGroup::model ()->findByAttributes ( array ('UID' => $user->id ) );
 		$model->uid = $user->id;
 		$model->attributes = $_POST ['UserProductGrade'];
 		$model->gid = $groupModel->ID;
@@ -608,67 +489,60 @@ class MainController extends Controller {
 	public function _actionState() {
 		$user = Yii::app ()->user;
 		
-		$groupMemberModel = UserGroupMember::model ()->findByAttributes ( array (
-				'UID' => $user->id 
-		) );
+		$groupMemberModel = UserGroupMember::model ()->findByAttributes ( array ('UID' => $user->id ) );
 		$booked = UserBooked::model ();
 		
-		$booked = $booked->findByAttributes ( array (
-				'UID' => $user->id 
-		) );
+		$booked = $booked->findByAttributes ( array ('UID' => $user->id ) );
 		
-		$this->render ( 'state', array (
-				'groupMemberModel' => $groupMemberModel,
-				'booked' => $booked 
-		) );
+		$this->render ( 'state', array ('groupMemberModel' => $groupMemberModel, 'booked' => $booked ) );
 	}
 	
 	/**
 	 * 我要报名
 	 */
-	public function _actionBook(){
-		$uid = Yii::app() -> user -> id;
-		$team =  new UserGroup('create');
-		$canBuild = $team -> canBuild($uid);
-		$username= Yii::app() -> user -> name;
+	public function _actionBook() {
+		$uid = Yii::app ()->user->id;
+		$team = new UserGroup ( 'create' );
+		$canBuild = $team->canBuild ( $uid );
+		$username = Yii::app ()->user->name;
 		
-		if(!$canBuild){
-			$this -> redirect($this -> createAbsoluteUrl('/profile').'?ac=accept');
-			Yii::app() -> end();
+		if (! $canBuild) {
+			$this->redirect ( $this->createAbsoluteUrl ( '/profile' ) . '?ac=accept' );
+			Yii::app ()->end ();
 		}
 		
-		if(isset($_POST['UserGroup'])){
-			$team -> attributes = $_POST['UserGroup'];
-			$team -> create_time = date('Y-m-d H:i:s');
-			$team -> UID = $uid;
-			$team -> username =$username ;
-			$team -> state = 1;
-			$team -> name = addslashes(strip_tags($team -> name));
+		if (isset ( $_POST ['UserGroup'] )) {
+			$team->attributes = $_POST ['UserGroup'];
+			$team->create_time = date ( 'Y-m-d H:i:s' );
+			$team->UID = $uid;
+			$team->username = $username;
+			$team->state = 1;
+			$team->name = addslashes ( strip_tags ( $team->name ) );
 			
-			if($team -> validate()){
-				$team -> save();
+			if ($team->validate ()) {
+				$team->save ();
 				
-				$model = new UserGroupMember ('create');
+				$model = new UserGroupMember ( 'create' );
 				$model->UID = $uid;
-				$model->gid = $team -> ID;
+				$model->gid = $team->ID;
 				$model->username = $username;
 				$model->state = 1;
 				$model->create_time = date ( 'Y-m-d H:i:s', time () );
-				$model ->save();
+				$model->save ();
 				
-				$this -> redirect($this -> createAbsoluteUrl('/profile').'?ac=accept');
-				Yii::app() -> end();
-				
-			}else{
-				YII_DEBUG &&var_dump($team -> errors); 
+				$this->redirect ( $this->createAbsoluteUrl ( '/profile' ) . '?ac=accept' );
+				Yii::app ()->end ();
+			
+			} else {
+				YII_DEBUG && var_dump ( $team->errors );
 			}
 		}
 		
-		if($canBuild){
-			$model = new UserGroup();
-			$this -> render('build_team',array('model'=>$model));
-		}else{
-			$this -> render('build_member');
+		if ($canBuild) {
+			$model = new UserGroup ();
+			$this->render ( 'build_team', array ('model' => $model ) );
+		} else {
+			$this->render ( 'build_member' );
 		}
 	}
 	
@@ -678,9 +552,7 @@ class MainController extends Controller {
 	public function old_actionBook() {
 		$bookModel = new UserBooked ();
 		$user = Yii::app ()->user;
-		$bookModel_already = $bookModel->findByAttributes ( array (
-				'UID' => $user->id 
-		) );
+		$bookModel_already = $bookModel->findByAttributes ( array ('UID' => $user->id ) );
 		if (empty ( $bookModel_already )) {
 			if (isset ( $_POST ['UserBooked'] )) {
 				$bookModel->attributes = $_POST ['UserBooked'];
@@ -692,9 +564,7 @@ class MainController extends Controller {
 					$bookModel->img = $path;
 					if ($bookModel->save ()) {
 						$user->setFlash ( 'success', '报名申请提交成功，请耐心等待验证哦!' );
-						$this->redirect ( $this->createUrl ( '/UserCenter/main/main', array (
-								'ac' => 'book' 
-						) ) );
+						$this->redirect ( $this->createUrl ( '/UserCenter/main/main', array ('ac' => 'book' ) ) );
 					}
 				} else {
 					YII_DEBUG && var_dump ( $bookModel->errors );
@@ -703,9 +573,7 @@ class MainController extends Controller {
 		} else {
 			$bookModel = $bookModel_already;
 		}
-		$this->render ( 'book', array (
-				'model' => $bookModel 
-		) );
+		$this->render ( 'book', array ('model' => $bookModel ) );
 	}
 	
 	/**
@@ -730,9 +598,7 @@ class MainController extends Controller {
 			$criteria->compare ( 't.judges', $uid );
 			$criteria->compare ( 't.is_checked', 0 );
 			$criteria->compare ( 't.ID', $id );
-			$criteria->with = array (
-					'product' 
-			);
+			$criteria->with = array ('product' );
 			
 			$model = $productGrade->find ( $criteria );
 			
@@ -743,29 +609,20 @@ class MainController extends Controller {
 					$model->check_time = date ( 'Y-m-d H:i:s', time () );
 					$model->save ();
 					Yii::app ()->user->setFlash ( 'success', '评分成功!' );
-					$this->redirect ( $this->createUrl ( '/UserCenter/main/main', array (
-							'ac' => 'assessment' 
-					) ) );
+					$this->redirect ( $this->createUrl ( '/UserCenter/main/main', array ('ac' => 'assessment' ) ) );
 				} else {
 					var_dump ( $model->errors );
 				}
 			}
 			
 			if (empty ( $model )) {
-				$this->redirect ( $this->createUrl ( '/UserCenter/main/main', array (
-						'ac' => 'assessment' 
-				) ) );
+				$this->redirect ( $this->createUrl ( '/UserCenter/main/main', array ('ac' => 'assessment' ) ) );
 			}
 			
-			$this->render ( 'assessment_ing', array (
-					'model' => $model 
-			) );
+			$this->render ( 'assessment_ing', array ('model' => $model ) );
 		} else {
 			$dataProvider = $productGrade->search ();
-			$this->render ( 'assessment', array (
-					'model' => $productGrade,
-					'dataProvider' => $dataProvider 
-			) );
+			$this->render ( 'assessment', array ('model' => $productGrade, 'dataProvider' => $dataProvider ) );
 		}
 	}
 	
@@ -781,10 +638,7 @@ class MainController extends Controller {
 		$productGrade->is_checked = 1;
 		$dataProvider = $productGrade->search ();
 		
-		$this->render ( 'assessmented', array (
-				'model' => $productGrade,
-				'dataProvider' => $dataProvider 
-		) );
+		$this->render ( 'assessmented', array ('model' => $productGrade, 'dataProvider' => $dataProvider ) );
 	}
 	/**
 	 * 个人用户信息
@@ -801,26 +655,26 @@ class MainController extends Controller {
 				if ($userInfo->validate ()) {
 					$userInfo->save ();
 					Yii::app ()->user->setFlash ( 'success', '修改成功!' );
-					$this->redirect ( $this->createUrl ( '/UserCenter/main/main', array (
-							'ac' => 'info' 
-					) ) );
+					$this->redirect ( $this->createUrl ( '/UserCenter/main/main', array ('ac' => 'info' ) ) );
 				}
 			}
 			
 			$edit = true;
 		}
-		$user = Yii::app() -> user ;
-		$profile = $user -> profile;
-		if($profile -> User_category =='1'){
-			$this->render ( 'student_info', array (
-					'model' => $userInfo,
-					'edit' => $edit
-			) );
-		}else{	
-			$this->render ( 'info', array (
-					'model' => $userInfo,
-					'edit' => $edit 
-			) );
+		$user = Yii::app ()->user;
+		$profile = $user->profile;
+		if(!$profile){
+			$profile = new UserProfile();
+			$profile -> ID = $user -> id;
+			$profile -> User_category  = 1;
+			$profile -> save();
+			$this ->redirect($this -> createAbsoluteUrl('/profile').'?ac=info');
+			Yii::app() -> end();
+		}
+		if ($profile->User_category == '1') {
+			$this->render ( 'student_info', array ('model' => $userInfo, 'edit' => $edit ) );
+		} else {
+			$this->render ( 'info', array ('model' => $userInfo, 'edit' => $edit ) );
 		}
 	}
 }

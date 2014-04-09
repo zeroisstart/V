@@ -30,7 +30,7 @@
 				?>				
 				<p><span><?php echo $model ->getAttributeLabel($key);?></span> ：<?php echo $model -> $key?></p>
 				<?php endforeach;?>
-				<?php if(0):?>
+				<?php if(1):?>
 				<div class="div_btn">
 					<a href="<?php echo $this -> createUrl('/UserCenter/main/main',array('ac'=>'info','edit'=>true))?>" class="green_btn">编辑</a>
 				</div>

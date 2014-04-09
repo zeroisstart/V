@@ -92,17 +92,19 @@ $this -> registerPopupBox();
                             	</li>
                             	
                             	<li>
+                            		<a href="http://www.synopsys.com" target="_blank" title="">
+                            			<img src="/images/logo/synopsis.jpg"  />
+                            		</a>
+                            	</li>
+                            	
+                            	<li>
                             		<a href="http://www.arm.com" target="_blank" title="">
                             			<img src="/images/logo/ar.jpg"  />
                             		</a>
                             	</li>
                             	
                             	
-                            	<li>
-                            		<a href="http://www.synopsys.com" target="_blank" title="">
-                            			<img src="/images/logo/synopsis.jpg"  />
-                            		</a>
-                            	</li>
+                            	
                             	
                             	<li>
                             		<a href="http://www.mxchip.com/" target="_blank" title="">

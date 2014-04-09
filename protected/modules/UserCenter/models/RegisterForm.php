@@ -147,7 +147,7 @@ class RegisterForm extends CFormModel {
 				'schoolName'=>'就读学校',
 				'idType'=>'身份证件类型',
 				'idNum'=>'身份证件号',
-				'schoolType','学位类型',
+				//'schoolType','学位类型',
 				'gender' =>'性别',
 				'mobile' => '手机号码',
 				'degreeType'=>'学位类型',
@@ -155,7 +155,7 @@ class RegisterForm extends CFormModel {
 				'majoy'=>'专业',
 				'joinDate'=>'入学年月',
 				'sid'=>'学号',
-				'city' => '所在城市',
+				'city' => '通信地址',
 				'allowRegister' => '同意大赛注册协议',
 				'email' => '邮箱',
 				'beforeleave'=>'攻读前户口所在省市',
@@ -260,8 +260,8 @@ class RegisterForm extends CFormModel {
 			if($userProfile -> validate()){
 				$userProfile->save ();
 			}else{
-				var_dump($userProfile -> errors);
-				die;
+				#var_dump($userProfile -> errors);
+				#die;
 			}
 			/*
 			$adminUser = new AdminUser();

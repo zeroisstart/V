@@ -72,6 +72,27 @@ $form = $this->beginWidget ( 'CActiveForm', array (
 	</div>
 
 	<div class="row">
+		<?php echo $form->labelEx($model,'job'); ?>
+		<?php echo $form->textField($model,'job'); ?>
+		<?php echo $form->error($model,'job'); ?>
+	</div>
+	
+	
+	<div class="row">
+		<?php echo $form->labelEx($model,'address'); ?>
+		<?php echo $form->textField($model,'address'); ?>
+		<?php echo $form->error($model,'address'); ?>
+	</div>
+	
+	
+	<div class="row">
+		<?php echo $form->labelEx($model,'schoolType'); ?>
+		<?php echo $form->textField($model,'schoolType'); ?>
+		<?php echo $form->error($model,'schoolType'); ?>
+	</div>
+	
+	
+	<div class="row">
 		<?php echo $form->labelEx($model,'Email'); ?>
 		<?php echo $form->textField($model,'Email'); ?>
 		<?php echo $form->error($model,'Email'); ?>

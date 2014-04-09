@@ -128,7 +128,7 @@ class UserProfile extends CActiveRecord {
 				'schoolName' =>'学校名称',
 				'qq'=>'QQ',
 				'Email' => '邮箱','nation'=>'名族',
-				'City' => '所在地址',
+				'City' => '通信地址',
 				'User_category' => 'User Category',
 				'idType'=>'',
 				'schoolType'=>'学校类型',

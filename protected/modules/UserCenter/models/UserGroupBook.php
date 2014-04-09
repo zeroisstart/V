@@ -8,9 +8,11 @@
  * @property integer $gid
  * @property string $bookimg
  * @property string $createdate
+ * @property string $productname
  */
 class UserGroupBook extends CActiveRecord
 {
+	
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
@@ -39,6 +41,7 @@ class UserGroupBook extends CActiveRecord
 		return array(
 			array('gid', 'numerical', 'integerOnly'=>true),
 			array('bookimg', 'length', 'max'=>255),
+			//array('productname','length','max'=>60),
 			array (
 					'bookimg',
 					'file',
@@ -51,10 +54,10 @@ class UserGroupBook extends CActiveRecord
 							'png'
 					)
 			),
-			array('createdate', 'safe'),
+			array('createdate,productname', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, gid, bookimg, createdate', 'safe', 'on'=>'search'),
+			array('id, gid, bookimg, createdate, productname', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -77,6 +80,7 @@ class UserGroupBook extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'gid' => 'Gid',
+			'productname'=>'作品名称:',
 			'bookimg' => '报名信息表:',
 			'createdate' => 'Createdate',
 		);
@@ -96,6 +100,7 @@ class UserGroupBook extends CActiveRecord
 		$criteria->compare('id',$this->id,true);
 		$criteria->compare('gid',$this->gid);
 		$criteria->compare('bookimg',$this->bookimg,true);
+		$criteria->compare('productname',$this->productname,true);
 		$criteria->compare('createdate',$this->createdate,true);
 
 		return new CActiveDataProvider($this, array(

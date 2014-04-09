@@ -9,8 +9,12 @@ class GroupController extends Controller {
 	
 	/**
 	 */
-	public function actionDelete() {
-		$this->render ( 'delete' );
+	public function actionDelete($id) {
+		
+		$userGroupMember = UserGroupMember::model()->deleteAllByAttributes(array('gid'=>$id));
+		$userGroup = UserGroup::model()->findByPk($id);
+		if($userGroup)
+			$userGroup -> delete();
 	}
 	/**
 	 * 用户组显示

@@ -56,11 +56,13 @@ $this->widget ( 'widget.Helper.GridView', array (
 		'columns' => array (
 				'id',
 				'username',
-				'email',
-				'state' => array (
+				'userProfile.Realname',
+				'userProfile.schoolName',
+				//'email',
+				/*'state' => array (
 						'name' => 'state',
 						'value' => '$data -> _state[$data -> state];' 
-				),
+				),*/
 				array (
 						'template' => '{update}',
 						'class' => 'widget.Helper.ButtonColumn' 

@@ -86,7 +86,7 @@ class UserGroup extends CActiveRecord {
 	 */
 	public function canBuild($uid){
 		
-		$model = UserGroupMember::model();
+		$model = new UserGroupMember();
 		$model -> UID = $uid;
 		$data = $model -> search();
 		$data = $data -> data;
@@ -194,6 +194,7 @@ class UserGroup extends CActiveRecord {
 				$ary_member [] =$_member -> profile;
 			}
 		}
+		
 		return $ary_member;
 	}
 

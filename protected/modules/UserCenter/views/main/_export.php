@@ -1708,7 +1708,7 @@ mso-bidi-font-family:宋体;mso-font-kerning:0pt'>参赛报名表<span lang=EN-U
   <p class=MsoNormal align=center style='text-align:center;mso-layout-grid-align:
   none;text-autospace:none'><span lang=EN-US style='mso-bidi-font-size:10.5pt;
   font-family:宋体;mso-hansi-font-family:"Times New Roman";mso-bidi-font-family:
-  宋体;mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+  宋体;mso-font-kerning:0pt'><o:p>&nbsp;</o:p>MsoNormal</span></p>
   </td>
   <td width=95 colspan=2 style='width:71.1pt;border-top:none;border-left:none;
   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
@@ -1883,15 +1883,13 @@ lang=EN-US style='mso-bidi-font-size:10.5pt;font-family:宋体;mso-bidi-font-fam
 宋体;mso-font-kerning:0pt'><span style='mso-list:Ignore'>2.<span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp; </span></span></span><![endif]><span
 style='mso-bidi-font-size:10.5pt;font-family:宋体;mso-bidi-font-family:宋体;
-mso-font-kerning:0pt'>每支参赛队须于递交报名表之后<span lang=EN-US>15</span>天内分赛区组委会电汇参赛费，每个参赛队为人民币<span
-lang=EN-US>500</span>元。请务必将汇票复印件（确保汇款单位及账号清晰）扫描邮件上传至竞赛官网，并邮件至组委会邮箱，请一定注明发票抬头，决赛队伍发票在决赛现场领取，未进入决赛队伍发票快递至报名单位。<span
-lang=EN-US><o:p></o:p></span></span></p>
+mso-font-kerning:0pt'>每支参赛队须于递交报名表之后<span lang=EN-US>15</span>天内分赛区组委会电汇参赛费。</span></p>
 
 <p class=MsoNormal align=left style='margin-left:21.0pt;text-align:left;
 text-indent:-21.0pt;line-height:20.0pt;mso-line-height-rule:exactly;mso-list:
 l0 level1 lfo1;mso-layout-grid-align:none;text-autospace:none'><![if !supportLists]><span
 lang=EN-US style='mso-fareast-font-family:"Times New Roman"'><span
-style='mso-list:Ignore'>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='mso-bidi-font-size:10.5pt;
 font-family:宋体;mso-font-kerning:0pt'>第九届竞赛报名截止时间为<span lang=EN-US>2014</span>年<span
 lang=EN-US>6</span>月<span lang=EN-US>1</span>日，请于截止时间前将登陆竞赛官网完成报名流程，并将盖章的报名表扫描件发送组委会邮箱。</span></p>
@@ -1900,7 +1898,7 @@ lang=EN-US>6</span>月<span lang=EN-US>1</span>日，请于截止时间前将登
 text-indent:-21.0pt;line-height:20.0pt;mso-line-height-rule:exactly;mso-list:
 l0 level1 lfo1;mso-layout-grid-align:none;text-autospace:none'><![if !supportLists]><span
 lang=EN-US style='mso-fareast-font-family:"Times New Roman"'><span
-style='mso-list:Ignore'>4.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'>4.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='mso-bidi-font-size:10.5pt;
 font-family:宋体;mso-font-kerning:0pt'>全国组委会电话：<span lang=EN-US>010-68273817<span
 style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span>邮箱：<span
