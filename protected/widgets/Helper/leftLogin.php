@@ -201,6 +201,20 @@ EOT;
                                 <div class="last"></div>
                             </div>
                         </div>
+                        
+                       <div class="leftItem">
+                            <div class="title">学生会员</div>
+                            <div class="box">
+                                <div class="first"></div>
+                                <div class="text"><p style="text-align:center;">
+                                	欢迎成为中国电子学会学生会员
+                                	<img style="width:120px;height:145px;text-align:center;" src="/images/member.jpg" /><br/>
+                                	<a href="http://www.cie-info.org.cn/mis/" target="_blank">申请加入</a>
+                                </p></div>
+                                <div class="last"></div>
+                            </div>
+                        </div>
+                        
                     </div>
 EOT;
 	}
