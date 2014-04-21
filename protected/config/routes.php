@@ -15,6 +15,8 @@ return array (
 		'join'=>'/Home/join/main',
 		'about'=>'/Home/about/main',
 		
+		'info' =>'/Home/info/main',
+		
 		'news'=>'/Home/feeds/main/',
 		
 		'profile'=>'/UserCenter/main/main',

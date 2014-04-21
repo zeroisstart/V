@@ -12,7 +12,7 @@ $this -> registerPopupBox();
                     </div>
                     
                     <div class="contentBlock competition">
-                            <div class="title titleBar">竞赛资讯</div>
+                            <div class="title titleBar">竞赛资讯 <a href="#" style="float:right;">more</a></div>
                             <div class="contentBox">
                             <ul class="competition_left">
                             <?php foreach($news['19']['left'] as $_model):?>
