@@ -124,9 +124,13 @@ class UserAdminController extends Controller {
 	}
 	
  	public function actionList() {
+
+ 		$req = Yii::app() -> request;
+ 		
+ 		$data = $req -> getParam('User');
+ 		
 		$model = User::model ();
-		
-		if (isset ( $_POST ['User'] )) {
+		if ( ( $data )) {
 			$model->attributes = $_POST ['User'];
 		}
 		$model ->with('userProfile');
@@ -185,6 +189,8 @@ class UserAdminController extends Controller {
 		}
 	}
 	public function actionDelete($id) {
-		$this->render ( 'delete' );
+		if($id){
+			
+		}		
 	}
 }

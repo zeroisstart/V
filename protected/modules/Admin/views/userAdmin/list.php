@@ -49,7 +49,30 @@ $this->widget ( 'widget.Helper.SecNav', array (
 
 <div class="grid_form">
 <?php
+$form = $this->beginWidget ( 'CActiveForm', array (
+		'id' => 'user-admin-form',
+		'htmlOptions' => array (
+				//'method' => 'post',
+		),
+		'enableAjaxValidation' => false
+) );
+?>
 
+	<?php echo $form->errorSummary($model); ?>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'username'); ?>
+		<?php echo $form->textField($model,'username',array('class'=>'w_600')); ?>
+		<?php echo $form->error($model,'username'); ?>
+	</div>
+	
+	<div class="row">
+		<?php echo CHtml::submitButton('查询');?>
+	</div>
+<?php $this->endWidget(); ?>
+
+
+<?php 
 /* @var $this AdminController */
 $this->widget ( 'widget.Helper.GridView', array (
 		'dataProvider' => $dataProvider,
@@ -64,7 +87,7 @@ $this->widget ( 'widget.Helper.GridView', array (
 						'value' => '$data -> _state[$data -> state];' 
 				),*/
 				array (
-						'template' => '{update}',
+						'template' => '{update}{delete}',
 						'class' => 'widget.Helper.ButtonColumn' 
 				) 
 		) 
