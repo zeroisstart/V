@@ -235,7 +235,7 @@ class UserGroup extends CActiveRecord {
 	 * @param String $txt        	
 	 */
 	public function getMemberLink($txt=false) {
-		return CHtml::link ( Controller::cut_str ( $txt, 10, 0 ), Yii::app ()->createUrl ( '/Admin/group/view', array (
+		return CHtml::link ( Controller::cut_str ( $txt, 10, 0 ), Yii::app ()->createUrl ( '/Admin/groupMember/view', array (
 				'id' => $this->ID 
 		) ), array (
 				'title' => $txt 
