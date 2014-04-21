@@ -2,6 +2,10 @@
 
 class Region extends CActiveRecord
 {
+	public function tableName() {
+		return '{{user_group}}';
+	}
+	
 	public function getRegion($cde){
 		$area_array=array();
 		$sub_array=array();
@@ -4396,7 +4400,8 @@ class Region extends CActiveRecord
 			$str .=$area_array[$cde[0]];
 		}
 		if(isset($cde[1])){
-			$str .=$l_arr[$cde[1]];
+			if($cde[1] && isset($l_arr[$cde[1]]))
+				$str .=$l_arr[$cde[1]];
 		}
 		if(isset($cde[2])){
 			$str .=$sub_array[$cde[0]][$cde[1]];

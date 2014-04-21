@@ -237,6 +237,7 @@ class RegisterForm extends CFormModel {
 			$userProfile = new UserProfile ();
 			$userProfile->Company_name = $this->company_name;
 			$userProfile->Realname = $this->contact;
+			$userProfile->area = $this -> area;
 			$userProfile->Mobile = $this->mobile;
 			$userProfile->Email = $this->email;
 			$userProfile->ID = $user->id;

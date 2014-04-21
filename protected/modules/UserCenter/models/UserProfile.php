@@ -140,6 +140,30 @@ class UserProfile extends CActiveRecord {
 				
 		);
 	}
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	public function getTeamName(){
+		$id = $this -> ID;
+		$model = UserGroupMember::model() -> findByAttributes(array('UID'=>$id));
+		if($model){
+			return $model -> group -> name;
+		}else{
+			return '';
+		}
+		
+	}
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	public function getProName(){
+		return '';
+	}
+	
 	/**
 	 * 获取用户的类型
 	 *
@@ -148,7 +172,11 @@ class UserProfile extends CActiveRecord {
 	public function getUserCategory() {
 		if($this -> User_category == 5)
 			return "管理员";
-		return $this->user_category [$this->User_category];
+		if(isset($this -> user_category[$this->User_category])){
+			return $this->user_category [$this->User_category];
+		}else{
+			return '';
+		}
 	}
 	
 	/**

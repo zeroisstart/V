@@ -4,7 +4,6 @@ return array (
 		'/' => 'Home/main/index',
 		'forum'=>'forum/forum/index',
 		
-		
 		'admin' =>'Admin/main/main',
 		'admin' =>'Admin/main/main',
 		'admin/login' =>'Admin/Authorized/Login',
