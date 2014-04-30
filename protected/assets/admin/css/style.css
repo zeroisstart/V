@@ -2371,3 +2371,49 @@ div#nyroModalFull div#nyroModalWrapper div#nyroModalContent a.nyroModalNext:hove
 	height:32px;
 	line-height:30px;
 }
+.bookimg {
+	width:400px;
+	height:200px;
+}
+
+@CHARSET "UTF-8";
+
+.div_btn {
+    width: 210px;
+    height: 37px;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+
+.div_btn a.green_btn {
+    display: block;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    font-size: 16px;
+    color: #fff;
+    background: #80be2f;
+    border: 1px solid #67ad0c;
+	text-decoration:none;
+}
+
+.div_btn a.green_btn:hover {
+    background: #7a3;
+}
+
+.div_btn .green_btn {
+	width: 210px;
+    display: block;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    font-size: 16px;
+    color: #fff;
+    background: #80be2f;
+    border: 1px solid #67ad0c;
+	text-decoration:none;
+}
+
+.div_btn .green_btn:hover {
+    background: #7a3;
+}

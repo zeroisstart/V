@@ -69,7 +69,11 @@ $form = $this->beginWidget ( 'CActiveForm', array (
 		</div>
 					
 			<?php if($count > 3):?>
+			<?php if($userGroupModel -> state):?>
 			<p><span>报名状态</span> ：完成</p>
+			<?php else:?>
+			<p><span>报名状态</span> ：未完成</p>
+			<?php endif;?>
 			<?php else:?>
 			<p><span>报名状态</span> ：未完成</p>
 			<?php endif;?>

@@ -115,6 +115,7 @@ Default colour scheme is blue. Uncomment prefered stylesheet to use it.
 							#array('label'=>'新闻', 'url'=>array('/news/admin/list')),
 							#array('label'=>'赛事', 'url'=>array('/event/admin/index')),
 							#array('label'=>'图片','url'=>array('/pic/slider/list')),
+							array('label'=>'报名审核','url'=>array('/Admin/groupbook/list')),
 							array('label'=>'用户管理','url'=>array('/Admin/UserAdmin/list')),
 							//array('label'=>'参赛用户数据导出','url'=>array('/Admin/export/main')),
 					);
@@ -127,6 +128,7 @@ Default colour scheme is blue. Uncomment prefered stylesheet to use it.
 						array('label'=>'内容发布', 'url'=>array('/Admin/content/list')),
 						array('label'=>'参赛队伍', 'url'=>array('/Admin/group/list')),
 						array('label'=>'作品评分分配','url'=>array('/Admin/product/list')),
+						array('label'=>'报名审核','url'=>array('/Admin/groupbook/list')),
 						//array('label'=>'报名审核页面','url'=>array('/Admin/book/list')),
 						array('label'=>'用户管理','url'=>array('/Admin/UserAdmin/list')),
 				);

@@ -31,7 +31,9 @@ class MainController extends Controller {
 		$ary_register = $register_form -> getNation_list();
 		
 		$model_region = new Region();
-		
+		echo <<<TT
+序号,姓名,性别,用户类型,用户名,分赛区,省市,民族,身份证号,学位类型,就读学校,入学年月,专业,队伍名称,作品名称,攻读专业与前置专业是否一致,攻读前户口所在省市,学号,手机,邮箱,QQ,通信地址
+TT;
 				
 		foreach($data as $_model){
 			

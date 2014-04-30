@@ -13,6 +13,8 @@
 class UserGroupBook extends CActiveRecord
 {
 	
+	public $_state = array('1'=>'成功','0'=>'未成功');
+	
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
@@ -57,7 +59,7 @@ class UserGroupBook extends CActiveRecord
 			array('createdate,productname', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, gid, bookimg, createdate, productname', 'safe', 'on'=>'search'),
+			array('id, gid, bookimg, createdate, productname, state', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -79,12 +81,18 @@ class UserGroupBook extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'gid' => 'Gid',
+			'gid' => '组ID',
 			'productname'=>'作品名称:',
 			'bookimg' => '报名信息表:',
-			'createdate' => 'Createdate',
+			'state'=>'状态',
+			'createdate' => '提交时间',
 		);
 	}
+	
+	public function _img($_src){
+		return "<a target='_blank' href=\"/img/$_src\" ><img class=\"bookimg\" src=\"/img/$_src\" ></a>";
+	}
+	
 
 	/**
 	 * Retrieves a list of models based on the current search/filter conditions.
@@ -102,6 +110,8 @@ class UserGroupBook extends CActiveRecord
 		$criteria->compare('bookimg',$this->bookimg,true);
 		$criteria->compare('productname',$this->productname,true);
 		$criteria->compare('createdate',$this->createdate,true);
+		$criteria->compare('state',$this->state,true);
+		
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
