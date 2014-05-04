@@ -1166,3 +1166,25 @@ ul.competition_logo {
 #member_btn{
 	height:35px;
 }
+.competition_left{
+	height:137px;
+}
+.competition_left li{
+	margin-top:8px;
+}
+.competition_right{
+	height:137px;
+}
+.competition_right li{
+	margin-top:8px;	
+}
+
+.contentBox .competition_left li.high-light	 a{
+	color:red;
+	font-size:15px;!important;
+}
+
+.high-light{
+	
+}
+

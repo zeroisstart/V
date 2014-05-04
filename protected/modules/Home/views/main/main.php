@@ -15,11 +15,20 @@ $this -> registerPopupBox();
                             <div class="contentBox">
                             <ul class="competition_left">
                             <?php foreach($news['19']['left'] as $_model):?>
+                            
+                            <?php if($_model -> ID != 63):?>
                             	<li>
                             		<a href="<?php echo $this -> createUrl('/Home/feeds/main',array('id'=>$_model -> ID))?>" title="<?php echo $_model -> title;?>">
                             			<?php echo mb_substr($_model -> title,0,60);?>
                             		</a>
                             	</li>
+                            <?php else:?>
+	                            <li class="high-light">
+	                            		<a href="<?php echo $this -> createUrl('/Home/feeds/main',array('id'=>$_model -> ID))?>" title="<?php echo $_model -> title;?>">
+	                            			<?php echo mb_substr($_model -> title,0,60);?>
+	                            		</a>
+	                            </li>
+                            <?php endif;?>
                             <?php endforeach;?>
                             </ul>
                             

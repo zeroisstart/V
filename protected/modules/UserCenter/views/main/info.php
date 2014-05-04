@@ -1,3 +1,6 @@
+<?php var_dump($profile->User_category);
+die;?>
+
 <div id="contextAdorn"></div>
 <div id="contextBox">
 	<div id="rightContent" class="user_profile_info">
@@ -10,7 +13,7 @@
 
 		<div class="user_data_info">
 			<?php if($edit):?>
-				<?php echo $this -> renderPartial('_info_form',array('model'=>$model));?>			
+				<?php echo $this -> renderPartial('_info_form',array('model'=>$model));?>
 			<?php else:?>
 				<?php
 				$ary_key = array (

@@ -652,6 +652,9 @@ class MainController extends Controller {
 		if ($req->getParam ( 'edit' )) {
 			if (isset ( $_POST ['UserProfile'] )) {
 				$userInfo->attributes = $_POST ['UserProfile'];
+				$userInfo -> joinDate = $_POST ['UserProfile']['joinDate'];
+				$userInfo -> majoy = $_POST ['UserProfile']['majoy'];
+				$userInfo -> schoolName = $_POST ['UserProfile']['schoolName'];
 				if ($userInfo->validate ()) {
 					$userInfo->save ();
 					Yii::app ()->user->setFlash ( 'success', '修改成功!' );
@@ -672,9 +675,9 @@ class MainController extends Controller {
 			Yii::app() -> end();
 		}
 		if ($profile->User_category == '1') {
-			$this->render ( 'student_info', array ('model' => $userInfo, 'edit' => $edit ) );
+			$this->render ( 'student_info', array ('model' => $userInfo, 'edit' => $edit ,'profile'=>$profile) );
 		} else {
-			$this->render ( 'info', array ('model' => $userInfo, 'edit' => $edit ) );
+			$this->render ( 'info', array ('model' => $userInfo, 'edit' => $edit,'profile'=>$profile ) );
 		}
 	}
 }
